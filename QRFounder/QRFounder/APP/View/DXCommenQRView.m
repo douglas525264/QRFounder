@@ -38,19 +38,25 @@
 - (void)setQrModel:(QRModel *)qrModel {
 
     _qrModel = qrModel;
-    if (self.qrView.qrModel) {
-        self.qrView.qrModel = qrModel;
-    }
-    
+//    if (self.qrView.qrModel) {
+//        self.qrView.qrModel = qrModel;
+//    }
+    [self.layer setNeedsDisplay];
 }
 - (void)setBoarderImage:(UIImage *)boarderImage {
 
     
     [self sendSubviewToBack:self.boarderImageView];
     //self.boarderImageView.backgroundColor = [UIColor greenColor];
-    self.boarderImageView.image = boarderImage;
+    
+    
     CGFloat width = self.frame.size.width;
-    self.qrView.frame = CGRectMake(width * self.QRFrame.origin.x , width * self.QRFrame.origin.y, width * self.QRFrame.size.width, width * self.QRFrame.size.height);
+    self.boarderImageView.image = boarderImage;
+    [UIView animateWithDuration:0.3 animations:^{
+      self.qrView.frame = CGRectMake(width * self.QRFrame.origin.x , width * self.QRFrame.origin.y, width * self.QRFrame.size.width, width * self.QRFrame.size.height);
+      
+    }];
+    
     _boarderImage = boarderImage;
     self.backgroundColor = [UIColor blueColor];
 }

@@ -8,6 +8,16 @@
 
 /* Begin PBXBuildFile section */
 		6F47158C73E0701CA9C33A1D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870B66BCB23AE6D674C3889 /* libPods.a */; };
+		A52A27DE1CC62CA400095D74 /* birthday001.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D31CC62CA400095D74 /* birthday001.png */; };
+		A52A27DF1CC62CA400095D74 /* birthday002.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D41CC62CA400095D74 /* birthday002.png */; };
+		A52A27E01CC62CA400095D74 /* birthday003.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D51CC62CA400095D74 /* birthday003.png */; };
+		A52A27E11CC62CA400095D74 /* birthday004.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D61CC62CA400095D74 /* birthday004.png */; };
+		A52A27E21CC62CA400095D74 /* birthday005.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D71CC62CA400095D74 /* birthday005.png */; };
+		A52A27E31CC62CA400095D74 /* birthday006.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D81CC62CA400095D74 /* birthday006.png */; };
+		A52A27E41CC62CA400095D74 /* BorderImageSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D91CC62CA400095D74 /* BorderImageSource.plist */; };
+		A52A27E51CC62CA400095D74 /* hello001.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27DB1CC62CA400095D74 /* hello001.png */; };
+		A52A27E61CC62CA400095D74 /* hello002.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27DC1CC62CA400095D74 /* hello002.png */; };
+		A52A27E71CC62CA400095D74 /* hello003.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27DD1CC62CA400095D74 /* hello003.png */; };
 		A57609A71CB287F8006F3F1B /* QRSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A57609A61CB287F8006F3F1B /* QRSourceManager.m */; };
 		A57609D91CB28E18006F3F1B /* album.png in Resources */ = {isa = PBXBuildFile; fileRef = A57609CB1CB28E18006F3F1B /* album.png */; };
 		A57609DA1CB28E18006F3F1B /* jingdong.png in Resources */ = {isa = PBXBuildFile; fileRef = A57609CC1CB28E18006F3F1B /* jingdong.png */; };
@@ -91,6 +101,16 @@
 /* Begin PBXFileReference section */
 		3870B66BCB23AE6D674C3889 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4F2B2A688A4033626C109B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A52A27D31CC62CA400095D74 /* birthday001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday001.png; sourceTree = "<group>"; };
+		A52A27D41CC62CA400095D74 /* birthday002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday002.png; sourceTree = "<group>"; };
+		A52A27D51CC62CA400095D74 /* birthday003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday003.png; sourceTree = "<group>"; };
+		A52A27D61CC62CA400095D74 /* birthday004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday004.png; sourceTree = "<group>"; };
+		A52A27D71CC62CA400095D74 /* birthday005.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday005.png; sourceTree = "<group>"; };
+		A52A27D81CC62CA400095D74 /* birthday006.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday006.png; sourceTree = "<group>"; };
+		A52A27D91CC62CA400095D74 /* BorderImageSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = BorderImageSource.plist; sourceTree = "<group>"; };
+		A52A27DB1CC62CA400095D74 /* hello001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hello001.png; sourceTree = "<group>"; };
+		A52A27DC1CC62CA400095D74 /* hello002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hello002.png; sourceTree = "<group>"; };
+		A52A27DD1CC62CA400095D74 /* hello003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hello003.png; sourceTree = "<group>"; };
 		A57609A51CB287F8006F3F1B /* QRSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRSourceManager.h; sourceTree = "<group>"; };
 		A57609A61CB287F8006F3F1B /* QRSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRSourceManager.m; sourceTree = "<group>"; };
 		A57609CB1CB28E18006F3F1B /* album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = album.png; sourceTree = "<group>"; };
@@ -233,6 +253,29 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A52A27D21CC62CA400095D74 /* Birthday */ = {
+			isa = PBXGroup;
+			children = (
+				A52A27D31CC62CA400095D74 /* birthday001.png */,
+				A52A27D41CC62CA400095D74 /* birthday002.png */,
+				A52A27D51CC62CA400095D74 /* birthday003.png */,
+				A52A27D61CC62CA400095D74 /* birthday004.png */,
+				A52A27D71CC62CA400095D74 /* birthday005.png */,
+				A52A27D81CC62CA400095D74 /* birthday006.png */,
+			);
+			path = Birthday;
+			sourceTree = "<group>";
+		};
+		A52A27DA1CC62CA400095D74 /* helloKility */ = {
+			isa = PBXGroup;
+			children = (
+				A52A27DB1CC62CA400095D74 /* hello001.png */,
+				A52A27DC1CC62CA400095D74 /* hello002.png */,
+				A52A27DD1CC62CA400095D74 /* hello003.png */,
+			);
+			path = helloKility;
+			sourceTree = "<group>";
+		};
 		A57609A41CB287DB006F3F1B /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -289,6 +332,9 @@
 		A57609D71CB28E18006F3F1B /* BorderImageSource */ = {
 			isa = PBXGroup;
 			children = (
+				A52A27D21CC62CA400095D74 /* Birthday */,
+				A52A27D91CC62CA400095D74 /* BorderImageSource.plist */,
+				A52A27DA1CC62CA400095D74 /* helloKility */,
 			);
 			path = BorderImageSource;
 			sourceTree = "<group>";
@@ -725,14 +771,21 @@
 			files = (
 				D78418DD1C7487AF00850129 /* APPInfoView.xib in Resources */,
 				A57609DF1CB28E18006F3F1B /* qqai.png in Resources */,
+				A52A27DE1CC62CA400095D74 /* birthday001.png in Resources */,
 				A57609E01CB28E18006F3F1B /* weibo.png in Resources */,
 				A57609E11CB28E18006F3F1B /* weixin.png in Resources */,
 				D78418681C74551200850129 /* LaunchScreen.storyboard in Resources */,
+				A52A27E11CC62CA400095D74 /* birthday004.png in Resources */,
 				D7FC155D1CA91BBD009EAB4C /* border_000.png in Resources */,
 				D78418DF1C7487BE00850129 /* MyCardInfoView.xib in Resources */,
+				A52A27E71CC62CA400095D74 /* hello003.png in Resources */,
 				D7FC155E1CA91BBD009EAB4C /* border_001.png in Resources */,
 				D78418651C74551200850129 /* Assets.xcassets in Resources */,
+				A52A27E01CC62CA400095D74 /* birthday003.png in Resources */,
 				D78418E51C7487F000850129 /* HttpInfoView.xib in Resources */,
+				A52A27E31CC62CA400095D74 /* birthday006.png in Resources */,
+				A52A27DF1CC62CA400095D74 /* birthday002.png in Resources */,
+				A52A27E21CC62CA400095D74 /* birthday005.png in Resources */,
 				A57609DB1CB28E18006F3F1B /* taobao.png in Resources */,
 				A57609E21CB28E18006F3F1B /* weixincircle.png in Resources */,
 				D78418E91C74885A00850129 /* PositionInfoView.xib in Resources */,
@@ -740,6 +793,8 @@
 				D78418E71C74884900850129 /* TextinfoView.xib in Resources */,
 				A57609DD1CB28E18006F3F1B /* tianmaoIcon.png in Resources */,
 				D78418DB1C74879800850129 /* CommenInfoView.xib in Resources */,
+				A52A27E41CC62CA400095D74 /* BorderImageSource.plist in Resources */,
+				A52A27E51CC62CA400095D74 /* hello001.png in Resources */,
 				D78418631C74551200850129 /* Main.storyboard in Resources */,
 				D7FC15601CA92459009EAB4C /* border_test.jpg in Resources */,
 				A57609D91CB28E18006F3F1B /* album.png in Resources */,
@@ -748,6 +803,7 @@
 				D78418E31C7487D600850129 /* MailInfoView.xib in Resources */,
 				D78418EB1C74887300850129 /* WIFIInfoView.xib in Resources */,
 				D78418D81C74797C00850129 /* 001.png in Resources */,
+				A52A27E61CC62CA400095D74 /* hello002.png in Resources */,
 				A57609E31CB28E18006F3F1B /* weixingreen.png in Resources */,
 				A57609DC1CB28E18006F3F1B /* tianmao.png in Resources */,
 			);

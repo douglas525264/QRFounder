@@ -38,6 +38,12 @@ enum {
         return;
     }
     CGContextRef cxt = UIGraphicsGetCurrentContext();
+    UIGraphicsPushContext(cxt);
+    //CGRect rectDraw = CGRectMake(0, 0, zoom, zoom);
+    
+    CGContextSetFillColorWithColor(cxt, [UIColor whiteColor].CGColor);
+    CGContextAddRect(cxt,rect);
+    CGContextFillPath(cxt);
     QRcode *code = QRcode_encodeString([_qrModel.QRStr UTF8String], 0, QR_ECLEVEL_L, QR_MODE_8, 1);
     [self drawQRCode:code context:cxt size:rect.size.width];
 }

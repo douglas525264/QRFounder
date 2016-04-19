@@ -31,6 +31,12 @@
     self.qrView.qrModel = self.qrModel;
 
 }
+- (void)setBoarderImage:(UIImage *)image withQRFrame:(CGRect)qrFrame {
+
+    self.qrModel.boarderImage = image;
+    self.qrModel.QRFrame = qrFrame;
+    self.qrView.qrModel = self.qrModel;
+}
 - (void)setEditType:(QREditType)editType {
 
     _editType = editType;
@@ -40,8 +46,13 @@
     __weak QREditViewController *weakSelf = self;
     [self.scrollMenu setSelectFinishedCallBack:^(NSIndexPath *path, NSInteger tag) {
         __strong QREditViewController *strongSelf = weakSelf;
+        
+
         if (path) {
-            if (path.section == 0) {
+            DXmenuItem *item = strongSelf.sourceArr[path.section];
+            DXSubMenuItem *subitem = item.items[path.row];
+
+            if (path.section == 0 && _editType == QREditTypeBg) {
                 switch (path.row) {
                     case 0:{
                         //相册
@@ -58,14 +69,23 @@
                     default:
                         break;
                 }
-                //return ;
+               // return ;
+            } else {
+                UIImage *image = [UIImage imageWithContentsOfFile:subitem.ImageName];
+                switch (strongSelf.editType) {
+                    case QREditTypeBg:{
+                        [strongSelf setBgImage:image];
+                    }break;
+                    case QREditTypeBoarder:{
+                        [strongSelf setBoarderImage:image withQRFrame:subitem.QRFrame];
+                    }break;
+                        
+                    default:
+                        break;
+                }
+                
             }
-            
-            DXmenuItem *item = strongSelf.sourceArr[path.section];
-            DXSubMenuItem *subitem = item.items[path.row];
-            UIImage *image = [UIImage imageWithContentsOfFile:subitem.ImageName];
-            [strongSelf setBgImage:image];
-            
+
         }
     }];
 
@@ -126,24 +146,24 @@
 - (NSArray *)loaddata {
     return [[QRSourceManager shareInstance] getSoureceWithEditeType:self.editType];
 //    if (self.editType) {
-        NSMutableArray *resultArr = [[NSMutableArray alloc] init];
-        
-        for (NSInteger j = 0 ; j < 8; j ++) {
-            DXmenuItem *firstMenu = [[DXmenuItem alloc] init];
-            firstMenu.menuIcon = [UIImage imageNamed:@"menuTest"];
-            firstMenu.title = @"测试Icon";
-            NSMutableArray *subArr = [[NSMutableArray alloc] init];
-            for (NSInteger i = 0; i < 8; i++) {
-                DXSubMenuItem *subOneMenu = [[DXSubMenuItem alloc] init];
-                subOneMenu.normalImage = [UIImage imageNamed:@"menuTest"];
-                subOneMenu.ImageName = @"menuTest";
-                [subArr addObject:subOneMenu];
-            }
-            firstMenu.items = subArr;
-            [resultArr addObject:firstMenu];
-        }
-        return resultArr;
-        
+//        NSMutableArray *resultArr = [[NSMutableArray alloc] init];
+//        
+//        for (NSInteger j = 0 ; j < 8; j ++) {
+//            DXmenuItem *firstMenu = [[DXmenuItem alloc] init];
+//            firstMenu.menuIcon = [UIImage imageNamed:@"menuTest"];
+//            firstMenu.title = @"测试Icon";
+//            NSMutableArray *subArr = [[NSMutableArray alloc] init];
+//            for (NSInteger i = 0; i < 8; i++) {
+//                DXSubMenuItem *subOneMenu = [[DXSubMenuItem alloc] init];
+//                subOneMenu.normalImage = [UIImage imageNamed:@"menuTest"];
+//                subOneMenu.ImageName = @"menuTest";
+//                [subArr addObject:subOneMenu];
+//            }
+//            firstMenu.items = subArr;
+//            [resultArr addObject:firstMenu];
+//        }
+//        return resultArr;
+    
 //    }
 //    return nil;
 }
