@@ -98,7 +98,7 @@
 
           j++;
         }
-        NSInteger pageCount = item.items.count / MenuItemCount + 1;
+        NSInteger pageCount = item.items.count / MenuItemCount + item.items.count % MenuItemCount > 0 ? 1 : 0;
         subScrollView.contentSize = CGSizeMake(subScrollView.frame.size.width *pageCount, subScrollView.frame.size.height);
 
         [self.menuScrollView addSubview:subScrollView];
