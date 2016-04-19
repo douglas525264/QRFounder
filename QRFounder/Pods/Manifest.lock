@@ -1,0 +1,18 @@
+PODS:
+  - ATMHud@dhoerl (3.0.0):
+    - ATMHud@dhoerl/Core (= 3.0.0)
+  - ATMHud@dhoerl/Core (3.0.0)
+  - libqrencode (3.4.2)
+  - ZBarSDK (1.3.1)
+
+DEPENDENCIES:
+  - ATMHud@dhoerl (~> 3.0.0)
+  - libqrencode (~> 3.4.2)
+  - ZBarSDK (~> 1.3.1)
+
+SPEC CHECKSUMS:
+  ATMHud@dhoerl: 3ec62b6a26511d2f099c0886533c9fc78769277c
+  libqrencode: 43dc34b89af83ea4b07c409cd8e09c87aa3a1c9f
+  ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
+
+COCOAPODS: 0.39.0

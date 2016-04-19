@@ -1,0 +1,90 @@
+//
+//  DXCommenHelper.h
+//  QRFounder
+//
+//  Created by dongxin on 16/2/17.
+//  Copyright © 2016年 dongxin. All rights reserved.
+//
+
+#ifndef DXCommenHelper_h
+#define DXCommenHelper_h
+#import "RemoteSever.h"
+#import "SourcePath.h"
+/**
+ *  全局通用宏定义
+ */
+
+#ifndef DEBUG
+#undef NSLog
+#define NSLog(args, ...)
+#endif
+
+#define ScreenWidth [UIScreen mainScreen].bounds.size.width
+#define ScreenHeight [UIScreen mainScreen].bounds.size.height
+
+
+#define IS_IOS8 [[UIDevice currentDevice] systemVersion].floatValue >= 8.0
+
+#define RGB(x,y,z,a) [UIColor colorWithRed:x/255.0 green:y/255.0 blue:z/255.0 alpha:a]
+
+#define DefaultColor RGB(33,188,225,1)
+/**
+ *  二维码种类
+ */
+typedef NS_ENUM(NSInteger,QRType) {
+    /**
+     *  身份信息
+     */
+    QRTypeMyCard,
+    /**
+     *  APP 推广类型
+     */
+    QRTypeAPP,
+    /**
+     *  HTTP 连接
+     */
+    QRTypeHTTP,
+    /**
+     *  发送消息类型
+     */
+    QRTypeMsg,
+    /**
+     *  发邮件类型
+     */
+    QRTypeMail,
+    /**
+     *  位置信息类型
+     */
+    QRTypePosition,
+    /**
+     *  wifi 类型
+     */
+    QRTypeWIFI,
+    /**
+     *  普通文本类型
+     */
+    QRTypeText
+};
+/**
+ *  编辑类型
+ */
+typedef NS_ENUM(NSInteger,QREditType) {
+    /**
+     *  背景图片
+     */
+    QREditTypeBg,
+    /**
+     *  边框
+     */
+    QREditTypeBoarder,
+    /**
+     *  logo
+     */
+    QREditTypeLogo,
+    /**
+     *  color
+     */
+    QREditTypeColor
+};
+
+#endif /* DXCommenHelper_h */
