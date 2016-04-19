@@ -51,6 +51,7 @@
                     case 1:{
                         //相机
                         [strongSelf showcamera];
+                        
                         return;
                     }break;
                         
