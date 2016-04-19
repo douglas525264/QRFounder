@@ -100,13 +100,13 @@
 			<array>
 				<dict>
 					<key>hScale</key>
-					<integer>0</integer>
+					<real>0.5346</real>
 					<key>wScale</key>
-					<integer>0</integer>
+					<real>0.5346</real>
 					<key>yScale</key>
-					<integer>0</integer>
+					<real>0.08450000000000001</real>
 					<key>xScale</key>
-					<integer>0</integer>
+					<real>0.3841</real>
 					<key>imageSourceName</key>
 					<string>hello001</string>
 					<key>menuIcon</key>
@@ -114,13 +114,13 @@
 				</dict>
 				<dict>
 					<key>hScale</key>
-					<integer>0</integer>
+					<real>0.53</real>
 					<key>wScale</key>
-					<integer>0</integer>
+					<real>0.53</real>
 					<key>yScale</key>
-					<integer>0</integer>
+					<real>0.3645</real>
 					<key>xScale</key>
-					<integer>0</integer>
+					<real>0.1049</real>
 					<key>imageSourceName</key>
 					<string>hello002</string>
 					<key>menuIcon</key>
@@ -128,13 +128,13 @@
 				</dict>
 				<dict>
 					<key>hScale</key>
-					<integer>0</integer>
+					<real>0.441</real>
 					<key>wScale</key>
-					<integer>0</integer>
+					<real>0.441</real>
 					<key>yScale</key>
-					<integer>0</integer>
+					<real>0.1406</real>
 					<key>xScale</key>
-					<integer>0</integer>
+					<real>0.288</real>
 					<key>imageSourceName</key>
 					<string>hello003</string>
 					<key>menuIcon</key>
