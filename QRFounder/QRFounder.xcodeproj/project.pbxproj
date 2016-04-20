@@ -13,7 +13,6 @@
 		A50258E41CC75E67007B00E3 /* taobao.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258D81CC75E67007B00E3 /* taobao.png */; };
 		A50258E51CC75E67007B00E3 /* tianmao.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258D91CC75E67007B00E3 /* tianmao.png */; };
 		A50258E61CC75E67007B00E3 /* tianmaoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258DA1CC75E67007B00E3 /* tianmaoIcon.png */; };
-		A50258E71CC75E67007B00E3 /* QRlogoSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = A50258DB1CC75E67007B00E3 /* QRlogoSource.plist */; };
 		A50258E81CC75E67007B00E3 /* qqai.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258DD1CC75E67007B00E3 /* qqai.png */; };
 		A50258E91CC75E67007B00E3 /* weibo.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258DE1CC75E67007B00E3 /* weibo.png */; };
 		A50258EA1CC75E67007B00E3 /* weixin.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258DF1CC75E67007B00E3 /* weixin.png */; };
@@ -22,6 +21,7 @@
 		A50258F01CC76A68007B00E3 /* CardInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50258EE1CC76A68007B00E3 /* CardInfoTableViewCell.m */; };
 		A50258F11CC76A68007B00E3 /* CardInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50258EF1CC76A68007B00E3 /* CardInfoTableViewCell.xib */; };
 		A50258F71CC76E65007B00E3 /* DXInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A50258F61CC76E65007B00E3 /* DXInputTextView.m */; };
+		A50258F91CC783F9007B00E3 /* QRlogoSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = A50258F81CC783F9007B00E3 /* QRlogoSource.plist */; };
 		A52A27DE1CC62CA400095D74 /* birthday001.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D31CC62CA400095D74 /* birthday001.png */; };
 		A52A27DF1CC62CA400095D74 /* birthday002.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D41CC62CA400095D74 /* birthday002.png */; };
 		A52A27E01CC62CA400095D74 /* birthday003.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D51CC62CA400095D74 /* birthday003.png */; };
@@ -120,7 +120,6 @@
 		A50258D81CC75E67007B00E3 /* taobao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taobao.png; sourceTree = "<group>"; };
 		A50258D91CC75E67007B00E3 /* tianmao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tianmao.png; sourceTree = "<group>"; };
 		A50258DA1CC75E67007B00E3 /* tianmaoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tianmaoIcon.png; sourceTree = "<group>"; };
-		A50258DB1CC75E67007B00E3 /* QRlogoSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QRlogoSource.plist; sourceTree = "<group>"; };
 		A50258DD1CC75E67007B00E3 /* qqai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qqai.png; sourceTree = "<group>"; };
 		A50258DE1CC75E67007B00E3 /* weibo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo.png; sourceTree = "<group>"; };
 		A50258DF1CC75E67007B00E3 /* weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixin.png; sourceTree = "<group>"; };
@@ -131,6 +130,7 @@
 		A50258EF1CC76A68007B00E3 /* CardInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardInfoTableViewCell.xib; sourceTree = "<group>"; };
 		A50258F51CC76E65007B00E3 /* DXInputTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXInputTextView.h; sourceTree = "<group>"; };
 		A50258F61CC76E65007B00E3 /* DXInputTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXInputTextView.m; sourceTree = "<group>"; };
+		A50258F81CC783F9007B00E3 /* QRlogoSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QRlogoSource.plist; sourceTree = "<group>"; };
 		A52A27D31CC62CA400095D74 /* birthday001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday001.png; sourceTree = "<group>"; };
 		A52A27D41CC62CA400095D74 /* birthday002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday002.png; sourceTree = "<group>"; };
 		A52A27D51CC62CA400095D74 /* birthday003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday003.png; sourceTree = "<group>"; };
@@ -396,8 +396,8 @@
 		A57609D81CB28E18006F3F1B /* LogoImageSource */ = {
 			isa = PBXGroup;
 			children = (
+				A50258F81CC783F9007B00E3 /* QRlogoSource.plist */,
 				A50258D51CC75E67007B00E3 /* Other */,
-				A50258DB1CC75E67007B00E3 /* QRlogoSource.plist */,
 				A50258DC1CC75E67007B00E3 /* SNS */,
 			);
 			path = LogoImageSource;
@@ -834,7 +834,6 @@
 				A50258F11CC76A68007B00E3 /* CardInfoTableViewCell.xib in Resources */,
 				D78418DD1C7487AF00850129 /* APPInfoView.xib in Resources */,
 				A57609DF1CB28E18006F3F1B /* qqai.png in Resources */,
-				A50258E71CC75E67007B00E3 /* QRlogoSource.plist in Resources */,
 				A52A27DE1CC62CA400095D74 /* birthday001.png in Resources */,
 				A57609E01CB28E18006F3F1B /* weibo.png in Resources */,
 				A57609E11CB28E18006F3F1B /* weixin.png in Resources */,
@@ -854,6 +853,7 @@
 				A52A27DF1CC62CA400095D74 /* birthday002.png in Resources */,
 				A52A27E21CC62CA400095D74 /* birthday005.png in Resources */,
 				A50258E91CC75E67007B00E3 /* weibo.png in Resources */,
+				A50258F91CC783F9007B00E3 /* QRlogoSource.plist in Resources */,
 				A57609DB1CB28E18006F3F1B /* taobao.png in Resources */,
 				A57609E21CB28E18006F3F1B /* weixincircle.png in Resources */,
 				A50258E41CC75E67007B00E3 /* taobao.png in Resources */,
