@@ -22,6 +22,8 @@
 		A50258F11CC76A68007B00E3 /* CardInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50258EF1CC76A68007B00E3 /* CardInfoTableViewCell.xib */; };
 		A50258F71CC76E65007B00E3 /* DXInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A50258F61CC76E65007B00E3 /* DXInputTextView.m */; };
 		A50258F91CC783F9007B00E3 /* QRlogoSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = A50258F81CC783F9007B00E3 /* QRlogoSource.plist */; };
+		A50FDA361CC789380027188C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA351CC789380027188C /* AddressBook.framework */; };
+		A50FDA381CC7893D0027188C /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA371CC7893D0027188C /* AddressBookUI.framework */; };
 		A52A27DE1CC62CA400095D74 /* birthday001.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D31CC62CA400095D74 /* birthday001.png */; };
 		A52A27DF1CC62CA400095D74 /* birthday002.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D41CC62CA400095D74 /* birthday002.png */; };
 		A52A27E01CC62CA400095D74 /* birthday003.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D51CC62CA400095D74 /* birthday003.png */; };
@@ -131,6 +133,8 @@
 		A50258F51CC76E65007B00E3 /* DXInputTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXInputTextView.h; sourceTree = "<group>"; };
 		A50258F61CC76E65007B00E3 /* DXInputTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXInputTextView.m; sourceTree = "<group>"; };
 		A50258F81CC783F9007B00E3 /* QRlogoSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QRlogoSource.plist; sourceTree = "<group>"; };
+		A50FDA351CC789380027188C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
+		A50FDA371CC7893D0027188C /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		A52A27D31CC62CA400095D74 /* birthday001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday001.png; sourceTree = "<group>"; };
 		A52A27D41CC62CA400095D74 /* birthday002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday002.png; sourceTree = "<group>"; };
 		A52A27D51CC62CA400095D74 /* birthday003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday003.png; sourceTree = "<group>"; };
@@ -252,6 +256,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A50FDA381CC7893D0027188C /* AddressBookUI.framework in Frameworks */,
+				A50FDA361CC789380027188C /* AddressBook.framework in Frameworks */,
 				D72A3BB41C9FA130001DB11F /* AVFoundation.framework in Frameworks */,
 				6F47158C73E0701CA9C33A1D /* libPods.a in Frameworks */,
 			);
@@ -406,6 +412,8 @@
 		CC25F21FA19289206F13E26A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A50FDA371CC7893D0027188C /* AddressBookUI.framework */,
+				A50FDA351CC789380027188C /* AddressBook.framework */,
 				D72A3BB31C9FA130001DB11F /* AVFoundation.framework */,
 				3870B66BCB23AE6D674C3889 /* libPods.a */,
 			);

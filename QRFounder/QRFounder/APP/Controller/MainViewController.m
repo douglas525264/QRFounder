@@ -8,15 +8,20 @@
 //
 
 #import "MainViewController.h"
-
+static MainViewController *mainVc;
 @interface MainViewController ()
 
 @end
 
 @implementation MainViewController
++ (MainViewController *) shareInstance {
 
+    return mainVc;
+    
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
+    mainVc = self;
     //self.tabBar.delegate = self;
     // Do any additional setup after loading the view.
 }

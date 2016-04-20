@@ -25,13 +25,29 @@
                     <rect key="frame" x="0.0" y="39" width="300" height="361"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                 </tableView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="evh-ac-noy">
+                    <rect key="frame" x="8" y="3" width="27" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="JP9-kx-1bp"/>
+                        <constraint firstAttribute="width" constant="27" id="pvm-t0-ECb"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="24"/>
+                    <state key="normal" title="+">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="addBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="xJN-TZ-ygL"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="a5s-xP-ATC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2un-Qk-4R1"/>
+                <constraint firstItem="evh-ac-noy" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="3" id="9iK-ma-89a"/>
                 <constraint firstItem="Zsw-rx-4Np" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AWQ-Ez-gnX"/>
                 <constraint firstAttribute="bottom" secondItem="Zsw-rx-4Np" secondAttribute="bottom" id="AoV-qQ-Pef"/>
                 <constraint firstAttribute="trailing" secondItem="Zsw-rx-4Np" secondAttribute="trailing" id="PBg-gU-rUI"/>
+                <constraint firstItem="evh-ac-noy" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="maG-0u-DCU"/>
                 <constraint firstItem="a5s-xP-ATC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="oQc-5N-GWd"/>
                 <constraint firstItem="Zsw-rx-4Np" firstAttribute="top" secondItem="a5s-xP-ATC" secondAttribute="bottom" id="w9J-2F-dCM"/>
             </constraints>

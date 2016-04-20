@@ -9,8 +9,9 @@
 
 #import "MyCardInfoView.h"
 #import "CardInfoTableViewCell.h"
-
-@interface MyCardInfoView()
+#import <AddressBookUI/AddressBookUI.h>
+#import "MainViewController.h"
+@interface MyCardInfoView()<ABPeoplePickerNavigationControllerDelegate>
 @property (nonatomic, strong) NSMutableArray *cells;
 @end
 @implementation MyCardInfoView
@@ -32,6 +33,13 @@
     if (self) {
     }
     return self;
+}
+- (IBAction)addBtnClick:(id)sender {
+    
+    ABPeoplePickerNavigationController *peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
+    peoplePicker.peoplePickerDelegate = self;
+    [[MainViewController shareInstance] presentViewController:peoplePicker animated:YES completion:nil];
+
 }
 - (void)drawRect:(CGRect)rect {
     self.infoTableView.delegate = self;
@@ -126,6 +134,7 @@
     
     return cell;
 }
+
 - (NSString *)getResultInfoStr {
     
     
@@ -169,6 +178,100 @@
     [resultStr appendString:@"END:VCARD"];
     
     return resultStr;
+}
+#pragma mark - ABPeoplePickerNavigationControllerDelegate
+- (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person {
+    //获取个人名字
+//    CFTypeRef abName = ABRecordCopyValue(person, kABPersonFirstNameProperty);
+//    CFTypeRef abLastName = ABRecordCopyValue(person, kABPersonLastNameProperty);
+    CFStringRef abFullName = ABRecordCopyCompositeName(person);
+    NSString *fullName = (__bridge NSString *)abFullName;
+    nameTextView.text = fullName;
+    ABPropertyID multiProperties[] = {
+        kABPersonPhoneProperty,
+        kABPersonEmailProperty
+    };
+    NSInteger multiPropertiesTotal = sizeof(multiProperties) / sizeof(ABPropertyID);
+    NSMutableString *telStr = [[NSMutableString alloc] init];
+    NSMutableString *mailStr = [[NSMutableString alloc] init];
+    for (NSInteger j = 0; j < multiPropertiesTotal; j++) {
+        ABPropertyID property = multiProperties[j];
+        ABMultiValueRef valuesRef = ABRecordCopyValue(person, property);
+        NSInteger valuesCount = 0;
+        if (valuesRef != nil) valuesCount = ABMultiValueGetCount(valuesRef);
+        
+        if (valuesCount == 0) {
+            if (valuesRef !=nil) {
+              CFRelease(valuesRef);
+            }
+            continue;
+        }
+        //获取电话号码和email
+        
+        for (NSInteger k = 0; k < valuesCount; k++) {
+            CFTypeRef value = ABMultiValueCopyValueAtIndex(valuesRef, k);
+            if (j == 0) {
+                NSString *ph = (__bridge NSString*)value;
+                NSLog(@"%@",ph);
+                if (ph) {
+                    [telStr appendFormat:@"%@%@",ph, k == (valuesCount - 1) ? @"" : @","];
+                }
+            }
+            if (j == 1) {
+                NSString *mai = (__bridge NSString*)value;
+                NSLog(@"%@",mai);
+                if (mai) {
+                    [mailStr appendFormat:@"%@%@",mai, k == (valuesCount - 1) ? @"" : @","];
+                }
+
+            }
+//            switch (j) {
+//                case 0: {// Phone number
+//                    
+//                }break;
+//                case 1: {// Email
+//                    NSString *mail = (__bridge NSString*)value;
+//                    
+//                }break;
+//            }
+            CFRelease(value);
+        }
+        
+        if (valuesRef !=nil) {
+            CFRelease(valuesRef);
+        }
+
+       // CFRelease(valuesRef);
+    }
+    telephoneTextView.text = telStr;
+    mailTextView.text = mailStr;
+    //将个人信息添加到数组中，循环完成后addressBookTemp中包含所有联系人的信息
+ //   [addressBookTemp addObject:addressBook];
+    
+    if (abFullName) CFRelease(abFullName);
+
+//    NSString *nameString = (__bridge NSString *)abName;
+//    NSString *lastNameString = (__bridge NSString *)abLastName;
+    //电话
+//    ABMultiValueRef multiValue = ABRecordCopyValue(person, kABPersonPhoneProperty);
+//    if (multiValue) {
+//        
+//        CFIndex index = ABMultiValueGetIndexForIdentifier(multiValue,kABPersonPhoneProperty);
+//        CFStringRef value = ABMultiValueCopyValueAtIndex(multiValue,index);
+//        telephoneTextView.text = (__bridge NSString*)value;
+//        CFRelease(multiValue);
+//    }
+//    NSString *firstPhoneticNameStr = (__bridge NSString *)(ABRecordCopyValue(person, kABPersonFirstNamePhoneticProperty));
+//    if (firstPhoneticNameStr) {
+//        nameTextView.text = firstPhoneticNameStr;
+////        CFIndex index = ABMultiValueGetIndexForIdentifier(multiValue,kABPersonPhoneProperty);
+////        CFStringRef value = ABMultiValueCopyValueAtIndex(multiValue,index);
+////        telephoneTextView.text = (__bridge NSString*)value;
+////        CFRelease(multiValue);
+//    }
+   [peoplePicker dismissViewControllerAnimated:YES completion:^{
+       
+   }];
 }
 - (NSMutableArray *)cells {
 

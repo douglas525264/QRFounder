@@ -9,5 +9,5 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UITabBarController
-
++ (MainViewController *) shareInstance;
 @end
