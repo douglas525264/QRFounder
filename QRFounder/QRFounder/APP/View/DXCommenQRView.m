@@ -65,11 +65,15 @@
     _QRFrame = QRFrame;
 }
 - (void)setLogo:(UIImage *)logo {
-    
+    if (!logo) {
+        self.logoImageView.hidden = YES;
+        return;
+    }
     [self bringSubviewToFront:self.logoImageView];
     self.logoImageView.image = logo;
     self.logoImageView.center = self.qrView.center;
     self.logoImageView.frame = CGRectMake(self.qrView.frame.origin.x + self.qrView.frame.size.width/2 - logoWidth/2, self.qrView.frame.origin.y + self.qrView.frame.size.height/2 - logoWidth/2, logoWidth, logoWidth);
+    self.logoImageView.hidden = NO;
     _logo = logo;
 }
 
@@ -99,6 +103,7 @@
         _logoImageView.layer.masksToBounds = YES;
         _logoImageView.layer.borderColor = [UIColor whiteColor].CGColor;
         _logoImageView.layer.borderWidth = 1;
+        _logoImageView.hidden = YES;
         [self addSubview:_logoImageView];
     }
     return _logoImageView;
