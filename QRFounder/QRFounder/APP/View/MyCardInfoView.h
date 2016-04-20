@@ -8,6 +8,8 @@
 
 #import "CommenInfoView.h"
 
-@interface MyCardInfoView : CommenInfoView
+@interface MyCardInfoView : CommenInfoView<UITableViewDelegate,UITableViewDataSource>
+
+@property (weak, nonatomic) IBOutlet UITableView *infoTableView;
 
 @end

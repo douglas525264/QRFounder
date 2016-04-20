@@ -31,6 +31,11 @@
     self.qrView.qrModel = self.qrModel;
 
 }
+- (void)setLogoImage:(UIImage *)image {
+    self.qrModel.logo = image;
+    self.qrView.qrModel = self.qrModel;
+    
+}
 - (void)setBoarderImage:(UIImage *)image withQRFrame:(CGRect)qrFrame {
 
     self.qrModel.boarderImage = image;
@@ -52,7 +57,7 @@
             DXmenuItem *item = strongSelf.sourceArr[path.section];
             DXSubMenuItem *subitem = item.items[path.row];
 
-            if (path.section == 0 && _editType == QREditTypeBg) {
+            if (path.section == 0 && (_editType == QREditTypeBg || _editType == QREditTypeLogo)) {
                 switch (path.row) {
                     case 0:{
                         //相册
@@ -78,6 +83,9 @@
                     }break;
                     case QREditTypeBoarder:{
                         [strongSelf setBoarderImage:image withQRFrame:subitem.QRFrame];
+                    }break;
+                    case QREditTypeLogo:{
+                        [strongSelf setLogoImage:image];
                     }break;
                         
                     default:
@@ -121,9 +129,19 @@
   //  NSString *mediaType = info[UIImagePickerControllerMediaType];
     //    系统预置的图片类型常量
     UIImage *image = info[UIImagePickerControllerEditedImage];
-    
-    self.qrModel.bgImage = image;
-    self.qrView.qrModel = self.qrModel;
+    switch (_editType) {
+        case QREditTypeBg:
+            [self setBgImage:image];
+            break;
+        case QREditTypeLogo:
+            [self setLogoImage:image];
+            break;
+            
+        default:
+            break;
+    }
+//    self.qrModel.bgImage = image;
+//    self.qrView.qrModel = self.qrModel;
     [picker dismissViewControllerAnimated:YES completion:^{
         
     }];

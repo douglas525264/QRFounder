@@ -8,7 +8,7 @@
 
 #import "DXCommenQRView.h"
 #import "DXQRView.h"
-#define logoWidth 60
+#define logoWidth (60.0f/320 * self.qrView.frame.size.width)
 @interface DXCommenQRView ()
 @property (nonatomic, strong) UIImageView *boarderImageView;
 @property (nonatomic, strong) UIImageView *logoImageView;
@@ -54,7 +54,7 @@
     self.boarderImageView.image = boarderImage;
     [UIView animateWithDuration:0.3 animations:^{
       self.qrView.frame = CGRectMake(width * self.QRFrame.origin.x , width * self.QRFrame.origin.y, width * self.QRFrame.size.width, width * self.QRFrame.size.height);
-      
+      self.logoImageView.frame = CGRectMake(self.qrView.frame.origin.x + self.qrView.frame.size.width/2 - logoWidth/2, self.qrView.frame.origin.y + self.qrView.frame.size.height/2 - logoWidth/2, logoWidth, logoWidth);
     }];
     
     _boarderImage = boarderImage;
@@ -69,6 +69,7 @@
     [self bringSubviewToFront:self.logoImageView];
     self.logoImageView.image = logo;
     self.logoImageView.center = self.qrView.center;
+    self.logoImageView.frame = CGRectMake(self.qrView.frame.origin.x + self.qrView.frame.size.width/2 - logoWidth/2, self.qrView.frame.origin.y + self.qrView.frame.size.height/2 - logoWidth/2, logoWidth, logoWidth);
     _logo = logo;
 }
 
@@ -95,6 +96,7 @@
         _logoImageView = [[UIImageView alloc] initWithFrame:CGRectMake(self.frame.size.width/2 - logoWidth/2, self.frame.size.height/2 - logoWidth/2, logoWidth, logoWidth)];
         _logoImageView.contentMode = UIViewContentModeScaleAspectFit;
         _logoImageView.layer.cornerRadius = 5;
+        _logoImageView.layer.masksToBounds = YES;
         _logoImageView.layer.borderColor = [UIColor whiteColor].CGColor;
         _logoImageView.layer.borderWidth = 1;
         [self addSubview:_logoImageView];

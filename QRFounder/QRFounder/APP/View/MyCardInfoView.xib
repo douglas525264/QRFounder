@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -12,23 +12,34 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="mycard" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="a5s-xP-ATC">
-                    <rect key="frame" x="112" y="121" width="77" height="69"/>
+                    <rect key="frame" x="112" y="8" width="77" height="31"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="69" id="JYu-Gl-BSY"/>
+                        <constraint firstAttribute="height" constant="31" id="JYu-Gl-BSY"/>
                         <constraint firstAttribute="width" constant="77" id="l5E-Pf-dd0"/>
                     </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="4" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Zsw-rx-4Np">
+                    <rect key="frame" x="0.0" y="39" width="300" height="361"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                </tableView>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
             <constraints>
                 <constraint firstItem="a5s-xP-ATC" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="2un-Qk-4R1"/>
-                <constraint firstItem="a5s-xP-ATC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="121" id="oQc-5N-GWd"/>
+                <constraint firstItem="Zsw-rx-4Np" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="AWQ-Ez-gnX"/>
+                <constraint firstAttribute="bottom" secondItem="Zsw-rx-4Np" secondAttribute="bottom" id="AoV-qQ-Pef"/>
+                <constraint firstAttribute="trailing" secondItem="Zsw-rx-4Np" secondAttribute="trailing" id="PBg-gU-rUI"/>
+                <constraint firstItem="a5s-xP-ATC" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="8" id="oQc-5N-GWd"/>
+                <constraint firstItem="Zsw-rx-4Np" firstAttribute="top" secondItem="a5s-xP-ATC" secondAttribute="bottom" id="w9J-2F-dCM"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="infoTableView" destination="Zsw-rx-4Np" id="cCb-CM-XVT"/>
+            </connections>
         </view>
     </objects>
 </document>

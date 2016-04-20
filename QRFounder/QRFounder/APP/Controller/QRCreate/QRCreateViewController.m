@@ -72,7 +72,7 @@
         return;
     }
     _currentInfoView = self.views[index];
-    _currentInfoView.backgroundColor = [UIColor whiteColor];
+    _currentInfoView.backgroundColor = [UIColor clearColor];
     _currentInfoView.frame =CGRectMake(100, 80, ScreenWidth - 100, 360);
     if (_currentInfoView) {
         [self.view addSubview:_currentInfoView];
@@ -108,6 +108,11 @@
             result = nil;
         default:
             break;
+    }
+    if (result) {
+        result.layer.borderColor = [UIColor whiteColor].CGColor;
+        result.layer.borderWidth = 1;
+        
     }
     return result;
 

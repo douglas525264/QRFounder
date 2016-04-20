@@ -79,7 +79,26 @@ static QRSourceManager *qManager;
             
         }break;
         case QREditTypeLogo:{
-            
+            [resultArr addObject:[self getAlbumItem]];
+            sourcepath = [[NSBundle mainBundle] pathForResource:@"QRlogoSource" ofType:@"plist"];
+            NSDictionary *infoDic = [NSDictionary dictionaryWithContentsOfFile:sourcepath];
+            NSArray *items = [infoDic objectForKey:@"items"];
+            for (NSDictionary *info in items) {
+                DXmenuItem *menuItem = [[DXmenuItem alloc] init];
+                menuItem.menuIcon = [UIImage imageNamed:[info objectForKey:@"iconName"]];
+                NSMutableArray *menulist = [[NSMutableArray alloc] init];
+                NSArray *subMenuInfos = [info objectForKey:@"menuList"];
+                for (NSDictionary *subInfo in subMenuInfos) {
+                    DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
+                    subItem.normalImage = [UIImage imageNamed:[subInfo objectForKey:@"menuIcon"]];
+                    subItem.ImageName = [[NSBundle mainBundle] pathForResource:[subInfo objectForKey:@"imageSourceName"] ofType:@"png"];
+                    [menulist addObject:subItem];
+                    
+                }
+                menuItem.items = menulist;
+                [resultArr addObject:menuItem];
+            }
+ 
         }break;
 
             
