@@ -244,7 +244,7 @@
        // CFRelease(valuesRef);
     }
     telephoneTextView.text = telStr;
-    mailTextView.text = mailStr; 
+    mailTextView.text = mailStr;
     //将个人信息添加到数组中，循环完成后addressBookTemp中包含所有联系人的信息
  //   [addressBookTemp addObject:addressBook];
     
