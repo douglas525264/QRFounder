@@ -8,6 +8,8 @@
 
 #import "CommenInfoView.h"
 
-@interface HttpInfoView : CommenInfoView
+@interface HttpInfoView : CommenInfoView<UITextViewDelegate>
+
+@property (weak, nonatomic) IBOutlet UITextView *infoTextView;
 
 @end

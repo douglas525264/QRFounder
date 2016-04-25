@@ -8,7 +8,7 @@
 
 #import "CommenInfoView.h"
 
-@interface TextInfoView : CommenInfoView
+@interface TextInfoView : CommenInfoView<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet UITextView *textInfoTextView;
 
 @end
