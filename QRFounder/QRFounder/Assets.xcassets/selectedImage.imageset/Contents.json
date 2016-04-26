@@ -3,16 +3,16 @@
     {
       "idiom" : "universal",
       "scale" : "1x",
-      "filename" : "qrcreate_press.png"
+      "filename" : "selectedImage.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "qrcreate_press@2x.png",
-      "scale" : "2x"
+      "scale" : "2x",
+      "filename" : "selectedImage@2x.png"
     },
     {
       "idiom" : "universal",
-      "filename" : "qrcreate_press@3x.png",
+      "filename" : "selectedImage@3x.png",
       "scale" : "3x"
     }
   ],

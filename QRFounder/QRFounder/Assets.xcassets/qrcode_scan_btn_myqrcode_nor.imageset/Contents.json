@@ -2,7 +2,8 @@
   "images" : [
     {
       "idiom" : "universal",
-      "scale" : "1x"
+      "scale" : "1x",
+      "filename" : "qrcode_scan_btn_myqrcode_nor.png"
     },
     {
       "idiom" : "universal",
@@ -11,7 +12,8 @@
     },
     {
       "idiom" : "universal",
-      "scale" : "3x"
+      "scale" : "3x",
+      "filename" : "qrcode_scan_btn_myqrcode_nor@3x.png"
     }
   ],
   "info" : {
