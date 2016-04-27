@@ -8,16 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		6F47158C73E0701CA9C33A1D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870B66BCB23AE6D674C3889 /* libPods.a */; };
-		A50258E21CC75E67007B00E3 /* album.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258D61CC75E67007B00E3 /* album.png */; };
-		A50258E31CC75E67007B00E3 /* jingdong.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258D71CC75E67007B00E3 /* jingdong.png */; };
-		A50258E41CC75E67007B00E3 /* taobao.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258D81CC75E67007B00E3 /* taobao.png */; };
-		A50258E51CC75E67007B00E3 /* tianmao.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258D91CC75E67007B00E3 /* tianmao.png */; };
-		A50258E61CC75E67007B00E3 /* tianmaoIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258DA1CC75E67007B00E3 /* tianmaoIcon.png */; };
-		A50258E81CC75E67007B00E3 /* qqai.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258DD1CC75E67007B00E3 /* qqai.png */; };
-		A50258E91CC75E67007B00E3 /* weibo.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258DE1CC75E67007B00E3 /* weibo.png */; };
-		A50258EA1CC75E67007B00E3 /* weixin.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258DF1CC75E67007B00E3 /* weixin.png */; };
-		A50258EB1CC75E67007B00E3 /* weixincircle.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258E01CC75E67007B00E3 /* weixincircle.png */; };
-		A50258EC1CC75E67007B00E3 /* weixingreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A50258E11CC75E67007B00E3 /* weixingreen.png */; };
 		A50258F01CC76A68007B00E3 /* CardInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50258EE1CC76A68007B00E3 /* CardInfoTableViewCell.m */; };
 		A50258F11CC76A68007B00E3 /* CardInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50258EF1CC76A68007B00E3 /* CardInfoTableViewCell.xib */; };
 		A50258F71CC76E65007B00E3 /* DXInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A50258F61CC76E65007B00E3 /* DXInputTextView.m */; };
@@ -117,16 +107,6 @@
 /* Begin PBXFileReference section */
 		3870B66BCB23AE6D674C3889 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		5E4F2B2A688A4033626C109B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
-		A50258D61CC75E67007B00E3 /* album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = album.png; sourceTree = "<group>"; };
-		A50258D71CC75E67007B00E3 /* jingdong.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = jingdong.png; sourceTree = "<group>"; };
-		A50258D81CC75E67007B00E3 /* taobao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = taobao.png; sourceTree = "<group>"; };
-		A50258D91CC75E67007B00E3 /* tianmao.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tianmao.png; sourceTree = "<group>"; };
-		A50258DA1CC75E67007B00E3 /* tianmaoIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tianmaoIcon.png; sourceTree = "<group>"; };
-		A50258DD1CC75E67007B00E3 /* qqai.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = qqai.png; sourceTree = "<group>"; };
-		A50258DE1CC75E67007B00E3 /* weibo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weibo.png; sourceTree = "<group>"; };
-		A50258DF1CC75E67007B00E3 /* weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixin.png; sourceTree = "<group>"; };
-		A50258E01CC75E67007B00E3 /* weixincircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixincircle.png; sourceTree = "<group>"; };
-		A50258E11CC75E67007B00E3 /* weixingreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixingreen.png; sourceTree = "<group>"; };
 		A50258ED1CC76A68007B00E3 /* CardInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInfoTableViewCell.h; sourceTree = "<group>"; };
 		A50258EE1CC76A68007B00E3 /* CardInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardInfoTableViewCell.m; sourceTree = "<group>"; };
 		A50258EF1CC76A68007B00E3 /* CardInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardInfoTableViewCell.xib; sourceTree = "<group>"; };
@@ -289,30 +269,6 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
-		A50258D51CC75E67007B00E3 /* Other */ = {
-			isa = PBXGroup;
-			children = (
-				A50258D61CC75E67007B00E3 /* album.png */,
-				A50258D71CC75E67007B00E3 /* jingdong.png */,
-				A50258D81CC75E67007B00E3 /* taobao.png */,
-				A50258D91CC75E67007B00E3 /* tianmao.png */,
-				A50258DA1CC75E67007B00E3 /* tianmaoIcon.png */,
-			);
-			path = Other;
-			sourceTree = "<group>";
-		};
-		A50258DC1CC75E67007B00E3 /* SNS */ = {
-			isa = PBXGroup;
-			children = (
-				A50258DD1CC75E67007B00E3 /* qqai.png */,
-				A50258DE1CC75E67007B00E3 /* weibo.png */,
-				A50258DF1CC75E67007B00E3 /* weixin.png */,
-				A50258E01CC75E67007B00E3 /* weixincircle.png */,
-				A50258E11CC75E67007B00E3 /* weixingreen.png */,
-			);
-			path = SNS;
-			sourceTree = "<group>";
-		};
 		A52A27D21CC62CA400095D74 /* Birthday */ = {
 			isa = PBXGroup;
 			children = (
@@ -403,8 +359,6 @@
 			isa = PBXGroup;
 			children = (
 				A50258F81CC783F9007B00E3 /* QRlogoSource.plist */,
-				A50258D51CC75E67007B00E3 /* Other */,
-				A50258DC1CC75E67007B00E3 /* SNS */,
 			);
 			path = LogoImageSource;
 			sourceTree = "<group>";
@@ -846,44 +800,34 @@
 				A57609E01CB28E18006F3F1B /* weibo.png in Resources */,
 				A57609E11CB28E18006F3F1B /* weixin.png in Resources */,
 				D78418681C74551200850129 /* LaunchScreen.storyboard in Resources */,
-				A50258EC1CC75E67007B00E3 /* weixingreen.png in Resources */,
 				A52A27E11CC62CA400095D74 /* birthday004.png in Resources */,
 				D7FC155D1CA91BBD009EAB4C /* border_000.png in Resources */,
 				D78418DF1C7487BE00850129 /* MyCardInfoView.xib in Resources */,
 				A52A27E71CC62CA400095D74 /* hello003.png in Resources */,
-				A50258E61CC75E67007B00E3 /* tianmaoIcon.png in Resources */,
 				D7FC155E1CA91BBD009EAB4C /* border_001.png in Resources */,
 				D78418651C74551200850129 /* Assets.xcassets in Resources */,
-				A50258E51CC75E67007B00E3 /* tianmao.png in Resources */,
 				A52A27E01CC62CA400095D74 /* birthday003.png in Resources */,
 				D78418E51C7487F000850129 /* HttpInfoView.xib in Resources */,
 				A52A27E31CC62CA400095D74 /* birthday006.png in Resources */,
 				A52A27DF1CC62CA400095D74 /* birthday002.png in Resources */,
 				A52A27E21CC62CA400095D74 /* birthday005.png in Resources */,
-				A50258E91CC75E67007B00E3 /* weibo.png in Resources */,
 				A50258F91CC783F9007B00E3 /* QRlogoSource.plist in Resources */,
 				A57609DB1CB28E18006F3F1B /* taobao.png in Resources */,
 				A57609E21CB28E18006F3F1B /* weixincircle.png in Resources */,
-				A50258E41CC75E67007B00E3 /* taobao.png in Resources */,
-				A50258E81CC75E67007B00E3 /* qqai.png in Resources */,
 				D78418E91C74885A00850129 /* PositionInfoView.xib in Resources */,
 				A57609DE1CB28E18006F3F1B /* QRBgSource.plist in Resources */,
 				D78418E71C74884900850129 /* TextinfoView.xib in Resources */,
-				A50258E31CC75E67007B00E3 /* jingdong.png in Resources */,
 				A57609DD1CB28E18006F3F1B /* tianmaoIcon.png in Resources */,
 				D78418DB1C74879800850129 /* CommenInfoView.xib in Resources */,
 				A52A27E41CC62CA400095D74 /* BorderImageSource.plist in Resources */,
 				A52A27E51CC62CA400095D74 /* hello001.png in Resources */,
-				A50258EA1CC75E67007B00E3 /* weixin.png in Resources */,
 				D78418631C74551200850129 /* Main.storyboard in Resources */,
 				D7FC15601CA92459009EAB4C /* border_test.jpg in Resources */,
-				A50258EB1CC75E67007B00E3 /* weixincircle.png in Resources */,
 				A57609D91CB28E18006F3F1B /* album.png in Resources */,
 				A57609DA1CB28E18006F3F1B /* jingdong.png in Resources */,
 				D78418E11C7487C900850129 /* MsgInfoView.xib in Resources */,
 				D78418E31C7487D600850129 /* MailInfoView.xib in Resources */,
 				D78418EB1C74887300850129 /* WIFIInfoView.xib in Resources */,
-				A50258E21CC75E67007B00E3 /* album.png in Resources */,
 				D78418D81C74797C00850129 /* 001.png in Resources */,
 				A52A27E61CC62CA400095D74 /* hello002.png in Resources */,
 				A57609E31CB28E18006F3F1B /* weixingreen.png in Resources */,
