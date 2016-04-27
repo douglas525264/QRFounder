@@ -56,17 +56,17 @@
     return YES;
 }
 - (NSString *)getResultInfoStr {
-    
+    //WIFI:S:12334;T:WPA;P:4567664;
     NSMutableString *resultStr = [[NSMutableString alloc] init];
     [resultStr appendString:@"WIFI:S:"];
     [resultStr appendFormat:@"%@;",self.wifiNameTextView.text];
     [resultStr appendString:@"T:"];
     if (self.NOPSWBTN.selected) {
-        [resultStr appendString:@"nopass"];
+        [resultStr appendString:@"nopass;"];
     }
     if (self.WAPBtn.selected) {
         [resultStr appendString:@"WAP;"];
-        [resultStr appendFormat:@"P:%@",self.pswTextView.text];
+        [resultStr appendFormat:@"P:%@;",self.pswTextView.text];
     }
     if (self.WEPBtn.selected) {
         [resultStr appendString:@"WEP;"];
