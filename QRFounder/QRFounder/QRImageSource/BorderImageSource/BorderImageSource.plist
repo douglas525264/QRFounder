@@ -140,6 +140,20 @@
 					<key>menuIcon</key>
 					<string>hello003</string>
 				</dict>
+				<dict>
+					<key>hScale</key>
+					<real>0.53</real>
+					<key>wScale</key>
+					<real>0.53</real>
+					<key>yScale</key>
+					<real>0.2323</real>
+					<key>xScale</key>
+					<real>0.068</real>
+					<key>imageSourceName</key>
+					<string>hello004</string>
+					<key>menuIcon</key>
+					<string>hello004</string>
+				</dict>
 			</array>
 			<key>iconName</key>
 			<string>album</string>

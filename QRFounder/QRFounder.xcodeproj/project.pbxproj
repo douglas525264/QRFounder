@@ -37,6 +37,7 @@
 		A57609E21CB28E18006F3F1B /* weixincircle.png in Resources */ = {isa = PBXBuildFile; fileRef = A57609D51CB28E18006F3F1B /* weixincircle.png */; };
 		A57609E31CB28E18006F3F1B /* weixingreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A57609D61CB28E18006F3F1B /* weixingreen.png */; };
 		A58A55F91CA2EED6003C97B7 /* DXCommenQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */; };
+		A5E871FC1CD8ABE000B00147 /* hello004.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E871FB1CD8ABE000B00147 /* hello004.png */; };
 		D7130D9E1C9A99BD0096768B /* QRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130D9D1C9A99BD0096768B /* QRModel.m */; };
 		D7130DA11C9A9E8D0096768B /* DXQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130DA01C9A9E8D0096768B /* DXQRView.m */; };
 		D7130DA61C9AA5A50096768B /* QRShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130DA51C9AA5A50096768B /* QRShowViewController.m */; };
@@ -140,6 +141,7 @@
 		A57609D61CB28E18006F3F1B /* weixingreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixingreen.png; sourceTree = "<group>"; };
 		A58A55F71CA2EED6003C97B7 /* DXCommenQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXCommenQRView.h; sourceTree = "<group>"; };
 		A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXCommenQRView.m; sourceTree = "<group>"; };
+		A5E871FB1CD8ABE000B00147 /* hello004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hello004.png; sourceTree = "<group>"; };
 		D2F73D3798209558300E55FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D7130D9C1C9A99BD0096768B /* QRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRModel.h; sourceTree = "<group>"; };
 		D7130D9D1C9A99BD0096768B /* QRModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRModel.m; sourceTree = "<group>"; };
@@ -285,6 +287,7 @@
 		A52A27DA1CC62CA400095D74 /* helloKility */ = {
 			isa = PBXGroup;
 			children = (
+				A5E871FB1CD8ABE000B00147 /* hello004.png */,
 				A52A27DB1CC62CA400095D74 /* hello001.png */,
 				A52A27DC1CC62CA400095D74 /* hello002.png */,
 				A52A27DD1CC62CA400095D74 /* hello003.png */,
@@ -832,6 +835,7 @@
 				A52A27E61CC62CA400095D74 /* hello002.png in Resources */,
 				A57609E31CB28E18006F3F1B /* weixingreen.png in Resources */,
 				A57609DC1CB28E18006F3F1B /* tianmao.png in Resources */,
+				A5E871FC1CD8ABE000B00147 /* hello004.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
