@@ -48,7 +48,7 @@
                             <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             <nil key="highlightedColor"/>
                         </label>
-                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="13520580107" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mcs-kF-wXW" customClass="DXInputTextView">
+                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Mcs-kF-wXW" customClass="DXInputTextView">
                             <rect key="frame" x="66" y="13" width="226" height="30"/>
                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             <constraints>

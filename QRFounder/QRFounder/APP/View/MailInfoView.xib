@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -11,16 +11,40 @@
             <rect key="frame" x="0.0" y="0.0" width="300" height="400"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="mail" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dgR-iM-hCE">
-                    <rect key="frame" x="129" y="141" width="42" height="21"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="邮箱地址：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="25s-uh-mVv">
+                    <rect key="frame" x="8" y="28" width="74" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="74" id="10T-F2-b0i"/>
+                        <constraint firstAttribute="height" constant="21" id="S1u-yv-cBd"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="aUc-09-X9c">
+                    <rect key="frame" x="70" y="24" width="230" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="M7F-iq-Nmx"/>
+                    </constraints>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                </textField>
             </subviews>
-            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <color key="backgroundColor" red="0.1155586178" green="0.64550168809999997" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="25s-uh-mVv" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="28" id="BBs-Yy-CPw"/>
+                <constraint firstItem="aUc-09-X9c" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="24" id="MTB-rA-GcU"/>
+                <constraint firstItem="25s-uh-mVv" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="gd5-yT-pnb"/>
+                <constraint firstAttribute="trailing" secondItem="aUc-09-X9c" secondAttribute="trailing" id="mg4-Ue-Sy7"/>
+                <constraint firstItem="aUc-09-X9c" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="70" id="y4L-cU-9Gg"/>
+            </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="mailTextFiled" destination="aUc-09-X9c" id="ft0-po-H5M"/>
+                <outlet property="nameLabke" destination="25s-uh-mVv" id="a88-zc-7TE"/>
+            </connections>
         </view>
     </objects>
 </document>

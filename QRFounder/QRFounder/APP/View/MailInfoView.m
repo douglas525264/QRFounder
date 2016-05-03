@@ -18,5 +18,24 @@
     // Drawing code
 }
 */
+- (void)drawRect:(CGRect)rect {
+    // Drawing code
+    self.mailTextFiled.delegate = self;
+}
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    if ([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        return NO;
+    }
+    
+    return YES;
+}
+- (BOOL)textFieldShouldReturn:(UITextField *)textField {
+    [self.mailTextFiled resignFirstResponder];
+    return NO;
+}
+- (NSString *)getResultInfoStr {
 
+    return self.mailTextFiled.text;
+}
 @end

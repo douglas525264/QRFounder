@@ -96,9 +96,9 @@
         case QRTypeMail:{
             result = [[[NSBundle mainBundle] loadNibNamed:@"MailInfoView" owner:self options:nil] lastObject];
         }break;
-        case QRTypePosition:{
-            result = [[[NSBundle mainBundle] loadNibNamed:@"PositionInfoView" owner:self options:nil] lastObject];
-        }break;
+//        case QRTypePosition:{
+//            result = [[[NSBundle mainBundle] loadNibNamed:@"PositionInfoView" owner:self options:nil] lastObject];
+//        }break;
         case QRTypeWIFI:{
             result = [[[NSBundle mainBundle] loadNibNamed:@"WIFIInfoView" owner:self options:nil] lastObject];
         }break;
@@ -141,7 +141,7 @@
 }
 - (DXSelectView *)selectView {
     if (!_selectView) {
-        _selectView = [[DXSelectView alloc] initWithFrame:CGRectMake(0, 80, 100, 360) titleArr:@[@"名片",@"app",@"网址",@"短信",@"邮件",@"位置",@"WIFI",@"文本"] andIconArr:nil];
+        _selectView = [[DXSelectView alloc] initWithFrame:CGRectMake(0, 80, 100, 360) titleArr:@[@"名片",@"app",@"网址",@"短信",@"邮件"/*,@"位置"*/,@"WIFI",@"文本"] andIconArr:nil];
         
     }
     return _selectView;
@@ -163,7 +163,7 @@
 
     if (!_views) {
         _views = [[NSMutableArray alloc] init];
-        for (NSInteger i = 0;i < 8; i++) {
+        for (NSInteger i = 0;i < 7; i++) {
             [_views addObject:[self createViewAtIndex:i]];
         }
     }

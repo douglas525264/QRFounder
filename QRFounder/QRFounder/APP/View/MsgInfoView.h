@@ -8,7 +8,7 @@
 
 #import "CommenInfoView.h"
 #import "DXInputTextView.h"
-@interface MsgInfoView : CommenInfoView
+@interface MsgInfoView : CommenInfoView<UITextViewDelegate>
 
 @property (weak, nonatomic) IBOutlet DXInputTextView *sendToTextView;
 @property (weak, nonatomic) IBOutlet DXInputTextView *contentTextView;

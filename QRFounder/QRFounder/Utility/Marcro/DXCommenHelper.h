@@ -55,7 +55,7 @@ typedef NS_ENUM(NSInteger,QRType) {
     /**
      *  位置信息类型
      */
-    QRTypePosition,
+    //QRTypePosition,
     /**
      *  wifi 类型
      */
