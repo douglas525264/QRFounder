@@ -14,6 +14,12 @@
 		A50258F91CC783F9007B00E3 /* QRlogoSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = A50258F81CC783F9007B00E3 /* QRlogoSource.plist */; };
 		A50FDA361CC789380027188C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA351CC789380027188C /* AddressBook.framework */; };
 		A50FDA381CC7893D0027188C /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA371CC7893D0027188C /* AddressBookUI.framework */; };
+		A51136131CDB5BB5005FD7ED /* mouse01.png in Resources */ = {isa = PBXBuildFile; fileRef = A511360D1CDB5BB5005FD7ED /* mouse01.png */; };
+		A51136141CDB5BB5005FD7ED /* mouse02.png in Resources */ = {isa = PBXBuildFile; fileRef = A511360E1CDB5BB5005FD7ED /* mouse02.png */; };
+		A51136151CDB5BB5005FD7ED /* mouse03.png in Resources */ = {isa = PBXBuildFile; fileRef = A511360F1CDB5BB5005FD7ED /* mouse03.png */; };
+		A51136161CDB5BB5005FD7ED /* mouse04.png in Resources */ = {isa = PBXBuildFile; fileRef = A51136101CDB5BB5005FD7ED /* mouse04.png */; };
+		A51136171CDB5BB5005FD7ED /* mouse05.png in Resources */ = {isa = PBXBuildFile; fileRef = A51136111CDB5BB5005FD7ED /* mouse05.png */; };
+		A51136181CDB5BB5005FD7ED /* mouse06.png in Resources */ = {isa = PBXBuildFile; fileRef = A51136121CDB5BB5005FD7ED /* mouse06.png */; };
 		A52A27DE1CC62CA400095D74 /* birthday001.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D31CC62CA400095D74 /* birthday001.png */; };
 		A52A27DF1CC62CA400095D74 /* birthday002.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D41CC62CA400095D74 /* birthday002.png */; };
 		A52A27E01CC62CA400095D74 /* birthday003.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D51CC62CA400095D74 /* birthday003.png */; };
@@ -116,6 +122,12 @@
 		A50258F81CC783F9007B00E3 /* QRlogoSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QRlogoSource.plist; sourceTree = "<group>"; };
 		A50FDA351CC789380027188C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		A50FDA371CC7893D0027188C /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		A511360D1CDB5BB5005FD7ED /* mouse01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse01.png; sourceTree = "<group>"; };
+		A511360E1CDB5BB5005FD7ED /* mouse02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse02.png; sourceTree = "<group>"; };
+		A511360F1CDB5BB5005FD7ED /* mouse03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse03.png; sourceTree = "<group>"; };
+		A51136101CDB5BB5005FD7ED /* mouse04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse04.png; sourceTree = "<group>"; };
+		A51136111CDB5BB5005FD7ED /* mouse05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse05.png; sourceTree = "<group>"; };
+		A51136121CDB5BB5005FD7ED /* mouse06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse06.png; sourceTree = "<group>"; };
 		A52A27D31CC62CA400095D74 /* birthday001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday001.png; sourceTree = "<group>"; };
 		A52A27D41CC62CA400095D74 /* birthday002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday002.png; sourceTree = "<group>"; };
 		A52A27D51CC62CA400095D74 /* birthday003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday003.png; sourceTree = "<group>"; };
@@ -271,6 +283,19 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		A511360C1CDB5BB5005FD7ED /* mouse */ = {
+			isa = PBXGroup;
+			children = (
+				A511360D1CDB5BB5005FD7ED /* mouse01.png */,
+				A511360E1CDB5BB5005FD7ED /* mouse02.png */,
+				A511360F1CDB5BB5005FD7ED /* mouse03.png */,
+				A51136101CDB5BB5005FD7ED /* mouse04.png */,
+				A51136111CDB5BB5005FD7ED /* mouse05.png */,
+				A51136121CDB5BB5005FD7ED /* mouse06.png */,
+			);
+			path = mouse;
+			sourceTree = "<group>";
+		};
 		A52A27D21CC62CA400095D74 /* Birthday */ = {
 			isa = PBXGroup;
 			children = (
@@ -351,6 +376,7 @@
 		A57609D71CB28E18006F3F1B /* BorderImageSource */ = {
 			isa = PBXGroup;
 			children = (
+				A511360C1CDB5BB5005FD7ED /* mouse */,
 				A52A27D21CC62CA400095D74 /* Birthday */,
 				A52A27D91CC62CA400095D74 /* BorderImageSource.plist */,
 				A52A27DA1CC62CA400095D74 /* helloKility */,
@@ -800,6 +826,7 @@
 				D78418DD1C7487AF00850129 /* APPInfoView.xib in Resources */,
 				A57609DF1CB28E18006F3F1B /* qqai.png in Resources */,
 				A52A27DE1CC62CA400095D74 /* birthday001.png in Resources */,
+				A51136151CDB5BB5005FD7ED /* mouse03.png in Resources */,
 				A57609E01CB28E18006F3F1B /* weibo.png in Resources */,
 				A57609E11CB28E18006F3F1B /* weixin.png in Resources */,
 				D78418681C74551200850129 /* LaunchScreen.storyboard in Resources */,
@@ -811,6 +838,7 @@
 				D78418651C74551200850129 /* Assets.xcassets in Resources */,
 				A52A27E01CC62CA400095D74 /* birthday003.png in Resources */,
 				D78418E51C7487F000850129 /* HttpInfoView.xib in Resources */,
+				A51136171CDB5BB5005FD7ED /* mouse05.png in Resources */,
 				A52A27E31CC62CA400095D74 /* birthday006.png in Resources */,
 				A52A27DF1CC62CA400095D74 /* birthday002.png in Resources */,
 				A52A27E21CC62CA400095D74 /* birthday005.png in Resources */,
@@ -821,13 +849,17 @@
 				A57609DE1CB28E18006F3F1B /* QRBgSource.plist in Resources */,
 				D78418E71C74884900850129 /* TextinfoView.xib in Resources */,
 				A57609DD1CB28E18006F3F1B /* tianmaoIcon.png in Resources */,
+				A51136181CDB5BB5005FD7ED /* mouse06.png in Resources */,
+				A51136141CDB5BB5005FD7ED /* mouse02.png in Resources */,
 				D78418DB1C74879800850129 /* CommenInfoView.xib in Resources */,
 				A52A27E41CC62CA400095D74 /* BorderImageSource.plist in Resources */,
 				A52A27E51CC62CA400095D74 /* hello001.png in Resources */,
 				D78418631C74551200850129 /* Main.storyboard in Resources */,
 				D7FC15601CA92459009EAB4C /* border_test.jpg in Resources */,
 				A57609D91CB28E18006F3F1B /* album.png in Resources */,
+				A51136131CDB5BB5005FD7ED /* mouse01.png in Resources */,
 				A57609DA1CB28E18006F3F1B /* jingdong.png in Resources */,
+				A51136161CDB5BB5005FD7ED /* mouse04.png in Resources */,
 				D78418E11C7487C900850129 /* MsgInfoView.xib in Resources */,
 				D78418E31C7487D600850129 /* MailInfoView.xib in Resources */,
 				D78418EB1C74887300850129 /* WIFIInfoView.xib in Resources */,
