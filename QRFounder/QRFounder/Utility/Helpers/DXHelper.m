@@ -8,6 +8,7 @@
 
 #import "DXHelper.h"
 #import "DXCommenQRView.h"
+#import "NSString+DXCheck.h"
 @interface DXHelper()
 @property (nonatomic, strong) DXCommenQRView *qrView;
 @end;
@@ -97,6 +98,28 @@ static DXHelper *helper;
         _qrView.frame = CGRectMake(0, 0, 1024, 1024);
     }
     return _qrView;
+}
+- (QRType)getTypeWithStr:(NSString *)QrStr {
+    
+    if ([QrStr hasPrefix:@"BEGIN:VCARD"] && [QrStr hasSuffix:@"END:VCARD"]) {
+        return QRTypeMyCard;
+    }
+    if ([QrStr hasPrefix:@"itms-apps://"]) {
+        return QRTypeAPP;
+    }
+    if ([QrStr hasPrefix:@"http://"] || [QrStr hasPrefix:@"https://"]) {
+        return QRTypeHTTP;
+    }
+    if ([QrStr hasPrefix:@"smsto:"]) {
+        return QRTypeMsg;
+    }
+    if ([NSString validateEmail:QrStr]) {
+        return QRTypeMail;
+    }
+    if ([QrStr hasPrefix:@"WIFI:"]) {
+        return QRTypeWIFI;
+    }
+    return QRTypeText;
 }
 
 @end

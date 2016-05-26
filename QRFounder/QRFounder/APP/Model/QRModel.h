@@ -23,4 +23,7 @@
 //二维码类型
 @property (nonatomic, assign) QRType type;
 
+
+- (instancetype)initWithQrStr:(NSString *)qrStr;
+
 @end

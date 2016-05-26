@@ -255,17 +255,17 @@
         
     }];
     if (zs.data == nil) {
+        
         NSLog(@"无法识别图片");
     }else {
+        [self getResult:zs.data];
         [readView stop];
-//        readView = nil;
-//        
-//        [self dismissViewControllerAnimated:YES completion:^{
-//            
-//        }];
         
     }
     
+    
+}
+- (void)getResult:(NSString *)result {
     
 }
 - (void)loadSourceWithType:(UIImagePickerControllerSourceType)sourceType{

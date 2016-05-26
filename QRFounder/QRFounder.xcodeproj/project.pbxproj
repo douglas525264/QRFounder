@@ -43,6 +43,9 @@
 		A57609E21CB28E18006F3F1B /* weixincircle.png in Resources */ = {isa = PBXBuildFile; fileRef = A57609D51CB28E18006F3F1B /* weixincircle.png */; };
 		A57609E31CB28E18006F3F1B /* weixingreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A57609D61CB28E18006F3F1B /* weixingreen.png */; };
 		A58A55F91CA2EED6003C97B7 /* DXCommenQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */; };
+		A5A8F49B1CF7021500019A7E /* NSString+DXCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A8F49A1CF7021500019A7E /* NSString+DXCheck.m */; };
+		A5A8F4A21CF7056100019A7E /* DXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A8F4A11CF7056100019A7E /* DXWebViewController.m */; };
+		A5A8F4A41CF7059400019A7E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A8F4A31CF7059400019A7E /* WebKit.framework */; };
 		A5E871FC1CD8ABE000B00147 /* hello004.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E871FB1CD8ABE000B00147 /* hello004.png */; };
 		D7130D9E1C9A99BD0096768B /* QRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130D9D1C9A99BD0096768B /* QRModel.m */; };
 		D7130DA11C9A9E8D0096768B /* DXQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130DA01C9A9E8D0096768B /* DXQRView.m */; };
@@ -153,6 +156,11 @@
 		A57609D61CB28E18006F3F1B /* weixingreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixingreen.png; sourceTree = "<group>"; };
 		A58A55F71CA2EED6003C97B7 /* DXCommenQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXCommenQRView.h; sourceTree = "<group>"; };
 		A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXCommenQRView.m; sourceTree = "<group>"; };
+		A5A8F4991CF7021500019A7E /* NSString+DXCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DXCheck.h"; sourceTree = "<group>"; };
+		A5A8F49A1CF7021500019A7E /* NSString+DXCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DXCheck.m"; sourceTree = "<group>"; };
+		A5A8F4A01CF7056100019A7E /* DXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXWebViewController.h; sourceTree = "<group>"; };
+		A5A8F4A11CF7056100019A7E /* DXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXWebViewController.m; sourceTree = "<group>"; };
+		A5A8F4A31CF7059400019A7E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		A5E871FB1CD8ABE000B00147 /* hello004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hello004.png; sourceTree = "<group>"; };
 		D2F73D3798209558300E55FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D7130D9C1C9A99BD0096768B /* QRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRModel.h; sourceTree = "<group>"; };
@@ -250,6 +258,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A8F4A41CF7059400019A7E /* WebKit.framework in Frameworks */,
 				A50FDA381CC7893D0027188C /* AddressBookUI.framework in Frameworks */,
 				A50FDA361CC789380027188C /* AddressBook.framework in Frameworks */,
 				D72A3BB41C9FA130001DB11F /* AVFoundation.framework in Frameworks */,
@@ -392,9 +401,19 @@
 			path = LogoImageSource;
 			sourceTree = "<group>";
 		};
+		A5A8F49C1CF702EB00019A7E /* QRReadVC */ = {
+			isa = PBXGroup;
+			children = (
+				A5A8F4A01CF7056100019A7E /* DXWebViewController.h */,
+				A5A8F4A11CF7056100019A7E /* DXWebViewController.m */,
+			);
+			name = QRReadVC;
+			sourceTree = "<group>";
+		};
 		CC25F21FA19289206F13E26A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5A8F4A31CF7059400019A7E /* WebKit.framework */,
 				A50FDA371CC7893D0027188C /* AddressBookUI.framework */,
 				A50FDA351CC789380027188C /* AddressBook.framework */,
 				D72A3BB31C9FA130001DB11F /* AVFoundation.framework */,
@@ -502,6 +521,7 @@
 		D784188C1C7455BA00850129 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A5A8F49C1CF702EB00019A7E /* QRReadVC */,
 				D78418A01C745C2600850129 /* QRScan */,
 				D78418A11C745C2F00850129 /* QRCreate */,
 				D7130DA21C9AA2EA0096768B /* QRResult */,
@@ -563,6 +583,8 @@
 			children = (
 				D74AAA131CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.h */,
 				D74AAA141CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.m */,
+				A5A8F4991CF7021500019A7E /* NSString+DXCheck.h */,
+				A5A8F49A1CF7021500019A7E /* NSString+DXCheck.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -940,6 +962,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5A8F49B1CF7021500019A7E /* NSString+DXCheck.m in Sources */,
 				D78418C11C746FC700850129 /* APPInfoView.m in Sources */,
 				D78418CD1C74703A00850129 /* HttpInfoView.m in Sources */,
 				D7130DA61C9AA5A50096768B /* QRShowViewController.m in Sources */,
@@ -959,6 +982,7 @@
 				D78418B01C745D4500850129 /* QRScanViewController.m in Sources */,
 				D78418D31C74706F00850129 /* PositionInfoView.m in Sources */,
 				D78418601C74551200850129 /* ViewController.m in Sources */,
+				A5A8F4A21CF7056100019A7E /* DXWebViewController.m in Sources */,
 				D78418B31C745DB900850129 /* QRCreateViewController.m in Sources */,
 				D78418EF1C7488D300850129 /* DXSelectView.m in Sources */,
 				D7FC15661CA93CB4009EAB4C /* DXmenuItem.m in Sources */,
