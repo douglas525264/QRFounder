@@ -9,8 +9,9 @@
 #import "QRScanViewController.h"
 #import <ZBarSDK.h>
 #import "DXQRScanView.h"
-
+#import "QRModel.h"
 #import <AVFoundation/AVFoundation.h>
+#import "DXWebViewController.h"
 #define ScanWidth 250
 @interface QRScanViewController ()<ZBarReaderViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVCaptureMetadataOutputObjectsDelegate>
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
@@ -150,11 +151,12 @@
         AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex:0];
        // self.ScanResult(metadataObject.stringValue,YES);
         NSLog(@"get Data : %@",metadataObject.stringValue);
+        [self getResult:metadataObject.stringValue];
     }
     
     [self.captureSession stopRunning];
     
-    [self dismissViewControllerAnimated:YES completion:nil];
+  //  [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 -(CGRect)getScanCrop:(CGRect)rect readerViewBounds:(CGRect)readerViewBounds
@@ -265,8 +267,24 @@
     
     
 }
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    self.tabBarController.tabBar.hidden = NO;
+}
 - (void)getResult:(NSString *)result {
-    
+    QRModel *qr = [[QRModel alloc] initWithQrStr:result];
+    switch (qr.type) {
+        case QRTypeHTTP:{
+            DXWebViewController  *webVC = [[DXWebViewController alloc] init];
+            webVC.loadUrl = qr.QRStr;
+            [self.navigationController pushViewController:webVC animated:YES];
+        }break;
+        case QRTypeMsg:{
+            
+        }break;
+        default:
+            break;
+    }
 }
 - (void)loadSourceWithType:(UIImagePickerControllerSourceType)sourceType{
     UIImagePickerController *picker = [[UIImagePickerController alloc]init];

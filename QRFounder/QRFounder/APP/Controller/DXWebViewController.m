@@ -21,9 +21,14 @@
     [self createUI];
     // Do any additional setup after loading the view.
 }
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    self.tabBarController.tabBar.hidden = YES;
+}
 - (void)createUI {
-
-    [self.view addSubview:self.webView];
+    
+    //self.tabBarController.tabBar.hidden = YES;
+    self.webView.backgroundColor = [UIColor redColor];
 }
 - (void)setLoadUrl:(NSString *)loadUrl {
     _loadUrl = loadUrl;
@@ -39,6 +44,7 @@
     if (!_webView) {
         _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
         _webView.delegate = self;
+        [self.view addSubview:_webView];
     }
     return _webView;
 }
