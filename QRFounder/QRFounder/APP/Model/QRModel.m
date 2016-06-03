@@ -7,7 +7,7 @@
 //
 
 #import "QRModel.h"
-
+#import "DXHelper.h"
 @implementation QRModel
 - (id)copyWithZone:(nullable NSZone *)zone {
 
@@ -20,4 +20,13 @@
     qr.type = self.type;
     return qr;
 }
+- (instancetype)initWithQrStr:(NSString *)qrStr {
+    self = [super init];
+    if (self) {
+        self.QRStr = qrStr;
+        self.type =  [[DXHelper shareInstance] getTypeWithStr:qrStr];
+    }
+    return self;
+}
+
 @end
