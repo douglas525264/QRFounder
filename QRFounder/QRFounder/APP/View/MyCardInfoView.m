@@ -141,6 +141,7 @@
     return [self getVcardStr];
 }
 - (NSString *)getVcardStr {
+    
   NSMutableString *resultStr = [[NSMutableString alloc] init];
     [resultStr appendString:@"BEGIN:VCARD\n"];
     [resultStr appendString:@"VERSION:3.0\n"];

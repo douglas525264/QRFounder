@@ -46,6 +46,8 @@
 		A5A8F49B1CF7021500019A7E /* NSString+DXCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A8F49A1CF7021500019A7E /* NSString+DXCheck.m */; };
 		A5A8F4A21CF7056100019A7E /* DXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A8F4A11CF7056100019A7E /* DXWebViewController.m */; };
 		A5A8F4A41CF7059400019A7E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A8F4A31CF7059400019A7E /* WebKit.framework */; };
+		A5B76D711D0C312A00A68667 /* DXTextInfovViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B76D701D0C312A00A68667 /* DXTextInfovViewController.m */; };
+		A5B76D741D0C314500A68667 /* DXScanresultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B76D731D0C314500A68667 /* DXScanresultViewController.m */; };
 		A5E871FC1CD8ABE000B00147 /* hello004.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E871FB1CD8ABE000B00147 /* hello004.png */; };
 		D7130D9E1C9A99BD0096768B /* QRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130D9D1C9A99BD0096768B /* QRModel.m */; };
 		D7130DA11C9A9E8D0096768B /* DXQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130DA01C9A9E8D0096768B /* DXQRView.m */; };
@@ -161,6 +163,10 @@
 		A5A8F4A01CF7056100019A7E /* DXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXWebViewController.h; sourceTree = "<group>"; };
 		A5A8F4A11CF7056100019A7E /* DXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXWebViewController.m; sourceTree = "<group>"; };
 		A5A8F4A31CF7059400019A7E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		A5B76D6F1D0C312A00A68667 /* DXTextInfovViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTextInfovViewController.h; sourceTree = "<group>"; };
+		A5B76D701D0C312A00A68667 /* DXTextInfovViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTextInfovViewController.m; sourceTree = "<group>"; };
+		A5B76D721D0C314500A68667 /* DXScanresultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXScanresultViewController.h; sourceTree = "<group>"; };
+		A5B76D731D0C314500A68667 /* DXScanresultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXScanresultViewController.m; sourceTree = "<group>"; };
 		A5E871FB1CD8ABE000B00147 /* hello004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hello004.png; sourceTree = "<group>"; };
 		D2F73D3798209558300E55FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D7130D9C1C9A99BD0096768B /* QRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRModel.h; sourceTree = "<group>"; };
@@ -406,6 +412,10 @@
 			children = (
 				A5A8F4A01CF7056100019A7E /* DXWebViewController.h */,
 				A5A8F4A11CF7056100019A7E /* DXWebViewController.m */,
+				A5B76D6F1D0C312A00A68667 /* DXTextInfovViewController.h */,
+				A5B76D701D0C312A00A68667 /* DXTextInfovViewController.m */,
+				A5B76D721D0C314500A68667 /* DXScanresultViewController.h */,
+				A5B76D731D0C314500A68667 /* DXScanresultViewController.m */,
 			);
 			name = QRReadVC;
 			sourceTree = "<group>";
@@ -970,6 +980,8 @@
 				D78418AA1C745D0900850129 /* DXCommenViewController.m in Sources */,
 				D7FC156C1CA93F05009EAB4C /* DXMenuBtn.m in Sources */,
 				D74AAA151CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
+				A5B76D711D0C312A00A68667 /* DXTextInfovViewController.m in Sources */,
+				A5B76D741D0C314500A68667 /* DXScanresultViewController.m in Sources */,
 				D7130D9E1C9A99BD0096768B /* QRModel.m in Sources */,
 				D78418C41C746FD900850129 /* MyCardInfoView.m in Sources */,
 				D78418D01C74705E00850129 /* TextInfoView.m in Sources */,

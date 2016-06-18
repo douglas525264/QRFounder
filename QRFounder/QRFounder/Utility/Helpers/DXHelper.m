@@ -121,5 +121,75 @@ static DXHelper *helper;
     }
     return QRTypeText;
 }
+- (NSDictionary *)getparamtersWithQrstr:(NSString *)qrStr {
+    NSMutableDictionary *resultDic = [[NSMutableDictionary alloc] init];
+    QRType type = [self getTypeWithStr:qrStr];
+    switch (type) {
+        case QRTypeMyCard:{
+            return [self parseMyCardinfoWithStr:qrStr];
+        }break;
+        case QRTypeWIFI:{
+            
+        }break;
+        case QRTypeMail:{
+            
+        }break;
+            
+        default:
+            break;
+    }
+    
+    return resultDic;
 
+}
+#pragma mark - private
+- (NSDictionary *)parseMyCardinfoWithStr:(NSString *)qrstr{
+    NSMutableDictionary *resultDic = [[NSMutableDictionary alloc] init];
+    
+    NSArray *arr = [qrstr componentsSeparatedByString:@"/n"];
+    if (arr.count > 0) {
+        for (NSString *paramter  in arr) {
+            @autoreleasepool {
+                NSRange nameRan = [paramter rangeOfString:@"N:"];
+                NSRange mailRan = [paramter rangeOfString:@"EMAIL:"];
+                NSRange telephoneRan = [paramter rangeOfString:@"TEL;CELL:"];
+                NSRange chuanzhenRan = [paramter rangeOfString:@"TEL:"];
+                NSRange companyRan = [paramter rangeOfString:@"ORG:"];
+                NSRange addressRan = [paramter rangeOfString:@"ADR;TYPE=WORK:"];
+                if (nameRan.length > 0) {
+                    //here need local infonamtion
+                    [resultDic setObject:[paramter substringFromIndex:nameRan.length + 1] forKey:@"name"];
+                }
+                if (mailRan.length > 0) {
+                    //here need local infonamtion
+                    [resultDic setObject:[paramter substringFromIndex:mailRan.length + 1] forKey:@"mail"];
+                }
+
+                if (telephoneRan.length > 0) {
+                    //here need local infonamtion
+                    [resultDic setObject:[paramter substringFromIndex:chuanzhenRan.length + 1] forKey:@"telephone"];
+                }
+
+                if (chuanzhenRan.length > 0) {
+                    //here need local infonamtion
+                    [resultDic setObject:[paramter substringFromIndex:chuanzhenRan.length + 1] forKey:@"chuanzhen"];
+                }
+
+                if (companyRan.length > 0) {
+                    //here need local infonamtion
+                    [resultDic setObject:[paramter substringFromIndex:companyRan.length + 1] forKey:@"company"];
+                }
+
+                if (addressRan.length > 0) {
+                    //here need local infonamtion
+                    [resultDic setObject:[paramter substringFromIndex:addressRan.length + 1] forKey:@"address"];
+                }
+
+                
+            }
+        }
+    }
+    
+    return resultDic;
+}
 @end

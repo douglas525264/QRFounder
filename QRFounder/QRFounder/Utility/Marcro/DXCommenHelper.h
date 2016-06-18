@@ -28,6 +28,7 @@
 #define RGB(x,y,z,a) [UIColor colorWithRed:x/255.0 green:y/255.0 blue:z/255.0 alpha:a]
 
 #define DefaultColor RGB(33,188,225,1)
+
 /**
  *  二维码种类
  */
