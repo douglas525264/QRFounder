@@ -24,6 +24,6 @@
 - (void)saveImageWithModel:(QRModel *)model withFinishedBlock:(void (^)(BOOL isOK))finishedBlcok;
 
 - (QRType)getTypeWithStr:(NSString *)QrStr;
-
+- (NSDictionary *)getparamtersWithQrstr:(NSString *)qrStr;
 
 @end

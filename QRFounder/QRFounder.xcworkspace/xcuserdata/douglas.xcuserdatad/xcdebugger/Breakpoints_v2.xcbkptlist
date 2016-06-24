@@ -22,16 +22,16 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "No"
+            shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QRFounder/APP/Controller/DXWebViewController.m"
-            timestampString = "486033099.693649"
+            filePath = "QRFounder/APP/View/MyCardInfoView.m"
+            timestampString = "487339975.221997"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "38"
-            endingLineNumber = "38"
-            landmarkName = "-setLoadUrl:"
+            startingLineNumber = "181"
+            endingLineNumber = "181"
+            landmarkName = "-getVcardStr"
             landmarkType = "5">
          </BreakpointContent>
       </BreakpointProxy>
