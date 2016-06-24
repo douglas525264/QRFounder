@@ -79,6 +79,7 @@ static DXHelper *helper;
     self.qrView.qrModel = model;
     [self imageFromView:self.qrView];
     UIImage *image1 = [self imageFromView:self.qrView];
+     
     UIImageWriteToSavedPhotosAlbum(image1, nil, nil, nil);
     self.qrView = nil;
 
