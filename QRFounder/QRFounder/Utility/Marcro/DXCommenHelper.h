@@ -88,4 +88,13 @@ typedef NS_ENUM(NSInteger,QREditType) {
     QREditTypeColor
 };
 
+//MyCard
+static NSString *NAME_KEY = @"qrnamekey";
+static NSString *COMPANY_KEY = @"qrcompanykey";
+static NSString *JOP_KEY = @"qrjopkey";
+static NSString *TELEPHONE_KEY = @"qrtelephonekey";
+static NSString *FAX_KEY = @"qrfaxkey";
+static NSString *MAIL_KEY = @"qrmailkey";
+static NSString *ADDRESS_KEY = @"qraddresskey";
+
 #endif /* DXCommenHelper_h */

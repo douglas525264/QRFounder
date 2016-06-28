@@ -12,6 +12,7 @@
 #import "QRModel.h"
 #import <AVFoundation/AVFoundation.h>
 #import "DXWebViewController.h"
+#import "DXScanresultViewController.h"
 #define ScanWidth 250
 @interface QRScanViewController ()<ZBarReaderViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVCaptureMetadataOutputObjectsDelegate>
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
@@ -282,6 +283,12 @@
         case QRTypeMsg:{
             
         }break;
+        case QRTypeMyCard:{
+            DXScanresultViewController *dVC = [[DXScanresultViewController alloc] init];
+            dVC.qrmodel = qr;
+            [self.navigationController pushViewController:dVC animated:YES];
+        }break;
+
         default:
             break;
     }

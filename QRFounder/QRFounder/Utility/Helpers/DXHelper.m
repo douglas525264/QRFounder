@@ -122,8 +122,15 @@ static DXHelper *helper;
     }
     return QRTypeText;
 }
-- (NSDictionary *)getparamtersWithQrstr:(NSString *)qrStr {
-    NSMutableDictionary *resultDic = [[NSMutableDictionary alloc] init];
+- (NSMutableDictionary *)getParamtersWithArr:(NSArray *)arr {
+    NSMutableDictionary *res = [[NSMutableDictionary alloc] init];
+    for (NSDictionary *info in arr) {
+        [res setValuesForKeysWithDictionary:info];
+    }
+    return res;
+}
+- (NSMutableArray *)getparamtersWithQrstr:(NSString *)qrStr {
+    NSMutableArray *resultDic = [[NSMutableArray alloc] init];
     QRType type = [self getTypeWithStr:qrStr];
     switch (type) {
         case QRTypeMyCard:{
@@ -144,46 +151,55 @@ static DXHelper *helper;
 
 }
 #pragma mark - private
-- (NSDictionary *)parseMyCardinfoWithStr:(NSString *)qrstr{
-    NSMutableDictionary *resultDic = [[NSMutableDictionary alloc] init];
+- (NSMutableArray *)parseMyCardinfoWithStr:(NSString *)qrstr{
+    NSMutableArray *resultDic = [[NSMutableArray alloc] init];
     
-    NSArray *arr = [qrstr componentsSeparatedByString:@"/n"];
+    NSArray *arr = [qrstr componentsSeparatedByString:@"\n"];
     if (arr.count > 0) {
         for (NSString *paramter  in arr) {
             @autoreleasepool {
+                if ([paramter isEqualToString:@"BEGIN:VCARD"] || [paramter isEqualToString:@"END:VCARD"]) {
+                    continue;
+                }
                 NSRange nameRan = [paramter rangeOfString:@"N:"];
                 NSRange mailRan = [paramter rangeOfString:@"EMAIL:"];
                 NSRange telephoneRan = [paramter rangeOfString:@"TEL;CELL:"];
                 NSRange chuanzhenRan = [paramter rangeOfString:@"TEL:"];
                 NSRange companyRan = [paramter rangeOfString:@"ORG:"];
                 NSRange addressRan = [paramter rangeOfString:@"ADR;TYPE=WORK:"];
-                if (nameRan.length > 0) {
+                if (nameRan.length > 0 && nameRan.location == 0) {
                     //here need local infonamtion
-                    [resultDic setObject:[paramter substringFromIndex:nameRan.length + 1] forKey:@"name"];
+                   // [resultDic setObject:[paramter substringFromIndex:nameRan.length] forKey:NAME_KEY];
+                    [resultDic addObject:@{NAME_KEY : [paramter substringFromIndex:nameRan.length]}];
                 }
-                if (mailRan.length > 0) {
+                if (mailRan.length > 0 && mailRan.location == 0) {
                     //here need local infonamtion
-                    [resultDic setObject:[paramter substringFromIndex:mailRan.length + 1] forKey:@"mail"];
-                }
-
-                if (telephoneRan.length > 0) {
-                    //here need local infonamtion
-                    [resultDic setObject:[paramter substringFromIndex:chuanzhenRan.length + 1] forKey:@"telephone"];
+                    //[resultDic setObject:[paramter substringFromIndex:mailRan.length] forKey:MAIL_KEY];
+                    [resultDic addObject:@{MAIL_KEY : [paramter substringFromIndex:mailRan.length]}];
                 }
 
-                if (chuanzhenRan.length > 0) {
+                if (telephoneRan.length > 0 && telephoneRan.location == 0) {
                     //here need local infonamtion
-                    [resultDic setObject:[paramter substringFromIndex:chuanzhenRan.length + 1] forKey:@"chuanzhen"];
+                   // [resultDic setObject:[paramter substringFromIndex:telephoneRan.length] forKey:TELEPHONE_KEY];
+                    [resultDic addObject:@{TELEPHONE_KEY : [paramter substringFromIndex:telephoneRan.length]}];
                 }
 
-                if (companyRan.length > 0) {
+                if (chuanzhenRan.length > 0 && chuanzhenRan.location == 0) {
                     //here need local infonamtion
-                    [resultDic setObject:[paramter substringFromIndex:companyRan.length + 1] forKey:@"company"];
+                   // [resultDic setObject:[paramter substringFromIndex:chuanzhenRan.length] forKey:FAX_KEY];
+                    [resultDic addObject:@{FAX_KEY : [paramter substringFromIndex:chuanzhenRan.length]}];
                 }
 
-                if (addressRan.length > 0) {
+                if (companyRan.length > 0 && companyRan.location == 0) {
                     //here need local infonamtion
-                    [resultDic setObject:[paramter substringFromIndex:addressRan.length + 1] forKey:@"address"];
+                 //   [resultDic setObject:[paramter substringFromIndex:companyRan.length] forKey:COMPANY_KEY];
+                    [resultDic addObject:@{COMPANY_KEY : [paramter substringFromIndex:companyRan.length]}];
+                }
+
+                if (addressRan.length > 0 && addressRan.location == 0) {
+                    //here need local infonamtion
+                    //[resultDic setObject:[paramter substringFromIndex:addressRan.length] forKey:ADDRESS_KEY];
+                    [resultDic addObject:@{ADDRESS_KEY : [paramter substringFromIndex:addressRan.length]}];
                 }
 
                 
@@ -192,5 +208,37 @@ static DXHelper *helper;
     }
     
     return resultDic;
+}
+- (NSString *)getLocalNameWithKey:(NSString *)key {
+
+    if ([key isEqualToString:NAME_KEY]) {
+        return @"姓名";
+    }
+    if ([key isEqualToString:COMPANY_KEY]) {
+        return @"公司";
+    }
+
+    if ([key isEqualToString:JOP_KEY]) {
+        return @"工作";
+    }
+
+    if ([key isEqualToString:TELEPHONE_KEY]) {
+        return @"电话";
+    }
+
+    if ([key isEqualToString:FAX_KEY]) {
+        return @"传真";
+    }
+
+    if ([key isEqualToString:MAIL_KEY]) {
+        return @"邮箱";
+    }
+
+    if ([key isEqualToString:ADDRESS_KEY]) {
+        return @"地址";
+    }
+
+    
+    return @"";
 }
 @end
