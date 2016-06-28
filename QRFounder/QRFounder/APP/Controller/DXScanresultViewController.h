@@ -9,5 +9,5 @@
 #import "DXCommenViewController.h"
 
 @interface DXScanresultViewController : DXCommenViewController
-@property(nonatomic, strong) QRModel *qrmodel;
+
 @end

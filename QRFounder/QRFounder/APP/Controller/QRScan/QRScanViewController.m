@@ -280,17 +280,16 @@
             webVC.loadUrl = qr.QRStr;
             [self.navigationController pushViewController:webVC animated:YES];
         }break;
-        case QRTypeMsg:{
+        case QRTypeAPP:{
             
         }break;
-        case QRTypeMyCard:{
-            DXScanresultViewController *dVC = [[DXScanresultViewController alloc] init];
-            dVC.qrmodel = qr;
-            [self.navigationController pushViewController:dVC animated:YES];
-        }break;
 
-        default:
-            break;
+        default:{
+            DXScanresultViewController *dVC = [[DXScanresultViewController alloc] init];
+            dVC.qrModel = qr;
+            [self.navigationController pushViewController:dVC animated:YES];
+
+        }break;
     }
 }
 - (void)loadSourceWithType:(UIImagePickerControllerSourceType)sourceType{

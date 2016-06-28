@@ -23,7 +23,7 @@
    // [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"001"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setBarTintColor:RGB(33, 188, 255, 1)];
     
-    [UINavigationBar appearance].translucent = YES;
+   // [UINavigationBar appearance].translucent = NO;
    // [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
     return YES;
 }

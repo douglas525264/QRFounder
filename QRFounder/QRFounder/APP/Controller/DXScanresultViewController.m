@@ -23,7 +23,7 @@
     [super viewDidLoad];
     self.paramters = [[NSMutableArray alloc] init];
     [self createUI];
-    if (self.qrmodel) {
+    if (self.qrModel) {
         [self loadData];
     }
     // Do any additional setup after loading the view.
@@ -36,15 +36,20 @@
     self.view.backgroundColor = DefaultColor;
 }
 - (void)loadData {
-    self.paramters = [[DXHelper shareInstance] getparamtersWithQrstr:self.qrmodel.QRStr];
-    self.paramtersDic = [[DXHelper shareInstance] getParamtersWithArr:self.paramters];
-    switch (self.qrmodel.type) {
+    self.paramters = [[DXHelper shareInstance] getparamtersWithQrstr:self.qrModel.QRStr];
+    switch (self.qrModel.type) {
+        
         case QRTypeMyCard:{
+            self.paramters = [[DXHelper shareInstance] getparamtersWithQrstr:self.qrModel.QRStr];
+            self.paramtersDic = [[DXHelper shareInstance] getParamtersWithArr:self.paramters];
+
             self.textFiled.hidden = YES;
             self.tableView.hidden = NO;
             self.OKBtn.hidden = NO;
-            self.tableView.frame = CGRectMake(0, 0, self.view.frame.size.width, self.view.frame.size.height - 80);
+            self.tableView.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 80);
             [self.OKBtn setTitle:@"保存到通讯录" forState:UIControlStateNormal];
+            [self.tableView reloadData];
+            //self.title = @"名片";
         }break;
         case QRTypeMail:{
             
@@ -52,27 +57,23 @@
         case QRTypeWIFI:{
             
         }break;
-            
-        case QRTypeText:{
-            
-        }break;
-            
-        default:
+
+        default:{
             self.textFiled.hidden = NO;
             self.tableView.hidden = YES;
             self.OKBtn.hidden = YES;
-
-            break;
+           // NSString *str = self.qrModel.QRStr;
+            self.textFiled.text = self.qrModel.QRStr;
+        }break;
     }
     
     NSLog(@"%@",self.paramters);
-    [self.tableView reloadData];
+    
 }
-- (void)setQrmodel:(QRModel *)qrmodel {
-    _qrmodel = qrmodel;
-    
+- (void)setQrModel:(QRModel *)qrModel {
+
+    [super setQrModel:qrModel];
     [self loadData];
-    
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
@@ -112,7 +113,9 @@
     if (!_textFiled) {
         _textFiled = [[DXInputTextView alloc] init];
         _textFiled.frame = self.view.bounds;
-        [self.view addSubview:_textFiled];
+        //_textFiled.backgroundColor = [UIColor redColor];
+        //_textFiled.textColor = []
+       // [self.view addSubview:_textFiled];
     }
     return _textFiled;
 
@@ -129,7 +132,7 @@
 - (UITableView *)tableView {
     if (!_tableView) {
         if (!_tableView) {
-            _tableView = [[UITableView alloc] initWithFrame:self.view.bounds style:UITableViewStylePlain];
+            _tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64) style:UITableViewStylePlain];
             _tableView.dataSource = self;
             _tableView.delegate = self;
             _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
