@@ -58,6 +58,10 @@
         }break;
             
         default:
+            self.textFiled.hidden = NO;
+            self.tableView.hidden = YES;
+            self.OKBtn.hidden = YES;
+
             break;
     }
     
@@ -82,6 +86,10 @@
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.paramters.count;
 }
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     CardInfoTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"CardInfoTableViewCell"];
     NSDictionary *info = self.paramters[indexPath.row];
@@ -90,6 +98,9 @@
     cell.nameLable.text = [[DXHelper shareInstance] getLocalNameWithKey:key];
     cell.inputView.text = info[key];
     cell.inputView.editable = NO;
+    UIView *slelectView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cell.contentView.frame.size.width, cell.contentView.frame.size.width)];
+    slelectView.backgroundColor = RGB(255, 255, 255, 0.6);
+    cell.selectedBackgroundView = slelectView;
     cell.backgroundColor = [UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor clearColor];
     return cell;
