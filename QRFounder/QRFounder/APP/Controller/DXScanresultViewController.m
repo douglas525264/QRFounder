@@ -28,7 +28,6 @@
 }
 - (NSInteger) tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     return self.paramters.allValues.count;
-    
 }
 #pragma mark - paivate 
 - (DXInputTextView *)textFiled {
