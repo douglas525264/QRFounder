@@ -60,7 +60,7 @@
                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                         </textView>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4fk-39-luK">
-                            <rect key="frame" x="14" y="55" width="42" height="21"/>
+                            <rect key="frame" x="14" y="60" width="42" height="21"/>
                             <constraints>
                                 <constraint firstAttribute="width" constant="42" id="9IH-sr-KBf"/>
                                 <constraint firstAttribute="height" constant="21" id="egB-Qo-caH"/>
@@ -84,7 +84,7 @@
                         <constraint firstAttribute="trailing" secondItem="Mcs-kF-wXW" secondAttribute="trailing" constant="8" id="UCA-9q-e6N"/>
                         <constraint firstItem="6WY-9j-Rvf" firstAttribute="leading" secondItem="05m-xi-zMd" secondAttribute="leading" constant="14" id="VN1-QR-Yxp"/>
                         <constraint firstItem="V4c-xO-OPf" firstAttribute="leading" secondItem="4fk-39-luK" secondAttribute="trailing" constant="10" id="Whb-hl-1SS"/>
-                        <constraint firstItem="4fk-39-luK" firstAttribute="top" secondItem="6WY-9j-Rvf" secondAttribute="bottom" constant="16" id="aGO-6Y-znk"/>
+                        <constraint firstItem="4fk-39-luK" firstAttribute="top" secondItem="6WY-9j-Rvf" secondAttribute="bottom" constant="21" id="aGO-6Y-znk"/>
                         <constraint firstAttribute="bottom" secondItem="V4c-xO-OPf" secondAttribute="bottom" constant="8" id="dRh-42-BkC"/>
                         <constraint firstAttribute="trailing" secondItem="6WY-9j-Rvf" secondAttribute="trailing" constant="226" id="fyV-IK-VEc"/>
                         <constraint firstItem="Mcs-kF-wXW" firstAttribute="top" secondItem="05m-xi-zMd" secondAttribute="top" constant="13" id="va2-eY-BpM"/>
