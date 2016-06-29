@@ -137,7 +137,7 @@ static DXHelper *helper;
             return [self parseMyCardinfoWithStr:qrStr];
         }break;
         case QRTypeWIFI:{
-            
+            return [self parseWifiInfoWithStr:qrStr];
         }break;
         case QRTypeMail:{
             
@@ -164,9 +164,12 @@ static DXHelper *helper;
                 NSRange nameRan = [paramter rangeOfString:@"N:"];
                 NSRange mailRan = [paramter rangeOfString:@"EMAIL:"];
                 NSRange telephoneRan = [paramter rangeOfString:@"TEL;CELL:"];
-                NSRange chuanzhenRan = [paramter rangeOfString:@"TEL:"];
+                NSRange chuanzhenRan = [paramter rangeOfString:@"TEL;WORK;FAX:"];
                 NSRange companyRan = [paramter rangeOfString:@"ORG:"];
                 NSRange addressRan = [paramter rangeOfString:@"ADR;TYPE=WORK:"];
+                NSRange homepageRan = [paramter rangeOfString:@"URL:"];
+                NSRange psRan = [paramter rangeOfString:@"NOTE:"];
+                NSRange jobRan = [paramter rangeOfString:@"TITLE:"];
                 if (nameRan.length > 0 && nameRan.location == 0) {
                     //here need local infonamtion
                    // [resultDic setObject:[paramter substringFromIndex:nameRan.length] forKey:NAME_KEY];
@@ -201,6 +204,24 @@ static DXHelper *helper;
                     //[resultDic setObject:[paramter substringFromIndex:addressRan.length] forKey:ADDRESS_KEY];
                     [resultDic addObject:@{ADDRESS_KEY : [paramter substringFromIndex:addressRan.length]}];
                 }
+                if (jobRan.length > 0 && jobRan.location == 0) {
+                    //here need local infonamtion
+                    //[resultDic setObject:[paramter substringFromIndex:addressRan.length] forKey:ADDRESS_KEY];
+                    [resultDic addObject:@{JOP_KEY : [paramter substringFromIndex:jobRan.length]}];
+                }
+
+                if (psRan.length > 0 && psRan.location == 0) {
+                    //here need local infonamtion
+                    //[resultDic setObject:[paramter substringFromIndex:addressRan.length] forKey:ADDRESS_KEY];
+                    [resultDic addObject:@{NOTE_KEY : [paramter substringFromIndex:psRan.length]}];
+                }
+
+                if (homepageRan.length > 0 && homepageRan.location == 0) {
+                    //here need local infonamtion
+                    //[resultDic setObject:[paramter substringFromIndex:addressRan.length] forKey:ADDRESS_KEY];
+                    [resultDic addObject:@{HOMEPAGE_KEY : [paramter substringFromIndex:homepageRan.length]}];
+                }
+
 
                 
             }
@@ -208,6 +229,32 @@ static DXHelper *helper;
     }
     
     return resultDic;
+}
+- (NSMutableArray *)parseWifiInfoWithStr:(NSString *)qrStr {
+    NSMutableArray *resultArr = [[NSMutableArray alloc]init];
+    NSString *subStr;
+    NSRange wifiRan = [qrStr rangeOfString:@"WIFI:"];
+    if (wifiRan.length > 0) {
+        subStr = [qrStr substringFromIndex:wifiRan.length];
+    }
+    NSArray *arr = [subStr componentsSeparatedByString:@";"];
+    for (NSString *paramter in arr) {
+       NSRange wifiNameRan = [[paramter lowercaseString] rangeOfString:@"s:"];
+        NSRange entryptTypeRan = [[paramter lowercaseString] rangeOfString:@"t:"];
+        NSRange pswRan = [[paramter lowercaseString] rangeOfString:@"p:"];
+        if (wifiNameRan.length > 0 && wifiNameRan.location == 0) {
+            [resultArr addObject:@{WIFI_NAME_KEY : [paramter substringFromIndex:wifiNameRan.length]}];
+        }
+        if (entryptTypeRan.length > 0 && entryptTypeRan.location == 0) {
+            [resultArr addObject:@{ENTRYPT_WAY_KEY : [paramter substringFromIndex:entryptTypeRan.length]}];
+        }
+
+        if (pswRan.length > 0 && pswRan.location == 0) {
+            [resultArr addObject:@{PSW_KEY : [paramter substringFromIndex:pswRan.length]}];
+        }
+
+    }
+    return resultArr;
 }
 - (NSString *)getLocalNameWithKey:(NSString *)key {
 
@@ -237,6 +284,23 @@ static DXHelper *helper;
     if ([key isEqualToString:ADDRESS_KEY]) {
         return @"地址";
     }
+    if ([key isEqualToString:HOMEPAGE_KEY]) {
+        return @"主页";
+    }
+
+    if ([key isEqualToString:NOTE_KEY]) {
+        return @"备注";
+    }
+    if ([key isEqualToString:WIFI_NAME_KEY]) {
+        return @"wifi名称";
+    }
+    if ([key isEqualToString:ENTRYPT_WAY_KEY]) {
+        return @"加密方式";
+    }
+    if ([key isEqualToString:PSW_KEY]) {
+        return @"密码";
+    }
+
 
     
     return @"";

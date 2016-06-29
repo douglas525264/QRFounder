@@ -96,5 +96,11 @@ static NSString *TELEPHONE_KEY = @"qrtelephonekey";
 static NSString *FAX_KEY = @"qrfaxkey";
 static NSString *MAIL_KEY = @"qrmailkey";
 static NSString *ADDRESS_KEY = @"qraddresskey";
+static NSString *HOMEPAGE_KEY = @"qrhomepagekey";
+static NSString *NOTE_KEY = @"qrnotekey";
 
+//WIFI
+static NSString *WIFI_NAME_KEY = @"wifiNameKey";
+static NSString *ENTRYPT_WAY_KEY = @"entryptKey";
+static NSString *PSW_KEY = @"pswKey";
 #endif /* DXCommenHelper_h */

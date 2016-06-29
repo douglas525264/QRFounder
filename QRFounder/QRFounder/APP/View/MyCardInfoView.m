@@ -95,7 +95,7 @@
             }break;
             case 4:{
              cell.nameLable.text = @"传真";
-             phoneTextView = cell.inputView;
+             faxTextView = cell.inputView;
              cell.inputView.placeHolder = @"传真";
             }break;
             case 5:{
@@ -149,20 +149,25 @@
     if (nameTextView.text.length > 0) {
       [resultStr appendFormat:@"N:%@\n",nameTextView.text];
     }
-    if (mailTextView.text.length > 0) {
-        [resultStr appendFormat:@"EMAIL:%@\n",mailTextView.text];
+    if (companyTextView.text.length > 0) {
+        [resultStr appendFormat:@"ORG:%@\n",companyTextView.text];
+    }
+    if (jobTextView.text.length > 0) {
+        [resultStr appendFormat:@"TITLE:%@\n",jobTextView.text];
     }
     if (telephoneTextView.text.length > 0) {
         [resultStr appendFormat:@"TEL;CELL:%@\n",telephoneTextView.text];
     }
-    if (phoneTextView.text.length > 0) {
-        [resultStr appendFormat:@"TEL:%@\n",phoneTextView.text];
-    }
     if (faxTextView.text.length > 0) {
         [resultStr appendFormat:@"TEL;WORK;FAX:%@\n",faxTextView.text];
     }
-    if (companyTextView.text.length > 0) {
-        [resultStr appendFormat:@"ORG:%@\n",companyTextView.text];
+
+
+    if (mailTextView.text.length > 0) {
+        [resultStr appendFormat:@"EMAIL:%@\n",mailTextView.text];
+    }
+    if (phoneTextView.text.length > 0) {
+        [resultStr appendFormat:@"TEL:%@\n",phoneTextView.text];
     }
     
     if (companyAdressTextView.text.length > 0) {
@@ -175,7 +180,6 @@
     if (psTextView.text.length > 0) {
         [resultStr appendFormat:@"NOTE:%@\n",psTextView.text];
     }
-    
     [resultStr appendString:@"END:VCARD"];
     
     return resultStr;

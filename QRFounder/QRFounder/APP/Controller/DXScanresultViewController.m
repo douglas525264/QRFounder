@@ -49,13 +49,23 @@
             self.tableView.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 80);
             [self.OKBtn setTitle:@"保存到通讯录" forState:UIControlStateNormal];
             [self.tableView reloadData];
-            //self.title = @"名片";
+            self.title = @"名片";
         }break;
         case QRTypeMail:{
             
         }break;
         case QRTypeWIFI:{
+            self.paramters = [[DXHelper shareInstance] getparamtersWithQrstr:self.qrModel.QRStr];
+            self.paramtersDic = [[DXHelper shareInstance] getParamtersWithArr:self.paramters];
             
+            self.textFiled.hidden = YES;
+            self.tableView.hidden = NO;
+            self.OKBtn.hidden = NO;
+            self.tableView.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 80);
+            [self.OKBtn setTitle:@"前去设置" forState:UIControlStateNormal];
+            [self.tableView reloadData];
+            self.title = @"WIFI";
+
         }break;
 
         default:{
@@ -64,6 +74,7 @@
             self.OKBtn.hidden = YES;
            // NSString *str = self.qrModel.QRStr;
             self.textFiled.text = self.qrModel.QRStr;
+            self.title = @"扫描结果";
         }break;
     }
     
