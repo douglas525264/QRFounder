@@ -150,6 +150,8 @@
 		A540A0D21D239F4B0012EEB0 /* MsgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgView.m; sourceTree = "<group>"; };
 		A540A0D41D239F740012EEB0 /* MsgView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MsgView.xib; sourceTree = "<group>"; };
 		A540A0D61D23A0C30012EEB0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		A540A0D81D23D4020012EEB0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
+		A540A0D91D23D4020012EEB0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		A57609A51CB287F8006F3F1B /* QRSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRSourceManager.h; sourceTree = "<group>"; };
 		A57609A61CB287F8006F3F1B /* QRSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRSourceManager.m; sourceTree = "<group>"; };
 		A57609CB1CB28E18006F3F1B /* album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = album.png; sourceTree = "<group>"; };
@@ -1062,6 +1064,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D78418621C74551200850129 /* Base */,
+				A540A0D91D23D4020012EEB0 /* zh-Hans */,
 			);
 			name = Main.storyboard;
 			path = ../..;
@@ -1071,6 +1074,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				D78418671C74551200850129 /* Base */,
+				A540A0D81D23D4020012EEB0 /* zh-Hans */,
 			);
 			name = LaunchScreen.storyboard;
 			path = ../..;

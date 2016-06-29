@@ -1,0 +1,30 @@
+
+/* Class = "UIViewController"; title = "生成二维码"; ObjectID = "6nP-E4-woF"; */
+"6nP-E4-woF.title" = "生成二维码";
+
+/* Class = "UIButton"; normalTitle = "logo"; ObjectID = "J6O-aZ-ucd"; */
+"J6O-aZ-ucd.normalTitle" = "logo";
+
+/* Class = "UIButton"; normalTitle = "背景"; ObjectID = "REc-Qs-7SF"; */
+"REc-Qs-7SF.normalTitle" = "背景";
+
+/* Class = "UIButton"; normalTitle = "OK"; ObjectID = "TuV-zf-50D"; */
+"TuV-zf-50D.normalTitle" = "OK";
+
+/* Class = "UITabBarItem"; title = "扫描"; ObjectID = "fn8-mF-GLy"; */
+"fn8-mF-GLy.title" = "扫描";
+
+/* Class = "UIViewController"; title = "扫描"; ObjectID = "h5R-yb-FfD"; */
+"h5R-yb-FfD.title" = "扫描";
+
+/* Class = "UITabBarItem"; title = "生成二维码"; ObjectID = "qzg-qY-X9I"; */
+"qzg-qY-X9I.title" = "生成二维码";
+
+/* Class = "UIButton"; normalTitle = "Cancel"; ObjectID = "r9Q-nC-AHI"; */
+"r9Q-nC-AHI.normalTitle" = "Cancel";
+
+/* Class = "UIButton"; normalTitle = "颜色"; ObjectID = "sbk-mF-4Xl"; */
+"sbk-mF-4Xl.normalTitle" = "颜色";
+
+/* Class = "UIButton"; normalTitle = "边框"; ObjectID = "swz-4F-U3C"; */
+"swz-4F-U3C.normalTitle" = "边框";

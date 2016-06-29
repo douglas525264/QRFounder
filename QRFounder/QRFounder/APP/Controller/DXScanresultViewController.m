@@ -8,14 +8,16 @@
 
 #import "DXScanresultViewController.h"
 #import "CardInfoTableViewCell.h"
+#import <AddressBook/AddressBook.h>
 #import "DXHelper.h"
 #import "MsgView.h"
-@interface DXScanresultViewController ()<UITableViewDataSource,UITableViewDelegate>
+#import <MessageUI/MFMessageComposeViewController.h>
+@interface DXScanresultViewController ()<UITableViewDataSource,UITableViewDelegate,MFMessageComposeViewControllerDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) DXInputTextView *textFiled;
 @property (nonatomic, strong) NSMutableArray *paramters;
 @property (nonatomic, strong) NSMutableDictionary *paramtersDic;
-@property (nonatomic, strong) UIButton *OKBtn;\
+@property (nonatomic, strong) UIButton *OKBtn;
 @property (nonatomic, strong) MsgView *msgView;
 @end
 
@@ -139,7 +141,106 @@
 #pragma mark - BtnClick
 - (void)okBtnClick:(UIButton *)sender {
     NSLog(@"Btn Click");
+    switch (self.qrModel.type) {
+        case QRTypeMyCard:{
+           //保存身份信息 并且给提示
+            ABAddressBookRef _addressBook = [self instanceAdderssBook];
+            ABRecordRef abContact = ABPersonCreate();
+            NSString *name = [self.paramtersDic objectForKey:NAME_KEY];
+            CFErrorRef error = NULL;
+            if (name) {
+                ABRecordSetValue(abContact, kABPersonFirstNameProperty, (__bridge CFTypeRef)(name), &error);
+            }
+            NSString *telephone = [self.paramtersDic objectForKey:TELEPHONE_KEY];
+            
+            if (telephone) {
+                //CFStringRef phoneNumber = (__bridge CFStringRef)
+                 ABMutableMultiValueRef multi  = ABMultiValueCreateMutable(kABMultiStringPropertyType);
+                ABMultiValueAddValueAndLabel(multi, (__bridge CFStringRef)telephone, kABPersonPhoneMainLabel, NULL);
+                ABRecordSetValue(abContact, kABPersonPhoneProperty, multi, &error);
+                CFRelease(multi);
+            }
+            ABAddressBookAddRecord(_addressBook, abContact, &error);
+            ABAddressBookSave(_addressBook, &error);
+            CFRelease(abContact);
+            if (!error) {
+                [[DXHelper shareInstance] makeAlterWithTitle:@"保存成功" andIsShake:NO];
+            } else {
+                [[DXHelper shareInstance] makeAlterWithTitle:@"保存失败" andIsShake:NO];
+            }
+            
+        }break;
+        case QRTypeWIFI:{
+            //跳转wifi界面
+            
+            NSURL*url=[NSURL URLWithString:@"prefs:root=WIFI"];
+            
+            if ([[UIApplication sharedApplication] openURL:url]) {
+                NSLog(@"跳转成功");
+            }else {
+                [[UIApplication sharedApplication] openURL:[NSURL URLWithString:UIApplicationOpenSettingsURLString]];
+                
+            };
+
+        }break;
+        case QRTypeMsg:{
+            //跳转发送信息界面
+            NSString *body = [self.paramtersDic objectForKey:SEND_BODY_KEY];
+            NSString *sendTo = [self.paramtersDic objectForKey:SEND_TO_KEY];
+            NSArray *arr = [sendTo componentsSeparatedByString:@","];
+            if (body && arr.count > 0) {
+                [self sendSMS:body recipientList:arr];
+            }
+        }break;
+
+            
+        default:
+            break;
+    }
     
+}
+- (void)sendSMS:(NSString *)bodyOfMessage recipientList:(NSArray *)recipients
+{
+    
+    MFMessageComposeViewController *controller = [[MFMessageComposeViewController alloc] init];
+    
+    if([MFMessageComposeViewController canSendText])
+        
+    {
+        controller.body = bodyOfMessage;
+        
+        controller.recipients = recipients;
+        
+        controller.messageComposeDelegate = self;
+        
+        [self presentViewController:controller animated:YES completion:^{
+            
+            [[[[controller viewControllers] lastObject] navigationItem] setRightBarButtonItem:[[UIBarButtonItem alloc] initWithTitle:@"取消" style:UIBarButtonItemStylePlain target:self action:@selector(back)]]  ;
+        }];
+        
+    }
+    
+}
+- (void)back{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+ 
+}
+// 处理发送完的响应结果
+- (void)messageComposeViewController:(MFMessageComposeViewController *)controller didFinishWithResult:(MessageComposeResult)result
+{
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
+    
+    if (result == MessageComposeResultCancelled)
+        NSLog(@"Message cancelled");
+        else if (result == MessageComposeResultSent)
+            NSLog(@"Message sent");
+            else 
+                NSLog(@"Message failed");
+                
 }
 #pragma mark - paivate 
 - (DXInputTextView *)textFiled {
@@ -187,6 +288,19 @@
     }
     return _tableView;
 }
+- (ABAddressBookRef)instanceAdderssBook{
+    ABAddressBookRef addressBook = ABAddressBookCreateWithOptions(NULL, NULL);
+    //get addressbook root
+    dispatch_semaphore_t sema = dispatch_semaphore_create(0);
+    
+    ABAddressBookRequestAccessWithCompletion(addressBook, ^(bool granted, CFErrorRef error) {
+        dispatch_semaphore_signal(sema);
+        
+    });
+    dispatch_semaphore_wait(sema, DISPATCH_TIME_FOREVER);
+    return addressBook;
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

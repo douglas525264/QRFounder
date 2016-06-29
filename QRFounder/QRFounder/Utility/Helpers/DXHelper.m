@@ -161,7 +161,7 @@ static DXHelper *helper;
     }
     NSRange phonrran = [subStr rangeOfString:@":"];
     NSString *to = [subStr substringToIndex:phonrran.location];
-    NSString *msgBody = [subStr substringFromIndex:phonrran.location];
+    NSString *msgBody = [subStr substringFromIndex:phonrran.location + 1];
     if (to.length > 0) {
         [resultArr addObject:@{SEND_TO_KEY : to}];
         
