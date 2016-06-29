@@ -9,12 +9,14 @@
 #import "DXScanresultViewController.h"
 #import "CardInfoTableViewCell.h"
 #import "DXHelper.h"
+#import "MsgView.h"
 @interface DXScanresultViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) UITableView *tableView;
 @property (nonatomic, strong) DXInputTextView *textFiled;
 @property (nonatomic, strong) NSMutableArray *paramters;
 @property (nonatomic, strong) NSMutableDictionary *paramtersDic;
-@property (nonatomic, strong) UIButton *OKBtn;
+@property (nonatomic, strong) UIButton *OKBtn;\
+@property (nonatomic, strong) MsgView *msgView;
 @end
 
 @implementation DXScanresultViewController
@@ -32,6 +34,7 @@
     
     [self.view addSubview:self.textFiled];
     [self.view addSubview:self.tableView];
+    [self.view addSubview:self.msgView];
     [self.view addSubview:self.OKBtn];
     self.view.backgroundColor = DefaultColor;
 }
@@ -44,6 +47,7 @@
             self.paramtersDic = [[DXHelper shareInstance] getParamtersWithArr:self.paramters];
 
             self.textFiled.hidden = YES;
+            self.msgView.hidden = YES;
             self.tableView.hidden = NO;
             self.OKBtn.hidden = NO;
             self.tableView.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 80);
@@ -51,10 +55,23 @@
             [self.tableView reloadData];
             self.title = @"名片";
         }break;
-        case QRTypeMail:{
-            
+        case QRTypeMsg:{
+            self.msgView.hidden = NO;
+            self.OKBtn.hidden = NO;
+            self.msgView.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 80);
+            self.tableView.hidden = YES;
+            self.textFiled.hidden = YES;
+            self.paramters = [[DXHelper shareInstance] getparamtersWithQrstr:self.qrModel.QRStr];
+            self.paramtersDic = [[DXHelper shareInstance] getParamtersWithArr:self.paramters];
+            self.msgView.sendToTextView.text = [self.paramtersDic objectForKey:SEND_TO_KEY];
+            self.msgView.contentTextView.text = [self.paramtersDic objectForKey:SEND_BODY_KEY];
+            self.msgView.sendToTextView.editable = NO;
+            self.msgView.contentTextView.editable = NO;
+            [self.OKBtn setTitle:@"发送" forState:UIControlStateNormal];
+
         }break;
         case QRTypeWIFI:{
+            self.msgView.hidden = YES;
             self.paramters = [[DXHelper shareInstance] getparamtersWithQrstr:self.qrModel.QRStr];
             self.paramtersDic = [[DXHelper shareInstance] getParamtersWithArr:self.paramters];
             
@@ -69,6 +86,7 @@
         }break;
 
         default:{
+            self.msgView.hidden = YES;
             self.textFiled.hidden = NO;
             self.tableView.hidden = YES;
             self.OKBtn.hidden = YES;
@@ -118,6 +136,11 @@
     return cell;
 
 }
+#pragma mark - BtnClick
+- (void)okBtnClick:(UIButton *)sender {
+    NSLog(@"Btn Click");
+    
+}
 #pragma mark - paivate 
 - (DXInputTextView *)textFiled {
 
@@ -136,9 +159,19 @@
     if (!_OKBtn) {
         _OKBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _OKBtn.frame = CGRectMake(self.view.frame.size.width/2 - 80, self.view.frame.size.height - 80, 160, 60);
+        [_OKBtn addTarget:self action:@selector(okBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         
     }
     return _OKBtn;
+}
+- (MsgView *)msgView {
+
+    if (!_msgView) {
+        _msgView = [[[NSBundle mainBundle] loadNibNamed:@"MsgView" owner:self options:nil] lastObject];
+        _msgView.frame = CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64 - 80);
+        _msgView.backgroundColor = [UIColor clearColor];
+    }
+    return _msgView;
 }
 - (UITableView *)tableView {
     if (!_tableView) {

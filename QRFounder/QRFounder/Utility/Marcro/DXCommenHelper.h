@@ -103,4 +103,8 @@ static NSString *NOTE_KEY = @"qrnotekey";
 static NSString *WIFI_NAME_KEY = @"wifiNameKey";
 static NSString *ENTRYPT_WAY_KEY = @"entryptKey";
 static NSString *PSW_KEY = @"pswKey";
+//msg
+static NSString *SEND_TO_KEY = @"sendToKey";
+static NSString *SEND_BODY_KEY = @"sendbodyKey";
+
 #endif /* DXCommenHelper_h */

@@ -139,8 +139,8 @@ static DXHelper *helper;
         case QRTypeWIFI:{
             return [self parseWifiInfoWithStr:qrStr];
         }break;
-        case QRTypeMail:{
-            
+        case QRTypeMsg:{
+            return  [self parseMsgInfoWithStr:qrStr];
         }break;
             
         default:
@@ -151,6 +151,29 @@ static DXHelper *helper;
 
 }
 #pragma mark - private
+- (NSMutableArray *)parseMsgInfoWithStr:(NSString *)qrStr {
+    
+    NSMutableArray *resultArr = [[NSMutableArray alloc] init];
+    NSString *subStr;
+    NSRange msgRan = [qrStr rangeOfString:@"smsto:"];
+    if (msgRan.length > 0) {
+        subStr = [qrStr substringFromIndex:msgRan.length];
+    }
+    NSRange phonrran = [subStr rangeOfString:@":"];
+    NSString *to = [subStr substringToIndex:phonrran.location];
+    NSString *msgBody = [subStr substringFromIndex:phonrran.location];
+    if (to.length > 0) {
+        [resultArr addObject:@{SEND_TO_KEY : to}];
+        
+    }
+    if (msgBody.length > 0) {
+        [resultArr addObject:@{SEND_BODY_KEY : msgBody}];
+    }
+    //NSArray *arr = [subStr componentsSeparatedByString:@":"];
+
+
+    return resultArr;
+}
 - (NSMutableArray *)parseMyCardinfoWithStr:(NSString *)qrstr{
     NSMutableArray *resultDic = [[NSMutableArray alloc] init];
     
@@ -256,6 +279,7 @@ static DXHelper *helper;
     }
     return resultArr;
 }
+
 - (NSString *)getLocalNameWithKey:(NSString *)key {
 
     if ([key isEqualToString:NAME_KEY]) {

@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="MsgView">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="300"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="发送至:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pcm-rX-vSn">
+                    <rect key="frame" x="8" y="30" width="52" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="52" id="WLq-Ah-ZCF"/>
+                        <constraint firstAttribute="height" constant="21" id="awI-Za-wgy"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="13520580107" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="YPE-q1-ix7" customClass="DXInputTextView">
+                    <rect key="frame" x="68" y="25" width="252" height="31"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="31" id="Mx4-BX-aAR"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="内容：" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p15-7G-WeF">
+                    <rect key="frame" x="8" y="82" width="52" height="21"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="52" id="ARE-OM-1ki"/>
+                        <constraint firstAttribute="height" constant="21" id="bPI-Nz-HFm"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="13520580107" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="jtr-ky-wPS" customClass="DXInputTextView">
+                    <rect key="frame" x="68" y="76" width="252" height="224"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="jtr-ky-wPS" firstAttribute="top" secondItem="YPE-q1-ix7" secondAttribute="bottom" constant="20" id="7fY-i0-9TY"/>
+                <constraint firstItem="YPE-q1-ix7" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="25" id="8Hd-mi-xQ8"/>
+                <constraint firstItem="jtr-ky-wPS" firstAttribute="leading" secondItem="p15-7G-WeF" secondAttribute="trailing" constant="8" id="CxQ-D8-G6v"/>
+                <constraint firstAttribute="trailing" secondItem="jtr-ky-wPS" secondAttribute="trailing" id="Dfc-gE-NIn"/>
+                <constraint firstItem="p15-7G-WeF" firstAttribute="top" secondItem="pcm-rX-vSn" secondAttribute="bottom" constant="31" id="FY3-3z-9sJ"/>
+                <constraint firstItem="pcm-rX-vSn" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="30" id="Luk-ZX-ePA"/>
+                <constraint firstAttribute="trailing" secondItem="YPE-q1-ix7" secondAttribute="trailing" id="QJM-a3-vq1"/>
+                <constraint firstItem="pcm-rX-vSn" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="eTR-hA-N4G"/>
+                <constraint firstItem="YPE-q1-ix7" firstAttribute="leading" secondItem="pcm-rX-vSn" secondAttribute="trailing" constant="8" id="sJw-D5-jMc"/>
+                <constraint firstAttribute="bottom" secondItem="jtr-ky-wPS" secondAttribute="bottom" id="tnN-Np-OfZ"/>
+                <constraint firstItem="p15-7G-WeF" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="8" id="vi0-cY-aYW"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="contentLable" destination="p15-7G-WeF" id="gRO-gw-ZBa"/>
+                <outlet property="contentTextView" destination="jtr-ky-wPS" id="Ttg-xh-MUa"/>
+                <outlet property="sendToTextView" destination="YPE-q1-ix7" id="iRf-cK-sLk"/>
+                <outlet property="sendtoLable" destination="pcm-rX-vSn" id="ch8-57-8bg"/>
+            </connections>
+        </view>
+    </objects>
+</document>
