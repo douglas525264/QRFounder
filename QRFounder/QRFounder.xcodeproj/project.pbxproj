@@ -12,6 +12,8 @@
 		A50258F11CC76A68007B00E3 /* CardInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50258EF1CC76A68007B00E3 /* CardInfoTableViewCell.xib */; };
 		A50258F71CC76E65007B00E3 /* DXInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A50258F61CC76E65007B00E3 /* DXInputTextView.m */; };
 		A50258F91CC783F9007B00E3 /* QRlogoSource.plist in Resources */ = {isa = PBXBuildFile; fileRef = A50258F81CC783F9007B00E3 /* QRlogoSource.plist */; };
+		A50459A91D33730E006C7D31 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A50459A81D33730E006C7D31 /* InfoPlist.strings */; };
+		A50459B41D3378F3006C7D31 /* AnalyticsManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A50459B31D3378F3006C7D31 /* AnalyticsManager.m */; };
 		A50FDA361CC789380027188C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA351CC789380027188C /* AddressBook.framework */; };
 		A50FDA381CC7893D0027188C /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA371CC7893D0027188C /* AddressBookUI.framework */; };
 		A51136131CDB5BB5005FD7ED /* mouse01.png in Resources */ = {isa = PBXBuildFile; fileRef = A511360D1CDB5BB5005FD7ED /* mouse01.png */; };
@@ -128,6 +130,12 @@
 		A50258F51CC76E65007B00E3 /* DXInputTextView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXInputTextView.h; sourceTree = "<group>"; };
 		A50258F61CC76E65007B00E3 /* DXInputTextView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXInputTextView.m; sourceTree = "<group>"; };
 		A50258F81CC783F9007B00E3 /* QRlogoSource.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = QRlogoSource.plist; sourceTree = "<group>"; };
+		A50459A81D33730E006C7D31 /* InfoPlist.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = InfoPlist.strings; sourceTree = "<group>"; };
+		A50459AC1D33768B006C7D31 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		A50459AE1D3376B2006C7D31 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
+		A50459B01D3376DB006C7D31 /* libc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libc++.tbd"; path = "usr/lib/libc++.tbd"; sourceTree = SDKROOT; };
+		A50459B21D3378F3006C7D31 /* AnalyticsManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AnalyticsManager.h; sourceTree = "<group>"; };
+		A50459B31D3378F3006C7D31 /* AnalyticsManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AnalyticsManager.m; sourceTree = "<group>"; };
 		A50FDA351CC789380027188C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		A50FDA371CC7893D0027188C /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
 		A511360D1CDB5BB5005FD7ED /* mouse01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse01.png; sourceTree = "<group>"; };
@@ -350,6 +358,8 @@
 			children = (
 				A57609A51CB287F8006F3F1B /* QRSourceManager.h */,
 				A57609A61CB287F8006F3F1B /* QRSourceManager.m */,
+				A50459B21D3378F3006C7D31 /* AnalyticsManager.h */,
+				A50459B31D3378F3006C7D31 /* AnalyticsManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -433,6 +443,9 @@
 		CC25F21FA19289206F13E26A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A50459B01D3376DB006C7D31 /* libc++.tbd */,
+				A50459AE1D3376B2006C7D31 /* libsqlite3.tbd */,
+				A50459AC1D33768B006C7D31 /* libz.tbd */,
 				A540A0D61D23A0C30012EEB0 /* MessageUI.framework */,
 				A5A8F4A31CF7059400019A7E /* WebKit.framework */,
 				A50FDA371CC7893D0027188C /* AddressBookUI.framework */,
@@ -506,6 +519,7 @@
 			children = (
 				A57609C81CB28E18006F3F1B /* QRImageSource */,
 				D78418591C74551200850129 /* main.m */,
+				A50459A81D33730E006C7D31 /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -869,6 +883,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A50258F11CC76A68007B00E3 /* CardInfoTableViewCell.xib in Resources */,
+				A50459A91D33730E006C7D31 /* InfoPlist.strings in Resources */,
 				D78418DD1C7487AF00850129 /* APPInfoView.xib in Resources */,
 				A57609DF1CB28E18006F3F1B /* qqai.png in Resources */,
 				A52A27DE1CC62CA400095D74 /* birthday001.png in Resources */,
@@ -1002,6 +1017,7 @@
 				D78418D01C74705E00850129 /* TextInfoView.m in Sources */,
 				A57609A71CB287F8006F3F1B /* QRSourceManager.m in Sources */,
 				D78418B81C746D2000850129 /* DXHelper.m in Sources */,
+				A50459B41D3378F3006C7D31 /* AnalyticsManager.m in Sources */,
 				D78418D61C74708100850129 /* WIFIInfoView.m in Sources */,
 				D7130DA11C9A9E8D0096768B /* DXQRView.m in Sources */,
 				A50258F71CC76E65007B00E3 /* DXInputTextView.m in Sources */,
@@ -1172,10 +1188,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = QRFounder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zapyaTest.QRFounder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.QRFounder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};
@@ -1188,10 +1208,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = QRFounder/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.zapyaTest.QRFounder;
+				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.QRFounder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 			};

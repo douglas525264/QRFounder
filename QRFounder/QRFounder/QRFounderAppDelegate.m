@@ -7,7 +7,7 @@
 //
 
 #import "QRFounderAppDelegate.h"
-
+#import "AnalyticsManager.h"
 #import "DXCommenHelper.h"
 @interface QRFounderAppDelegate ()
 
@@ -22,7 +22,7 @@
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
    // [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"001"] forBarMetrics:UIBarMetricsDefault];
     [[UINavigationBar appearance] setBarTintColor:RGB(33, 188, 255, 1)];
-    
+    [[AnalyticsManager shareInstance] startUMSDK];
    // [UINavigationBar appearance].translucent = NO;
    // [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
     return YES;

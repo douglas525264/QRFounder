@@ -1,0 +1,8 @@
+/* 
+  InfoPlist.strings
+  QRFounder
+
+  Created by douglas on 16/7/11.
+  Copyright © 2016年 dongxin. All rights reserved.
+*/
+CFBundleDisplayName = "玩转二维码";

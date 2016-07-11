@@ -13,6 +13,7 @@
 #import <AVFoundation/AVFoundation.h>
 #import "DXWebViewController.h"
 #import "DXScanresultViewController.h"
+#import "AnalyticsManager.h"
 #define ScanWidth 250
 @interface QRScanViewController ()<ZBarReaderViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVCaptureMetadataOutputObjectsDelegate>
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
@@ -152,6 +153,7 @@
         AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex:0];
        // self.ScanResult(metadataObject.stringValue,YES);
         NSLog(@"get Data : %@",metadataObject.stringValue);
+        [[AnalyticsManager shareInstance] scanQRCodeWithCameraEvent];
         [self getResult:metadataObject.stringValue];
     }
     
@@ -261,6 +263,7 @@
         
         NSLog(@"无法识别图片");
     }else {
+        [[AnalyticsManager shareInstance] scanQRCodeWithAlbumEvent];
         [self getResult:zs.data];
         [readView stop];
         
@@ -274,6 +277,7 @@
 }
 - (void)getResult:(NSString *)result {
     QRModel *qr = [[QRModel alloc] initWithQrStr:result];
+    
     switch (qr.type) {
         case QRTypeHTTP:{
             DXWebViewController  *webVC = [[DXWebViewController alloc] init];

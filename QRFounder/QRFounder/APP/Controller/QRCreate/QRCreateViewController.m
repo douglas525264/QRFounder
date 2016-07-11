@@ -20,6 +20,7 @@
 #import "WIFIInfoView.h"
 #import "QRModel.h"
 #import "QRShowViewController.h"
+#import "AnalyticsManager.h"
 #define createBtnWidth 120
 @interface QRCreateViewController ()
 @property (nonatomic, strong)DXSelectView *selectView;
@@ -122,8 +123,10 @@
 
     NSString *qrStr = [self.currentInfoView getResultInfoStr];
     if (!qrStr || qrStr.length < 2) {
+        
         return;
     }
+    
     QRModel *model = [[QRModel alloc] init];
     model.QRStr = qrStr;
 //    model.QRFrame = CGRectMake(0.065, 0.2355, 0.7, 0.7);
@@ -138,6 +141,7 @@
     qVC.qrModel = model;
     
     [self.navigationController pushViewController:qVC animated:YES];
+     [[AnalyticsManager shareInstance] createQREventWithType:model.type];
 }
 - (DXSelectView *)selectView {
     if (!_selectView) {
