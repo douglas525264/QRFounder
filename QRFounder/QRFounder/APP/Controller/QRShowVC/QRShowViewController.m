@@ -10,6 +10,7 @@
 #import "QRShowViewController.h"
 #import "QREditViewController.h"
 #import "DXHelper.h"
+#import "ShareManager.h"
 @interface QRShowViewController ()
 
 @end
@@ -18,13 +19,21 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    [self createUI];
+    // Do any additional setup after loading the view.
+}
+- (void)createUI {
     self.view.backgroundColor = DefaultColor;
     self.qrView.qrModel = _qrModel;
     UILongPressGestureRecognizer *lGes = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longTab:)];
     [self.qrView addGestureRecognizer:lGes];
-    // Do any additional setup after loading the view.
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(shareClick:)];
 }
+- (void)shareClick:(UIButton *)btn {
 
+    UIImage *image = [[DXHelper shareInstance] imageFromView:self.qrView];
+    [[ShareManager shareInstance] shareQrimage:image];
+}
 - (void)longTab:(UIGestureRecognizer *)ges {
     switch (ges.state) {
         case UIGestureRecognizerStateBegan:{

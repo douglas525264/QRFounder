@@ -9,5 +9,7 @@
 #import <UIKit/UIKit.h>
 
 @interface MainViewController : UITabBarController
+@property (nonatomic, strong) UIButton *btn;
+
 + (MainViewController *) shareInstance;
 @end

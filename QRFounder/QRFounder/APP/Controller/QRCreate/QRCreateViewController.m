@@ -21,6 +21,7 @@
 #import "QRModel.h"
 #import "QRShowViewController.h"
 #import "AnalyticsManager.h"
+#import "MainViewController.h"
 #define createBtnWidth 120
 @interface QRCreateViewController ()
 @property (nonatomic, strong)DXSelectView *selectView;
@@ -60,9 +61,21 @@
     
     
 }
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+     self.tabBarController.tabBar.hidden = YES;
+
+}
+
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
-    self.tabBarController.tabBar.hidden = NO;
+    [MainViewController shareInstance].btn.hidden = NO;
+   // self.tabBarController.tabBar.hidden = NO;
+}
+- (void)viewWillDisappear:(BOOL)animated {
+
+    [super viewWillDisappear:animated];
+    [MainViewController shareInstance].btn.hidden = YES;
 }
 - (void)showViewAtIndex:(NSInteger)index {
     
@@ -140,7 +153,7 @@
     
     qVC.qrModel = model;
     qVC.hidesBottomBarWhenPushed = YES;
-  
+//    qVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self.navigationController pushViewController:qVC animated:YES];
      [[AnalyticsManager shareInstance] createQREventWithType:model.type];
 }

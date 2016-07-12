@@ -15,6 +15,7 @@
 #import "DXScanresultViewController.h"
 #import "AnalyticsManager.h"
 #import "DXHelper.h"
+#import "MainViewController.h"
 #define ScanWidth 250
 @interface QRScanViewController ()<ZBarReaderViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVCaptureMetadataOutputObjectsDelegate,ZBarReaderDelegate>
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
@@ -131,12 +132,19 @@
     //[readView start];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
      [self.captureSession startRunning];
+        self.tabBarController.tabBar.hidden = YES;
     
     });
     [self.scanView startAnimation];
-    
+  
 //
 }
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
+    [MainViewController shareInstance].btn.hidden = NO;
+    // self.tabBarController.tabBar.hidden = NO;
+}
+
 - (void)viewWillDisappear:(BOOL)animated {
 
     [super viewWillDisappear:animated];
@@ -144,6 +152,7 @@
         [self.captureSession stopRunning];
     });
     [self.scanView stopAnimation];
+    [MainViewController shareInstance].btn.hidden = YES;
    // [self.captureSession stopRunning];
    // [readView stop];
 }
@@ -294,10 +303,8 @@
     
     
 }
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
-    self.tabBarController.tabBar.hidden = NO;
-}
+
+
 - (void)getResult:(NSString *)result {
     QRModel *qr = [[QRModel alloc] initWithQrStr:result];
     
@@ -315,7 +322,7 @@
         default:{
             DXScanresultViewController *dVC = [[DXScanresultViewController alloc] init];
             dVC.qrModel = qr;
-            dVC.hidesBottomBarWhenPushed = YES;
+           // dVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:dVC animated:YES];
 
         }break;
