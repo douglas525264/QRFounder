@@ -24,6 +24,7 @@
     [self.qrView addGestureRecognizer:lGes];
     // Do any additional setup after loading the view.
 }
+
 - (void)longTab:(UIGestureRecognizer *)ges {
     switch (ges.state) {
         case UIGestureRecognizerStateBegan:{

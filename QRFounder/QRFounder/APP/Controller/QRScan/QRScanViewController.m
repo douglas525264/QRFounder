@@ -14,8 +14,9 @@
 #import "DXWebViewController.h"
 #import "DXScanresultViewController.h"
 #import "AnalyticsManager.h"
+#import "DXHelper.h"
 #define ScanWidth 250
-@interface QRScanViewController ()<ZBarReaderViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVCaptureMetadataOutputObjectsDelegate>
+@interface QRScanViewController ()<ZBarReaderViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVCaptureMetadataOutputObjectsDelegate,ZBarReaderDelegate>
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) DXQRScanView *scanView;
@@ -81,8 +82,8 @@
 
     [self.captureSession addInput:captureInput];
     
-    AVCaptureVideoDataOutput *captureOutput = [[AVCaptureVideoDataOutput alloc] init];
-    captureOutput.alwaysDiscardsLateVideoFrames = YES;
+//    AVCaptureVideoDataOutput *captureOutput = [[AVCaptureVideoDataOutput alloc] init];
+//    captureOutput.alwaysDiscardsLateVideoFrames = YES;
    
 
     AVCaptureMetadataOutput*_output=[[AVCaptureMetadataOutput alloc]init];
@@ -214,6 +215,19 @@
     
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
         [self loadSourceWithType:UIImagePickerControllerSourceTypePhotoLibrary];
+        
+//        ZBarReaderController *reader = [ZBarReaderController new];
+//        
+//        reader.allowsEditing = NO   ;
+//        
+//        reader.showsHelpOnFail = NO;
+//        
+//        reader.readerDelegate = self;
+//    
+//        reader.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
+//        
+//        [self presentViewController:reader animated:YES completion:nil];
+
     }else{
         NSLog(@"相册不可用");
         // [self showAlterWithMessage:@"相册不可用"];
@@ -234,37 +248,46 @@
 }
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
     //    先判断资源是否是图片资源
-    NSString *mediaType = info[UIImagePickerControllerMediaType];
+    
+    //NSString *mediaType = info[UIImagePickerControllerMediaType];
     //    系统预置的图片类型常量
-    UIImage *image = info[UIImagePickerControllerEditedImage];
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
     
     //    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
     //        //        取得图片
     //        UIImage *image = info[UIImagePickerControllerEditedImage];
     //        [self.view setBackgroundColor:[UIColor colorWithPatternImage:image]];
     //    }
-    ZBarImageScanner *scanner = [[ZBarImageScanner alloc] init];
-    [scanner setSymbology: ZBAR_I25
-                   config: ZBAR_CFG_ENABLE
-                       to: 0];
-    [scanner scanImage:[[ZBarImage alloc] initWithCGImage:image.CGImage]];
-    ZBarSymbol *zs = nil;
-    for (zs in scanner.results) {
+//    ZBarImageScanner *scanner = [[ZBarImageScanner alloc] init];
+//    [scanner setSymbology: ZBAR_I25
+//                   config: ZBAR_CFG_ENABLE
+//                       to: 0];
+//    [scanner scanImage:[[ZBarImage alloc] initWithCGImage:image.CGImage]];
+//
+//    
+    ZBarReaderController *read = [ZBarReaderController new];
+    CGImageRef cgImageRef = image.CGImage;
+    ZBarSymbol* symbol = nil;
+    for(symbol in [read scanImage:cgImageRef]){
         break;
     }
+//    ZBarSymbol *zs = nil;
+//    for (zs in info[ZBarReaderControllerResults]) {
+//        break;
+//    }
     
     // ZBarSymbol *resSymbol = resul
-    NSLog(@"%@",zs.data);
+    NSLog(@"%@",symbol.data);
     
     [picker dismissViewControllerAnimated:NO completion:^{
         
     }];
-    if (zs.data == nil) {
-        
+    if (symbol.data == nil) {
+        [[DXHelper shareInstance] makeAlterWithTitle:@"无法识别图片" andIsShake:NO];
         NSLog(@"无法识别图片");
     }else {
         [[AnalyticsManager shareInstance] scanQRCodeWithAlbumEvent];
-        [self getResult:zs.data];
+        [self getResult:symbol.data];
         [readView stop];
         
     }
@@ -301,7 +324,7 @@
     picker.sourceType = sourceType;
     picker.delegate = self;
     //    是否对相册资源进行自动处理
-    picker.allowsEditing = YES;
+   // picker.allowsEditing = YES;
     //
     [self presentViewController:picker animated:YES completion:^{
         
