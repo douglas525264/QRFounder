@@ -139,7 +139,8 @@
     QRShowViewController *qVC = [story instantiateViewControllerWithIdentifier:@"QRShowViewController"];
     
     qVC.qrModel = model;
-    
+    qVC.hidesBottomBarWhenPushed = YES;
+  
     [self.navigationController pushViewController:qVC animated:YES];
      [[AnalyticsManager shareInstance] createQREventWithType:model.type];
 }

@@ -10,6 +10,7 @@
 #import <UIKit/UIKit.h>
 #import <UMMobClick/MobClick.h>
 #import "DXCommenHelper.h"
+
 @interface AnalyticsManager : NSObject
 @property (nonatomic, assign) BOOL analyticsEnable;
 + (AnalyticsManager *)shareInstance;

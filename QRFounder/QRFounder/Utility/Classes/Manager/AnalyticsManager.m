@@ -9,6 +9,7 @@
 #import "AnalyticsManager.h"
 static AnalyticsManager *aManager;
 #define UMKEY @"57833c7f67e58e11620000ff"
+
 @implementation AnalyticsManager
 + (AnalyticsManager *)shareInstance {
 
