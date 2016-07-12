@@ -44,7 +44,15 @@ enum {
     CGContextSetFillColorWithColor(cxt, [UIColor whiteColor].CGColor);
     CGContextAddRect(cxt,rect);
     CGContextFillPath(cxt);
-    QRcode *code = QRcode_encodeString([_qrModel.QRStr UTF8String], 0, QR_ECLEVEL_L, QR_MODE_8, 1);
+    QRecLevel lef = QR_ECLEVEL_Q;
+    if (_qrModel.QRStr.length > 64) {
+        lef = QR_ECLEVEL_M;
+    }
+    if (_qrModel.QRStr.length > 128) {
+        lef = QR_ECLEVEL_L;
+    }
+    
+    QRcode *code = QRcode_encodeString([_qrModel.QRStr UTF8String], 0, lef, QR_MODE_8, 1);
     [self drawQRCode:code context:cxt size:rect.size.width];
 }
 
