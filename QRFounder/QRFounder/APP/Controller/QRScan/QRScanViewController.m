@@ -305,6 +305,7 @@
         case QRTypeHTTP:{
             DXWebViewController  *webVC = [[DXWebViewController alloc] init];
             webVC.loadUrl = qr.QRStr;
+            webVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:webVC animated:YES];
         }break;
         case QRTypeAPP:{
@@ -314,6 +315,7 @@
         default:{
             DXScanresultViewController *dVC = [[DXScanresultViewController alloc] init];
             dVC.qrModel = qr;
+            dVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:dVC animated:YES];
 
         }break;

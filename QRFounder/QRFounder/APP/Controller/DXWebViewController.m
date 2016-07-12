@@ -23,10 +23,10 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-    self.tabBarController.tabBar.hidden = YES;
+   // self.tabBarController.tabBar.hidden = YES;
 }
 - (void)createUI {
-    
+    self.title = @"网页";
     //self.tabBarController.tabBar.hidden = YES;
     self.webView.backgroundColor = [UIColor redColor];
 }
@@ -42,7 +42,7 @@
 - (UIWebView *)webView {
 
     if (!_webView) {
-        _webView = [[UIWebView alloc] initWithFrame:self.view.bounds];
+        _webView = [[UIWebView alloc] initWithFrame:CGRectMake(0, 64, self.view.frame.size.width, self.view.frame.size.height - 64)];
         _webView.delegate = self;
         [self.view addSubview:_webView];
     }
@@ -51,10 +51,15 @@
 #pragma maek - UIWebViewDelegate
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     NSLog(@"start load : %@",webView.request.URL.absoluteString);
-
+    NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];
+    if (theTitle && theTitle.length > 1) {
+      self.title = theTitle;
+    }
+    
 }
 - (void)webViewDidFinishLoad:(UIWebView *)webView {
     NSLog(@"load finished : %@",webView.request.URL.absoluteString);
+    
 }
 - (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error {
         NSLog(@"load Error : %@",webView.request.URL.absoluteString);
