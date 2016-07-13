@@ -25,6 +25,7 @@
 }
 - (void)drawRect:(CGRect)rect {
     self.sendToTextView.placeHolder = @"请输入电话";
+    self.sendToTextView.keyboardType = UIKeyboardTypeNumberPad;
     self.contentTextView.placeHolder = @"要发送的内容";
     self.sendToTextView.delegate = self;
     self.contentTextView.delegate = self;

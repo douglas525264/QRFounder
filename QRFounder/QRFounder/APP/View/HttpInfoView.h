@@ -7,9 +7,9 @@
 //
 
 #import "CommenInfoView.h"
-
+#import "DXInputTextView.h"
 @interface HttpInfoView : CommenInfoView<UITextViewDelegate>
 
-@property (weak, nonatomic) IBOutlet UITextView *infoTextView;
+@property (weak, nonatomic) IBOutlet DXInputTextView *infoTextView;
 
 @end

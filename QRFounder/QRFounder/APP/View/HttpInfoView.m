@@ -25,6 +25,7 @@
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     self.infoTextView.delegate = self;
+    self.infoTextView.placeHolder = @"http://";
 }
 
 - (NSString *)getResultInfoStr {

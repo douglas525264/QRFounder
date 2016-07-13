@@ -92,11 +92,13 @@
              cell.nameLable.text = @"移动电话";
              telephoneTextView = cell.inputView;
              cell.inputView.placeHolder = @"移动电话";
+             cell.inputView.keyboardType = UIKeyboardTypeNumberPad;
             }break;
             case 4:{
              cell.nameLable.text = @"传真";
              faxTextView = cell.inputView;
              cell.inputView.placeHolder = @"传真";
+             cell.inputView.keyboardType = UIKeyboardTypeNumberPad;
             }break;
             case 5:{
              cell.nameLable.text = @"邮箱";

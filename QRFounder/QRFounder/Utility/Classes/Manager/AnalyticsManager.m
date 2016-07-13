@@ -17,6 +17,8 @@ static AnalyticsManager *aManager;
         static dispatch_once_t onceToken;
         dispatch_once(&onceToken, ^{
             aManager = [[AnalyticsManager alloc] init];
+            //这里可以控制是否开启数据统计功能
+            aManager.analyticsEnable = YES;
         });
     }
     return aManager;
@@ -32,13 +34,24 @@ static AnalyticsManager *aManager;
  *  统计登录次数
  */
 - (void)loginEvent {
+    if (!self.analyticsEnable) {
+        return;
+    }
     [MobClick event:@"qr_login"];
 }
 
 - (void)createQREvent {
+    if (!self.analyticsEnable) {
+        return;
+    }
+
     [MobClick event:@"qr_create"];
 }
 - (void)createQREventWithType:(QRType)type {
+    if (!self.analyticsEnable) {
+        return;
+    }
+
     [self createQREvent];
     switch (type) {
         case QRTypeMyCard:{
@@ -70,12 +83,24 @@ static AnalyticsManager *aManager;
 }
 
 - (void)scanQRCodeWithAlbumEvent {
+    if (!self.analyticsEnable) {
+        return;
+    }
+
     [MobClick event:@"qr_scan_album"];
 }
 - (void)scanQRCodeWithCameraEvent {
+    if (!self.analyticsEnable) {
+        return;
+    }
+
     [MobClick event:@"qr_scan_camera"];
 }
 - (void)scanQREventWithType:(QRType)type {
+    if (!self.analyticsEnable) {
+        return;
+    }
+
     [MobClick event:@"qr_scan"];
 }
 

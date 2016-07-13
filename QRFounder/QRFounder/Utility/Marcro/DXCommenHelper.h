@@ -21,7 +21,7 @@
 
 #define ScreenWidth [UIScreen mainScreen].bounds.size.width
 #define ScreenHeight [UIScreen mainScreen].bounds.size.height
-
+#define ADENABLE   YES
 
 #define IS_IOS8 [[UIDevice currentDevice] systemVersion].floatValue >= 8.0
 

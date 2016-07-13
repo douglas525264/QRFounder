@@ -29,7 +29,10 @@
     self.qrView.qrModel = self.qrModel;
     
     self.view.backgroundColor = DefaultColor;
-    [self createAD];
+    if (ADENABLE) {
+      [self createAD];  
+    }
+    
     // Do any additional setup after loading the view.
 }
 - (void)createAD {
