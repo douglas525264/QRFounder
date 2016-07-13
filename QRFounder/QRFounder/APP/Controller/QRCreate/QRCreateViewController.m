@@ -43,11 +43,13 @@
     self.view.backgroundColor = RGB(33,188,225,1);
     self.navigationItem.title = @"生成二维码";
     
-    [self.navigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"qrcreate_press"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+//    [self.navigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"qrcreate_press"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    
     UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
     backItem.title = @"返回";
     self.navigationItem.backBarButtonItem = backItem;
-    [self.navigationController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:DefaultColor} forState:UIControlStateSelected];
+    
+    //[self.navigationController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:DefaultColor} forState:UIControlStateSelected];
     
     //侧边栏
     [self.view addSubview:self.selectView];
@@ -58,11 +60,20 @@
         NSLog(@"select at index %ld",index);
     }];
     [self.selectView show];
+
     [self showViewAtIndex:0];
     [self.view addSubview:self.createBtn];
     
+    //关于
+    UIButton *profileBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    profileBtn.frame = CGRectMake(0, 0, 33, 33);
+    [profileBtn setImage:[UIImage imageNamed:@"profile"] forState:UIControlStateNormal];
+    [profileBtn addTarget:self action:@selector(aboutBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:profileBtn];
     
-    
+}
+- (void)aboutBtnClick:(id)sender {
+    //关于
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

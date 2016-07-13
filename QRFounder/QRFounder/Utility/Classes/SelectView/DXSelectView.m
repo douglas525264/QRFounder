@@ -29,6 +29,7 @@
     if (self.selectedCallBackBlock) {
         self.selectedCallBackBlock(indexPath.row);
     }
+    
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
@@ -50,12 +51,20 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"SelectTableViewCell"];
     if (!cell) {
         cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"SelectTableViewCell"];
+        cell.selectedBackgroundView = [self getSelectView];
     }
     cell.textLabel.text = self.titleArr[indexPath.row];
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.contentView.backgroundColor = [UIColor clearColor];
     cell.backgroundColor = [UIColor clearColor];
     return cell;
+}
+- (UIView *)getSelectView{
+
+    UIView *view = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.tableView.frame.size.width, self.frame.size.height/self.titleArr.count)];
+    view.backgroundColor = [UIColor lightTextColor];
+    view.alpha = 0.6;
+    return view;
 }
 #pragma mark - 懒加载
 - (UITableView *)tableView {
@@ -85,7 +94,7 @@
     if (!self.tintColor) {
         self.tintColor = DefaultColor;
     }
-    
+    [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
     self.backgroundColor = self.tintColor;
 }
 //- (void)drawRect:(CGRect)rect {

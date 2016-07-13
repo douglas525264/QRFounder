@@ -42,6 +42,7 @@
 		A51136161CDB5BB5005FD7ED /* mouse04.png in Resources */ = {isa = PBXBuildFile; fileRef = A51136101CDB5BB5005FD7ED /* mouse04.png */; };
 		A51136171CDB5BB5005FD7ED /* mouse05.png in Resources */ = {isa = PBXBuildFile; fileRef = A51136111CDB5BB5005FD7ED /* mouse05.png */; };
 		A51136181CDB5BB5005FD7ED /* mouse06.png in Resources */ = {isa = PBXBuildFile; fileRef = A51136121CDB5BB5005FD7ED /* mouse06.png */; };
+		A51191461D364BE2004C2697 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51191451D364BE2004C2697 /* AboutViewController.m */; };
 		A52A27DE1CC62CA400095D74 /* birthday001.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D31CC62CA400095D74 /* birthday001.png */; };
 		A52A27DF1CC62CA400095D74 /* birthday002.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D41CC62CA400095D74 /* birthday002.png */; };
 		A52A27E01CC62CA400095D74 /* birthday003.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D51CC62CA400095D74 /* birthday003.png */; };
@@ -210,6 +211,8 @@
 		A51136101CDB5BB5005FD7ED /* mouse04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse04.png; sourceTree = "<group>"; };
 		A51136111CDB5BB5005FD7ED /* mouse05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse05.png; sourceTree = "<group>"; };
 		A51136121CDB5BB5005FD7ED /* mouse06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse06.png; sourceTree = "<group>"; };
+		A51191441D364BE2004C2697 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
+		A51191451D364BE2004C2697 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		A52A27D31CC62CA400095D74 /* birthday001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday001.png; sourceTree = "<group>"; };
 		A52A27D41CC62CA400095D74 /* birthday002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday002.png; sourceTree = "<group>"; };
 		A52A27D51CC62CA400095D74 /* birthday003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday003.png; sourceTree = "<group>"; };
@@ -530,6 +533,15 @@
 			path = mouse;
 			sourceTree = "<group>";
 		};
+		A51191431D364BBF004C2697 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				A51191441D364BE2004C2697 /* AboutViewController.h */,
+				A51191451D364BE2004C2697 /* AboutViewController.m */,
+			);
+			name = About;
+			sourceTree = "<group>";
+		};
 		A52A27D21CC62CA400095D74 /* Birthday */ = {
 			isa = PBXGroup;
 			children = (
@@ -798,6 +810,7 @@
 		D784188C1C7455BA00850129 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A51191431D364BBF004C2697 /* About */,
 				A5A8F49C1CF702EB00019A7E /* QRReadVC */,
 				D78418A01C745C2600850129 /* QRScan */,
 				D78418A11C745C2F00850129 /* QRCreate */,
@@ -1281,6 +1294,7 @@
 				D78418EF1C7488D300850129 /* DXSelectView.m in Sources */,
 				D7FC15661CA93CB4009EAB4C /* DXmenuItem.m in Sources */,
 				A58A55F91CA2EED6003C97B7 /* DXCommenQRView.m in Sources */,
+				A51191461D364BE2004C2697 /* AboutViewController.m in Sources */,
 				D72A3BB71CA00287001DB11F /* QREditViewController.m in Sources */,
 				D7FC15691CA93DDF009EAB4C /* DXSubMenuItem.m in Sources */,
 				D78418BB1C746D2D00850129 /* QRHelper.m in Sources */,
