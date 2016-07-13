@@ -32,11 +32,19 @@
     
 }
 - (NSString *)getResultInfoStr {
+    if (!self.sendToTextView.text || ![NSString validateMobile:self.sendToTextView.text]) {
+        [[DXHelper shareInstance] makeAlterWithTitle:@"手机号不合法" andIsShake:NO];
+        return nil;
+    }
+    if (!self.contentTextView.text || self.contentTextView.text.length == 0) {
+        [[DXHelper shareInstance] makeAlterWithTitle:@"请输入要发送的信息" andIsShake:NO];
+        return nil;
+    }
+    
     NSMutableString *resultStr = [[NSMutableString alloc] init];
     [resultStr appendString:@"smsto:"];
     [resultStr appendString:self.sendToTextView.text];
     [resultStr appendFormat:@":%@;",self.contentTextView.text];
-    
     return resultStr;
 }
 #pragma mark - ABPeoplePickerNavigationControllerDelegate

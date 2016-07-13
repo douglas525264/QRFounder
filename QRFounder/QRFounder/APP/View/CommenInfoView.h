@@ -7,7 +7,8 @@
 //
 
 #import <UIKit/UIKit.h>
-
+#import "DXHelper.h"
+#import "NSString+DXCheck.h"
 @interface CommenInfoView : UIView
 - (NSString *)getResultInfoStr;
 

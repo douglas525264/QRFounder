@@ -10,4 +10,5 @@
 
 @interface NSString (DXCheck)
 + (BOOL) validateEmail:(NSString *)email;
++ (BOOL) validateMobile:(NSString *)mobile;
 @end

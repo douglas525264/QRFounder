@@ -149,7 +149,7 @@
 - (void)createBtnClick:(UIButton *)sender {
 
     NSString *qrStr = [self.currentInfoView getResultInfoStr];
-    if (!qrStr || qrStr.length < 2) {
+    if (!qrStr || qrStr.length == 0) {
         
         return;
     }

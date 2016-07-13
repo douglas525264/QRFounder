@@ -29,6 +29,16 @@
 }
 
 - (NSString *)getResultInfoStr {
+    if (self.infoTextView.text.length == 0) {
+        [[DXHelper shareInstance] makeAlterWithTitle:@"请输入网址" andIsShake:YES];
+        return nil;
+    }
+    if (!([self.infoTextView.text hasPrefix:@"http://"] || [self.infoTextView.text hasPrefix:@"https://"])) {
+        [[DXHelper shareInstance] makeAlterWithTitle:@"网址格式不正确" andIsShake:YES];
+        return nil;
+    }
+    
+    
     
     return self.infoTextView.text;
 }

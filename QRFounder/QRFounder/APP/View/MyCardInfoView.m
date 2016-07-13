@@ -140,10 +140,20 @@
 - (NSString *)getResultInfoStr {
     
     
-    return [self getVcardStr];
+    NSString *result = [self getVcardStr];
+    if (!result || result.length == 0) {
+        [[DXHelper shareInstance] makeAlterWithTitle:@"请输入身份信息" andIsShake:NO];
+        return nil;
+    }
+    return result;
 }
 - (NSString *)getVcardStr {
     
+    if (nameTextView.text.length == 0
+        || telephoneTextView.text.length == 0
+        ) {
+        return nil;
+    }
   NSMutableString *resultStr = [[NSMutableString alloc] init];
     [resultStr appendString:@"BEGIN:VCARD\n"];
     [resultStr appendString:@"VERSION:3.0\n"];

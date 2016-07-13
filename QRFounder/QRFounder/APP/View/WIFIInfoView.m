@@ -57,6 +57,7 @@
 }
 - (NSString *)getResultInfoStr {
     //WIFI:S:12334;T:WPA;P:4567664;
+    
     NSMutableString *resultStr = [[NSMutableString alloc] init];
     [resultStr appendString:@"WIFI:S:"];
     [resultStr appendFormat:@"%@;",self.wifiNameTextView.text];
@@ -72,7 +73,10 @@
         [resultStr appendString:@"WEP;"];
         [resultStr appendFormat:@"P:%@;",self.pswTextView.text];
     }
-    
+    if (resultStr.length == 0) {
+        [[DXHelper shareInstance] makeAlterWithTitle:@"信息不完整请重新输入" andIsShake:NO];
+        return nil;
+    }
     return resultStr;
 }
 

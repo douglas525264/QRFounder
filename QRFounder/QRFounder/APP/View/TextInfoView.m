@@ -32,10 +32,14 @@
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     self.textInfoTextView.delegate = self;
+     self.textInfoTextView.placeHolder = @"请输入文本信息";
 }
 
 - (NSString *)getResultInfoStr {
-
+    if (self.textInfoTextView.text.length == 0) {
+        [[DXHelper shareInstance] makeAlterWithTitle:@"请输入文本信息" andIsShake:NO];
+        return nil;
+    }
     return self.textInfoTextView.text;
 }
 @end
