@@ -67,7 +67,7 @@
     self.qrView.qrModel = self.qrModel;
 }
 - (void)setEditType:(QREditType)editType {
-
+    
     _editType = editType;
     NSArray *items = [self loaddata];
     self.sourceArr = [NSMutableArray arrayWithArray:items];
@@ -81,7 +81,7 @@
             DXmenuItem *item = strongSelf.sourceArr[path.section];
             DXSubMenuItem *subitem = item.items[path.row];
 
-            if (path.section == 0 && (_editType == QREditTypeBg || _editType == QREditTypeLogo)) {
+            if (path.section == 0 && (strongSelf.editType == QREditTypeBg || strongSelf.editType == QREditTypeLogo)) {
                 switch (path.row) {
                     case 0:{
                         //相册
@@ -220,6 +220,10 @@
 // Sent when an ad request fail to loaded an ad
 - (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error {
     NSLog(@"Show AD Fail");
+}
+- (UIStatusBarStyle)preferredStatusBarStyle {
+
+    return UIStatusBarStyleLightContent;
 }
 - (void)dealloc {
 

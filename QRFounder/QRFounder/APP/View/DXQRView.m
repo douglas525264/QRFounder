@@ -10,7 +10,7 @@
 #import "qrencode.h"
 #define BGAPLAH 0.7
 #define SMALLBGPLAH 0.2
-#define SMALLPLAH 0.6
+#define SMALLPLAH 0.5
 enum {
     qr_margin = 1
 };
