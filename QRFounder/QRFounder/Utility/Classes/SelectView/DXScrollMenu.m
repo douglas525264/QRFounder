@@ -66,6 +66,8 @@
             
             j++;
         }
+        NSInteger pageCount = mainMenu.items.count / MenuItemCount + (mainMenu.items.count % MenuItemCount > 0 ? 1 : 0);
+        self.menuScrollView.contentSize = CGSizeMake(self.menuScrollView.frame.size.width *pageCount, self.menuScrollView.frame.size.height);
 
         
     } else {
@@ -124,7 +126,7 @@
 
           j++;
         }
-        NSInteger pageCount = item.items.count / MenuItemCount + item.items.count % MenuItemCount > 0 ? 1 : 0;
+        NSInteger pageCount = item.items.count / MenuItemCount + (item.items.count % MenuItemCount > 0 ? 1 : 0);
         subScrollView.contentSize = CGSizeMake(subScrollView.frame.size.width *pageCount, subScrollView.frame.size.height);
 
         [self.menuScrollView addSubview:subScrollView];

@@ -191,27 +191,6 @@
 }
 - (NSArray *)loaddata {
     return [[QRSourceManager shareInstance] getSoureceWithEditeType:self.editType];
-//    if (self.editType) {
-//        NSMutableArray *resultArr = [[NSMutableArray alloc] init];
-//        
-//        for (NSInteger j = 0 ; j < 8; j ++) {
-//            DXmenuItem *firstMenu = [[DXmenuItem alloc] init];
-//            firstMenu.menuIcon = [UIImage imageNamed:@"menuTest"];
-//            firstMenu.title = @"测试Icon";
-//            NSMutableArray *subArr = [[NSMutableArray alloc] init];
-//            for (NSInteger i = 0; i < 8; i++) {
-//                DXSubMenuItem *subOneMenu = [[DXSubMenuItem alloc] init];
-//                subOneMenu.normalImage = [UIImage imageNamed:@"menuTest"];
-//                subOneMenu.ImageName = @"menuTest";
-//                [subArr addObject:subOneMenu];
-//            }
-//            firstMenu.items = subArr;
-//            [resultArr addObject:firstMenu];
-//        }
-//        return resultArr;
-    
-//    }
-//    return nil;
 }
 #pragma mark -  懒加载
 - (DXScrollMenu *)scrollMenu {

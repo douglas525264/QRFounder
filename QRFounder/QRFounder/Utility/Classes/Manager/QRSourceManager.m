@@ -102,7 +102,7 @@ static QRSourceManager *qManager;
  
         }break;
         case QREditTypeColor:{
-            NSArray *colors = @[[UIColor redColor],[UIColor greenColor],[UIColor yellowColor],[UIColor orangeColor],[UIColor darkGrayColor],[UIColor purpleColor],[UIColor magentaColor]];
+            NSArray *colors = @[[UIColor redColor],[UIColor greenColor],[UIColor yellowColor],[UIColor orangeColor],[UIColor darkGrayColor],[UIColor purpleColor],[UIColor magentaColor],[UIColor blueColor],[UIColor brownColor],[UIColor darkGrayColor]];
             DXmenuItem *menuItem = [[DXmenuItem alloc] init];
             menuItem.color = [UIColor yellowColor];
              NSMutableArray *menulist = [[NSMutableArray alloc] init];
