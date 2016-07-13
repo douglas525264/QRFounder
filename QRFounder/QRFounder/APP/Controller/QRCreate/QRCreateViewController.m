@@ -44,6 +44,9 @@
     self.navigationItem.title = @"生成二维码";
     
     [self.navigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"qrcreate_press"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+    backItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = backItem;
     [self.navigationController.tabBarItem setTitleTextAttributes:@{NSForegroundColorAttributeName:DefaultColor} forState:UIControlStateSelected];
     
     //侧边栏

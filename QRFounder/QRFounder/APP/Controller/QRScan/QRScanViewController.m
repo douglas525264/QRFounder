@@ -21,6 +21,7 @@
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
 @property (nonatomic, strong) AVCaptureSession *captureSession;
 @property (nonatomic, strong) DXQRScanView *scanView;
+@property (nonatomic, strong) UILabel *alertLable;
 @end
 
 @implementation QRScanViewController
@@ -70,6 +71,8 @@
 //    [self.view sendSubviewToBack:readView];
     self.scanView.ScanRect = [self getScanRect];
     [self.view addSubview:self.scanView];
+    self.alertLable.text = @"将二维码放入框中，即可自动扫描";
+    [self.view addSubview:self.alertLable];
     
 }
 - (void)initCapture
@@ -345,6 +348,19 @@
         _scanView = [[DXQRScanView alloc] initWithFrame:self.view.bounds];
     }
     return _scanView;
+}
+- (UILabel *)alertLable {
+
+    if (!_alertLable) {
+        _alertLable = [[UILabel alloc] init];
+        _alertLable.font = [UIFont systemFontOfSize:14];
+        _alertLable.textColor = [UIColor whiteColor];
+        _alertLable.alpha = 0.6;
+        _alertLable.textAlignment = NSTextAlignmentCenter;
+        CGRect rect = [self getScanRect];
+        _alertLable.frame = CGRectMake(0, rect.origin.y + rect.size.height + 10, self.view.frame.size.width, 20);
+    }
+    return _alertLable;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

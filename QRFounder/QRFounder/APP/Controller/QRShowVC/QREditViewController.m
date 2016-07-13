@@ -27,7 +27,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.qrView.qrModel = self.qrModel;
-    
+   
     self.view.backgroundColor = DefaultColor;
     if (ADENABLE) {
       [self createAD];  
@@ -35,6 +35,7 @@
     
     // Do any additional setup after loading the view.
 }
+
 - (void)createAD {
 
     _dmAdView = [[DMAdView alloc] initWithPublisherId:@"56OJ2XeouNyyVYYzVk" placementId:@"16TLP2vvApalANUU2ciqFnZi"];

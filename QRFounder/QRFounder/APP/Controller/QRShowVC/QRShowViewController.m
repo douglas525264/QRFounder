@@ -28,6 +28,8 @@
     UILongPressGestureRecognizer *lGes = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longTab:)];
     [self.qrView addGestureRecognizer:lGes];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(shareClick:)];
+    self.title = @"二维码";
+    
 }
 - (void)shareClick:(UIButton *)btn {
 
