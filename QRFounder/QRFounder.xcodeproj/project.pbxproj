@@ -55,6 +55,19 @@
 		A540A0D31D239F4B0012EEB0 /* MsgView.m in Sources */ = {isa = PBXBuildFile; fileRef = A540A0D21D239F4B0012EEB0 /* MsgView.m */; };
 		A540A0D51D239F740012EEB0 /* MsgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A540A0D41D239F740012EEB0 /* MsgView.xib */; };
 		A540A0D71D23A0C30012EEB0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A540A0D61D23A0C30012EEB0 /* MessageUI.framework */; };
+		A5682CCD1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5682CCB1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle */; };
+		A5682CCE1D35DFB100E0AD8C /* libDomobAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CCC1D35DFB100E0AD8C /* libDomobAdSDK.a */; };
+		A5682CD01D35DFF700E0AD8C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CCF1D35DFF700E0AD8C /* CoreMedia.framework */; };
+		A5682CD21D35E00B00E0AD8C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD11D35E00B00E0AD8C /* QuartzCore.framework */; };
+		A5682CD41D35E01A00E0AD8C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD31D35E01A00E0AD8C /* CoreText.framework */; };
+		A5682CD61D35E02300E0AD8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD51D35E02300E0AD8C /* CoreGraphics.framework */; };
+		A5682CD81D35E02B00E0AD8C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD71D35E02B00E0AD8C /* StoreKit.framework */; };
+		A5682CDA1D35E03300E0AD8C /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD91D35E03300E0AD8C /* PassKit.framework */; };
+		A5682CDC1D35E03D00E0AD8C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CDB1D35E03D00E0AD8C /* Social.framework */; };
+		A5682CDE1D35E04600E0AD8C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CDD1D35E04600E0AD8C /* EventKit.framework */; };
+		A5682CE01D35E05D00E0AD8C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CDF1D35E05D00E0AD8C /* AudioToolbox.framework */; };
+		A5682CE21D35E06200E0AD8C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CE11D35E06200E0AD8C /* SystemConfiguration.framework */; };
+		A5682CE41D35E07300E0AD8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CE31D35E07300E0AD8C /* Foundation.framework */; };
 		A57609A71CB287F8006F3F1B /* QRSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A57609A61CB287F8006F3F1B /* QRSourceManager.m */; };
 		A57609D91CB28E18006F3F1B /* album.png in Resources */ = {isa = PBXBuildFile; fileRef = A57609CB1CB28E18006F3F1B /* album.png */; };
 		A57609DA1CB28E18006F3F1B /* jingdong.png in Resources */ = {isa = PBXBuildFile; fileRef = A57609CC1CB28E18006F3F1B /* jingdong.png */; };
@@ -213,6 +226,25 @@
 		A540A0D61D23A0C30012EEB0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A540A0D81D23D4020012EEB0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A540A0D91D23D4020012EEB0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		A5682CC41D35DFB100E0AD8C /* DMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMAdView.h; sourceTree = "<group>"; };
+		A5682CC51D35DFB100E0AD8C /* DMFeedsAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFeedsAdView.h; sourceTree = "<group>"; };
+		A5682CC61D35DFB100E0AD8C /* DMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMInterstitialAdController.h; sourceTree = "<group>"; };
+		A5682CC71D35DFB100E0AD8C /* DMRTSplashAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMRTSplashAdController.h; sourceTree = "<group>"; };
+		A5682CC81D35DFB100E0AD8C /* DMSplashAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSplashAdController.h; sourceTree = "<group>"; };
+		A5682CC91D35DFB100E0AD8C /* DMTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTools.h; sourceTree = "<group>"; };
+		A5682CCB1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobAdSDKBundle.bundle; sourceTree = "<group>"; };
+		A5682CCC1D35DFB100E0AD8C /* libDomobAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobAdSDK.a; sourceTree = "<group>"; };
+		A5682CCF1D35DFF700E0AD8C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		A5682CD11D35E00B00E0AD8C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		A5682CD31D35E01A00E0AD8C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
+		A5682CD51D35E02300E0AD8C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		A5682CD71D35E02B00E0AD8C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A5682CD91D35E03300E0AD8C /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
+		A5682CDB1D35E03D00E0AD8C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		A5682CDD1D35E04600E0AD8C /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
+		A5682CDF1D35E05D00E0AD8C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		A5682CE11D35E06200E0AD8C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		A5682CE31D35E07300E0AD8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		A57609A51CB287F8006F3F1B /* QRSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRSourceManager.h; sourceTree = "<group>"; };
 		A57609A61CB287F8006F3F1B /* QRSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRSourceManager.m; sourceTree = "<group>"; };
 		A57609CB1CB28E18006F3F1B /* album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = album.png; sourceTree = "<group>"; };
@@ -334,17 +366,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5682CE41D35E07300E0AD8C /* Foundation.framework in Frameworks */,
+				A5682CE21D35E06200E0AD8C /* SystemConfiguration.framework in Frameworks */,
+				A5682CE01D35E05D00E0AD8C /* AudioToolbox.framework in Frameworks */,
+				A5682CDE1D35E04600E0AD8C /* EventKit.framework in Frameworks */,
+				A5682CDC1D35E03D00E0AD8C /* Social.framework in Frameworks */,
+				A5682CDA1D35E03300E0AD8C /* PassKit.framework in Frameworks */,
+				A5682CD81D35E02B00E0AD8C /* StoreKit.framework in Frameworks */,
+				A5682CD61D35E02300E0AD8C /* CoreGraphics.framework in Frameworks */,
+				A5682CD41D35E01A00E0AD8C /* CoreText.framework in Frameworks */,
+				A5682CD21D35E00B00E0AD8C /* QuartzCore.framework in Frameworks */,
+				A5682CD01D35DFF700E0AD8C /* CoreMedia.framework in Frameworks */,
+				A50459EA1D338FC3006C7D31 /* libz.tbd in Frameworks */,
 				A50459F11D339009006C7D31 /* libsqlite3.tbd in Frameworks */,
 				A50459F01D338FFF006C7D31 /* ImageIO.framework in Frameworks */,
 				A50459EE1D338FDB006C7D31 /* JavaScriptCore.framework in Frameworks */,
 				A50459EC1D338FD4006C7D31 /* libstdc++.tbd in Frameworks */,
-				A50459EA1D338FC3006C7D31 /* libz.tbd in Frameworks */,
 				A50459E91D338FB9006C7D31 /* libicucore.tbd in Frameworks */,
 				A540A0D71D23A0C30012EEB0 /* MessageUI.framework in Frameworks */,
 				A50459E51D338EA7006C7D31 /* MOBFoundation.framework in Frameworks */,
 				A50459E11D338EA7006C7D31 /* libWeiboSDK.a in Frameworks */,
 				A50459E71D338EA7006C7D31 /* ShareSDKConnector.framework in Frameworks */,
 				A50459E31D338EA7006C7D31 /* libWeChatSDK.a in Frameworks */,
+				A5682CCE1D35DFB100E0AD8C /* libDomobAdSDK.a in Frameworks */,
 				A50459DE1D338EA7006C7D31 /* ShareSDKUI.framework in Frameworks */,
 				A50459DC1D338EA7006C7D31 /* ShareSDKExtension.framework in Frameworks */,
 				A5A8F4A41CF7059400019A7E /* WebKit.framework in Frameworks */,
@@ -510,6 +554,30 @@
 			path = helloKility;
 			sourceTree = "<group>";
 		};
+		A5682CC31D35DFB100E0AD8C /* DomobAdSDK */ = {
+			isa = PBXGroup;
+			children = (
+				A5682CC41D35DFB100E0AD8C /* DMAdView.h */,
+				A5682CC51D35DFB100E0AD8C /* DMFeedsAdView.h */,
+				A5682CC61D35DFB100E0AD8C /* DMInterstitialAdController.h */,
+				A5682CC71D35DFB100E0AD8C /* DMRTSplashAdController.h */,
+				A5682CC81D35DFB100E0AD8C /* DMSplashAdController.h */,
+				A5682CC91D35DFB100E0AD8C /* DMTools.h */,
+				A5682CCA1D35DFB100E0AD8C /* DomobAdSDKBundle */,
+				A5682CCC1D35DFB100E0AD8C /* libDomobAdSDK.a */,
+			);
+			name = DomobAdSDK;
+			path = ../DomobAdSDK;
+			sourceTree = "<group>";
+		};
+		A5682CCA1D35DFB100E0AD8C /* DomobAdSDKBundle */ = {
+			isa = PBXGroup;
+			children = (
+				A5682CCB1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle */,
+			);
+			path = DomobAdSDKBundle;
+			sourceTree = "<group>";
+		};
 		A57609A41CB287DB006F3F1B /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -602,6 +670,17 @@
 		CC25F21FA19289206F13E26A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5682CE31D35E07300E0AD8C /* Foundation.framework */,
+				A5682CE11D35E06200E0AD8C /* SystemConfiguration.framework */,
+				A5682CDF1D35E05D00E0AD8C /* AudioToolbox.framework */,
+				A5682CDD1D35E04600E0AD8C /* EventKit.framework */,
+				A5682CDB1D35E03D00E0AD8C /* Social.framework */,
+				A5682CD91D35E03300E0AD8C /* PassKit.framework */,
+				A5682CD71D35E02B00E0AD8C /* StoreKit.framework */,
+				A5682CD51D35E02300E0AD8C /* CoreGraphics.framework */,
+				A5682CD31D35E01A00E0AD8C /* CoreText.framework */,
+				A5682CD11D35E00B00E0AD8C /* QuartzCore.framework */,
+				A5682CCF1D35DFF700E0AD8C /* CoreMedia.framework */,
 				A50459EF1D338FFF006C7D31 /* ImageIO.framework */,
 				A50459ED1D338FDB006C7D31 /* JavaScriptCore.framework */,
 				A50459EB1D338FD4006C7D31 /* libstdc++.tbd */,
@@ -816,6 +895,7 @@
 		D78418951C7455C400850129 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				A5682CC31D35DFB100E0AD8C /* DomobAdSDK */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -1067,6 +1147,7 @@
 				A51136171CDB5BB5005FD7ED /* mouse05.png in Resources */,
 				A50459E01D338EA7006C7D31 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				A52A27E31CC62CA400095D74 /* birthday006.png in Resources */,
+				A5682CCD1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle in Resources */,
 				A52A27DF1CC62CA400095D74 /* birthday002.png in Resources */,
 				A52A27E21CC62CA400095D74 /* birthday005.png in Resources */,
 				A50258F91CC783F9007B00E3 /* QRlogoSource.plist in Resources */,
@@ -1358,6 +1439,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1373,6 +1455,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/QRFounder/Utility/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/QRFounder/Utility/DomobAdSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.QRFounder;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1387,6 +1470,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -1402,6 +1486,7 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/QRFounder/Utility/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/QRFounder/Utility/DomobAdSDK",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.QRFounder;
 				PRODUCT_NAME = "$(TARGET_NAME)";

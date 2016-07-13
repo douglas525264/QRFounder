@@ -9,7 +9,9 @@
 #import "QREditViewController.h"
 #import "DXScrollMenu.h"
 #import "QRSourceManager.h"
-@interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate>
+
+#import "DMAdView.h"
+@interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,DMAdViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 
 @property (nonatomic, strong) DXScrollMenu *scrollMenu;
@@ -18,14 +20,30 @@
 @end
 
 @implementation QREditViewController
+{
 
+    DMAdView *_dmAdView;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.qrView.qrModel = self.qrModel;
     
     self.view.backgroundColor = DefaultColor;
+    [self createAD];
     // Do any additional setup after loading the view.
 }
+- (void)createAD {
+
+    _dmAdView = [[DMAdView alloc] initWithPublisherId:@"56OJ2XeouNyyVYYzVk" placementId:@"16TLP2vvApalANUU2ciqFnZi"];
+    _dmAdView.frame = CGRectMake(0, 20, FLEXIBLE_SIZE.width,FLEXIBLE_SIZE.height);
+    _dmAdView.delegate = self; // 设置 Delegate
+    _dmAdView.rootViewController = self; // 设置 RootViewController
+    [self.view addSubview:_dmAdView]; // 将 告视图添加到 视图中
+    [_dmAdView loadAd]; // 开始加载 告}
+
+    
+}
+
 - (void)setBgImage:(UIImage *)image {
     self.qrModel.bgImage = image;
     self.qrView.qrModel = self.qrModel;
@@ -206,7 +224,19 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+#pragma mark - ADDelegate
+- (void)dmAdViewSuccessToLoadAd:(DMAdView *)adView {
+    NSLog(@"Show Ad Success");
+}
+// Sent when an ad request fail to loaded an ad
+- (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error {
+    NSLog(@"Show AD Fail");
+}
+- (void)dealloc {
 
+    _dmAdView.delegate = nil;
+    _dmAdView.rootViewController = nil;
+}
 /*
 #pragma mark - Navigation
 
