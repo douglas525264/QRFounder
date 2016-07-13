@@ -88,6 +88,17 @@ static DXHelper *helper;
     finishedBlcok(YES);
     
 }
+- (UIImage *)getColorImageWithColor:(UIColor *)color andSize:(CGSize)size {
+    UIGraphicsBeginImageContextWithOptions(size, YES, [UIScreen mainScreen].scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    CGContextSetFillColorWithColor(context, color.CGColor);
+    CGContextFillRect(context, CGRectMake(0, 0, size.width, size.height));
+    
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+
+}
 - (void)test {
     
     

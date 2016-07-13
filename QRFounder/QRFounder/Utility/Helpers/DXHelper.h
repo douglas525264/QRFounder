@@ -27,5 +27,5 @@
 - (NSMutableArray *)getparamtersWithQrstr:(NSString *)qrStr;
 - (NSMutableDictionary *)getParamtersWithArr:(NSArray *)arr;
 - (NSString *)getLocalNameWithKey:(NSString *)key;
-
+- (UIImage *)getColorImageWithColor:(UIColor *)color andSize:(CGSize)size;
 @end

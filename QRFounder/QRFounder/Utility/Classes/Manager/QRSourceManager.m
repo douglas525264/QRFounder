@@ -9,6 +9,7 @@
 #import "QRSourceManager.h"
 #import "DXmenuItem.h"
 #import "DXSubMenuItem.h"
+#import "DXHelper.h"
 static QRSourceManager *qManager;
 @implementation QRSourceManager
 
@@ -100,8 +101,20 @@ static QRSourceManager *qManager;
             }
  
         }break;
-
-            
+        case QREditTypeColor:{
+            NSArray *colors = @[[UIColor redColor],[UIColor greenColor],[UIColor yellowColor],[UIColor orangeColor],[UIColor darkGrayColor],[UIColor purpleColor],[UIColor magentaColor]];
+            DXmenuItem *menuItem = [[DXmenuItem alloc] init];
+            menuItem.color = [UIColor yellowColor];
+             NSMutableArray *menulist = [[NSMutableArray alloc] init];
+            for (UIColor *c in colors) {
+               DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
+                subItem.normalImage = [[DXHelper shareInstance] getColorImageWithColor:c andSize:CGSizeMake(40, 40)];
+                subItem.color = c;
+                [menulist addObject:subItem];
+            }
+            menuItem.items = menulist;
+            [resultArr addObject:menuItem];
+        }break;
         default:
             break;
     }

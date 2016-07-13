@@ -147,6 +147,7 @@
 //    model.boarderImage = [UIImage imageWithContentsOfFile:path];
     //model.bgImage = [UIImage imageNamed:@"testimage"];
    // model.logo = [UIImage imageNamed:@"logo"];
+   // model.codeColor = [UIColor yellowColor];
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     
     QRShowViewController *qVC = [story instantiateViewControllerWithIdentifier:@"QRShowViewController"];

@@ -15,6 +15,7 @@
 @property (nonatomic, strong) UIImage *selectImage;
 @property (nonatomic, copy) NSString *ImageName;
 @property (nonatomic, assign) CGRect QRFrame;
+@property (nonatomic, strong) UIColor *color;
 //这里也可扩展命令类型
 
 @end

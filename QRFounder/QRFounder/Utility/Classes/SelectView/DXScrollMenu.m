@@ -44,6 +44,32 @@
     self.iconScrollView = nil;
     [self.menuScrollView removeFromSuperview];
     self.menuScrollView = nil;
+    
+    DXmenuItem *mainMenu = menuItems[0];
+    if (mainMenu.color) {
+      CGFloat iconW = self.frame.size.width/MenuItemCount;
+        NSInteger j = 0;
+        for (DXSubMenuItem *subMenu in mainMenu.items) {
+            
+            DXMenuBtn *iconBtn = [DXMenuBtn buttonWithType:UIButtonTypeCustom];
+            iconBtn.tag = -1;
+            iconBtn.path = [NSIndexPath indexPathForRow:j inSection:0];
+            
+            iconBtn.frame = CGRectMake(j * iconW , 0 , iconW, self.menuScrollView.frame.size.height);
+            
+            [iconBtn setImage:subMenu.normalImage forState:UIControlStateNormal];
+            
+            [iconBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+            
+            [self.menuScrollView addSubview:iconBtn];
+            
+            
+            j++;
+        }
+
+        
+    } else {
+    
     NSInteger i = 0;
     self.menuScrollView.contentSize = CGSizeMake(self.menuScrollView.frame.size.width * _menuItems.count, self.menuScrollView.frame.size.height);
 
@@ -117,6 +143,7 @@
         i ++;
     }
     [self selectIconWithTag:0];
+    }
     
 }
 

@@ -46,6 +46,7 @@
 
 - (void)setBgImage:(UIImage *)image {
     self.qrModel.bgImage = image;
+    self.qrModel.codeColor = nil;
     self.qrView.qrModel = self.qrModel;
 
 }
@@ -53,6 +54,11 @@
     self.qrModel.logo = image;
     self.qrView.qrModel = self.qrModel;
     
+}
+- (void)setQRColor:(UIColor *)color {
+
+    self.qrModel.codeColor = color;
+     self.qrView.qrModel = self.qrModel;
 }
 - (void)setBoarderImage:(UIImage *)image withQRFrame:(CGRect)qrFrame {
 
@@ -105,6 +111,10 @@
                     case QREditTypeLogo:{
                         [strongSelf setLogoImage:image];
                     }break;
+                    case QREditTypeColor:{
+                        [strongSelf setQRColor:subitem.color];
+                    }break;
+
                         
                     default:
                         break;

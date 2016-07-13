@@ -17,4 +17,6 @@
 //这里放的是 subMenuItems
 @property (nonatomic, strong) NSMutableArray *items;
 
+@property (nonatomic, strong) UIColor *color;
+
 @end

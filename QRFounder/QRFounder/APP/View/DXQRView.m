@@ -59,7 +59,7 @@ enum {
 - (void)drawQRCode:(QRcode *)code context:(CGContextRef)ctx size:(CGFloat)size {
     
     
-    if (_qrModel.bgImage) {
+    if (_qrModel.bgImage && !_qrModel.codeColor) {
         [self drawBgQRCode:code context:ctx size:size];
     } else {
         unsigned char *data = 0;
@@ -76,8 +76,11 @@ enum {
         CGContextFillPath(ctx);
         
         
-        
-        CGContextSetFillColorWithColor(ctx,RGB(0, 0, 0, 1).CGColor);
+        if (_qrModel.codeColor) {
+            CGContextSetFillColorWithColor(ctx,_qrModel.codeColor.CGColor);
+        } else {
+            CGContextSetFillColorWithColor(ctx,RGB(0, 0, 0, 1).CGColor);
+        }
         for(int i = 0; i < width; ++i) {
             for(int j = 0; j < width; ++j) {
                 if(*data & 1) {

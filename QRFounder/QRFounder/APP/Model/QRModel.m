@@ -18,6 +18,7 @@
     qr.boarderImage = self.boarderImage;
     qr.logo = self.logo;
     qr.type = self.type;
+    qr.codeColor = self.codeColor;
     return qr;
 }
 - (instancetype)initWithQrStr:(NSString *)qrStr {
