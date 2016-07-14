@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "DXCommenHelper.h"
+#import "NSString+DXTool.h"
 @interface QRModel : NSObject<NSCopying>
 //二维码字符串
 @property (nonatomic, copy) NSString *QRStr;
@@ -25,6 +26,9 @@
 //二维码颜色 实用此颜色后 默认背景色为白色 背景图片 失效 
 @property (nonatomic, assign) UIColor *codeColor;
 
+@property (nonatomic, assign) int64_t createTime;
+
+@property (nonatomic, assign) BOOL isScanResult;
 
 - (instancetype)initWithQrStr:(NSString *)qrStr;
 

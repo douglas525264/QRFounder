@@ -22,6 +22,7 @@
     self.view.backgroundColor = DefaultColor;
     self.title = @"关于";
     [self createUI];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -61,7 +62,6 @@
         default:
             break;
     }
-    
     
    // [[RootMainViewController shareInstand].navigationController pushViewController:[UMFeedback feedbackViewController] animated:YES];
 

@@ -87,6 +87,14 @@
 		A5B76D711D0C312A00A68667 /* DXTextInfovViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B76D701D0C312A00A68667 /* DXTextInfovViewController.m */; };
 		A5B76D741D0C314500A68667 /* DXScanresultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B76D731D0C314500A68667 /* DXScanresultViewController.m */; };
 		A5D76F6B1D373D2200AA8006 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F6A1D373D2200AA8006 /* AboutTableViewController.m */; };
+		A5D76F731D378DC900AA8006 /* QRdatabase.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F711D378DC900AA8006 /* QRdatabase.xcdatamodeld */; };
+		A5D76F761D3793C900AA8006 /* NSString+DXTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F751D3793C900AA8006 /* NSString+DXTool.m */; };
+		A5D76F811D3795D400AA8006 /* DBHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F781D3795D400AA8006 /* DBHelper.m */; };
+		A5D76F821D3795D400AA8006 /* DBManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F7A1D3795D400AA8006 /* DBManager.m */; };
+		A5D76F831D3795D400AA8006 /* DmDatabaseOperation.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F7C1D3795D400AA8006 /* DmDatabaseOperation.m */; };
+		A5D76F841D3795D400AA8006 /* DmSearchCriteria.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F7E1D3795D400AA8006 /* DmSearchCriteria.m */; };
+		A5D76F851D3795D400AA8006 /* NSManagedObject+NSManagedObject_BaseType.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F801D3795D400AA8006 /* NSManagedObject+NSManagedObject_BaseType.m */; };
+		A5D76F881D379E8D00AA8006 /* NSDictionary+DXHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F871D379E8D00AA8006 /* NSDictionary+DXHelper.m */; };
 		A5E871FC1CD8ABE000B00147 /* hello004.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E871FB1CD8ABE000B00147 /* hello004.png */; };
 		D7130D9E1C9A99BD0096768B /* QRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130D9D1C9A99BD0096768B /* QRModel.m */; };
 		D7130DA11C9A9E8D0096768B /* DXQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130DA01C9A9E8D0096768B /* DXQRView.m */; };
@@ -272,6 +280,21 @@
 		A5B76D731D0C314500A68667 /* DXScanresultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXScanresultViewController.m; sourceTree = "<group>"; };
 		A5D76F691D373D2200AA8006 /* AboutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewController.h; sourceTree = "<group>"; };
 		A5D76F6A1D373D2200AA8006 /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
+		A5D76F721D378DC900AA8006 /* QRdatabase.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = QRdatabase.xcdatamodel; sourceTree = "<group>"; };
+		A5D76F741D3793C900AA8006 /* NSString+DXTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DXTool.h"; sourceTree = "<group>"; };
+		A5D76F751D3793C900AA8006 /* NSString+DXTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DXTool.m"; sourceTree = "<group>"; };
+		A5D76F771D3795D400AA8006 /* DBHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBHelper.h; sourceTree = "<group>"; };
+		A5D76F781D3795D400AA8006 /* DBHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBHelper.m; sourceTree = "<group>"; };
+		A5D76F791D3795D400AA8006 /* DBManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DBManager.h; sourceTree = "<group>"; };
+		A5D76F7A1D3795D400AA8006 /* DBManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DBManager.m; sourceTree = "<group>"; };
+		A5D76F7B1D3795D400AA8006 /* DmDatabaseOperation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DmDatabaseOperation.h; sourceTree = "<group>"; };
+		A5D76F7C1D3795D400AA8006 /* DmDatabaseOperation.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DmDatabaseOperation.m; sourceTree = "<group>"; };
+		A5D76F7D1D3795D400AA8006 /* DmSearchCriteria.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DmSearchCriteria.h; sourceTree = "<group>"; };
+		A5D76F7E1D3795D400AA8006 /* DmSearchCriteria.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DmSearchCriteria.m; sourceTree = "<group>"; };
+		A5D76F7F1D3795D400AA8006 /* NSManagedObject+NSManagedObject_BaseType.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSManagedObject+NSManagedObject_BaseType.h"; sourceTree = "<group>"; };
+		A5D76F801D3795D400AA8006 /* NSManagedObject+NSManagedObject_BaseType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+NSManagedObject_BaseType.m"; sourceTree = "<group>"; };
+		A5D76F861D379E8D00AA8006 /* NSDictionary+DXHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DXHelper.h"; sourceTree = "<group>"; };
+		A5D76F871D379E8D00AA8006 /* NSDictionary+DXHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DXHelper.m"; sourceTree = "<group>"; };
 		A5E871FB1CD8ABE000B00147 /* hello004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hello004.png; sourceTree = "<group>"; };
 		D2F73D3798209558300E55FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D7130D9C1C9A99BD0096768B /* QRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRModel.h; sourceTree = "<group>"; };
@@ -879,6 +902,10 @@
 				D74AAA141CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.m */,
 				A5A8F4991CF7021500019A7E /* NSString+DXCheck.h */,
 				A5A8F49A1CF7021500019A7E /* NSString+DXCheck.m */,
+				A5D76F741D3793C900AA8006 /* NSString+DXTool.h */,
+				A5D76F751D3793C900AA8006 /* NSString+DXTool.m */,
+				A5D76F861D379E8D00AA8006 /* NSDictionary+DXHelper.h */,
+				A5D76F871D379E8D00AA8006 /* NSDictionary+DXHelper.m */,
 			);
 			path = Category;
 			sourceTree = "<group>";
@@ -944,6 +971,17 @@
 		D784189C1C74564000850129 /* DB */ = {
 			isa = PBXGroup;
 			children = (
+				A5D76F771D3795D400AA8006 /* DBHelper.h */,
+				A5D76F781D3795D400AA8006 /* DBHelper.m */,
+				A5D76F791D3795D400AA8006 /* DBManager.h */,
+				A5D76F7A1D3795D400AA8006 /* DBManager.m */,
+				A5D76F7B1D3795D400AA8006 /* DmDatabaseOperation.h */,
+				A5D76F7C1D3795D400AA8006 /* DmDatabaseOperation.m */,
+				A5D76F7D1D3795D400AA8006 /* DmSearchCriteria.h */,
+				A5D76F7E1D3795D400AA8006 /* DmSearchCriteria.m */,
+				A5D76F7F1D3795D400AA8006 /* NSManagedObject+NSManagedObject_BaseType.h */,
+				A5D76F801D3795D400AA8006 /* NSManagedObject+NSManagedObject_BaseType.m */,
+				A5D76F711D378DC900AA8006 /* QRdatabase.xcdatamodeld */,
 			);
 			path = DB;
 			sourceTree = "<group>";
@@ -1271,10 +1309,13 @@
 				D7130DA61C9AA5A50096768B /* QRShowViewController.m in Sources */,
 				D78418CA1C74700000850129 /* MailInfoView.m in Sources */,
 				D78418AA1C745D0900850129 /* DXCommenViewController.m in Sources */,
+				A5D76F851D3795D400AA8006 /* NSManagedObject+NSManagedObject_BaseType.m in Sources */,
 				D7FC156C1CA93F05009EAB4C /* DXMenuBtn.m in Sources */,
 				D74AAA151CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				A5B76D711D0C312A00A68667 /* DXTextInfovViewController.m in Sources */,
+				A5D76F831D3795D400AA8006 /* DmDatabaseOperation.m in Sources */,
 				A5B76D741D0C314500A68667 /* DXScanresultViewController.m in Sources */,
+				A5D76F841D3795D400AA8006 /* DmSearchCriteria.m in Sources */,
 				D7130D9E1C9A99BD0096768B /* QRModel.m in Sources */,
 				D78418C41C746FD900850129 /* MyCardInfoView.m in Sources */,
 				D78418D01C74705E00850129 /* TextInfoView.m in Sources */,
@@ -1284,6 +1325,7 @@
 				A50459B41D3378F3006C7D31 /* AnalyticsManager.m in Sources */,
 				D78418D61C74708100850129 /* WIFIInfoView.m in Sources */,
 				A5D76F6B1D373D2200AA8006 /* AboutTableViewController.m in Sources */,
+				A5D76F731D378DC900AA8006 /* QRdatabase.xcdatamodeld in Sources */,
 				D7130DA11C9A9E8D0096768B /* DXQRView.m in Sources */,
 				A50258F71CC76E65007B00E3 /* DXInputTextView.m in Sources */,
 				D78418C71C746FEB00850129 /* MsgInfoView.m in Sources */,
@@ -1295,14 +1337,18 @@
 				D78418EF1C7488D300850129 /* DXSelectView.m in Sources */,
 				D7FC15661CA93CB4009EAB4C /* DXmenuItem.m in Sources */,
 				A58A55F91CA2EED6003C97B7 /* DXCommenQRView.m in Sources */,
+				A5D76F811D3795D400AA8006 /* DBHelper.m in Sources */,
 				D72A3BB71CA00287001DB11F /* QREditViewController.m in Sources */,
 				D7FC15691CA93DDF009EAB4C /* DXSubMenuItem.m in Sources */,
 				D78418BB1C746D2D00850129 /* QRHelper.m in Sources */,
+				A5D76F761D3793C900AA8006 /* NSString+DXTool.m in Sources */,
 				A540A0D31D239F4B0012EEB0 /* MsgView.m in Sources */,
 				D784185D1C74551200850129 /* QRFounderAppDelegate.m in Sources */,
 				D7FC156F1CA93F51009EAB4C /* DXScrollMenu.m in Sources */,
+				A5D76F821D3795D400AA8006 /* DBManager.m in Sources */,
 				A50258F01CC76A68007B00E3 /* CardInfoTableViewCell.m in Sources */,
 				D78418BE1C746FAF00850129 /* CommenInfoView.m in Sources */,
+				A5D76F881D379E8D00AA8006 /* NSDictionary+DXHelper.m in Sources */,
 				D7E4BF2E1C9ABD7600AE9030 /* DXQRScanView.m in Sources */,
 				D784185A1C74551200850129 /* main.m in Sources */,
 				D784189F1C745B9400850129 /* MainViewController.m in Sources */,
@@ -1596,6 +1642,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A5D76F711D378DC900AA8006 /* QRdatabase.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A5D76F721D378DC900AA8006 /* QRdatabase.xcdatamodel */,
+			);
+			currentVersion = A5D76F721D378DC900AA8006 /* QRdatabase.xcdatamodel */;
+			path = QRdatabase.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = D784184D1C74551200850129 /* Project object */;
 }
