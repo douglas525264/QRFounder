@@ -32,5 +32,6 @@
 - (void)asyDeleteModels:(NSArray *)models;
 
 - (void)getModelWithClass:(Class)clss andCount:(NSInteger)count Offset:(NSInteger)offset ascending:(BOOL) asending withFinishBlock:(void (^)(BOOL isOK,NSArray *resultArr)) finishBlock;
+- (void)getAllQRModelwithFinishBlock:(void (^)(BOOL isOK,NSArray *resultArr)) finishBlock;
 
 @end

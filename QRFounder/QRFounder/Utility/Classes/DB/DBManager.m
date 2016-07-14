@@ -362,6 +362,10 @@ static DBManager *dbManager;
     return nil;
     
 }
+- (void)getAllQRModelwithFinishBlock:(void (^)(BOOL isOK,NSArray *resultArr)) finishBlock {
+    [self getModelWithClass:[QRModel class] andCount:0 Offset:0 ascending:YES withFinishBlock:finishBlock];
+
+}
 - (NSManagedObject *)managerObjWithModel:(id)dataModel{
     
     @synchronized(self) {
