@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>UMengFeedback.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ZBarSDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -27,7 +32,7 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>26E60B96485B8E1C4FB21AB739501F98</key>
+		<key>036E8B7F912D87A729AEC9997DF13300</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -37,12 +42,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>9AAFB91F7AFE1C9B05360EA364A1332B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>A46A84BFCC6FEE4C66AEF1DECC1DC502</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>C8BE4CE8D736A0FF2DB5BE26518DA198</key>
+		<key>CA7BBEF629E30BE9E841F8370A47EF8A</key>
 		<dict>
 			<key>primary</key>
 			<true/>

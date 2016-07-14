@@ -20,6 +20,11 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 Copyright 2011 - 2015 UMeng.com. All rights reserved.
 
 
+## UMengFeedback
+
+Copyright 2011 - 2015 UMeng.com. All rights reserved.
+
+
 ## ZBarSDK
 
 		  GNU LESSER GENERAL PUBLIC LICENSE

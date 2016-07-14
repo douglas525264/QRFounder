@@ -9,6 +9,7 @@
 #import "AboutTableViewController.h"
 #import "DXCommenHelper.h"
 #import "DXHelper.h"
+#import <UMFeedback.h>
 @interface AboutTableViewController ()
 @property(nonatomic, strong) UIImageView *imageView;
 @property(nonatomic, strong) UILabel *versionLable;
@@ -43,6 +44,27 @@
 }
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    switch (indexPath.row) {
+        case 0:{
+            NSString *strUrl = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id576309271"];
+            NSURL *url = [NSURL URLWithString:strUrl];
+            [[UIApplication sharedApplication] openURL:url];
+ 
+        }break;
+        case 1:{
+         [UMFeedback showFeedback:self withAppkey:@"57833c7f67e58e11620000ff"];
+        }break;
+        case 2:{
+            
+        }break;
+            
+        default:
+            break;
+    }
+    
+    
+   // [[RootMainViewController shareInstand].navigationController pushViewController:[UMFeedback feedbackViewController] animated:YES];
+
 }
 #pragma maek - 懒加载
 - (UIImageView *)imageView {
