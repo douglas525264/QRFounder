@@ -22,7 +22,7 @@ static MainViewController *mainVc;
     [super viewDidLoad];
     mainVc = self;
     
-   
+    self.tabBar.hidden = YES;
    
    // _btn.titleLabel.textColor = []
     

@@ -77,7 +77,7 @@
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
-     self.tabBarController.tabBar.hidden = YES;
+    
 
 }
 
@@ -167,7 +167,7 @@
     QRShowViewController *qVC = [story instantiateViewControllerWithIdentifier:@"QRShowViewController"];
     
     qVC.qrModel = model;
-    qVC.hidesBottomBarWhenPushed = YES;
+   // qVC.hidesBottomBarWhenPushed = YES;
 //    qVC.modalTransitionStyle = UIModalTransitionStyleCrossDissolve;
     [self.navigationController pushViewController:qVC animated:YES];
      [[AnalyticsManager shareInstance] createQREventWithType:model.type];

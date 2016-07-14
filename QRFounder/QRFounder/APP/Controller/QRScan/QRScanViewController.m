@@ -135,7 +135,7 @@
     //[readView start];
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
      [self.captureSession startRunning];
-        self.tabBarController.tabBar.hidden = YES;
+   //     self.tabBarController.tabBar.hidden = YES;
     
     });
     [self.scanView startAnimation];
@@ -315,7 +315,6 @@
         case QRTypeHTTP:{
             DXWebViewController  *webVC = [[DXWebViewController alloc] init];
             webVC.loadUrl = qr.QRStr;
-            webVC.hidesBottomBarWhenPushed = YES;
             [self.navigationController pushViewController:webVC animated:YES];
         }break;
         case QRTypeAPP:{
@@ -325,7 +324,7 @@
         default:{
             DXScanresultViewController *dVC = [[DXScanresultViewController alloc] init];
             dVC.qrModel = qr;
-           // dVC.hidesBottomBarWhenPushed = YES;
+           
             [self.navigationController pushViewController:dVC animated:YES];
 
         }break;
