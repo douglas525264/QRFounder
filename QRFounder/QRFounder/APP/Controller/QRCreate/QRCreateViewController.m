@@ -21,6 +21,7 @@
 #import "QRModel.h"
 #import "QRShowViewController.h"
 #import "AnalyticsManager.h"
+#import "AboutTableViewController.h"
 #import "MainViewController.h"
 #define createBtnWidth 120
 @interface QRCreateViewController ()
@@ -74,6 +75,9 @@
 }
 - (void)aboutBtnClick:(id)sender {
     //关于
+    UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    AboutTableViewController *aVC = [mainStory instantiateViewControllerWithIdentifier:@"AboutTableViewController"];
+    [self.navigationController pushViewController:aVC animated:YES];
 }
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];

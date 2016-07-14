@@ -42,7 +42,6 @@
 		A51136161CDB5BB5005FD7ED /* mouse04.png in Resources */ = {isa = PBXBuildFile; fileRef = A51136101CDB5BB5005FD7ED /* mouse04.png */; };
 		A51136171CDB5BB5005FD7ED /* mouse05.png in Resources */ = {isa = PBXBuildFile; fileRef = A51136111CDB5BB5005FD7ED /* mouse05.png */; };
 		A51136181CDB5BB5005FD7ED /* mouse06.png in Resources */ = {isa = PBXBuildFile; fileRef = A51136121CDB5BB5005FD7ED /* mouse06.png */; };
-		A51191461D364BE2004C2697 /* AboutViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A51191451D364BE2004C2697 /* AboutViewController.m */; };
 		A52A27DE1CC62CA400095D74 /* birthday001.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D31CC62CA400095D74 /* birthday001.png */; };
 		A52A27DF1CC62CA400095D74 /* birthday002.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D41CC62CA400095D74 /* birthday002.png */; };
 		A52A27E01CC62CA400095D74 /* birthday003.png in Resources */ = {isa = PBXBuildFile; fileRef = A52A27D51CC62CA400095D74 /* birthday003.png */; };
@@ -87,6 +86,7 @@
 		A5A8F4A41CF7059400019A7E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A8F4A31CF7059400019A7E /* WebKit.framework */; };
 		A5B76D711D0C312A00A68667 /* DXTextInfovViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B76D701D0C312A00A68667 /* DXTextInfovViewController.m */; };
 		A5B76D741D0C314500A68667 /* DXScanresultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B76D731D0C314500A68667 /* DXScanresultViewController.m */; };
+		A5D76F6B1D373D2200AA8006 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F6A1D373D2200AA8006 /* AboutTableViewController.m */; };
 		A5E871FC1CD8ABE000B00147 /* hello004.png in Resources */ = {isa = PBXBuildFile; fileRef = A5E871FB1CD8ABE000B00147 /* hello004.png */; };
 		D7130D9E1C9A99BD0096768B /* QRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130D9D1C9A99BD0096768B /* QRModel.m */; };
 		D7130DA11C9A9E8D0096768B /* DXQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130DA01C9A9E8D0096768B /* DXQRView.m */; };
@@ -211,8 +211,6 @@
 		A51136101CDB5BB5005FD7ED /* mouse04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse04.png; sourceTree = "<group>"; };
 		A51136111CDB5BB5005FD7ED /* mouse05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse05.png; sourceTree = "<group>"; };
 		A51136121CDB5BB5005FD7ED /* mouse06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse06.png; sourceTree = "<group>"; };
-		A51191441D364BE2004C2697 /* AboutViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutViewController.h; sourceTree = "<group>"; };
-		A51191451D364BE2004C2697 /* AboutViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutViewController.m; sourceTree = "<group>"; };
 		A52A27D31CC62CA400095D74 /* birthday001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday001.png; sourceTree = "<group>"; };
 		A52A27D41CC62CA400095D74 /* birthday002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday002.png; sourceTree = "<group>"; };
 		A52A27D51CC62CA400095D74 /* birthday003.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday003.png; sourceTree = "<group>"; };
@@ -272,6 +270,8 @@
 		A5B76D701D0C312A00A68667 /* DXTextInfovViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTextInfovViewController.m; sourceTree = "<group>"; };
 		A5B76D721D0C314500A68667 /* DXScanresultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXScanresultViewController.h; sourceTree = "<group>"; };
 		A5B76D731D0C314500A68667 /* DXScanresultViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXScanresultViewController.m; sourceTree = "<group>"; };
+		A5D76F691D373D2200AA8006 /* AboutTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewController.h; sourceTree = "<group>"; };
+		A5D76F6A1D373D2200AA8006 /* AboutTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewController.m; sourceTree = "<group>"; };
 		A5E871FB1CD8ABE000B00147 /* hello004.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hello004.png; sourceTree = "<group>"; };
 		D2F73D3798209558300E55FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D7130D9C1C9A99BD0096768B /* QRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRModel.h; sourceTree = "<group>"; };
@@ -536,8 +536,8 @@
 		A51191431D364BBF004C2697 /* About */ = {
 			isa = PBXGroup;
 			children = (
-				A51191441D364BE2004C2697 /* AboutViewController.h */,
-				A51191451D364BE2004C2697 /* AboutViewController.m */,
+				A5D76F691D373D2200AA8006 /* AboutTableViewController.h */,
+				A5D76F6A1D373D2200AA8006 /* AboutTableViewController.m */,
 			);
 			name = About;
 			sourceTree = "<group>";
@@ -1283,6 +1283,7 @@
 				A50459B71D338A17006C7D31 /* ShareManager.m in Sources */,
 				A50459B41D3378F3006C7D31 /* AnalyticsManager.m in Sources */,
 				D78418D61C74708100850129 /* WIFIInfoView.m in Sources */,
+				A5D76F6B1D373D2200AA8006 /* AboutTableViewController.m in Sources */,
 				D7130DA11C9A9E8D0096768B /* DXQRView.m in Sources */,
 				A50258F71CC76E65007B00E3 /* DXInputTextView.m in Sources */,
 				D78418C71C746FEB00850129 /* MsgInfoView.m in Sources */,
@@ -1294,7 +1295,6 @@
 				D78418EF1C7488D300850129 /* DXSelectView.m in Sources */,
 				D7FC15661CA93CB4009EAB4C /* DXmenuItem.m in Sources */,
 				A58A55F91CA2EED6003C97B7 /* DXCommenQRView.m in Sources */,
-				A51191461D364BE2004C2697 /* AboutViewController.m in Sources */,
 				D72A3BB71CA00287001DB11F /* QREditViewController.m in Sources */,
 				D7FC15691CA93DDF009EAB4C /* DXSubMenuItem.m in Sources */,
 				D78418BB1C746D2D00850129 /* QRHelper.m in Sources */,

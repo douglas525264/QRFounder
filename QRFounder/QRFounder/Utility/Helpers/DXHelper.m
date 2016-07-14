@@ -185,6 +185,11 @@ static DXHelper *helper;
 
     return resultArr;
 }
++ (NSString *)getVersionCode{
+    NSDictionary *infoDir =  [[NSBundle mainBundle]infoDictionary];
+    return [infoDir objectForKey:@"CFBundleShortVersionString"];
+}
+
 - (NSMutableArray *)parseMyCardinfoWithStr:(NSString *)qrstr{
     NSMutableArray *resultDic = [[NSMutableArray alloc] init];
     
