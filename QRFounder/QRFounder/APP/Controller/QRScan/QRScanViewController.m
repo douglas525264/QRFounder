@@ -16,6 +16,7 @@
 #import "AnalyticsManager.h"
 #import "DXHelper.h"
 #import "MainViewController.h"
+#import "DBManager.h"
 #define ScanWidth 250
 @interface QRScanViewController ()<ZBarReaderViewDelegate,UIImagePickerControllerDelegate,UINavigationControllerDelegate,AVCaptureMetadataOutputObjectsDelegate,ZBarReaderDelegate>
 @property (nonatomic, strong) AVCaptureVideoPreviewLayer *captureVideoPreviewLayer;
@@ -310,7 +311,8 @@
 
 - (void)getResult:(NSString *)result {
     QRModel *qr = [[QRModel alloc] initWithQrStr:result];
-    
+    qr.isScanResult = YES;
+    [[DBManager shareManager] saveModel:qr];
     switch (qr.type) {
         case QRTypeHTTP:{
             DXWebViewController  *webVC = [[DXWebViewController alloc] init];

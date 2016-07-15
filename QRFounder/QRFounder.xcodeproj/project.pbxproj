@@ -80,6 +80,7 @@
 		A57609E11CB28E18006F3F1B /* weixin.png in Resources */ = {isa = PBXBuildFile; fileRef = A57609D41CB28E18006F3F1B /* weixin.png */; };
 		A57609E21CB28E18006F3F1B /* weixincircle.png in Resources */ = {isa = PBXBuildFile; fileRef = A57609D51CB28E18006F3F1B /* weixincircle.png */; };
 		A57609E31CB28E18006F3F1B /* weixingreen.png in Resources */ = {isa = PBXBuildFile; fileRef = A57609D61CB28E18006F3F1B /* weixingreen.png */; };
+		A579DBD91D388D8100561CD3 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A579DBD81D388D8100561CD3 /* HistoryViewController.m */; };
 		A58A55F91CA2EED6003C97B7 /* DXCommenQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */; };
 		A5A8F49B1CF7021500019A7E /* NSString+DXCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A8F49A1CF7021500019A7E /* NSString+DXCheck.m */; };
 		A5A8F4A21CF7056100019A7E /* DXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A8F4A11CF7056100019A7E /* DXWebViewController.m */; };
@@ -267,6 +268,8 @@
 		A57609D41CB28E18006F3F1B /* weixin.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixin.png; sourceTree = "<group>"; };
 		A57609D51CB28E18006F3F1B /* weixincircle.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixincircle.png; sourceTree = "<group>"; };
 		A57609D61CB28E18006F3F1B /* weixingreen.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = weixingreen.png; sourceTree = "<group>"; };
+		A579DBD71D388D8100561CD3 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
+		A579DBD81D388D8100561CD3 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		A58A55F71CA2EED6003C97B7 /* DXCommenQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXCommenQRView.h; sourceTree = "<group>"; };
 		A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXCommenQRView.m; sourceTree = "<group>"; };
 		A5A8F4991CF7021500019A7E /* NSString+DXCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DXCheck.h"; sourceTree = "<group>"; };
@@ -689,6 +692,15 @@
 			path = LogoImageSource;
 			sourceTree = "<group>";
 		};
+		A579DBD61D388D6900561CD3 /* History */ = {
+			isa = PBXGroup;
+			children = (
+				A579DBD71D388D8100561CD3 /* HistoryViewController.h */,
+				A579DBD81D388D8100561CD3 /* HistoryViewController.m */,
+			);
+			name = History;
+			sourceTree = "<group>";
+		};
 		A5A8F49C1CF702EB00019A7E /* QRReadVC */ = {
 			isa = PBXGroup;
 			children = (
@@ -833,6 +845,7 @@
 		D784188C1C7455BA00850129 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A579DBD61D388D6900561CD3 /* History */,
 				A51191431D364BBF004C2697 /* About */,
 				A5A8F49C1CF702EB00019A7E /* QRReadVC */,
 				D78418A01C745C2600850129 /* QRScan */,
@@ -1336,6 +1349,7 @@
 				D78418B31C745DB900850129 /* QRCreateViewController.m in Sources */,
 				D78418EF1C7488D300850129 /* DXSelectView.m in Sources */,
 				D7FC15661CA93CB4009EAB4C /* DXmenuItem.m in Sources */,
+				A579DBD91D388D8100561CD3 /* HistoryViewController.m in Sources */,
 				A58A55F91CA2EED6003C97B7 /* DXCommenQRView.m in Sources */,
 				A5D76F811D3795D400AA8006 /* DBHelper.m in Sources */,
 				D72A3BB71CA00287001DB11F /* QREditViewController.m in Sources */,

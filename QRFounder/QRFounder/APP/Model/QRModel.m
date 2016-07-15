@@ -20,6 +20,7 @@
     qr.type = self.type;
     qr.codeColor = self.codeColor;
     qr.createTime = self.createTime;
+    qr.isScanResult = self.isScanResult;
     return qr;
 }
 - (instancetype)initWithQrStr:(NSString *)qrStr {
@@ -28,6 +29,7 @@
         
         self.QRStr = qrStr;
         _createTime = [NSString getNormalTime];
+        _isScanResult = NO;
         self.type =  [[DXHelper shareInstance] getTypeWithStr:qrStr];
     }
     return self;
@@ -36,6 +38,7 @@
     self = [super init];
     if (self) {
         _createTime = [NSString getNormalTime];
+        _isScanResult = NO;
     }
     return  self;
 }

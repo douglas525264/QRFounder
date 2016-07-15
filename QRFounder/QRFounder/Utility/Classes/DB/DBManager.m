@@ -61,7 +61,7 @@ static DBManager *dbManager;
             
             [self saveQrModel:dataModel toObject:objc];
             // [_helper saveContext];
-            NSLog(@"dataBase has save a User %@",dataModel);
+            NSLog(@"dataBase has save a QRModel %@",dataModel);
             //  return ;
         }
         

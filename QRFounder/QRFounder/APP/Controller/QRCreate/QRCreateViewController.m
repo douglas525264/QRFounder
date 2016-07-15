@@ -23,6 +23,8 @@
 #import "AnalyticsManager.h"
 #import "AboutTableViewController.h"
 #import "MainViewController.h"
+#import "HistoryViewController.h"
+#import "DBManager.h"
 #define createBtnWidth 120
 @interface QRCreateViewController ()
 @property (nonatomic, strong)DXSelectView *selectView;
@@ -71,6 +73,16 @@
     [profileBtn setImage:[UIImage imageNamed:@"profile"] forState:UIControlStateNormal];
     [profileBtn addTarget:self action:@selector(aboutBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:profileBtn];
+    
+    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(historyBtnClick:)];
+    
+    
+}
+- (void)historyBtnClick:(UIButton *)sender {
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    
+    HistoryViewController *qVC = [story instantiateViewControllerWithIdentifier:@"HistoryViewController"];
+    [self.navigationController pushViewController:qVC animated:YES];
     
 }
 - (void)aboutBtnClick:(id)sender {
@@ -160,6 +172,7 @@
     
     QRModel *model = [[QRModel alloc] init];
     model.QRStr = qrStr;
+    [[DBManager shareManager] saveModel:model];
 //    model.QRFrame = CGRectMake(0.065, 0.2355, 0.7, 0.7);
 //    NSString *path = [[NSBundle mainBundle] pathForResource:@"border_test" ofType:@"jpg"];
 //    model.boarderImage = [UIImage imageWithContentsOfFile:path];
