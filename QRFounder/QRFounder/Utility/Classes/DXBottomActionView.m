@@ -10,6 +10,9 @@
 #define maxlinCount 3
 #define smallWidth 30
 #define oneLineHeight 49
+@interface DXBottomActionView()
+@property (nonatomic, strong) UIView *sLine;
+@end
 @implementation DXBottomActionView
 + (DXBottomActionView *)popWithCommendArr:(NSArray *)arr andBlock:(void (^)(DXBottomActionView *bpc,DXBottomActionMenu command)) block {
 
@@ -24,6 +27,7 @@
     self = [super init];
     if (self) {
         self.commendArr = [NSMutableArray arrayWithArray:commendArr];
+        [self addSubview:self.sLine];
     }
     return self;
 }
@@ -160,6 +164,15 @@
         [self removeFromSuperview];
         
     }
+}
+- (UIView *)sLine {
+    if (!_sLine) {
+        _sLine = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.frame.size.width, 1)];
+        _sLine.backgroundColor = [UIColor whiteColor];
+        _sLine.alpha = 0.6;
+        _sLine.autoresizingMask = UIViewAutoresizingFlexibleWidth;
+    }
+    return _sLine;
 }
 /*
 // Only override drawRect: if you perform custom drawing.

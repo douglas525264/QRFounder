@@ -141,7 +141,14 @@
         cell.selectedBackgroundView = view1;
         
         cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
-        cell.selectionStyle = UITableViewCellSelectionStyleGray;
+        cell.selectionStyle = UITableViewCellSelectionStyleBlue;
+//        UILabel *av = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 20, 20)];
+//        av.text = @">";
+//        av.textColor = [UIColor whiteColor];
+//        
+        cell.tintColor = [UIColor whiteColor];
+        
+        
         //cell.imageView.image = [UIImage imageNamed:@"logo"];
     }
     QRModel *model;
@@ -157,6 +164,7 @@
     cell.textLabel.text = model.QRStr;
     cell.textLabel.textColor = [UIColor whiteColor];
     cell.detailTextLabel.text = [NSString getTimeStrFromTimestamp:model.createTime];
+    cell.detailTextLabel.textColor = [UIColor whiteColor];
     cell.contentView.backgroundColor = [UIColor clearColor];
     
     return cell;
@@ -165,16 +173,14 @@
 - (NSString *)tableView:(UITableView *)tableView titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)indexPath {
     return @"删除";
 }
-- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (self.tableView.isEditing) {
-      return UITableViewCellEditingStyleInsert|UITableViewCellEditingStyleDelete;
-    } else {
-      return UITableViewCellEditingStyleDelete;
-    }
+// 自定义左滑显示编辑按钮
+
+-(NSArray<UITableViewRowAction*>*)tableView:(UITableView *)tableView editActionsForRowAtIndexPath:(NSIndexPath *)indexPath
+{
     
-}
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
+    UITableViewRowAction *rowAction = [UITableViewRowAction rowActionWithStyle:UITableViewRowActionStyleDefault
+                                                                         title:@"删除" handler:^(UITableViewRowAction * _Nonnull action, NSIndexPath * _Nonnull indexPath)
+    {
         NSLog(@"你选择了删除");
         QRModel *model;
         if (self.isScanShow) {
@@ -188,6 +194,31 @@
         
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
         [self cheakEnable];
+
+        
+                                                                             
+    }];
+    
+    
+    rowAction.backgroundColor = [UIColor colorWithRed:252/255.0f green:88/255.0f blue:112/255.0f alpha:1];
+    
+    NSArray *arr = @[rowAction];
+    return arr;
+}
+- (UIView *)memberOfTableView:(UIView *)object {
+
+    return nil;
+}
+- (UITableViewCellEditingStyle)tableView:(UITableView *)tableView editingStyleForRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (self.tableView.isEditing) {
+      return UITableViewCellEditingStyleInsert|UITableViewCellEditingStyleDelete;
+    } else {
+      return UITableViewCellEditingStyleDelete;
+    }
+    
+}
+- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
+    if (editingStyle == UITableViewCellEditingStyleDelete) {
        // [self reloadUI];
     }//
 }
@@ -300,7 +331,7 @@
             }
             
         }];
-        _bottomView.backgroundColor = [UIColor redColor];
+        _bottomView.backgroundColor = [UIColor clearColor];
         if (self.isScanShow) {
          _bottomView.allcount = self.scanArr.count;
         } else {
@@ -343,6 +374,8 @@
         _tableView.separatorColor = [UIColor whiteColor];
         self.tableView.backgroundColor = [UIColor clearColor];
         _tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
+        _tableView.sectionIndexTrackingBackgroundColor = [UIColor whiteColor];
+        _tableView.tintColor = [UIColor whiteColor];
       //  [_tableView registerClass:[UITableViewCell class] forCellReuseIdentifier:@"cellID"];
         
     }
