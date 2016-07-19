@@ -19,6 +19,15 @@
     NSString *str = [formatter stringFromDate:currentDate];
     return [[str componentsSeparatedByString:@":"] componentsJoinedByString:@""];
 }
++ (NSString *)getTimeStrFromTimestamp:(int64_t)timestamp{
+    
+    NSDateFormatter *formatter = [[NSDateFormatter alloc] init];
+    [formatter setDateFormat:@"MM-dd hh:mm"];
+    NSString *str = [formatter stringFromDate:[NSDate dateWithTimeIntervalSince1970:timestamp/1000]];
+    return str;
+    
+}
+
 + (long long)getNormalTime {
     long long timeInterval = [[NSDate date] timeIntervalSince1970] * 1000;
     return  timeInterval;

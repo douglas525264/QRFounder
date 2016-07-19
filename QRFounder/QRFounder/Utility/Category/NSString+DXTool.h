@@ -15,4 +15,5 @@
 + (NSString *)getCurrentTime;
 + (long long)getNormalTime;
 + (NSString *)getNormalTimeStr;
++ (NSString *)getTimeStrFromTimestamp:(int64_t)timestamp;
 @end

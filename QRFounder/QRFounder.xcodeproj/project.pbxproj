@@ -55,6 +55,7 @@
 		A540A0D31D239F4B0012EEB0 /* MsgView.m in Sources */ = {isa = PBXBuildFile; fileRef = A540A0D21D239F4B0012EEB0 /* MsgView.m */; };
 		A540A0D51D239F740012EEB0 /* MsgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A540A0D41D239F740012EEB0 /* MsgView.xib */; };
 		A540A0D71D23A0C30012EEB0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A540A0D61D23A0C30012EEB0 /* MessageUI.framework */; };
+		A554246F1D3E0A7900081141 /* DXBottomActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A554246E1D3E0A7900081141 /* DXBottomActionView.m */; };
 		A5682CCD1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5682CCB1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle */; };
 		A5682CCE1D35DFB100E0AD8C /* libDomobAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CCC1D35DFB100E0AD8C /* libDomobAdSDK.a */; };
 		A5682CD01D35DFF700E0AD8C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CCF1D35DFF700E0AD8C /* CoreMedia.framework */; };
@@ -236,6 +237,8 @@
 		A540A0D61D23A0C30012EEB0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
 		A540A0D81D23D4020012EEB0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
 		A540A0D91D23D4020012EEB0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
+		A554246D1D3E0A7900081141 /* DXBottomActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXBottomActionView.h; sourceTree = "<group>"; };
+		A554246E1D3E0A7900081141 /* DXBottomActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXBottomActionView.m; sourceTree = "<group>"; };
 		A5682CC41D35DFB100E0AD8C /* DMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMAdView.h; sourceTree = "<group>"; };
 		A5682CC51D35DFB100E0AD8C /* DMFeedsAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFeedsAdView.h; sourceTree = "<group>"; };
 		A5682CC61D35DFB100E0AD8C /* DMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMInterstitialAdController.h; sourceTree = "<group>"; };
@@ -929,6 +932,8 @@
 				A57609A41CB287DB006F3F1B /* Manager */,
 				D78418EC1C7488BA00850129 /* SelectView */,
 				D784189C1C74564000850129 /* DB */,
+				A554246D1D3E0A7900081141 /* DXBottomActionView.h */,
+				A554246E1D3E0A7900081141 /* DXBottomActionView.m */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -1356,6 +1361,7 @@
 				D7FC15691CA93DDF009EAB4C /* DXSubMenuItem.m in Sources */,
 				D78418BB1C746D2D00850129 /* QRHelper.m in Sources */,
 				A5D76F761D3793C900AA8006 /* NSString+DXTool.m in Sources */,
+				A554246F1D3E0A7900081141 /* DXBottomActionView.m in Sources */,
 				A540A0D31D239F4B0012EEB0 /* MsgView.m in Sources */,
 				D784185D1C74551200850129 /* QRFounderAppDelegate.m in Sources */,
 				D7FC156F1CA93F51009EAB4C /* DXScrollMenu.m in Sources */,

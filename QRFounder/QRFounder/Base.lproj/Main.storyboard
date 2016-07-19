@@ -286,7 +286,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6zG-gW-ybL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1709" y="343"/>
+            <point key="canvasLocation" x="1438.5" y="157"/>
         </scene>
         <!--About Table View Controller-->
         <scene sceneID="zz2-MN-FWk">
@@ -365,11 +365,11 @@
                                                     <exclude reference="G7O-1w-PQm"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="c5d-Kk-e7l"/>
-                                                    <exclude reference="oj5-3P-jWR"/>
                                                     <exclude reference="7CD-lW-d1C"/>
                                                     <exclude reference="abz-sf-BNB"/>
                                                     <exclude reference="hLz-a8-g7F"/>
+                                                    <exclude reference="c5d-Kk-e7l"/>
+                                                    <exclude reference="oj5-3P-jWR"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact">
@@ -377,11 +377,11 @@
                                                     <include reference="G7O-1w-PQm"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <include reference="c5d-Kk-e7l"/>
-                                                    <include reference="oj5-3P-jWR"/>
                                                     <include reference="7CD-lW-d1C"/>
                                                     <include reference="abz-sf-BNB"/>
                                                     <include reference="hLz-a8-g7F"/>
+                                                    <include reference="c5d-Kk-e7l"/>
+                                                    <include reference="oj5-3P-jWR"/>
                                                 </mask>
                                             </variation>
                                         </tableViewCellContentView>
@@ -660,7 +660,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RC1-Xv-ls0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1731" y="1193"/>
+            <point key="canvasLocation" x="1461" y="933"/>
         </scene>
         <!--Edit View Controller-->
         <scene sceneID="yP2-Lo-zg6">
@@ -838,7 +838,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0HQ-Xy-acy" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2347.5" y="452"/>
+            <point key="canvasLocation" x="2311.5" y="100"/>
         </scene>
         <!--History View Controller-->
         <scene sceneID="5Pw-PW-ooV">
@@ -879,7 +879,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="koI-zI-3D9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2214" y="1047"/>
+            <point key="canvasLocation" x="2328" y="921"/>
         </scene>
         <!--扫描-->
         <scene sceneID="MXy-pa-wOK">
