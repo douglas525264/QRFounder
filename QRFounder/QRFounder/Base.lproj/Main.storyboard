@@ -99,6 +99,15 @@
                                     </mask>
                                 </variation>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" alpha="0.80000000000000004" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="长按图片可以保存" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3n1-ep-llX">
+                                <rect key="frame" x="0.0" y="370" width="600" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="S1p-Pw-VOt"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="REc-Qs-7SF">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <constraints>
@@ -211,6 +220,7 @@
                             <constraint firstItem="P2w-S4-Wfj" firstAttribute="top" secondItem="J6O-aZ-ucd" secondAttribute="bottom" constant="20" id="8U5-19-UXl">
                                 <variation key="widthClass=compact" constant="23"/>
                             </constraint>
+                            <constraint firstItem="3n1-ep-llX" firstAttribute="leading" secondItem="cWy-tf-gh2" secondAttribute="leadingMargin" constant="-20" id="CMs-QM-DiQ"/>
                             <constraint firstItem="swz-4F-U3C" firstAttribute="centerX" secondItem="cWy-tf-gh2" secondAttribute="centerX" id="CP5-rz-unW">
                                 <variation key="widthClass=compact" constant="-41"/>
                             </constraint>
@@ -228,9 +238,12 @@
                             <constraint firstItem="Ncc-i1-1v8" firstAttribute="leading" secondItem="cWy-tf-gh2" secondAttribute="leadingMargin" constant="-10" id="GoB-II-oqD"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Ncc-i1-1v8" secondAttribute="trailing" constant="-10" id="MVA-vb-FCx"/>
                             <constraint firstItem="Ncc-i1-1v8" firstAttribute="centerX" secondItem="cWy-tf-gh2" secondAttribute="centerX" id="PAn-WX-e1Z"/>
+                            <constraint firstItem="3n1-ep-llX" firstAttribute="top" secondItem="Ncc-i1-1v8" secondAttribute="bottom" constant="15" id="RYR-k6-hQp"/>
                             <constraint firstItem="J6O-aZ-ucd" firstAttribute="centerX" secondItem="cWy-tf-gh2" secondAttribute="centerX" id="SWW-ka-sUu">
                                 <variation key="widthClass=compact" constant="47"/>
                             </constraint>
+                            <constraint firstItem="3n1-ep-llX" firstAttribute="centerX" secondItem="cWy-tf-gh2" secondAttribute="centerX" id="SsB-gP-jWQ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="3n1-ep-llX" secondAttribute="trailing" constant="-20" id="w7u-ov-8gD"/>
                             <constraint firstItem="Ncc-i1-1v8" firstAttribute="top" secondItem="g0q-Un-6c4" secondAttribute="bottom" constant="95" id="xR9-Zb-JRr"/>
                         </constraints>
                         <variation key="default">
@@ -286,7 +299,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6zG-gW-ybL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438.5" y="157"/>
+            <point key="canvasLocation" x="1438" y="157"/>
         </scene>
         <!--About Table View Controller-->
         <scene sceneID="zz2-MN-FWk">
@@ -295,7 +308,7 @@
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="none" rowHeight="49" sectionHeaderHeight="18" sectionFooterHeight="18" id="XEp-un-EyU">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
+                        <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <color key="separatorColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                         <sections>
                             <tableViewSection id="U4N-oE-clT">
@@ -423,7 +436,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="QF6-G8-ysE"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -509,7 +522,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="Ssm-Ju-h6m"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">
@@ -597,7 +610,7 @@
                                                         <constraint firstAttribute="height" constant="1" id="6OJ-mH-S1o"/>
                                                     </constraints>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                    <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                                     <nil key="highlightedColor"/>
                                                     <variation key="default">
                                                         <mask key="constraints">

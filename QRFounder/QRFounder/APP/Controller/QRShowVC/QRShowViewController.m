@@ -11,6 +11,7 @@
 #import "QREditViewController.h"
 #import "DXHelper.h"
 #import "ShareManager.h"
+#import "UIActionSheet+RACExtends.h"
 @interface QRShowViewController ()
 
 @end
@@ -40,12 +41,30 @@
     switch (ges.state) {
         case UIGestureRecognizerStateBegan:{
 
-            [[DXHelper shareInstance] saveImageWithModel:self.qrModel withFinishedBlock:^(BOOL isOK) {
-                if (isOK) {
-                    [[DXHelper shareInstance] makeAlterWithTitle:@"图片保存成功" andIsShake:YES];
- 
+            [UIActionSheet actionSheetWithTitle:@"操作" cancelButtonTitle:@"取消" destructiveButtonTitle:nil callBackBlock:^(NSNumber *indexNumber) {
+                switch ([indexNumber integerValue]) {
+                    case 0:{
+                        [self shareClick:nil];
+                    }break;
+                    case 1:{
+                        [[DXHelper shareInstance] saveImageWithModel:self.qrModel withFinishedBlock:^(BOOL isOK) {
+                            if (isOK) {
+                                [[DXHelper shareInstance] makeAlterWithTitle:@"图片保存成功" andIsShake:YES];
+                                
+                            }
+                        }];
+                        
+                    }break;
+                    case 2:{
+                        
+                    }break;
+
+
+                        
+                    default:
+                        break;
                 }
-            }];
+            } otherButtonTitles:@"分享二维码",@"保存二维码", nil];
             }break;
             
         default:

@@ -14,6 +14,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>ReactiveCocoa.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>UMengFeedback.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -32,7 +37,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>036E8B7F912D87A729AEC9997DF13300</key>
+		<key>0D928596E47DF9926D5FF7305A0BE38E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>493916BEC12C93E24DA01C7110B8053C</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -42,17 +52,17 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>9AAFB91F7AFE1C9B05360EA364A1332B</key>
+		<key>645652AFFA267F74DE04EDD7EC96DAA5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>86A100CE727E95CD8AA9B97CED922FA2</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>A46A84BFCC6FEE4C66AEF1DECC1DC502</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>CA7BBEF629E30BE9E841F8370A47EF8A</key>
 		<dict>
 			<key>primary</key>
 			<true/>
