@@ -17,6 +17,8 @@
 - (void)drawRect:(CGRect)rect {
     // Drawing code
     self.otherOSTextView.placeHolder = @"请输入其他APP应用平台链接";
+    self.iOSInputTextFiled.placeholder = @"请输入iOS AppID";
+    self.iOSInputTextFiled.textColor = [UIColor whiteColor];
     [self.sControl addTarget:self action:@selector(selectChange:) forControlEvents:UIControlEventValueChanged];
     self.sControl.selectedSegmentIndex = 0;
     [self selectChange:self.sControl];
