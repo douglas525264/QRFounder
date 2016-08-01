@@ -47,6 +47,7 @@
     
     DXmenuItem *mainMenu = menuItems[0];
     if (mainMenu.color) {
+        self.menuScrollView.frame = CGRectMake(0, 10, self.frame.size.width, self.frame.size.height - 10);
       CGFloat iconW = self.frame.size.width/MenuItemCount;
         NSInteger j = 0;
         for (DXSubMenuItem *subMenu in mainMenu.items) {
@@ -71,7 +72,14 @@
 
         
     } else {
-    
+        UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0,self.iconScrollView.frame.origin.y + self.iconScrollView.frame.size.height - 1, self.iconScrollView.frame.size.width, 1)];
+        lable.backgroundColor = [UIColor whiteColor];
+        
+        
+        [self addSubview:self.iconScrollView];
+        
+        [self addSubview:lable];
+
     NSInteger i = 0;
     self.menuScrollView.contentSize = CGSizeMake(self.menuScrollView.frame.size.width * _menuItems.count, self.menuScrollView.frame.size.height);
 
@@ -230,14 +238,7 @@
        // _iconScrollView.pagingEnabled = YES;
         _iconScrollView.showsHorizontalScrollIndicator = NO;
         _iconScrollView.contentSize = CGSizeMake(_iconScrollView.frame.size.width, _iconScrollView.frame.size.height);
-        UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(0,_iconScrollView.frame.origin.y + _iconScrollView.frame.size.height - 1, _iconScrollView.frame.size.width, 1)];
-        lable.backgroundColor = [UIColor whiteColor];
-        
-        
-        [self addSubview:_iconScrollView];
-        
-        [self addSubview:lable];
-    }
+            }
     return _iconScrollView;
 }
 

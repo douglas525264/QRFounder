@@ -200,7 +200,13 @@
 - (DXScrollMenu *)scrollMenu {
     @synchronized(self) {
         if (!_scrollMenu) {
-            _scrollMenu = [[DXScrollMenu alloc] initWithFrame:CGRectMake(0, self.toolView.frame.origin.y - 120 , self.view.frame.size.width, 120)];
+            if (_editType == QREditTypeColor) {
+             _scrollMenu = [[DXScrollMenu alloc] initWithFrame:CGRectMake(0, self.toolView.frame.origin.y - 60 , self.view.frame.size.width, 60)];
+                _scrollMenu.backgroundColor = [UIColor greenColor];
+            } else {
+                _scrollMenu = [[DXScrollMenu alloc] initWithFrame:CGRectMake(0, self.toolView.frame.origin.y - 120 , self.view.frame.size.width, 120)];
+            }
+            
             //_scrollMenu.backgroundColor = [UIColor greenColor];
             [self.view addSubview:_scrollMenu];
         }
@@ -209,8 +215,11 @@
     }
 }
 - (void)viewDidLayoutSubviews {
-
-    self.scrollMenu.frame = CGRectMake(0, self.toolView.frame.origin.y - 120 , self.view.frame.size.width, 120);
+    if (_editType == QREditTypeColor) {
+    self.scrollMenu.frame = CGRectMake(0, self.toolView.frame.origin.y - 60 , self.view.frame.size.width, 60);
+    } else {
+        self.scrollMenu.frame = CGRectMake(0, self.toolView.frame.origin.y - 120 , self.view.frame.size.width, 120);
+    }
     self.scrollMenu.backgroundColor = self.toolView.backgroundColor;
 }
 - (void)didReceiveMemoryWarning {
