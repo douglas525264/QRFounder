@@ -10,9 +10,11 @@
 #import "DXCommenHelper.h"
 #import "DXHelper.h"
 #import <UMFeedback.h>
+#import "RecommendViewController.h"
 @interface AboutTableViewController ()
 @property(nonatomic, strong) UIImageView *imageView;
 @property(nonatomic, strong) UILabel *versionLable;
+@property(nonatomic, strong) RecommendViewController *rVC;
 @end
 
 @implementation AboutTableViewController
@@ -56,7 +58,7 @@
          [UMFeedback showFeedback:self withAppkey:@"57833c7f67e58e11620000ff"];
         }break;
         case 2:{
-            
+            [[[UIApplication sharedApplication] keyWindow] addSubview:self.rVC.view];
         }break;
             
         default:
@@ -80,6 +82,15 @@
         _versionLable = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 24)];
     }
     return _versionLable;
+}
+- (RecommendViewController *)rVC {
+
+    if (!_rVC) {
+        UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+        _rVC = [mainStory instantiateViewControllerWithIdentifier:@"RecommendViewController"];
+        
+    }
+    return _rVC;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
