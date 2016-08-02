@@ -11,6 +11,7 @@
 #import "DXHelper.h"
 #import <UMFeedback.h>
 #import "RecommendViewController.h"
+#import "AboutTableViewCell.h"
 @interface AboutTableViewController ()
 @property(nonatomic, strong) UIImageView *imageView;
 @property(nonatomic, strong) UILabel *versionLable;
@@ -22,6 +23,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = DefaultColor;
+   // self.tableView.style = UITableViewStylePlain;
+    self.tableView.backgroundColor = DefaultColor;
+    self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.title = @"关于";
     [self createUI];
     
@@ -45,9 +49,52 @@
     [headerView addSubview:self.versionLable];
     self.tableView.tableHeaderView = headerView;
 }
+- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
+
+    return 1;
+}
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
+
+    return 4;
+}
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    return IS_IPAD ? 65 : 55;
+}
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
+
+    NSString *tag = @"AboutTableViewCell";
+    AboutTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tag];
+    if (!cell) {
+        cell = [[[NSBundle mainBundle] loadNibNamed:@"AboutTableViewCell" owner:self options:nil] lastObject];
+        
+    }
+    switch (indexPath.row) {
+        case 0:{
+        cell.actionLable.text = @"去评分";
+        }break;
+        case 1:{
+          cell.actionLable.text = @"用户反馈";
+        }break;
+        case 2:{
+          cell.actionLable.text = @"推荐给朋友";
+        }break;
+        case 3:{
+          cell.actionLable.text = @"更多功能敬请期待";
+        }break;
+        
+        default:
+        break;
+    }
+    cell.backgroundColor = [UIColor clearColor];
+    cell.contentView.backgroundColor = [UIColor clearColor];
+
+    cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
+    return cell;
+}
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     [tableView deselectRowAtIndexPath:indexPath animated:YES];
-    switch (indexPath.row) {
+   // UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
+        switch (indexPath.row) {
         case 0:{
             NSString *strUrl = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id576309271"];
             NSURL *url = [NSURL URLWithString:strUrl];

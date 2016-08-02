@@ -87,8 +87,8 @@
 }
 - (void)aboutBtnClick:(id)sender {
     //关于
-    UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
-    AboutTableViewController *aVC = [mainStory instantiateViewControllerWithIdentifier:@"AboutTableViewController"];
+ 
+    AboutTableViewController *aVC = [[AboutTableViewController alloc] init];
     [self.navigationController pushViewController:aVC animated:YES];
 }
 - (void)viewWillAppear:(BOOL)animated {

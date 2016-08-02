@@ -88,6 +88,8 @@
 		A56FFA2C1D50986300F61BD6 /* mouse05_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A56FFA0B1D50986300F61BD6 /* mouse05_icon.png */; };
 		A56FFA2D1D50986300F61BD6 /* mouse06.png in Resources */ = {isa = PBXBuildFile; fileRef = A56FFA0C1D50986300F61BD6 /* mouse06.png */; };
 		A56FFA2E1D50986300F61BD6 /* mouse06_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A56FFA0D1D50986300F61BD6 /* mouse06_icon.png */; };
+		A56FFA311D50B65B00F61BD6 /* AboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A56FFA301D50B65B00F61BD6 /* AboutTableViewCell.m */; };
+		A56FFA331D50B67A00F61BD6 /* AboutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A56FFA321D50B67A00F61BD6 /* AboutTableViewCell.xib */; };
 		A57609A71CB287F8006F3F1B /* QRSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A57609A61CB287F8006F3F1B /* QRSourceManager.m */; };
 		A57609D91CB28E18006F3F1B /* album.png in Resources */ = {isa = PBXBuildFile; fileRef = A57609CB1CB28E18006F3F1B /* album.png */; };
 		A57609DA1CB28E18006F3F1B /* jingdong.png in Resources */ = {isa = PBXBuildFile; fileRef = A57609CC1CB28E18006F3F1B /* jingdong.png */; };
@@ -294,6 +296,9 @@
 		A56FFA0B1D50986300F61BD6 /* mouse05_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse05_icon.png; sourceTree = "<group>"; };
 		A56FFA0C1D50986300F61BD6 /* mouse06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse06.png; sourceTree = "<group>"; };
 		A56FFA0D1D50986300F61BD6 /* mouse06_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse06_icon.png; sourceTree = "<group>"; };
+		A56FFA2F1D50B65B00F61BD6 /* AboutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCell.h; sourceTree = "<group>"; };
+		A56FFA301D50B65B00F61BD6 /* AboutTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AboutTableViewCell.m; sourceTree = "<group>"; };
+		A56FFA321D50B67A00F61BD6 /* AboutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutTableViewCell.xib; sourceTree = "<group>"; };
 		A57609A51CB287F8006F3F1B /* QRSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRSourceManager.h; sourceTree = "<group>"; };
 		A57609A61CB287F8006F3F1B /* QRSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRSourceManager.m; sourceTree = "<group>"; };
 		A57609CB1CB28E18006F3F1B /* album.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = album.png; sourceTree = "<group>"; };
@@ -943,6 +948,9 @@
 				A540A0D11D239F4B0012EEB0 /* MsgView.h */,
 				A540A0D21D239F4B0012EEB0 /* MsgView.m */,
 				A540A0D41D239F740012EEB0 /* MsgView.xib */,
+				A56FFA2F1D50B65B00F61BD6 /* AboutTableViewCell.h */,
+				A56FFA301D50B65B00F61BD6 /* AboutTableViewCell.m */,
+				A56FFA321D50B67A00F61BD6 /* AboutTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1257,6 +1265,7 @@
 				A56FFA1C1D50986300F61BD6 /* hello001_icon.png in Resources */,
 				D78418681C74551200850129 /* LaunchScreen.storyboard in Resources */,
 				D78418DF1C7487BE00850129 /* MyCardInfoView.xib in Resources */,
+				A56FFA331D50B67A00F61BD6 /* AboutTableViewCell.xib in Resources */,
 				D78418651C74551200850129 /* Assets.xcassets in Resources */,
 				A56FFA0F1D50986300F61BD6 /* birthday001_icon.png in Resources */,
 				D78418E51C7487F000850129 /* HttpInfoView.xib in Resources */,
@@ -1384,6 +1393,7 @@
 				D78418AA1C745D0900850129 /* DXCommenViewController.m in Sources */,
 				A5D76F851D3795D400AA8006 /* NSManagedObject+NSManagedObject_BaseType.m in Sources */,
 				D7FC156C1CA93F05009EAB4C /* DXMenuBtn.m in Sources */,
+				A56FFA311D50B65B00F61BD6 /* AboutTableViewCell.m in Sources */,
 				D74AAA151CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				A5B76D711D0C312A00A68667 /* DXTextInfovViewController.m in Sources */,
 				A5D76F831D3795D400AA8006 /* DmDatabaseOperation.m in Sources */,
