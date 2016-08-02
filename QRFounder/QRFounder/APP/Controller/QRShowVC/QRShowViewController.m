@@ -41,7 +41,7 @@
     switch (ges.state) {
         case UIGestureRecognizerStateBegan:{
 
-            [UIActionSheet actionSheetWithTitle:@"操作" cancelButtonTitle:@"取消" destructiveButtonTitle:nil callBackBlock:^(NSNumber *indexNumber) {
+         UIActionSheet *ac =   [UIActionSheet actionSheetWithTitle:@"操作" cancelButtonTitle:@"取消" destructiveButtonTitle:nil callBackBlock:^(NSNumber *indexNumber) {
                 switch ([indexNumber integerValue]) {
                     case 0:{
                         [self shareClick:nil];
@@ -65,6 +65,10 @@
                         break;
                 }
             } otherButtonTitles:@"分享二维码",@"保存二维码", nil];
+            if (IS_IPAD) {
+                [ac showFromRect:self.qrView.bounds inView:self.qrView animated:YES];
+            }
+
             }break;
             
         default:
