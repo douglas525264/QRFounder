@@ -8,9 +8,9 @@
 
 #import "DXQRView.h"
 #import "qrencode.h"
-#define BGAPLAH 0.7
-#define SMALLBGPLAH 0.2
-#define SMALLPLAH 0.5
+#define BGAPLAH 0.7 //四周黑框颜色 以及白边透明度
+#define SMALLBGPLAH 0.2 //小背景透明度
+#define SMALLPLAH 0.5 //小块透明度
 enum {
     qr_margin = 1
 };

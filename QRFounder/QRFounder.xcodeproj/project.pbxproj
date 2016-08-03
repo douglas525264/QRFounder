@@ -1207,7 +1207,7 @@
 				TargetAttributes = {
 					D78418541C74551200850129 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = Q8D78N2C67;
+						DevelopmentTeam = E8KT45CMGH;
 					};
 					D784186D1C74551200850129 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1583,8 +1583,8 @@
 			baseConfigurationReference = 5E4F2B2A688A4033626C109B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: DEWMOBILE USA INC.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: DEWMOBILE USA INC.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chia Bingchen (G6RW5TPK6D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chia Bingchen (G6RW5TPK6D)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1603,9 +1603,9 @@
 					"$(PROJECT_DIR)/QRFounder/Utility/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/DomobAdSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.testapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.zapya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7a6fa660-0e1f-4aaa-adee-0194be7d778e";
+				PROVISIONING_PROFILE = "6dce1cb5-1ae6-409e-9e52-bcad6d984e44";
 			};
 			name = Debug;
 		};
@@ -1614,8 +1614,8 @@
 			baseConfigurationReference = D2F73D3798209558300E55FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: DEWMOBILE USA INC.";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: DEWMOBILE USA INC.";
+				CODE_SIGN_IDENTITY = "iPhone Developer: Chia Bingchen (G6RW5TPK6D)";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chia Bingchen (G6RW5TPK6D)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1634,9 +1634,9 @@
 					"$(PROJECT_DIR)/QRFounder/Utility/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/DomobAdSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.testapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.zapya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7a6fa660-0e1f-4aaa-adee-0194be7d778e";
+				PROVISIONING_PROFILE = "6dce1cb5-1ae6-409e-9e52-bcad6d984e44";
 			};
 			name = Release;
 		};

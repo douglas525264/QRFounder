@@ -66,6 +66,9 @@
     AboutTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:tag];
     if (!cell) {
         cell = [[[NSBundle mainBundle] loadNibNamed:@"AboutTableViewCell" owner:self options:nil] lastObject];
+        UIView *bgView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, cell.contentView.frame.size.width, cell.contentView.frame.size.height)];
+        bgView.backgroundColor = RGB(255, 255, 255, 0.6);
+        cell.selectedBackgroundView = bgView;
         
     }
     switch (indexPath.row) {
@@ -87,7 +90,7 @@
     }
     cell.backgroundColor = [UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor clearColor];
-
+    
     cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
     return cell;
 }
