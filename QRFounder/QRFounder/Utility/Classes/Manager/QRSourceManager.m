@@ -131,7 +131,7 @@ static QRSourceManager *qManager;
     DXSubMenuItem *sub1 = [[DXSubMenuItem alloc] init];
     sub1.normalImage = [UIImage imageNamed:@"albumIcon"];
     DXSubMenuItem *sub2 = [[DXSubMenuItem alloc] init];
-    sub2.normalImage = [UIImage imageNamed:@"albumIcon"];
+    sub2.normalImage = [UIImage imageNamed:@"camera"];
     menuItem.items = [NSMutableArray arrayWithArray:@[sub1,sub2]];
     return menuItem;
 }

@@ -36,6 +36,7 @@ static ShareManager *sManager;
     return sManager;
 }
 - (void)startSDK {
+    return;
     [ShareSDK registerApp:ShareKey
      
           activePlatforms:@[
