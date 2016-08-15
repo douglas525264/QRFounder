@@ -24,6 +24,22 @@ static MainViewController *mainVc;
     mainVc = self;
     
     self.tabBar.hidden = YES;
+    QRFounderAppDelegate *qde = (QRFounderAppDelegate *)[UIApplication sharedApplication].delegate;
+    [qde addAD];
+   // _btn.titleLabel.textColor = []
+    
+    //self.tabBar.delegate = self;
+    // Do any additional setup after loading the view.
+}
+- (void)viewWillAppear:(BOOL)animated {
+
+    [super viewWillAppear:animated];
+    
+   
+    
+}
+- (void)viewDidAppear:(BOOL)animated {
+    [super viewDidAppear:animated];
     if (!_btn) {
         _btn = [UIButton buttonWithType:UIButtonTypeCustom];
         _btn.frame = CGRectMake(self.view.frame.size.width - 75, self.view.frame.size.height - 75, 50, 50);
@@ -42,21 +58,7 @@ static MainViewController *mainVc;
         [self.view.superview addSubview:_btn];
         
     }
-    QRFounderAppDelegate *qde = (QRFounderAppDelegate *)[UIApplication sharedApplication].delegate;
-    [qde addAD];
-   // _btn.titleLabel.textColor = []
-    
-    //self.tabBar.delegate = self;
-    // Do any additional setup after loading the view.
-}
-- (void)viewWillAppear:(BOOL)animated {
 
-    [super viewWillAppear:animated];
-   
-    
-}
-- (void)viewDidAppear:(BOOL)animated {
-    [super viewDidAppear:animated];
 
 }
 - (void)btnClick {
