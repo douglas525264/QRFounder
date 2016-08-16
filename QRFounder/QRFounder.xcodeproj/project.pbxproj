@@ -147,7 +147,6 @@
 		D78418D01C74705E00850129 /* TextInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78418CF1C74705E00850129 /* TextInfoView.m */; };
 		D78418D31C74706F00850129 /* PositionInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78418D21C74706F00850129 /* PositionInfoView.m */; };
 		D78418D61C74708100850129 /* WIFIInfoView.m in Sources */ = {isa = PBXBuildFile; fileRef = D78418D51C74708100850129 /* WIFIInfoView.m */; };
-		D78418D81C74797C00850129 /* 001.png in Resources */ = {isa = PBXBuildFile; fileRef = D78418D71C74797C00850129 /* 001.png */; };
 		D78418DB1C74879800850129 /* CommenInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78418DA1C74879800850129 /* CommenInfoView.xib */; };
 		D78418DD1C7487AF00850129 /* APPInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78418DC1C7487AF00850129 /* APPInfoView.xib */; };
 		D78418DF1C7487BE00850129 /* MyCardInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78418DE1C7487BE00850129 /* MyCardInfoView.xib */; };
@@ -406,7 +405,6 @@
 		D78418D21C74706F00850129 /* PositionInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PositionInfoView.m; sourceTree = "<group>"; };
 		D78418D41C74708100850129 /* WIFIInfoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WIFIInfoView.h; sourceTree = "<group>"; };
 		D78418D51C74708100850129 /* WIFIInfoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WIFIInfoView.m; sourceTree = "<group>"; };
-		D78418D71C74797C00850129 /* 001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = 001.png; sourceTree = "<group>"; };
 		D78418DA1C74879800850129 /* CommenInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CommenInfoView.xib; sourceTree = "<group>"; };
 		D78418DC1C7487AF00850129 /* APPInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = APPInfoView.xib; sourceTree = "<group>"; };
 		D78418DE1C7487BE00850129 /* MyCardInfoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyCardInfoView.xib; sourceTree = "<group>"; };
@@ -824,7 +822,6 @@
 		D784184C1C74551200850129 = {
 			isa = PBXGroup;
 			children = (
-				D78418D71C74797C00850129 /* 001.png */,
 				D78418571C74551200850129 /* QRFounder */,
 				D78418711C74551200850129 /* QRFounderTests */,
 				D784187C1C74551200850129 /* QRFounderUITests */,
@@ -1303,7 +1300,6 @@
 				A56FFA201D50986300F61BD6 /* hello003_icon.png in Resources */,
 				A56FFA181D50986300F61BD6 /* birthday006.png in Resources */,
 				D78418EB1C74887300850129 /* WIFIInfoView.xib in Resources */,
-				D78418D81C74797C00850129 /* 001.png in Resources */,
 				A50459E21D338EA7006C7D31 /* WeiboSDK.bundle in Resources */,
 				A57609E31CB28E18006F3F1B /* weixingreen.png in Resources */,
 				A56FFA111D50986300F61BD6 /* birthday002_icon.png in Resources */,
