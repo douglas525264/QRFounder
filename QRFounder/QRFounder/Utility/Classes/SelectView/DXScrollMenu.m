@@ -101,9 +101,9 @@
         
         [iconBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
         [iconBtn setImage:item.menuIcon forState:UIControlStateNormal];
-        UILabel *lable11 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 4, 4)];
-        lable11.backgroundColor = RGB(0, 0, 0, 0.6);
-        [iconBtn setBackgroundImage: [[DXHelper shareInstance] imageFromView:lable11 ] forState:UIControlStateSelected];
+//        UILabel *lable11 = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 4, 4)];
+//        lable11.backgroundColor = RGB(255, 255, 255, 0.6);
+        [iconBtn setBackgroundImage:[UIImage imageNamed:@"selectIcon"] forState:UIControlStateSelected];
         
         [self.iconScrollView addSubview:iconBtn];
         [self.iconScrollView addSubview:lable];
