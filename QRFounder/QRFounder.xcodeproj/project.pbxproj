@@ -42,6 +42,8 @@
 		A54E2C391D74465800667C1E /* mouse.png in Resources */ = {isa = PBXBuildFile; fileRef = A54E2C381D74465800667C1E /* mouse.png */; };
 		A54E2C3B1D74465C00667C1E /* hello.png in Resources */ = {isa = PBXBuildFile; fileRef = A54E2C3A1D74465C00667C1E /* hello.png */; };
 		A54E2C3D1D74466400667C1E /* birthday.png in Resources */ = {isa = PBXBuildFile; fileRef = A54E2C3C1D74466400667C1E /* birthday.png */; };
+		A54E2C3F1D74488800667C1E /* SNS.png in Resources */ = {isa = PBXBuildFile; fileRef = A54E2C3E1D74488800667C1E /* SNS.png */; };
+		A54E2C411D7448A000667C1E /* shop.png in Resources */ = {isa = PBXBuildFile; fileRef = A54E2C401D7448A000667C1E /* shop.png */; };
 		A554246F1D3E0A7900081141 /* DXBottomActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A554246E1D3E0A7900081141 /* DXBottomActionView.m */; };
 		A55424721D3E3C1B00081141 /* UIActionSheet+RACExtends.m in Sources */ = {isa = PBXBuildFile; fileRef = A55424711D3E3C1B00081141 /* UIActionSheet+RACExtends.m */; };
 		A5682CCD1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5682CCB1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle */; };
@@ -243,6 +245,8 @@
 		A54E2C381D74465800667C1E /* mouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse.png; sourceTree = "<group>"; };
 		A54E2C3A1D74465C00667C1E /* hello.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hello.png; sourceTree = "<group>"; };
 		A54E2C3C1D74466400667C1E /* birthday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday.png; sourceTree = "<group>"; };
+		A54E2C3E1D74488800667C1E /* SNS.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SNS.png; sourceTree = "<group>"; };
+		A54E2C401D7448A000667C1E /* shop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = shop.png; sourceTree = "<group>"; };
 		A554246D1D3E0A7900081141 /* DXBottomActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXBottomActionView.h; sourceTree = "<group>"; };
 		A554246E1D3E0A7900081141 /* DXBottomActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXBottomActionView.m; sourceTree = "<group>"; };
 		A55424701D3E3C1B00081141 /* UIActionSheet+RACExtends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+RACExtends.h"; sourceTree = "<group>"; };
@@ -727,6 +731,7 @@
 			isa = PBXGroup;
 			children = (
 				A57609CB1CB28E18006F3F1B /* album.png */,
+				A54E2C401D7448A000667C1E /* shop.png */,
 				A57609CC1CB28E18006F3F1B /* jingdong.png */,
 				A57609CD1CB28E18006F3F1B /* taobao.png */,
 				A57609CE1CB28E18006F3F1B /* tianmao.png */,
@@ -738,6 +743,7 @@
 		A57609D11CB28E18006F3F1B /* SNS */ = {
 			isa = PBXGroup;
 			children = (
+				A54E2C3E1D74488800667C1E /* SNS.png */,
 				A57609D21CB28E18006F3F1B /* qqai.png */,
 				A57609D31CB28E18006F3F1B /* weibo.png */,
 				A57609D41CB28E18006F3F1B /* weixin.png */,
@@ -1279,6 +1285,7 @@
 				A56FFA1E1D50986300F61BD6 /* hello002_icon.png in Resources */,
 				A56FFA161D50986300F61BD6 /* birthday005.png in Resources */,
 				A5682CCD1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle in Resources */,
+				A54E2C411D7448A000667C1E /* shop.png in Resources */,
 				A56FFA141D50986300F61BD6 /* birthday004.png in Resources */,
 				A54E2C3D1D74466400667C1E /* birthday.png in Resources */,
 				A50258F91CC783F9007B00E3 /* QRlogoSource.plist in Resources */,
@@ -1287,6 +1294,7 @@
 				A56FFA2D1D50986300F61BD6 /* mouse06.png in Resources */,
 				A57609DB1CB28E18006F3F1B /* taobao.png in Resources */,
 				A50459DD1D338EA7006C7D31 /* ShareSDKUI.bundle in Resources */,
+				A54E2C3F1D74488800667C1E /* SNS.png in Resources */,
 				A57609E21CB28E18006F3F1B /* weixincircle.png in Resources */,
 				A56FFA171D50986300F61BD6 /* birthday005_icon.png in Resources */,
 				D78418E91C74885A00850129 /* PositionInfoView.xib in Resources */,
@@ -1613,7 +1621,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.zapya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8e6716d5-d1d6-4c8a-aa8b-fa918992898c";
+				PROVISIONING_PROFILE = "6dce1cb5-1ae6-409e-9e52-bcad6d984e44";
 			};
 			name = Debug;
 		};
@@ -1644,7 +1652,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.zapya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8e6716d5-d1d6-4c8a-aa8b-fa918992898c";
+				PROVISIONING_PROFILE = "6dce1cb5-1ae6-409e-9e52-bcad6d984e44";
 			};
 			name = Release;
 		};
