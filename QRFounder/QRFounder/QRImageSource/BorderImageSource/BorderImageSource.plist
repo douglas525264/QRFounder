@@ -6,7 +6,7 @@
 	<array>
 		<dict>
 			<key>iconName</key>
-			<string>album</string>
+			<string>birthday</string>
 			<key>menuList</key>
 			<array>
 				<dict>
@@ -156,11 +156,11 @@
 				</dict>
 			</array>
 			<key>iconName</key>
-			<string>album</string>
+			<string>hello</string>
 		</dict>
 		<dict>
 			<key>iconName</key>
-			<string>album</string>
+			<string>mouse</string>
 			<key>menuList</key>
 			<array>
 				<dict>

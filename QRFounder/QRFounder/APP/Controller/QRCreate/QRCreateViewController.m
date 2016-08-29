@@ -200,7 +200,7 @@
     if (!_createBtn) {
         _createBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _createBtn.frame = CGRectMake(self.view.frame.size.width/2 - createBtnWidth/2, self.view.frame.size.height - 49 - 50 - createBtnWidth *1.2/4, createBtnWidth, createBtnWidth*1.2/4);
-        [_createBtn setTitle:@"createQR" forState:UIControlStateNormal];
+        [_createBtn setTitle:@"创建" forState:UIControlStateNormal];
         [_createBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_createBtn addTarget:self action:@selector(createBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         _createBtn.layer.borderColor = [UIColor whiteColor].CGColor;
