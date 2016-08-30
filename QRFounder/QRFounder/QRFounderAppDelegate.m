@@ -12,6 +12,8 @@
 #import "ShareManager.h"
 #import "DMSplashAdController.h"
 #import "DMRTSplashAdController.h"
+#import "LaViewController.h"
+#import "DXHelper.h"
 @interface QRFounderAppDelegate ()<DMSplashAdControllerDelegate>
 {
     DMSplashAdController *_splashAd;
@@ -43,8 +45,14 @@
     return YES;
 }
 - (void)addAD {
+    UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    LaViewController *lVC = [mainStory instantiateViewControllerWithIdentifier:@"LaViewController"];
+    lVC.view.frame = self.window.bounds;
+    UIImage *image = [[DXHelper shareInstance] imageFromView:lVC.view];
+    UIColor *bgColor = [UIColor colorWithPatternImage:image];
+    
     _bgView = [[UIView alloc] initWithFrame:_window.bounds];
-    _bgView.backgroundColor = [UIColor greenColor];
+    _bgView.backgroundColor = bgColor;
     
     [_window.rootViewController.view addSubview:_bgView];
     // 设置适合的背景图片
@@ -74,7 +82,7 @@
     
     NSString* testPubID = @"56OJ2XeouNyyVYYzVk";
     NSString* testSplashPlacementID = @"16TLP2vvApalANUU2pMjZgbs";
-    UIColor* bgColor = [UIColor greenColor];
+  
     
     if (isCacheSplash) {
         _splashAd = [[DMSplashAdController alloc] initWithPublisherId:testPubID
@@ -105,7 +113,7 @@
         
     }
   
-
+    [self performSelector:@selector(dismissAd) withObject:nil afterDelay:2];
 
 }
 - (void)applicationWillResignActive:(UIApplication *)application {
@@ -136,6 +144,10 @@
 }
 // Sent when an ad request fail to loaded an ad
 - (void)dmSplashAdFailToLoadAd:(DMSplashAdController *)dmSplashAd withError:(NSError *)err {
+    [_bgView removeFromSuperview];
+}
+- (void)dismissAd{
+
     [_bgView removeFromSuperview];
 }
 @end
