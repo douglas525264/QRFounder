@@ -26,5 +26,6 @@
 - (void)scanQRCodeWithAlbumEvent;
 - (void)scanQRCodeWithCameraEvent;
 - (void)scanQREventWithType:(QRType)type;
-
+- (void)beginqLoadVC:(UIViewController *)vc;
+- (void)endLoadVC:(UIViewController *)vc;
 @end

@@ -25,7 +25,7 @@
 }
 - (void)createUI {
     self.view.backgroundColor = DefaultColor;
-    self.qrView.qrModel = _qrModel;
+    self.qrView.qrModel = self.qrModel;
     UILongPressGestureRecognizer *lGes = [[UILongPressGestureRecognizer alloc] initWithTarget:self action:@selector(longTab:)];
     [self.qrView addGestureRecognizer:lGes];
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithTitle:@"分享" style:UIBarButtonItemStylePlain target:self action:@selector(shareClick:)];
@@ -78,7 +78,7 @@
 }
 - (void)setQrModel:(QRModel *)qrModel {
     
-    _qrModel = qrModel;
+    self.qrModel = qrModel;
     self.qrView.qrModel = qrModel;
 }
 - (void)viewWillAppear:(BOOL)animated {
