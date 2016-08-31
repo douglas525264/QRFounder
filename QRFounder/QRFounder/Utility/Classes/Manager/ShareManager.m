@@ -102,7 +102,7 @@ static ShareManager *sManager;
 - (void)shareQrimage:(UIImage *)image {
 
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
-    [shareParams SSDKSetupShareParamsByText:@"分享内容"
+    [shareParams SSDKSetupShareParamsByText:@""
                                      images:@[image]
                                         url:[NSURL URLWithString:@"http://mob.com"]
                                       title:@"分享标题"

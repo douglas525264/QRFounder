@@ -78,7 +78,7 @@
 }
 - (void)setQrModel:(QRModel *)qrModel {
     
-    self.qrModel = qrModel;
+    super.qrModel = qrModel;
     self.qrView.qrModel = qrModel;
 }
 - (void)viewWillAppear:(BOOL)animated {
