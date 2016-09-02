@@ -40,6 +40,19 @@
 		A540A0D51D239F740012EEB0 /* MsgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A540A0D41D239F740012EEB0 /* MsgView.xib */; };
 		A540A0D71D23A0C30012EEB0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A540A0D61D23A0C30012EEB0 /* MessageUI.framework */; };
 		A54305701D753C18001E5906 /* LaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A543056F1D753C18001E5906 /* LaViewController.m */; };
+		A54DE70F1D79682C00481822 /* batterfly.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE7021D79682C00481822 /* batterfly.png */; };
+		A54DE7101D79682C00481822 /* batterfly01.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE7031D79682C00481822 /* batterfly01.png */; };
+		A54DE7111D79682C00481822 /* batterfly01_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE7041D79682C00481822 /* batterfly01_icon.png */; };
+		A54DE7121D79682C00481822 /* batterfly02.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE7051D79682C00481822 /* batterfly02.png */; };
+		A54DE7131D79682C00481822 /* batterfly02_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE7061D79682C00481822 /* batterfly02_icon.png */; };
+		A54DE7141D79682C00481822 /* batterfly03.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE7071D79682C00481822 /* batterfly03.png */; };
+		A54DE7151D79682C00481822 /* batterfly03_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE7081D79682C00481822 /* batterfly03_icon.png */; };
+		A54DE7161D79682C00481822 /* batterfly04.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE7091D79682C00481822 /* batterfly04.png */; };
+		A54DE7171D79682C00481822 /* batterfly04_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE70A1D79682C00481822 /* batterfly04_icon.png */; };
+		A54DE7181D79682C00481822 /* batterfly05.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE70B1D79682C00481822 /* batterfly05.png */; };
+		A54DE7191D79682C00481822 /* batterfly05_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE70C1D79682C00481822 /* batterfly05_icon.png */; };
+		A54DE71A1D79682C00481822 /* batterfly06.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE70D1D79682C00481822 /* batterfly06.png */; };
+		A54DE71B1D79682C00481822 /* batterfly06_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE70E1D79682C00481822 /* batterfly06_icon.png */; };
 		A54E2C391D74465800667C1E /* mouse.png in Resources */ = {isa = PBXBuildFile; fileRef = A54E2C381D74465800667C1E /* mouse.png */; };
 		A54E2C3B1D74465C00667C1E /* hello.png in Resources */ = {isa = PBXBuildFile; fileRef = A54E2C3A1D74465C00667C1E /* hello.png */; };
 		A54E2C3D1D74466400667C1E /* birthday.png in Resources */ = {isa = PBXBuildFile; fileRef = A54E2C3C1D74466400667C1E /* birthday.png */; };
@@ -245,6 +258,19 @@
 		A540A0D91D23D4020012EEB0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		A543056E1D753C18001E5906 /* LaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaViewController.h; sourceTree = "<group>"; };
 		A543056F1D753C18001E5906 /* LaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaViewController.m; sourceTree = "<group>"; };
+		A54DE7021D79682C00481822 /* batterfly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly.png; sourceTree = "<group>"; };
+		A54DE7031D79682C00481822 /* batterfly01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly01.png; sourceTree = "<group>"; };
+		A54DE7041D79682C00481822 /* batterfly01_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly01_icon.png; sourceTree = "<group>"; };
+		A54DE7051D79682C00481822 /* batterfly02.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly02.png; sourceTree = "<group>"; };
+		A54DE7061D79682C00481822 /* batterfly02_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly02_icon.png; sourceTree = "<group>"; };
+		A54DE7071D79682C00481822 /* batterfly03.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly03.png; sourceTree = "<group>"; };
+		A54DE7081D79682C00481822 /* batterfly03_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly03_icon.png; sourceTree = "<group>"; };
+		A54DE7091D79682C00481822 /* batterfly04.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly04.png; sourceTree = "<group>"; };
+		A54DE70A1D79682C00481822 /* batterfly04_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly04_icon.png; sourceTree = "<group>"; };
+		A54DE70B1D79682C00481822 /* batterfly05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly05.png; sourceTree = "<group>"; };
+		A54DE70C1D79682C00481822 /* batterfly05_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly05_icon.png; sourceTree = "<group>"; };
+		A54DE70D1D79682C00481822 /* batterfly06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly06.png; sourceTree = "<group>"; };
+		A54DE70E1D79682C00481822 /* batterfly06_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly06_icon.png; sourceTree = "<group>"; };
 		A54E2C381D74465800667C1E /* mouse.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse.png; sourceTree = "<group>"; };
 		A54E2C3A1D74465C00667C1E /* hello.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = hello.png; sourceTree = "<group>"; };
 		A54E2C3C1D74466400667C1E /* birthday.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = birthday.png; sourceTree = "<group>"; };
@@ -606,6 +632,26 @@
 			name = About;
 			sourceTree = "<group>";
 		};
+		A54DE7011D79682C00481822 /* BatterFly */ = {
+			isa = PBXGroup;
+			children = (
+				A54DE7021D79682C00481822 /* batterfly.png */,
+				A54DE7031D79682C00481822 /* batterfly01.png */,
+				A54DE7041D79682C00481822 /* batterfly01_icon.png */,
+				A54DE7051D79682C00481822 /* batterfly02.png */,
+				A54DE7061D79682C00481822 /* batterfly02_icon.png */,
+				A54DE7071D79682C00481822 /* batterfly03.png */,
+				A54DE7081D79682C00481822 /* batterfly03_icon.png */,
+				A54DE7091D79682C00481822 /* batterfly04.png */,
+				A54DE70A1D79682C00481822 /* batterfly04_icon.png */,
+				A54DE70B1D79682C00481822 /* batterfly05.png */,
+				A54DE70C1D79682C00481822 /* batterfly05_icon.png */,
+				A54DE70D1D79682C00481822 /* batterfly06.png */,
+				A54DE70E1D79682C00481822 /* batterfly06_icon.png */,
+			);
+			path = BatterFly;
+			sourceTree = "<group>";
+		};
 		A5682CC31D35DFB100E0AD8C /* DomobAdSDK */ = {
 			isa = PBXGroup;
 			children = (
@@ -633,6 +679,7 @@
 		A56FF9E91D50986300F61BD6 /* BorderImageSource */ = {
 			isa = PBXGroup;
 			children = (
+				A54DE7011D79682C00481822 /* BatterFly */,
 				A56FF9EA1D50986300F61BD6 /* Birthday */,
 				A56FF9F71D50986300F61BD6 /* BorderImageSource.plist */,
 				A56FF9F81D50986300F61BD6 /* helloKility */,
@@ -1277,13 +1324,18 @@
 				A56FFA2B1D50986300F61BD6 /* mouse05.png in Resources */,
 				A50459E61D338EA7006C7D31 /* ShareSDK.bundle in Resources */,
 				A56FFA281D50986300F61BD6 /* mouse03_icon.png in Resources */,
+				A54DE7181D79682C00481822 /* batterfly05.png in Resources */,
 				A57609E01CB28E18006F3F1B /* weibo.png in Resources */,
 				A57609E11CB28E18006F3F1B /* weixin.png in Resources */,
 				A56FFA1C1D50986300F61BD6 /* hello001_icon.png in Resources */,
+				A54DE7161D79682C00481822 /* batterfly04.png in Resources */,
 				D78418681C74551200850129 /* LaunchScreen.storyboard in Resources */,
 				D78418DF1C7487BE00850129 /* MyCardInfoView.xib in Resources */,
+				A54DE7121D79682C00481822 /* batterfly02.png in Resources */,
+				A54DE7141D79682C00481822 /* batterfly03.png in Resources */,
 				A56FFA331D50B67A00F61BD6 /* AboutTableViewCell.xib in Resources */,
 				D78418651C74551200850129 /* Assets.xcassets in Resources */,
+				A54DE7191D79682C00481822 /* batterfly05_icon.png in Resources */,
 				A56FFA0F1D50986300F61BD6 /* birthday001_icon.png in Resources */,
 				D78418E51C7487F000850129 /* HttpInfoView.xib in Resources */,
 				A50459E01D338EA7006C7D31 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -1310,28 +1362,36 @@
 				D78418DB1C74879800850129 /* CommenInfoView.xib in Resources */,
 				D78418631C74551200850129 /* Main.storyboard in Resources */,
 				A54E2C391D74465800667C1E /* mouse.png in Resources */,
+				A54DE7131D79682C00481822 /* batterfly02_icon.png in Resources */,
 				A57609D91CB28E18006F3F1B /* album.png in Resources */,
 				A540A0D51D239F740012EEB0 /* MsgView.xib in Resources */,
 				A57609DA1CB28E18006F3F1B /* jingdong.png in Resources */,
+				A54DE7151D79682C00481822 /* batterfly03_icon.png in Resources */,
 				A54E2C3B1D74465C00667C1E /* hello.png in Resources */,
 				A50459E41D338EA7006C7D31 /* README.txt in Resources */,
+				A54DE71A1D79682C00481822 /* batterfly06.png in Resources */,
 				A56FFA261D50986300F61BD6 /* mouse02_icon.png in Resources */,
 				A56FFA1B1D50986300F61BD6 /* hello001.png in Resources */,
 				D78418E11C7487C900850129 /* MsgInfoView.xib in Resources */,
+				A54DE71B1D79682C00481822 /* batterfly06_icon.png in Resources */,
+				A54DE7111D79682C00481822 /* batterfly01_icon.png in Resources */,
 				A56FFA1D1D50986300F61BD6 /* hello002.png in Resources */,
 				A56FFA2C1D50986300F61BD6 /* mouse05_icon.png in Resources */,
 				A56FFA191D50986300F61BD6 /* birthday006_icon.png in Resources */,
 				D78418E31C7487D600850129 /* MailInfoView.xib in Resources */,
 				A56FFA201D50986300F61BD6 /* hello003_icon.png in Resources */,
+				A54DE7171D79682C00481822 /* batterfly04_icon.png in Resources */,
 				A56FFA181D50986300F61BD6 /* birthday006.png in Resources */,
 				D78418EB1C74887300850129 /* WIFIInfoView.xib in Resources */,
 				A50459E21D338EA7006C7D31 /* WeiboSDK.bundle in Resources */,
 				A57609E31CB28E18006F3F1B /* weixingreen.png in Resources */,
 				A56FFA111D50986300F61BD6 /* birthday002_icon.png in Resources */,
+				A54DE70F1D79682C00481822 /* batterfly.png in Resources */,
 				A56FFA211D50986300F61BD6 /* hello004.png in Resources */,
 				A56FFA151D50986300F61BD6 /* birthday004_icon.png in Resources */,
 				A56FFA271D50986300F61BD6 /* mouse03.png in Resources */,
 				A57609DC1CB28E18006F3F1B /* tianmao.png in Resources */,
+				A54DE7101D79682C00481822 /* batterfly01.png in Resources */,
 				A56FFA291D50986300F61BD6 /* mouse04.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -1605,8 +1665,8 @@
 			baseConfigurationReference = 5E4F2B2A688A4033626C109B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chia Bingchen (G6RW5TPK6D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chia Bingchen (G6RW5TPK6D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1636,8 +1696,8 @@
 			baseConfigurationReference = D2F73D3798209558300E55FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer: Chia Bingchen (G6RW5TPK6D)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: Chia Bingchen (G6RW5TPK6D)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
