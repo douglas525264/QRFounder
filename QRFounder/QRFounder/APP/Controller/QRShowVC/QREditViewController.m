@@ -9,20 +9,23 @@
 #import "QREditViewController.h"
 #import "DXScrollMenu.h"
 #import "QRSourceManager.h"
-
-#import "DMAdView.h"
-@interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,DMAdViewDelegate>
+#import "MobiSageManager.h"
+#import "MobiSageBanner.h"
+#import "BaiduMobAdSDK/BaiduMobAdView.h"
+#import "BaiduMobAdSDK/BaiduMobAdDelegateProtocol.h"
+@interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,BaiduMobAdViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 
 @property (nonatomic, strong) DXScrollMenu *scrollMenu;
 
 @property (nonatomic, strong) NSMutableArray *sourceArr;
+@property (nonatomic,strong) MobiSageBanner *mobisageBanner;
 @end
 
 @implementation QREditViewController
 {
+    BaiduMobAdView *sharedAdView;
 
-    DMAdView *_dmAdView;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -30,21 +33,22 @@
    
     self.view.backgroundColor = DefaultColor;
     if (ADENABLE) {
-      [self createAD];  
+
+    //  [self createAD];
     }
     
     // Do any additional setup after loading the view.
 }
 
 - (void)createAD {
-
-    _dmAdView = [[DMAdView alloc] initWithPublisherId:@"56OJ2XeouNyyVYYzVk" placementId:@"16TLP2vvApalANUU2ciqFnZi"];
-    _dmAdView.frame = CGRectMake(0, 20, FLEXIBLE_SIZE.width,FLEXIBLE_SIZE.height);
-    _dmAdView.delegate = self; // 设置 Delegate
-    _dmAdView.rootViewController = self; // 设置 RootViewController
-    [self.view addSubview:_dmAdView]; // 将 告视图添加到 视图中
-    [_dmAdView loadAd]; // 开始加载 告}
-
+    sharedAdView = [[BaiduMobAdView alloc] init]; //把在mssp.baidu.com上创建后获得的代码位id写到这里
+    sharedAdView.AdUnitTag = @"2873611";
+    sharedAdView.AdType = BaiduMobAdViewTypeBanner;
+    sharedAdView.frame = CGRectMake(0, 20, self.view.bounds.size.width, 64);
+    sharedAdView.backgroundColor = [UIColor clearColor];
+    sharedAdView.delegate = self;
+    [self.view addSubview:sharedAdView];
+    [sharedAdView start];
     
 }
 
@@ -226,22 +230,41 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma mark - ADDelegate
-- (void)dmAdViewSuccessToLoadAd:(DMAdView *)adView {
-    NSLog(@"Show Ad Success");
-}
-// Sent when an ad request fail to loaded an ad
-- (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error {
-    NSLog(@"Show AD Fail");
-}
 - (UIStatusBarStyle)preferredStatusBarStyle {
-
+    
     return UIStatusBarStyleLightContent;
 }
-- (void)dealloc {
 
-    _dmAdView.delegate = nil;
-    _dmAdView.rootViewController = nil;
+#pragma mark - ADDelegate
+
+#pragma mark - mobisageBannerAdDelegate
+#pragma mark
+
+//横幅广告被点击时,触发此回调方法,用于统计广告点击数
+- (void)mobiSageBannerAdClick:(MobiSageBanner *)adBanner
+{
+    NSLog(@"mobisageBannerAdClick");
+}
+
+//横幅广告成功展示时,触发此回调方法,用于统计广告展示数
+- (void)mobiSageBannerAdSuccessToShowAd:(MobiSageBanner *)adBanner
+{
+    NSLog(@"mobisageBannerAdSuccessToShowAd");
+}
+- (NSString *)publisherId {
+
+    return @"ff5809c5";
+}
+//横幅广告展示失败时,触发此回调方法
+- (void)mobiSageBannerAdFaildToShowAd:(MobiSageBanner *)adBanner withError:(NSError *)error
+{
+    NSLog(@"mobisageBannerAdFaildToShowAd, error = %@", [error description]);
+}
+
+- (void)dealloc
+{
+    self.mobisageBanner.delegate = nil;
+    self.mobisageBanner = nil;
 }
 /*
 #pragma mark - Navigation

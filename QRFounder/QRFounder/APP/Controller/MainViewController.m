@@ -24,8 +24,8 @@ static MainViewController *mainVc;
     mainVc = self;
     
     self.tabBar.hidden = YES;
-    QRFounderAppDelegate *qde = (QRFounderAppDelegate *)[UIApplication sharedApplication].delegate;
-    [qde addAD];
+//    QRFounderAppDelegate *qde = (QRFounderAppDelegate *)[UIApplication sharedApplication].delegate;
+//    [qde addAD];
    // _btn.titleLabel.textColor = []
     
     //self.tabBar.delegate = self;

@@ -40,6 +40,12 @@
 		A540A0D51D239F740012EEB0 /* MsgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A540A0D41D239F740012EEB0 /* MsgView.xib */; };
 		A540A0D71D23A0C30012EEB0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A540A0D61D23A0C30012EEB0 /* MessageUI.framework */; };
 		A54305701D753C18001E5906 /* LaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A543056F1D753C18001E5906 /* LaViewController.m */; };
+		A549E7371D7FFAC800651D23 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A50459B01D3376DB006C7D31 /* libc++.tbd */; };
+		A549E7391D7FFAE500651D23 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E7381D7FFAE500651D23 /* AdSupport.framework */; };
+		A549E73B1D7FFAF300651D23 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73A1D7FFAF300651D23 /* CoreMotion.framework */; };
+		A549E73D1D7FFB0300651D23 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73C1D7FFB0300651D23 /* CoreLocation.framework */; };
+		A549E73F1D7FFB0F00651D23 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73E1D7FFB0F00651D23 /* CoreTelephony.framework */; };
+		A549E7411D7FFB8800651D23 /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E7401D7FFB8800651D23 /* BaiduMobAdSDK.framework */; };
 		A54DE70F1D79682C00481822 /* batterfly.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE7021D79682C00481822 /* batterfly.png */; };
 		A54DE7101D79682C00481822 /* batterfly01.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE7031D79682C00481822 /* batterfly01.png */; };
 		A54DE7111D79682C00481822 /* batterfly01_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE7041D79682C00481822 /* batterfly01_icon.png */; };
@@ -60,8 +66,7 @@
 		A54E2C411D7448A000667C1E /* shop.png in Resources */ = {isa = PBXBuildFile; fileRef = A54E2C401D7448A000667C1E /* shop.png */; };
 		A554246F1D3E0A7900081141 /* DXBottomActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A554246E1D3E0A7900081141 /* DXBottomActionView.m */; };
 		A55424721D3E3C1B00081141 /* UIActionSheet+RACExtends.m in Sources */ = {isa = PBXBuildFile; fileRef = A55424711D3E3C1B00081141 /* UIActionSheet+RACExtends.m */; };
-		A5682CCD1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5682CCB1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle */; };
-		A5682CCE1D35DFB100E0AD8C /* libDomobAdSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CCC1D35DFB100E0AD8C /* libDomobAdSDK.a */; };
+		A55714BC1D7EC045008B9EA7 /* libMobiSage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A55714B61D7EC045008B9EA7 /* libMobiSage.a */; };
 		A5682CD01D35DFF700E0AD8C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CCF1D35DFF700E0AD8C /* CoreMedia.framework */; };
 		A5682CD21D35E00B00E0AD8C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD11D35E00B00E0AD8C /* QuartzCore.framework */; };
 		A5682CD41D35E01A00E0AD8C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD31D35E01A00E0AD8C /* CoreText.framework */; };
@@ -258,6 +263,11 @@
 		A540A0D91D23D4020012EEB0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		A543056E1D753C18001E5906 /* LaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaViewController.h; sourceTree = "<group>"; };
 		A543056F1D753C18001E5906 /* LaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaViewController.m; sourceTree = "<group>"; };
+		A549E7381D7FFAE500651D23 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		A549E73A1D7FFAF300651D23 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
+		A549E73C1D7FFB0300651D23 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		A549E73E1D7FFB0F00651D23 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
+		A549E7401D7FFB8800651D23 /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
 		A54DE7021D79682C00481822 /* batterfly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly.png; sourceTree = "<group>"; };
 		A54DE7031D79682C00481822 /* batterfly01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly01.png; sourceTree = "<group>"; };
 		A54DE7041D79682C00481822 /* batterfly01_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly01_icon.png; sourceTree = "<group>"; };
@@ -280,14 +290,12 @@
 		A554246E1D3E0A7900081141 /* DXBottomActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXBottomActionView.m; sourceTree = "<group>"; };
 		A55424701D3E3C1B00081141 /* UIActionSheet+RACExtends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+RACExtends.h"; sourceTree = "<group>"; };
 		A55424711D3E3C1B00081141 /* UIActionSheet+RACExtends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+RACExtends.m"; sourceTree = "<group>"; };
-		A5682CC41D35DFB100E0AD8C /* DMAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMAdView.h; sourceTree = "<group>"; };
-		A5682CC51D35DFB100E0AD8C /* DMFeedsAdView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMFeedsAdView.h; sourceTree = "<group>"; };
-		A5682CC61D35DFB100E0AD8C /* DMInterstitialAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMInterstitialAdController.h; sourceTree = "<group>"; };
-		A5682CC71D35DFB100E0AD8C /* DMRTSplashAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMRTSplashAdController.h; sourceTree = "<group>"; };
-		A5682CC81D35DFB100E0AD8C /* DMSplashAdController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMSplashAdController.h; sourceTree = "<group>"; };
-		A5682CC91D35DFB100E0AD8C /* DMTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DMTools.h; sourceTree = "<group>"; };
-		A5682CCB1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = DomobAdSDKBundle.bundle; sourceTree = "<group>"; };
-		A5682CCC1D35DFB100E0AD8C /* libDomobAdSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libDomobAdSDK.a; sourceTree = "<group>"; };
+		A55714B61D7EC045008B9EA7 /* libMobiSage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobiSage.a; sourceTree = "<group>"; };
+		A55714B71D7EC045008B9EA7 /* MobiSageBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageBanner.h; sourceTree = "<group>"; };
+		A55714B81D7EC045008B9EA7 /* MobiSageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageFactory.h; sourceTree = "<group>"; };
+		A55714B91D7EC045008B9EA7 /* MobiSageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageManager.h; sourceTree = "<group>"; };
+		A55714BA1D7EC045008B9EA7 /* MobiSageNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageNative.h; sourceTree = "<group>"; };
+		A55714BB1D7EC045008B9EA7 /* MobiSagePoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSagePoster.h; sourceTree = "<group>"; };
 		A5682CCF1D35DFF700E0AD8C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		A5682CD11D35E00B00E0AD8C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A5682CD31D35E01A00E0AD8C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -472,13 +480,20 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5682CE41D35E07300E0AD8C /* Foundation.framework in Frameworks */,
 				A5682CE21D35E06200E0AD8C /* SystemConfiguration.framework in Frameworks */,
+				A549E73F1D7FFB0F00651D23 /* CoreTelephony.framework in Frameworks */,
+				A549E73D1D7FFB0300651D23 /* CoreLocation.framework in Frameworks */,
+				A540A0D71D23A0C30012EEB0 /* MessageUI.framework in Frameworks */,
+				A549E73B1D7FFAF300651D23 /* CoreMotion.framework in Frameworks */,
+				A549E7391D7FFAE500651D23 /* AdSupport.framework in Frameworks */,
+				A5682CD81D35E02B00E0AD8C /* StoreKit.framework in Frameworks */,
+				A549E7371D7FFAC800651D23 /* libc++.tbd in Frameworks */,
+				A5682CE41D35E07300E0AD8C /* Foundation.framework in Frameworks */,
 				A5682CE01D35E05D00E0AD8C /* AudioToolbox.framework in Frameworks */,
 				A5682CDE1D35E04600E0AD8C /* EventKit.framework in Frameworks */,
+				A549E7411D7FFB8800651D23 /* BaiduMobAdSDK.framework in Frameworks */,
 				A5682CDC1D35E03D00E0AD8C /* Social.framework in Frameworks */,
 				A5682CDA1D35E03300E0AD8C /* PassKit.framework in Frameworks */,
-				A5682CD81D35E02B00E0AD8C /* StoreKit.framework in Frameworks */,
 				A5682CD61D35E02300E0AD8C /* CoreGraphics.framework in Frameworks */,
 				A5682CD41D35E01A00E0AD8C /* CoreText.framework in Frameworks */,
 				A5682CD21D35E00B00E0AD8C /* QuartzCore.framework in Frameworks */,
@@ -489,16 +504,15 @@
 				A50459EE1D338FDB006C7D31 /* JavaScriptCore.framework in Frameworks */,
 				A50459EC1D338FD4006C7D31 /* libstdc++.tbd in Frameworks */,
 				A50459E91D338FB9006C7D31 /* libicucore.tbd in Frameworks */,
-				A540A0D71D23A0C30012EEB0 /* MessageUI.framework in Frameworks */,
 				A50459E51D338EA7006C7D31 /* MOBFoundation.framework in Frameworks */,
 				A50459E11D338EA7006C7D31 /* libWeiboSDK.a in Frameworks */,
 				A50459E71D338EA7006C7D31 /* ShareSDKConnector.framework in Frameworks */,
 				A50459E31D338EA7006C7D31 /* libWeChatSDK.a in Frameworks */,
-				A5682CCE1D35DFB100E0AD8C /* libDomobAdSDK.a in Frameworks */,
 				A50459DE1D338EA7006C7D31 /* ShareSDKUI.framework in Frameworks */,
 				A50459DC1D338EA7006C7D31 /* ShareSDKExtension.framework in Frameworks */,
 				A5A8F4A41CF7059400019A7E /* WebKit.framework in Frameworks */,
 				A50459DB1D338EA7006C7D31 /* ShareSDK.framework in Frameworks */,
+				A55714BC1D7EC045008B9EA7 /* libMobiSage.a in Frameworks */,
 				A50459DF1D338EA7006C7D31 /* TencentOpenAPI.framework in Frameworks */,
 				A50FDA381CC7893D0027188C /* AddressBookUI.framework in Frameworks */,
 				A50FDA361CC789380027188C /* AddressBook.framework in Frameworks */,
@@ -652,28 +666,17 @@
 			path = BatterFly;
 			sourceTree = "<group>";
 		};
-		A5682CC31D35DFB100E0AD8C /* DomobAdSDK */ = {
+		A55714B51D7EC045008B9EA7 /* MobiSageSDK */ = {
 			isa = PBXGroup;
 			children = (
-				A5682CC41D35DFB100E0AD8C /* DMAdView.h */,
-				A5682CC51D35DFB100E0AD8C /* DMFeedsAdView.h */,
-				A5682CC61D35DFB100E0AD8C /* DMInterstitialAdController.h */,
-				A5682CC71D35DFB100E0AD8C /* DMRTSplashAdController.h */,
-				A5682CC81D35DFB100E0AD8C /* DMSplashAdController.h */,
-				A5682CC91D35DFB100E0AD8C /* DMTools.h */,
-				A5682CCA1D35DFB100E0AD8C /* DomobAdSDKBundle */,
-				A5682CCC1D35DFB100E0AD8C /* libDomobAdSDK.a */,
+				A55714B61D7EC045008B9EA7 /* libMobiSage.a */,
+				A55714B71D7EC045008B9EA7 /* MobiSageBanner.h */,
+				A55714B81D7EC045008B9EA7 /* MobiSageFactory.h */,
+				A55714B91D7EC045008B9EA7 /* MobiSageManager.h */,
+				A55714BA1D7EC045008B9EA7 /* MobiSageNative.h */,
+				A55714BB1D7EC045008B9EA7 /* MobiSagePoster.h */,
 			);
-			name = DomobAdSDK;
-			path = ../DomobAdSDK;
-			sourceTree = "<group>";
-		};
-		A5682CCA1D35DFB100E0AD8C /* DomobAdSDKBundle */ = {
-			isa = PBXGroup;
-			children = (
-				A5682CCB1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle */,
-			);
-			path = DomobAdSDKBundle;
+			path = MobiSageSDK;
 			sourceTree = "<group>";
 		};
 		A56FF9E91D50986300F61BD6 /* BorderImageSource */ = {
@@ -836,6 +839,11 @@
 		CC25F21FA19289206F13E26A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A549E7401D7FFB8800651D23 /* BaiduMobAdSDK.framework */,
+				A549E73E1D7FFB0F00651D23 /* CoreTelephony.framework */,
+				A549E73C1D7FFB0300651D23 /* CoreLocation.framework */,
+				A549E73A1D7FFAF300651D23 /* CoreMotion.framework */,
+				A549E7381D7FFAE500651D23 /* AdSupport.framework */,
 				A5682CE31D35E07300E0AD8C /* Foundation.framework */,
 				A5682CE11D35E06200E0AD8C /* SystemConfiguration.framework */,
 				A5682CDF1D35E05D00E0AD8C /* AudioToolbox.framework */,
@@ -1076,7 +1084,7 @@
 		D78418951C7455C400850129 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				A5682CC31D35DFB100E0AD8C /* DomobAdSDK */,
+				A55714B51D7EC045008B9EA7 /* MobiSageSDK */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
@@ -1271,7 +1279,7 @@
 				TargetAttributes = {
 					D78418541C74551200850129 = {
 						CreatedOnToolsVersion = 7.2;
-						DevelopmentTeam = E8KT45CMGH;
+						DevelopmentTeam = B6H7GPKGQJ;
 					};
 					D784186D1C74551200850129 = {
 						CreatedOnToolsVersion = 7.2;
@@ -1341,7 +1349,6 @@
 				A50459E01D338EA7006C7D31 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				A56FFA1E1D50986300F61BD6 /* hello002_icon.png in Resources */,
 				A56FFA161D50986300F61BD6 /* birthday005.png in Resources */,
-				A5682CCD1D35DFB100E0AD8C /* DomobAdSDKBundle.bundle in Resources */,
 				A54E2C411D7448A000667C1E /* shop.png in Resources */,
 				A56FFA141D50986300F61BD6 /* birthday004.png in Resources */,
 				A54E2C3D1D74466400667C1E /* birthday.png in Resources */,
@@ -1666,7 +1673,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xin dong (SQRSDQ2957)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1684,10 +1691,11 @@
 					"$(PROJECT_DIR)/QRFounder/Utility/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/DomobAdSDK",
+					"$(PROJECT_DIR)/QRFounder/Utility/Libs/MobiSageSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.zapya;
+				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.qrcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8e6716d5-d1d6-4c8a-aa8b-fa918992898c";
+				PROVISIONING_PROFILE = "848b0cb0-f4c1-4c92-8986-b8aafe55de71";
 			};
 			name = Debug;
 		};
@@ -1697,7 +1705,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer: xin dong (SQRSDQ2957)";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1715,10 +1723,11 @@
 					"$(PROJECT_DIR)/QRFounder/Utility/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/DomobAdSDK",
+					"$(PROJECT_DIR)/QRFounder/Utility/Libs/MobiSageSDK",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.zapya;
+				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.qrcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8e6716d5-d1d6-4c8a-aa8b-fa918992898c";
+				PROVISIONING_PROFILE = "848b0cb0-f4c1-4c92-8986-b8aafe55de71";
 			};
 			name = Release;
 		};

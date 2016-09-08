@@ -34,7 +34,8 @@
 }
 - (void)shareClick:(UIButton *)btn {
 
-    UIImage *image = [[DXHelper shareInstance] imageFromView:self.qrView];
+    UIImage *image = [[DXHelper shareInstance] normalImageFromView:self.qrView];
+    
     [[ShareManager shareInstance] shareQrimage:image];
 }
 - (void)longTab:(UIGestureRecognizer *)ges {

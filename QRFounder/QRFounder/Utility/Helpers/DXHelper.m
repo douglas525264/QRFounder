@@ -25,6 +25,29 @@ static DXHelper *helper;
     return helper;
 
 }
+- (UIImage *)normalImageFromView:(UIView *)theView {
+    CGFloat scale = [UIScreen mainScreen].scale;
+    
+    UIImage *image = [self normalImageFromView:theView withScale:scale];
+    NSData *da = UIImagePNGRepresentation(image);
+    while (da.length > 512 * 1024) {
+        scale /= 2;
+        image = [self normalImageFromView:theView withScale:scale];
+        da = UIImagePNGRepresentation(image);
+
+    }
+    return image;
+
+}
+- (UIImage *)normalImageFromView:(UIView *)theView withScale:(CGFloat)scale {
+
+    UIGraphicsBeginImageContextWithOptions(theView.frame.size, YES, scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [theView.layer renderInContext:context];
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
+}
 - (UIImage *)imageFromView:(UIView *)theView
 {
     UIGraphicsBeginImageContextWithOptions(theView.frame.size, YES, [UIScreen mainScreen].scale);
@@ -74,6 +97,13 @@ static DXHelper *helper;
 - (void)makeAlterWithTitle:(NSString *)title dur:(CGFloat)dur andIsShake:(BOOL)isShake
 {
     [self makeAlterWithTitle:title dur:dur andIsShake:isShake inView:[UIApplication sharedApplication].keyWindow];
+}
+- (UIImage *)getShareImageWithModel:(QRModel *)model {
+
+    self.qrView.qrModel = model;
+    [self normalImageFromView:self.qrView];
+    UIImage *image1 = [self normalImageFromView:self.qrView];
+    return image1;
 }
 - (void)saveImageWithModel:(QRModel *)model withFinishedBlock:(void (^)(BOOL isOK))finishedBlcok{
     self.qrView.qrModel = model;

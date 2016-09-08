@@ -77,8 +77,8 @@ static ShareManager *sManager;
                                        appSecret:@"db9ee5340c7f25e5e9f4cd2d7771d896"];
                  break;
              case SSDKPlatformTypeQQ:
-                 [appInfo SSDKSetupQQByAppId:@"100371282"
-                                      appKey:@"aed9b0303e3ed1e27bae87c33761161d"
+                 [appInfo SSDKSetupQQByAppId:@"1105673876"
+                                      appKey:@"7jvamBizVpj51q1b"
                                     authType:SSDKAuthTypeBoth];
                  break;
              case SSDKPlatformTypeRenren:
@@ -101,14 +101,38 @@ static ShareManager *sManager;
 }
 - (void)shareQrimage:(UIImage *)image {
 
+    CGSize  imagesize = image.size;
+    NSLog(@"w : %.2f l : %.2f",imagesize.width, imagesize.height);
+//    CGFloat scale = 2;
+//    BOOL isedit = NO;
+//    NSData *imageData = UIImagePNGRepresentation(image);
+//    while (imageData.length/1024 > 300) {
+//        imageData = UIImageJPEGRepresentation(image, scale);
+//        scale /= 2;
+//        isedit = YES;
+//        
+//    }
+//    if (isedit) {
+//        image = [UIImage imageWithData:imageData scale:scale];
+//    }
+    
+   
+    
+    CGSize itemSize = CGSizeMake(240,240);
+    UIGraphicsBeginImageContext(itemSize);
+    CGRect imageRect = CGRectMake(0, 0,240, 240);
+    [image drawInRect:imageRect];
+    UIImage * thumImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+
     NSMutableDictionary *shareParams = [NSMutableDictionary dictionary];
     [shareParams SSDKSetupShareParamsByText:@""
                                      images:@[image]
-                                        url:[NSURL URLWithString:@"http://mob.com"]
+                                        url:nil
                                       title:@"分享标题"
                                        type:SSDKContentTypeAuto];
-    [shareParams SSDKSetupWeChatParamsByText:@"二维码" title:@"二维码" url:[NSURL URLWithString:@"http://www.baidu.com"] thumbImage:image image:image musicFileURL:nil extInfo:nil fileData:nil emoticonData:nil type:SSDKContentTypeImage forPlatformSubType:SSDKPlatformSubTypeWechatSession];
-    
+    [shareParams SSDKSetupWeChatParamsByText:@"二维码" title:@"二维码" url:[NSURL URLWithString:@"http://www.baidu.com"] thumbImage:thumImage image:image musicFileURL:nil extInfo:nil fileData:nil emoticonData:nil type:SSDKContentTypeImage forPlatformSubType:SSDKPlatformSubTypeWechatSession];
+    [shareParams SSDKSetupQQParamsByText:@"" title:@"" url:nil thumbImage:thumImage image:image type:SSDKContentTypeImage forPlatformSubType:SSDKPlatformTypeQQ];
     //2、分享（可以弹出我们的分享菜单和编辑界面）
     [ShareSDK showShareActionSheet:nil //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响
                              items:@[@(SSDKPlatformSubTypeWechatSession),@(SSDKPlatformSubTypeWechatTimeline),@(SSDKPlatformSubTypeQQFriend),@(SSDKPlatformTypeSinaWeibo)]
