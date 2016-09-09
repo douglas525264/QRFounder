@@ -9,8 +9,6 @@
 #import "QREditViewController.h"
 #import "DXScrollMenu.h"
 #import "QRSourceManager.h"
-#import "MobiSageManager.h"
-#import "MobiSageBanner.h"
 #import "BaiduMobAdSDK/BaiduMobAdView.h"
 #import "BaiduMobAdSDK/BaiduMobAdDelegateProtocol.h"
 @interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,BaiduMobAdViewDelegate>

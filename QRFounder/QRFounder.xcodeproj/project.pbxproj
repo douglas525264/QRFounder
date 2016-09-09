@@ -66,7 +66,6 @@
 		A54E2C411D7448A000667C1E /* shop.png in Resources */ = {isa = PBXBuildFile; fileRef = A54E2C401D7448A000667C1E /* shop.png */; };
 		A554246F1D3E0A7900081141 /* DXBottomActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A554246E1D3E0A7900081141 /* DXBottomActionView.m */; };
 		A55424721D3E3C1B00081141 /* UIActionSheet+RACExtends.m in Sources */ = {isa = PBXBuildFile; fileRef = A55424711D3E3C1B00081141 /* UIActionSheet+RACExtends.m */; };
-		A55714BC1D7EC045008B9EA7 /* libMobiSage.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A55714B61D7EC045008B9EA7 /* libMobiSage.a */; };
 		A5682CD01D35DFF700E0AD8C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CCF1D35DFF700E0AD8C /* CoreMedia.framework */; };
 		A5682CD21D35E00B00E0AD8C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD11D35E00B00E0AD8C /* QuartzCore.framework */; };
 		A5682CD41D35E01A00E0AD8C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD31D35E01A00E0AD8C /* CoreText.framework */; };
@@ -290,12 +289,6 @@
 		A554246E1D3E0A7900081141 /* DXBottomActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXBottomActionView.m; sourceTree = "<group>"; };
 		A55424701D3E3C1B00081141 /* UIActionSheet+RACExtends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+RACExtends.h"; sourceTree = "<group>"; };
 		A55424711D3E3C1B00081141 /* UIActionSheet+RACExtends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+RACExtends.m"; sourceTree = "<group>"; };
-		A55714B61D7EC045008B9EA7 /* libMobiSage.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libMobiSage.a; sourceTree = "<group>"; };
-		A55714B71D7EC045008B9EA7 /* MobiSageBanner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageBanner.h; sourceTree = "<group>"; };
-		A55714B81D7EC045008B9EA7 /* MobiSageFactory.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageFactory.h; sourceTree = "<group>"; };
-		A55714B91D7EC045008B9EA7 /* MobiSageManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageManager.h; sourceTree = "<group>"; };
-		A55714BA1D7EC045008B9EA7 /* MobiSageNative.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSageNative.h; sourceTree = "<group>"; };
-		A55714BB1D7EC045008B9EA7 /* MobiSagePoster.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MobiSagePoster.h; sourceTree = "<group>"; };
 		A5682CCF1D35DFF700E0AD8C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		A5682CD11D35E00B00E0AD8C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A5682CD31D35E01A00E0AD8C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -512,7 +505,6 @@
 				A50459DC1D338EA7006C7D31 /* ShareSDKExtension.framework in Frameworks */,
 				A5A8F4A41CF7059400019A7E /* WebKit.framework in Frameworks */,
 				A50459DB1D338EA7006C7D31 /* ShareSDK.framework in Frameworks */,
-				A55714BC1D7EC045008B9EA7 /* libMobiSage.a in Frameworks */,
 				A50459DF1D338EA7006C7D31 /* TencentOpenAPI.framework in Frameworks */,
 				A50FDA381CC7893D0027188C /* AddressBookUI.framework in Frameworks */,
 				A50FDA361CC789380027188C /* AddressBook.framework in Frameworks */,
@@ -664,19 +656,6 @@
 				A54DE70E1D79682C00481822 /* batterfly06_icon.png */,
 			);
 			path = BatterFly;
-			sourceTree = "<group>";
-		};
-		A55714B51D7EC045008B9EA7 /* MobiSageSDK */ = {
-			isa = PBXGroup;
-			children = (
-				A55714B61D7EC045008B9EA7 /* libMobiSage.a */,
-				A55714B71D7EC045008B9EA7 /* MobiSageBanner.h */,
-				A55714B81D7EC045008B9EA7 /* MobiSageFactory.h */,
-				A55714B91D7EC045008B9EA7 /* MobiSageManager.h */,
-				A55714BA1D7EC045008B9EA7 /* MobiSageNative.h */,
-				A55714BB1D7EC045008B9EA7 /* MobiSagePoster.h */,
-			);
-			path = MobiSageSDK;
 			sourceTree = "<group>";
 		};
 		A56FF9E91D50986300F61BD6 /* BorderImageSource */ = {
@@ -1084,7 +1063,6 @@
 		D78418951C7455C400850129 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
-				A55714B51D7EC045008B9EA7 /* MobiSageSDK */,
 			);
 			path = Libs;
 			sourceTree = "<group>";
