@@ -99,7 +99,7 @@
    // UITableViewCell *cell = [tableView cellForRowAtIndexPath:indexPath];
         switch (indexPath.row) {
         case 0:{
-            NSString *strUrl = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id576309271"];
+            NSString *strUrl = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id1152798225"];
             NSURL *url = [NSURL URLWithString:strUrl];
             [[UIApplication sharedApplication] openURL:url];
  

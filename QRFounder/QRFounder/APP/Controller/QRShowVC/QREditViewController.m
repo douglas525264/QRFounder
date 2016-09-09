@@ -19,7 +19,7 @@
 @property (nonatomic, strong) DXScrollMenu *scrollMenu;
 
 @property (nonatomic, strong) NSMutableArray *sourceArr;
-@property (nonatomic,strong) MobiSageBanner *mobisageBanner;
+
 @end
 
 @implementation QREditViewController
@@ -34,7 +34,7 @@
     self.view.backgroundColor = DefaultColor;
     if (ADENABLE) {
 
-    //  [self createAD];
+     [self createAD];
     }
     
     // Do any additional setup after loading the view.
@@ -48,6 +48,7 @@
     sharedAdView.backgroundColor = [UIColor clearColor];
     sharedAdView.delegate = self;
     [self.view addSubview:sharedAdView];
+    sharedAdView.hidden = YES;
     [sharedAdView start];
     
 }
@@ -241,30 +242,30 @@
 #pragma mark
 
 //横幅广告被点击时,触发此回调方法,用于统计广告点击数
-- (void)mobiSageBannerAdClick:(MobiSageBanner *)adBanner
-{
-    NSLog(@"mobisageBannerAdClick");
+/**
+ *  广告将要被载入
+ */
+- (void)willDisplayAd:(BaiduMobAdView *)adview {
+
+    NSLog(@"广告将要被载入");
+    sharedAdView.hidden = NO;
 }
 
-//横幅广告成功展示时,触发此回调方法,用于统计广告展示数
-- (void)mobiSageBannerAdSuccessToShowAd:(MobiSageBanner *)adBanner
-{
-    NSLog(@"mobisageBannerAdSuccessToShowAd");
+/**
+ *  广告载入失败
+ */
+- (void)failedDisplayAd:(BaiduMobFailReason)reason {
+
+    NSLog(@"fail reason : %ld",reason);
 }
 - (NSString *)publisherId {
 
     return @"ff5809c5";
 }
-//横幅广告展示失败时,触发此回调方法
-- (void)mobiSageBannerAdFaildToShowAd:(MobiSageBanner *)adBanner withError:(NSError *)error
-{
-    NSLog(@"mobisageBannerAdFaildToShowAd, error = %@", [error description]);
-}
-
 - (void)dealloc
 {
-    self.mobisageBanner.delegate = nil;
-    self.mobisageBanner = nil;
+    sharedAdView.delegate = nil;
+    sharedAdView = nil;
 }
 /*
 #pragma mark - Navigation

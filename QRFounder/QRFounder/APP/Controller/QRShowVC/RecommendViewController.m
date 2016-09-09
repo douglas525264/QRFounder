@@ -22,7 +22,7 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    QRModel *model = [[QRModel alloc] initWithQrStr: [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@",@"576309271"]];
+    QRModel *model = [[QRModel alloc] initWithQrStr: [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@",@"1152798225"]];
     self.qrView.qrModel = model;
     self.view.backgroundColor = RGB(0, 0, 0, 0.4);
 
