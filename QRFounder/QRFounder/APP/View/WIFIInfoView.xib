@@ -17,7 +17,7 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="MkR-mm-YeK">
                             <rect key="frame" x="0.0" y="0.0" width="300" height="50"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wifiname:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-sT-enf">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WIFI名称:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Trs-sT-enf">
                                     <rect key="frame" x="14" y="14" width="82" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="COt-PA-GGA"/>
@@ -171,7 +171,7 @@
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="password:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvr-5U-tgW">
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="密码:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zvr-5U-tgW">
                                     <rect key="frame" x="14" y="14" width="82" height="21"/>
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="cTg-hO-2yM"/>
