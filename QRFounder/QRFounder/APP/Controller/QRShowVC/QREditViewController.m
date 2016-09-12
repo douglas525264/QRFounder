@@ -29,7 +29,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.qrView.qrModel = self.qrModel;
-   
+    self.toolView.backgroundColor = [UIColor clearColor];
     self.view.backgroundColor = DefaultColor;
     if (ADENABLE) {
 

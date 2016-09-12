@@ -24,7 +24,10 @@
     [super viewDidLoad];
     self.view.backgroundColor = DefaultColor;
    // self.tableView.style = UITableViewStylePlain;
-    self.tableView.backgroundColor = DefaultColor;
+    UIImageView *imageV = [[UIImageView alloc] initWithFrame:self.view.bounds];
+    imageV.image = [[DXHelper shareInstance] getBgImage];
+    imageV.contentMode = UIViewContentModeScaleAspectFill;
+    self.tableView.backgroundView = imageV;
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.title = @"关于";
     [self createUI];
