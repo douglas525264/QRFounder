@@ -1601,7 +1601,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.zapya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8e6716d5-d1d6-4c8a-aa8b-fa918992898c";
+				PROVISIONING_PROFILE = "01cd617b-bc8a-4dac-8f92-daab87cdf21f";
 			};
 			name = Debug;
 		};
@@ -1632,7 +1632,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.zapya;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "8e6716d5-d1d6-4c8a-aa8b-fa918992898c";
+				PROVISIONING_PROFILE = "01cd617b-bc8a-4dac-8f92-daab87cdf21f";
 			};
 			name = Release;
 		};
