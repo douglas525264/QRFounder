@@ -25,6 +25,7 @@
 #import "MainViewController.h"
 #import "HistoryViewController.h"
 #import "DBManager.h"
+#import "DXHelper.h"
 #define createBtnWidth 120
 @interface QRCreateViewController ()
 @property (nonatomic, strong)DXSelectView *selectView;
@@ -43,7 +44,10 @@
 }
 
 - (void)createUI{
-    self.view.backgroundColor = RGB(33,188,225,1);
+   
+   
+    self.view.backgroundColor = DefaultColor;
+  //  [self.view insertSubview:bgImageView atIndex:0];
     self.navigationItem.title = @"生成二维码";
     
 //    [self.navigationController.tabBarItem setSelectedImage:[[UIImage imageNamed:@"qrcreate_press"] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal]];
@@ -200,7 +204,7 @@
     if (!_createBtn) {
         _createBtn = [UIButton buttonWithType:UIButtonTypeCustom];
         _createBtn.frame = CGRectMake(self.view.frame.size.width/2 - createBtnWidth/2, self.view.frame.size.height - 49 - 50 - createBtnWidth *1.2/4, createBtnWidth, createBtnWidth*1.2/4);
-        [_createBtn setTitle:@"createQR" forState:UIControlStateNormal];
+        [_createBtn setTitle:@"创建" forState:UIControlStateNormal];
         [_createBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_createBtn addTarget:self action:@selector(createBtnClick:) forControlEvents:UIControlEventTouchUpInside];
         _createBtn.layer.borderColor = [UIColor whiteColor].CGColor;

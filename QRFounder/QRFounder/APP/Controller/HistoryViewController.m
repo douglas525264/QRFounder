@@ -12,6 +12,7 @@
 #import "QRShowViewController.h"
 #import "HistoryViewController.h"
 #import "DXBottomActionView.h"
+#import "DXHelper.h"
 @interface HistoryViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray *scanArr;
 @property (nonatomic, strong) NSMutableArray *createArr;
@@ -264,12 +265,19 @@
 
     
     [self.bottomView showInView:self.view];
+    CGFloat y = self.sourceSegment.frame.origin.y + self.sourceSegment.frame.size.height;
+    
+    self.tableView.frame = CGRectMake(0,y, self.view.frame.size.width, self.view.frame.size.height - y - self.bottomView.frame.size.height);
+    
 }
 - (void)dismisPop {
 
     [self.bottomView dismisswithAnimation:YES];
     [self.selectArr removeAllObjects];
     self.bottomView.count = 0;
+    CGFloat y = self.sourceSegment.frame.origin.y + self.sourceSegment.frame.size.height;
+    
+    self.tableView.frame = CGRectMake(0,y, self.view.frame.size.width, self.view.frame.size.height - y);
 }
 #pragma mark - 懒加载
 - (DXBottomActionView *)bottomView {

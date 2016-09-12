@@ -9,42 +9,46 @@
 #import "QREditViewController.h"
 #import "DXScrollMenu.h"
 #import "QRSourceManager.h"
-
-#import "DMAdView.h"
-@interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,DMAdViewDelegate>
+#import "BaiduMobAdSDK/BaiduMobAdView.h"
+#import "BaiduMobAdSDK/BaiduMobAdDelegateProtocol.h"
+#import "DXHelper.h"
+@interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,BaiduMobAdViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 
 @property (nonatomic, strong) DXScrollMenu *scrollMenu;
 
 @property (nonatomic, strong) NSMutableArray *sourceArr;
+
 @end
 
 @implementation QREditViewController
 {
+    BaiduMobAdView *sharedAdView;
 
-    DMAdView *_dmAdView;
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.qrView.qrModel = self.qrModel;
-   
+    self.toolView.backgroundColor = [UIColor clearColor];
     self.view.backgroundColor = DefaultColor;
     if (ADENABLE) {
-      [self createAD];  
+
+     [self createAD];
     }
     
     // Do any additional setup after loading the view.
 }
 
 - (void)createAD {
-
-    _dmAdView = [[DMAdView alloc] initWithPublisherId:@"56OJ2XeouNyyVYYzVk" placementId:@"16TLP2vvApalANUU2ciqFnZi"];
-    _dmAdView.frame = CGRectMake(0, 20, FLEXIBLE_SIZE.width,FLEXIBLE_SIZE.height);
-    _dmAdView.delegate = self; // 设置 Delegate
-    _dmAdView.rootViewController = self; // 设置 RootViewController
-    [self.view addSubview:_dmAdView]; // 将 告视图添加到 视图中
-    [_dmAdView loadAd]; // 开始加载 告}
-
+    sharedAdView = [[BaiduMobAdView alloc] init]; //把在mssp.baidu.com上创建后获得的代码位id写到这里
+    sharedAdView.AdUnitTag = @"2873611";
+    sharedAdView.AdType = BaiduMobAdViewTypeBanner;
+    sharedAdView.frame = CGRectMake(0, 20, self.view.bounds.size.width, 64);
+    sharedAdView.backgroundColor = [UIColor clearColor];
+    sharedAdView.delegate = self;
+    [self.view addSubview:sharedAdView];
+    sharedAdView.hidden = YES;
+    [sharedAdView start];
     
 }
 
@@ -204,7 +208,7 @@
              _scrollMenu = [[DXScrollMenu alloc] initWithFrame:CGRectMake(0, self.toolView.frame.origin.y - 60 , self.view.frame.size.width, 60)];
                 _scrollMenu.backgroundColor = [UIColor greenColor];
             } else {
-                _scrollMenu = [[DXScrollMenu alloc] initWithFrame:CGRectMake(0, self.toolView.frame.origin.y - 120 , self.view.frame.size.width, 120)];
+                _scrollMenu = [[DXScrollMenu alloc] initWithFrame:CGRectMake(0, self.toolView.frame.origin.y - 95 , self.view.frame.size.width, 95)];
             }
             
             //_scrollMenu.backgroundColor = [UIColor greenColor];
@@ -218,7 +222,7 @@
     if (_editType == QREditTypeColor) {
     self.scrollMenu.frame = CGRectMake(0, self.toolView.frame.origin.y - 60 , self.view.frame.size.width, 60);
     } else {
-        self.scrollMenu.frame = CGRectMake(0, self.toolView.frame.origin.y - 120 , self.view.frame.size.width, 120);
+        self.scrollMenu.frame = CGRectMake(0, self.toolView.frame.origin.y - 95, self.view.frame.size.width, 95);
     }
     self.scrollMenu.backgroundColor = self.toolView.backgroundColor;
 }
@@ -226,22 +230,41 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-#pragma mark - ADDelegate
-- (void)dmAdViewSuccessToLoadAd:(DMAdView *)adView {
-    NSLog(@"Show Ad Success");
-}
-// Sent when an ad request fail to loaded an ad
-- (void)dmAdViewFailToLoadAd:(DMAdView *)adView withError:(NSError *)error {
-    NSLog(@"Show AD Fail");
-}
 - (UIStatusBarStyle)preferredStatusBarStyle {
-
+    
     return UIStatusBarStyleLightContent;
 }
-- (void)dealloc {
 
-    _dmAdView.delegate = nil;
-    _dmAdView.rootViewController = nil;
+#pragma mark - ADDelegate
+
+#pragma mark - mobisageBannerAdDelegate
+#pragma mark
+
+//横幅广告被点击时,触发此回调方法,用于统计广告点击数
+/**
+ *  广告将要被载入
+ */
+- (void)willDisplayAd:(BaiduMobAdView *)adview {
+
+    NSLog(@"广告将要被载入");
+    sharedAdView.hidden = NO;
+}
+
+/**
+ *  广告载入失败
+ */
+- (void)failedDisplayAd:(BaiduMobFailReason)reason {
+
+    NSLog(@"fail reason : %ld",reason);
+}
+- (NSString *)publisherId {
+
+    return @"ff5809c5";
+}
+- (void)dealloc
+{
+    sharedAdView.delegate = nil;
+    sharedAdView = nil;
 }
 /*
 #pragma mark - Navigation

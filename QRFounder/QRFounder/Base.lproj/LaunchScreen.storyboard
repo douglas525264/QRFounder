@@ -16,7 +16,44 @@
                     <view key="view" contentMode="scaleToFill" id="Ze5-6b-2t3">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" red="0.3094507104" green="1" blue="0.13805990400000001" alpha="1" colorSpace="calibratedRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appIcon_180" translatesAutoresizingMaskIntoConstraints="NO" id="mI3-Bx-ZbU">
+                                <rect key="frame" x="175" y="484" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="42e-JN-GFu"/>
+                                    <constraint firstAttribute="width" constant="60" id="g1Y-e6-7ub"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="玩转二维码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5cB-II-0c3">
+                                <rect key="frame" x="243" y="494" width="223" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="223" id="awa-Yl-F5d"/>
+                                    <constraint firstAttribute="height" constant="21" id="x6Y-Yt-jbZ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="随心所欲，想玩就玩" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DOf-Ck-W8n">
+                                <rect key="frame" x="243" y="523" width="223" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="cHY-tb-6Hp"/>
+                                    <constraint firstAttribute="width" constant="223" id="mwc-2V-z48"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="mI3-Bx-ZbU" secondAttribute="bottom" constant="56" id="3Um-3N-eIS"/>
+                            <constraint firstItem="5cB-II-0c3" firstAttribute="leading" secondItem="mI3-Bx-ZbU" secondAttribute="trailing" constant="8" id="BbX-Ox-Wq2"/>
+                            <constraint firstItem="xb3-aO-Qok" firstAttribute="top" secondItem="DOf-Ck-W8n" secondAttribute="bottom" constant="56" id="QHf-Yr-f1T"/>
+                            <constraint firstItem="DOf-Ck-W8n" firstAttribute="leading" secondItem="mI3-Bx-ZbU" secondAttribute="trailing" constant="8" id="UlD-F6-2AO"/>
+                            <constraint firstItem="DOf-Ck-W8n" firstAttribute="top" secondItem="5cB-II-0c3" secondAttribute="bottom" constant="8" id="bgx-sZ-QtX"/>
+                            <constraint firstItem="mI3-Bx-ZbU" firstAttribute="centerX" secondItem="Ze5-6b-2t3" secondAttribute="centerX" constant="-95" id="y5h-0g-Qg6"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -24,4 +61,7 @@
             <point key="canvasLocation" x="53" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="appIcon_180" width="60" height="60"/>
+    </resources>
 </document>

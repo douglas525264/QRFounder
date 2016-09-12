@@ -392,13 +392,13 @@
                                                     <exclude reference="G7O-1w-PQm"/>
                                                 </mask>
                                                 <mask key="constraints">
-                                                    <exclude reference="7CD-lW-d1C"/>
-                                                    <exclude reference="abz-sf-BNB"/>
-                                                    <exclude reference="hLz-a8-g7F"/>
                                                     <exclude reference="Kpw-Tj-uik"/>
                                                     <exclude reference="QCV-o6-fXm"/>
                                                     <exclude reference="c5d-Kk-e7l"/>
                                                     <exclude reference="oj5-3P-jWR"/>
+                                                    <exclude reference="7CD-lW-d1C"/>
+                                                    <exclude reference="abz-sf-BNB"/>
+                                                    <exclude reference="hLz-a8-g7F"/>
                                                 </mask>
                                             </variation>
                                             <variation key="widthClass=compact" ambiguous="YES">
@@ -407,11 +407,11 @@
                                                     <include reference="G7O-1w-PQm"/>
                                                 </mask>
                                                 <mask key="constraints">
+                                                    <include reference="c5d-Kk-e7l"/>
+                                                    <include reference="oj5-3P-jWR"/>
                                                     <include reference="7CD-lW-d1C"/>
                                                     <include reference="abz-sf-BNB"/>
                                                     <include reference="hLz-a8-g7F"/>
-                                                    <include reference="c5d-Kk-e7l"/>
-                                                    <include reference="oj5-3P-jWR"/>
                                                 </mask>
                                             </variation>
                                             <variation key="heightClass=regular-widthClass=regular">
@@ -785,7 +785,7 @@
                                             <constraint firstAttribute="width" constant="46" id="VPn-od-gk0"/>
                                             <constraint firstAttribute="width" constant="46" id="jzN-r6-JLx"/>
                                         </constraints>
-                                        <state key="normal" title="OK">
+                                        <state key="normal" title="确定">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <variation key="default">
@@ -814,7 +814,7 @@
                                             <constraint firstAttribute="width" constant="77" id="LEp-cv-ZMr"/>
                                             <constraint firstAttribute="height" constant="30" id="Vin-vY-8UC"/>
                                         </constraints>
-                                        <state key="normal" title="Cancel">
+                                        <state key="normal" title="取消">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
                                         <variation key="default">
@@ -1080,8 +1080,64 @@
             </objects>
             <point key="canvasLocation" x="655.5" y="706"/>
         </scene>
+        <!--La View Controller-->
+        <scene sceneID="cS4-zc-zj9">
+            <objects>
+                <viewController storyboardIdentifier="LaViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="xBa-UT-GrG" customClass="LaViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="NcN-f4-pvc"/>
+                        <viewControllerLayoutGuide type="bottom" id="Tx8-Er-RrX"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8CA-Ys-IZP">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="appIcon_180" translatesAutoresizingMaskIntoConstraints="NO" id="s7P-5f-RBY">
+                                <rect key="frame" x="175" y="484" width="60" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="bqa-aV-11O"/>
+                                    <constraint firstAttribute="width" constant="60" id="wlj-p0-hzM"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="玩转二维码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nmL-f1-Ezl">
+                                <rect key="frame" x="243" y="494" width="223" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="223" id="Odp-hf-b9h"/>
+                                    <constraint firstAttribute="height" constant="21" id="qOO-Qf-y9n"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="随心所欲，想玩就玩" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JeK-wF-q36">
+                                <rect key="frame" x="243" y="523" width="223" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="NPE-Zh-csF"/>
+                                    <constraint firstAttribute="width" constant="223" id="dRI-yA-TGL"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="s7P-5f-RBY" firstAttribute="centerX" secondItem="8CA-Ys-IZP" secondAttribute="centerX" constant="-95" id="0SV-nh-gvU"/>
+                            <constraint firstItem="Tx8-Er-RrX" firstAttribute="top" secondItem="s7P-5f-RBY" secondAttribute="bottom" constant="56" id="Srm-hY-qHj"/>
+                            <constraint firstItem="JeK-wF-q36" firstAttribute="top" secondItem="nmL-f1-Ezl" secondAttribute="bottom" constant="8" id="k9T-Hg-Hjr"/>
+                            <constraint firstItem="Tx8-Er-RrX" firstAttribute="top" secondItem="JeK-wF-q36" secondAttribute="bottom" constant="56" id="qwX-9K-8WR"/>
+                            <constraint firstItem="JeK-wF-q36" firstAttribute="leading" secondItem="s7P-5f-RBY" secondAttribute="trailing" constant="8" id="s6X-tH-xp6"/>
+                            <constraint firstItem="nmL-f1-Ezl" firstAttribute="leading" secondItem="s7P-5f-RBY" secondAttribute="trailing" constant="8" id="tr3-Fi-WY9"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ZM2-xi-agj" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-283" y="2231"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="appIcon_180" width="60" height="60"/>
         <image name="qrcreate_normal" width="22" height="22"/>
         <image name="qrscan_normal" width="22" height="22"/>
         <image name="qrscan_press" width="22" height="22"/>

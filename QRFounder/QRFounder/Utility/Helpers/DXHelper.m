@@ -11,6 +11,8 @@
 #import "NSString+DXCheck.h"
 @interface DXHelper()
 @property (nonatomic, strong) DXCommenQRView *qrView;
+@property (nonatomic, strong) UIImage *bgImage;
+@property (nonatomic, strong) UIImageView *bgImageView;
 @end;
 static DXHelper *helper;
 
@@ -24,6 +26,29 @@ static DXHelper *helper;
     }
     return helper;
 
+}
+- (UIImage *)normalImageFromView:(UIView *)theView {
+    CGFloat scale = [UIScreen mainScreen].scale;
+    
+    UIImage *image = [self normalImageFromView:theView withScale:scale];
+    NSData *da = UIImagePNGRepresentation(image);
+    while (da.length > 700 * 1024) {
+        scale /= 2;
+        image = [self normalImageFromView:theView withScale:scale];
+        da = UIImagePNGRepresentation(image);
+
+    }
+    return image;
+
+}
+- (UIImage *)normalImageFromView:(UIView *)theView withScale:(CGFloat)scale {
+
+    UIGraphicsBeginImageContextWithOptions(theView.frame.size, YES, scale);
+    CGContextRef context = UIGraphicsGetCurrentContext();
+    [theView.layer renderInContext:context];
+    UIImage *theImage = UIGraphicsGetImageFromCurrentImageContext();
+    UIGraphicsEndImageContext();
+    return theImage;
 }
 - (UIImage *)imageFromView:(UIView *)theView
 {
@@ -74,6 +99,13 @@ static DXHelper *helper;
 - (void)makeAlterWithTitle:(NSString *)title dur:(CGFloat)dur andIsShake:(BOOL)isShake
 {
     [self makeAlterWithTitle:title dur:dur andIsShake:isShake inView:[UIApplication sharedApplication].keyWindow];
+}
+- (UIImage *)getShareImageWithModel:(QRModel *)model {
+
+    self.qrView.qrModel = model;
+    [self normalImageFromView:self.qrView];
+    UIImage *image1 = [self normalImageFromView:self.qrView];
+    return image1;
 }
 - (void)saveImageWithModel:(QRModel *)model withFinishedBlock:(void (^)(BOOL isOK))finishedBlcok{
     self.qrView.qrModel = model;
@@ -344,5 +376,32 @@ static DXHelper *helper;
 
     
     return @"";
+}
+- (UIImage *)getBgImage {
+    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.bounds];
+    self.bgImageView = bgImageView;
+   // [[UIApplication sharedApplication].keyWindow addSubview:self.bgImageView];
+    UIImage *image = [UIImage imageNamed:@"background"];
+   
+    if (!self.bgImage) {
+        
+        CIContext *context = [CIContext contextWithOptions:nil];
+        UIImage *orImage = image;
+        CIImage *coImage = [CIImage imageWithCGImage:orImage.CGImage];
+        CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
+        [filter setValue:coImage forKey:kCIInputImageKey];
+        [filter setValue:[NSNumber numberWithFloat:4.0] forKey:@"inputRadius"];
+        // blur image
+        CIImage *result = [filter valueForKey:kCIOutputImageKey];
+        CGImageRef cgImage = [context createCGImage:result fromRect:[coImage extent]];
+        UIImage *rimage = [UIImage imageWithCGImage:cgImage];
+        CGImageRelease(cgImage);
+        bgImageView.image = rimage;
+        bgImageView.contentMode = UIViewContentModeScaleAspectFill;
+        
+
+        self.bgImage = [self imageFromView:self.bgImageView];;
+    }
+    return self.bgImage;
 }
 @end

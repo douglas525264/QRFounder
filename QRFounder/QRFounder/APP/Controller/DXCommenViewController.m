@@ -7,7 +7,7 @@
 //
 
 #import "DXCommenViewController.h"
-
+#import "AnalyticsManager.h"
 @interface DXCommenViewController ()
 
 @end
@@ -18,7 +18,16 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
 }
+- (void)viewWillAppear:(BOOL)animated {
 
+    [super viewWillAppear:animated];
+    [[AnalyticsManager shareInstance] beginqLoadVC:self];
+}
+- (void)viewWillDisappear:(BOOL)animated {
+
+    [super viewWillDisappear:animated];
+    [[AnalyticsManager shareInstance] endLoadVC:self];
+}
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

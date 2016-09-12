@@ -25,7 +25,7 @@
                         <action selector="addBtnClick:" destination="iN0-l3-epB" eventType="touchUpInside" id="gDr-Kf-iNw"/>
                     </connections>
                 </button>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="msg" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEj-YC-FXL">
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="短信" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dEj-YC-FXL">
                     <rect key="frame" x="112" y="8" width="77" height="31"/>
                     <constraints>
                         <constraint firstAttribute="width" constant="77" id="4JJ-ng-Y4n"/>

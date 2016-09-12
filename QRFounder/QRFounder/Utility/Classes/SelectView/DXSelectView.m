@@ -92,7 +92,7 @@
     self.tableView.scrollEnabled = NO;
     self.tableView.separatorColor = [UIColor whiteColor];
     if (!self.tintColor) {
-        self.tintColor = DefaultColor;
+        self.tintColor = [UIColor clearColor];
     }
     [self.tableView selectRowAtIndexPath:[NSIndexPath indexPathForRow:0 inSection:0] animated:YES scrollPosition:UITableViewScrollPositionNone];
     self.backgroundColor = self.tintColor;

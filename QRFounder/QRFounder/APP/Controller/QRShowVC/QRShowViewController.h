@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 #import "DXCommenQRView.h"
-#import "QRModel.h"
-@interface QRShowViewController : UIViewController
+#import "DXCommenViewController.h"
+
+@interface QRShowViewController : DXCommenViewController
 
 @property (weak, nonatomic) IBOutlet DXCommenQRView *qrView;
-@property (nonatomic, strong) QRModel *qrModel;
+
 
 @end

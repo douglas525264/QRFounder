@@ -10,14 +10,16 @@
 #import "AnalyticsManager.h"
 #import "DXCommenHelper.h"
 #import "ShareManager.h"
-#import "DMSplashAdController.h"
-#import "DMRTSplashAdController.h"
-@interface QRFounderAppDelegate ()<DMSplashAdControllerDelegate>
+#import "LaViewController.h"
+#import "DXHelper.h"
+#import <BaiduMobAdSDK/BaiduMobAdSplash.h>
+@interface QRFounderAppDelegate ()<BaiduMobAdSplashDelegate>
+
 {
-    DMSplashAdController *_splashAd;
+    
     UIView *_bgView;
 }
-
+@property (nonatomic, strong)BaiduMobAdSplash *splash;
 @end
 
 @implementation QRFounderAppDelegate
@@ -28,11 +30,18 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
    // [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"001"] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setBarTintColor:RGB(33, 188, 255, 1)];
+    [[UINavigationBar appearance] setBarTintColor:RGB(87, 82, 127, 1)];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     [[AnalyticsManager shareInstance] startUMSDK];
     [[ShareManager shareInstance] startSDK];
     
+    
+    BaiduMobAdSplash *splash = [[BaiduMobAdSplash alloc] init];
+    splash.delegate = self; //把在mssp.baidu.com上创建后获得的代码位id写到这里 splash.AdUnitTag = @"2058492";
+    splash.AdUnitTag = @"2873611";
+    splash.canSplashClick = YES;
+    [splash loadAndDisplayUsingKeyWindow:self.window];
+    self.splash = splash;
     //});
     
  // [NSThread sleepForTimeInterval:2.0];
@@ -43,8 +52,14 @@
     return YES;
 }
 - (void)addAD {
+    UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    LaViewController *lVC = [mainStory instantiateViewControllerWithIdentifier:@"LaViewController"];
+    lVC.view.frame = self.window.bounds;
+    UIImage *image = [[DXHelper shareInstance] imageFromView:lVC.view];
+    UIColor *bgColor = [UIColor colorWithPatternImage:image];
+    
     _bgView = [[UIView alloc] initWithFrame:_window.bounds];
-    _bgView.backgroundColor = [UIColor greenColor];
+    _bgView.backgroundColor = bgColor;
     
     [_window.rootViewController.view addSubview:_bgView];
     // 设置适合的背景图片
@@ -52,62 +67,9 @@
     NSString *defaultImgName = @"Default";
     CGFloat offset = 0.0f;
     CGSize adSize;
-    if ([UIDevice currentDevice].userInterfaceIdiom == UIUserInterfaceIdiomPad) {
-        adSize = DOMOB_AD_SIZE_768x576;
-        defaultImgName = @"Default-Portrait";
-        offset = 374.0f;
-    } else {
-        adSize = DOMOB_AD_SIZE_320x400;
-        if ([UIScreen mainScreen].bounds.size.height > 480.0f) {
-            defaultImgName = @"Default-568h";
-            offset = 233.0f;
-        } else {
-            offset = 168.0f;
-        }
-    }
-    //  [UIView setAnimationDuration:2.0];
-    BOOL isCacheSplash = NO;
-    // 选择测试缓存开屏还是实时开屏，NO为实时开屏。
-    // Choose NO or YES for RealTimeSplashView or SplashView
-    // 初始化开屏广告控制器，此处使用的是测试ID，请登陆多盟官网（www.domob.cn）获取新的ID
-    // Get your ID from Domob website
-    
-    NSString* testPubID = @"56OJ2XeouNyyVYYzVk";
-    NSString* testSplashPlacementID = @"16TLP2vvApalANUU2pMjZgbs";
-    UIColor* bgColor = [UIColor greenColor];
-    
-    if (isCacheSplash) {
-        _splashAd = [[DMSplashAdController alloc] initWithPublisherId:testPubID
-                                                          placementId:testSplashPlacementID
-                                                               window:self.window
-                                                           background:bgColor
-                                                            animation:YES];
-        _splashAd.delegate = self;
-        if (_splashAd.isReady)
-        {
-            [_splashAd present];
-            
-        }
-        
-    } else {
-        DMRTSplashAdController* rtsplashAd = nil;
-        rtsplashAd = [[DMRTSplashAdController alloc] initWithPublisherId:testPubID
-                                                             placementId:testSplashPlacementID
-                                                                    size:adSize
-                                                                  offset:0
-                                                                  window:self.window
-                                                              background:bgColor
-                                                               animation:NO];
-        
-        
-        rtsplashAd.delegate = self;
-        [rtsplashAd present];
-        
-    }
-  
-
 
 }
+
 - (void)applicationWillResignActive:(UIApplication *)application {
     // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
     // Use this method to pause ongoing tasks, disable timers, and throttle down OpenGL ES frame rates. Games should use this method to pause the game.
@@ -129,13 +91,14 @@
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
 }
-// Sent when an splash ad request success to loaded an ad
-- (void)dmSplashAdSuccessToLoadAd:(DMSplashAdController *)dmSplashAd {
+#pragma mark - ADDelegate
+- (NSString *)publisherId {
+    return @"ff5809c5";
 
-    [_bgView removeFromSuperview];
 }
-// Sent when an ad request fail to loaded an ad
-- (void)dmSplashAdFailToLoadAd:(DMSplashAdController *)dmSplashAd withError:(NSError *)err {
+// Sent when an splash ad request success to loaded an ad
+- (void)dismissAd{
+
     [_bgView removeFromSuperview];
 }
 @end
