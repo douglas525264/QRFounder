@@ -26,8 +26,8 @@
 #define IS_IOS8 [[UIDevice currentDevice] systemVersion].floatValue >= 8.0
 #define IS_IPAD UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad
 #define RGB(x,y,z,a) [UIColor colorWithRed:x/255.0 green:y/255.0 blue:z/255.0 alpha:a]
-
-#define DefaultColor RGB(33,188,225,1)
+//RGB(33,188,225,1)
+#define DefaultColor [UIColor colorWithPatternImage:[[DXHelper shareInstance] getBgImage]]
 
 /**
  *  二维码种类

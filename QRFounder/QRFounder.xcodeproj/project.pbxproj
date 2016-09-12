@@ -46,6 +46,7 @@
 		A549E73D1D7FFB0300651D23 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73C1D7FFB0300651D23 /* CoreLocation.framework */; };
 		A549E73F1D7FFB0F00651D23 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73E1D7FFB0F00651D23 /* CoreTelephony.framework */; };
 		A549E7411D7FFB8800651D23 /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E7401D7FFB8800651D23 /* BaiduMobAdSDK.framework */; };
+		A54BBBE81D8680D900E38764 /* dxBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54BBBE71D8680D900E38764 /* dxBgView.m */; };
 		A54DE70F1D79682C00481822 /* batterfly.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE7021D79682C00481822 /* batterfly.png */; };
 		A54DE7101D79682C00481822 /* batterfly01.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE7031D79682C00481822 /* batterfly01.png */; };
 		A54DE7111D79682C00481822 /* batterfly01_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A54DE7041D79682C00481822 /* batterfly01_icon.png */; };
@@ -267,6 +268,8 @@
 		A549E73C1D7FFB0300651D23 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		A549E73E1D7FFB0F00651D23 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A549E7401D7FFB8800651D23 /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
+		A54BBBE61D8680D900E38764 /* dxBgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dxBgView.h; sourceTree = "<group>"; };
+		A54BBBE71D8680D900E38764 /* dxBgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dxBgView.m; sourceTree = "<group>"; };
 		A54DE7021D79682C00481822 /* batterfly.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly.png; sourceTree = "<group>"; };
 		A54DE7031D79682C00481822 /* batterfly01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly01.png; sourceTree = "<group>"; };
 		A54DE7041D79682C00481822 /* batterfly01_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = batterfly01_icon.png; sourceTree = "<group>"; };
@@ -1002,6 +1005,8 @@
 				A56FFA2F1D50B65B00F61BD6 /* AboutTableViewCell.h */,
 				A56FFA301D50B65B00F61BD6 /* AboutTableViewCell.m */,
 				A56FFA321D50B67A00F61BD6 /* AboutTableViewCell.xib */,
+				A54BBBE61D8680D900E38764 /* dxBgView.h */,
+				A54BBBE71D8680D900E38764 /* dxBgView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -1463,6 +1468,7 @@
 				D74AAA151CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				A5B76D711D0C312A00A68667 /* DXTextInfovViewController.m in Sources */,
 				A5D76F831D3795D400AA8006 /* DmDatabaseOperation.m in Sources */,
+				A54BBBE81D8680D900E38764 /* dxBgView.m in Sources */,
 				A5B76D741D0C314500A68667 /* DXScanresultViewController.m in Sources */,
 				A5D76F841D3795D400AA8006 /* DmSearchCriteria.m in Sources */,
 				D7130D9E1C9A99BD0096768B /* QRModel.m in Sources */,

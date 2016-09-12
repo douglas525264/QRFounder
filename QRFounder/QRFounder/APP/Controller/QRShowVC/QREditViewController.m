@@ -11,6 +11,7 @@
 #import "QRSourceManager.h"
 #import "BaiduMobAdSDK/BaiduMobAdView.h"
 #import "BaiduMobAdSDK/BaiduMobAdDelegateProtocol.h"
+#import "DXHelper.h"
 @interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,BaiduMobAdViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 

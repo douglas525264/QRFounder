@@ -29,4 +29,6 @@
 - (NSString *)getLocalNameWithKey:(NSString *)key;
 - (UIImage *)getColorImageWithColor:(UIColor *)color andSize:(CGSize)size;
 + (NSString *)getVersionCode;
+
+- (UIImage *)getBgImage;
 @end

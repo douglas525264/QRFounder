@@ -30,7 +30,7 @@
     [[UINavigationBar appearance] setTitleTextAttributes:@{NSForegroundColorAttributeName:[UIColor whiteColor]}];
     [[UINavigationBar appearance] setTintColor:[UIColor whiteColor]];
    // [[UINavigationBar appearance] setBackgroundImage:[UIImage imageNamed:@"001"] forBarMetrics:UIBarMetricsDefault];
-    [[UINavigationBar appearance] setBarTintColor:RGB(33, 188, 255, 1)];
+    [[UINavigationBar appearance] setBarTintColor:RGB(87, 82, 127, 1)];
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     [[AnalyticsManager shareInstance] startUMSDK];
     [[ShareManager shareInstance] startSDK];

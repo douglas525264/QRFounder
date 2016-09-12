@@ -11,6 +11,8 @@
 #import "NSString+DXCheck.h"
 @interface DXHelper()
 @property (nonatomic, strong) DXCommenQRView *qrView;
+@property (nonatomic, strong) UIImage *bgImage;
+@property (nonatomic, strong) UIImageView *bgImageView;
 @end;
 static DXHelper *helper;
 
@@ -374,5 +376,32 @@ static DXHelper *helper;
 
     
     return @"";
+}
+- (UIImage *)getBgImage {
+    UIImageView *bgImageView = [[UIImageView alloc] initWithFrame:[UIApplication sharedApplication].keyWindow.bounds];
+    self.bgImageView = bgImageView;
+   // [[UIApplication sharedApplication].keyWindow addSubview:self.bgImageView];
+    UIImage *image = [UIImage imageNamed:@"background"];
+   
+    if (!self.bgImage) {
+        
+        CIContext *context = [CIContext contextWithOptions:nil];
+        UIImage *orImage = image;
+        CIImage *coImage = [CIImage imageWithCGImage:orImage.CGImage];
+        CIFilter *filter = [CIFilter filterWithName:@"CIGaussianBlur"];
+        [filter setValue:coImage forKey:kCIInputImageKey];
+        [filter setValue:[NSNumber numberWithFloat:4.0] forKey:@"inputRadius"];
+        // blur image
+        CIImage *result = [filter valueForKey:kCIOutputImageKey];
+        CGImageRef cgImage = [context createCGImage:result fromRect:[coImage extent]];
+        UIImage *rimage = [UIImage imageWithCGImage:cgImage];
+        CGImageRelease(cgImage);
+        bgImageView.image = rimage;
+        bgImageView.contentMode = UIViewContentModeScaleAspectFill;
+        
+
+        self.bgImage = [self imageFromView:self.bgImageView];;
+    }
+    return self.bgImage;
 }
 @end

@@ -12,6 +12,7 @@
 #import "QRShowViewController.h"
 #import "HistoryViewController.h"
 #import "DXBottomActionView.h"
+#import "DXHelper.h"
 @interface HistoryViewController ()<UITableViewDataSource,UITableViewDelegate>
 @property (nonatomic, strong) NSMutableArray *scanArr;
 @property (nonatomic, strong) NSMutableArray *createArr;
