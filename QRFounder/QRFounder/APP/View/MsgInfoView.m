@@ -11,16 +11,27 @@
 #import "CardInfoTableViewCell.h"
 #import <AddressBookUI/AddressBookUI.h>
 #import "MainViewController.h"
-@interface MsgInfoView()<ABPeoplePickerNavigationControllerDelegate>
+#import <ContactsUI/ContactsUI.h>
+@interface MsgInfoView()<ABPeoplePickerNavigationControllerDelegate,CNContactPickerDelegate>
 @property (nonatomic, strong) NSMutableArray *cells;
 
 @end
 @implementation MsgInfoView
 - (IBAction)addBtnClick:(id)sender {
     
-    ABPeoplePickerNavigationController *peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
-    peoplePicker.peoplePickerDelegate = self;
-    [[MainViewController shareInstance] presentViewController:peoplePicker animated:YES completion:nil];
+    if (IS_IOS9) {
+        CNContactPickerViewController *cnController = [CNContactPickerViewController new];
+        cnController.delegate = self;
+        //        NSArray *arrKeys = @[CNContactPhoneNumbersKey];
+        //        cnController.displayedPropertyKeys = arrKeys;
+        [[MainViewController shareInstance] presentViewController:cnController animated:YES completion:nil];
+        
+    } else {
+        
+        ABPeoplePickerNavigationController *peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
+        peoplePicker.peoplePickerDelegate = self;
+        [[MainViewController shareInstance] presentViewController:peoplePicker animated:YES completion:nil];
+    }
     
 }
 - (void)drawRect:(CGRect)rect {
@@ -47,6 +58,41 @@
     [resultStr appendFormat:@":%@;",self.contentTextView.text];
     return resultStr;
 }
+- (void)contactPickerDidCancel:(CNContactPickerViewController *)picker
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact {
+    NSMutableString *telephoneStr = [[NSMutableString alloc] init];
+    NSArray *arr = contact.phoneNumbers;
+    NSInteger i = 0;
+    for (CNContactProperty * p in arr) {
+        CNPhoneNumber *phoneNumber = p.value;
+        NSString *phoneNO = phoneNumber.stringValue;
+        if (i == 0) {
+            [telephoneStr appendString:[self getPhoneNumber:phoneNO]];
+        } else {
+            [telephoneStr appendFormat:@",%@",[self getPhoneNumber:phoneNO]];
+        }
+        
+        i++;
+    }
+ self.sendToTextView.text = telephoneStr;
+    // mailTextView.text = emailStr;
+    
+    
+    
+}
+- (NSString *)getPhoneNumber:(NSString *)phoneNO
+{
+    if ([phoneNO hasPrefix:@"+"]) {
+        phoneNO = [phoneNO substringFromIndex:3];
+    }
+    phoneNO = [phoneNO stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    NSLog(@"%@", phoneNO);
+    return phoneNO;
+}
+
 #pragma mark - ABPeoplePickerNavigationControllerDelegate
 - (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person {
     //获取个人名字
