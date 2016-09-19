@@ -61,7 +61,7 @@
     NSLog(@"load finished : %@",webView.request.URL.absoluteString);
     
 }
-- (void)webView:(UIWebView *)webView didFailLoadWithError:(nullable NSError *)error {
+- (void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
         NSLog(@"load Error : %@",webView.request.URL.absoluteString);
 
 }
