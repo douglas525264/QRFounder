@@ -41,7 +41,7 @@
 
 - (void)createAD {
     sharedAdView = [[BaiduMobAdView alloc] init]; //把在mssp.baidu.com上创建后获得的代码位id写到这里
-    sharedAdView.AdUnitTag = @"2015347";// @"2873611";
+    sharedAdView.AdUnitTag = @"2873611";// @"2015347";//
     sharedAdView.AdType = BaiduMobAdViewTypeBanner;
     sharedAdView.frame = CGRectMake(0, 20, self.view.bounds.size.width, 64);
     sharedAdView.backgroundColor = [UIColor clearColor];
@@ -256,10 +256,11 @@
 - (void)failedDisplayAd:(BaiduMobFailReason)reason {
 
     NSLog(@"fail reason : %ld",reason);
+    sharedAdView.hidden = YES;
 }
 - (NSString *)publisherId {
 
-    return @"ccb60059";//@"ff5809c5";
+    return @"ff5809c5";//@"ccb60059";//
 }
 - (void)dealloc
 {

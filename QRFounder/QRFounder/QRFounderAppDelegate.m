@@ -67,7 +67,7 @@
 
     BaiduMobAdSplash *splash = [[BaiduMobAdSplash alloc] init];
     splash.delegate = self;
-    splash.AdUnitTag = @"2058492";//@"2873611";
+    splash.AdUnitTag = @"2873611";//@"2058492";
     splash.canSplashClick = YES;
     self.splash = splash;
     
@@ -113,7 +113,7 @@
 }
 #pragma mark - ADDelegate
 - (NSString *)publisherId {
-    return @"ccb60059";//@"ff5809c5";
+    return @"ff5809c5";//@"ccb60059";
 
 }
 /**
