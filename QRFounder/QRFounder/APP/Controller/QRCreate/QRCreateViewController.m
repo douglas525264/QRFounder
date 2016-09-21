@@ -26,6 +26,7 @@
 #import "HistoryViewController.h"
 #import "DBManager.h"
 #import "DXHelper.h"
+#import "QRFounderAppDelegate.h"
 #define createBtnWidth 120
 @interface QRCreateViewController ()
 @property (nonatomic, strong)DXSelectView *selectView;
@@ -80,6 +81,9 @@
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(historyBtnClick:)];
     
+    QRFounderAppDelegate *appde = [UIApplication sharedApplication].delegate;
+    [appde addAD];
+
     
 }
 - (void)historyBtnClick:(UIButton *)sender {
@@ -87,8 +91,7 @@
     
     HistoryViewController *qVC = [story instantiateViewControllerWithIdentifier:@"HistoryViewController"];
     [self.navigationController pushViewController:qVC animated:YES];
-    
-}
+   }
 - (void)aboutBtnClick:(id)sender {
     //关于
  

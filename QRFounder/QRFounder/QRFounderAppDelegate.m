@@ -20,6 +20,7 @@
     UIView *_bgView;
 }
 @property (nonatomic, strong)BaiduMobAdSplash *splash;
+@property (nonatomic, retain) UIView *customSplashView;
 @end
 
 @implementation QRFounderAppDelegate
@@ -36,14 +37,15 @@
     [[ShareManager shareInstance] startSDK];
     
     
-    BaiduMobAdSplash *splash = [[BaiduMobAdSplash alloc] init];
-    splash.delegate = self; //把在mssp.baidu.com上创建后获得的代码位id写到这里 splash.AdUnitTag = @"2058492";
-    splash.AdUnitTag = @"2873611";
-    splash.canSplashClick = YES;
-    [splash loadAndDisplayUsingKeyWindow:self.window];
-    self.splash = splash;
+//    BaiduMobAdSplash *splash = [[BaiduMobAdSplash alloc] init];
+//    splash.delegate = self; //把在mssp.baidu.com上创建后获得的代码位id写到这里 splash.AdUnitTag = @"2058492";
+//    splash.AdUnitTag = @"2058492";//@"2873611";
+//    splash.canSplashClick = YES;
+//    [splash loadAndDisplayUsingKeyWindow:self.window];
+//    self.splash = splash;
     //});
-    
+//
+
  // [NSThread sleepForTimeInterval:2.0];
   //  [_window makeKeyAndVisible];
 
@@ -61,12 +63,30 @@
     _bgView = [[UIView alloc] initWithFrame:_window.bounds];
     _bgView.backgroundColor = bgColor;
     
-    [_window.rootViewController.view addSubview:_bgView];
-    // 设置适合的背景图片
-    // Set background image
-    NSString *defaultImgName = @"Default";
-    CGFloat offset = 0.0f;
-    CGSize adSize;
+    [_window addSubview:_bgView];
+
+    BaiduMobAdSplash *splash = [[BaiduMobAdSplash alloc] init];
+    splash.delegate = self;
+    splash.AdUnitTag = @"2058492";//@"2873611";
+    splash.canSplashClick = YES;
+    self.splash = splash;
+    
+    //可以在customSplashView上显示包含icon的自定义开屏
+    self.customSplashView = _bgView;
+  
+   
+    
+    CGFloat screenWidth = self.window.frame.size.width;
+    CGFloat screenHeight = self.window.frame.size.height;
+    
+    //在baiduSplashContainer用做上展现百度广告的容器，注意尺寸必须大于200*200，并且baiduSplashContainer需要全部在window内，同时开机画面不建议旋转
+    UIView * baiduSplashContainer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight - 150)];
+    
+    [self.customSplashView addSubview:baiduSplashContainer];
+    
+
+    [splash loadAndDisplayUsingContainerView:baiduSplashContainer];
+
 
 }
 
@@ -93,7 +113,54 @@
 }
 #pragma mark - ADDelegate
 - (NSString *)publisherId {
-    return @"ff5809c5";
+    return @"ccb60059";//@"ff5809c5";
+
+}
+/**
+ *  广告展示成功
+ */
+- (void)splashSuccessPresentScreen:(BaiduMobAdSplash *)splash {
+
+//    if (_bgView) {
+//        [_bgView removeFromSuperview];
+//    }
+}
+
+/**
+ *  广告展示失败
+ */
+- (void)splashlFailPresentScreen:(BaiduMobAdSplash *)splash withError:(BaiduMobFailReason) reason {
+
+    if (_bgView) {
+        [_bgView removeFromSuperview];
+    }
+
+}
+
+/**
+ *  广告被点击
+ */
+- (void)splashDidClicked:(BaiduMobAdSplash *)splash {
+
+}
+
+/**
+ *  广告展示结束
+ */
+- (void)splashDidDismissScreen:(BaiduMobAdSplash *)splash {
+    if (_bgView) {
+        [_bgView removeFromSuperview];
+    }
+
+}
+
+/**
+ *  广告详情页消失
+ */
+- (void)splashDidDismissLp:(BaiduMobAdSplash *)splash {
+    if (_bgView) {
+        [_bgView removeFromSuperview];
+    }
 
 }
 // Sent when an splash ad request success to loaded an ad

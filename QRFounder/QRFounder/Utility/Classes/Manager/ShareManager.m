@@ -73,8 +73,8 @@ static ShareManager *sManager;
                                             authType:SSDKAuthTypeBoth];
                  break;
              case SSDKPlatformTypeWechat:
-                 [appInfo SSDKSetupWeChatByAppId:@"wxb183ac53ca68eccd"
-                                       appSecret:@"db9ee5340c7f25e5e9f4cd2d7771d896"];
+                 [appInfo SSDKSetupWeChatByAppId:@"wx03565949c4ef222b"
+                                       appSecret:@"00ecaa559e5352f49cfaadcede09a7d4"];
                  break;
              case SSDKPlatformTypeQQ:
                  [appInfo SSDKSetupQQByAppId:@"1105673876"
