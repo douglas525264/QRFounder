@@ -7,9 +7,9 @@
 //
 
 #import "DXCommenViewController.h"
-#import "DXQRView.h"
+#import "DXCommenQRView.h"
 @interface RecommendViewController : DXCommenViewController
-@property (weak, nonatomic) IBOutlet DXQRView *qrView;
+@property (weak, nonatomic) IBOutlet DXCommenQRView *qrView;
 @property (weak, nonatomic) IBOutlet UILabel *alertLable;
 
 @end
