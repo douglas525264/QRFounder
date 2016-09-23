@@ -36,7 +36,7 @@
 
     UIImage *image = [[DXHelper shareInstance] normalImageFromView:self.qrView];
     
-    [[ShareManager shareInstance] shareQrimage:image];
+    [[ShareManager shareInstance] shareQrimage:image withView:IS_IPAD ? self.qrView : nil];
 }
 - (void)longTab:(UIGestureRecognizer *)ges {
     switch (ges.state) {
