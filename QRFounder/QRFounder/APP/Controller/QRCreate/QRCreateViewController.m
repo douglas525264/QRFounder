@@ -124,7 +124,9 @@
     }
     _currentInfoView = self.views[index];
     _currentInfoView.backgroundColor = [UIColor clearColor];
-    _currentInfoView.frame =CGRectMake(100, 80, ScreenWidth - 100, IS_IPAD ? 500 : 360);
+    CGFloat width =  self.view.frame.size.width * 0.27;
+    width = width > 100 ? 100 : width;
+    _currentInfoView.frame =CGRectMake(width, 80, ScreenWidth - width, IS_IPAD ? 500 : 360);
     if (_currentInfoView) {
         [self.view addSubview:_currentInfoView];
     }
@@ -198,7 +200,9 @@
 }
 - (DXSelectView *)selectView {
     if (!_selectView) {
-        _selectView = [[DXSelectView alloc] initWithFrame:CGRectMake(0, 80, 100,IS_IPAD ? 500 : 360) titleArr:@[@"名片",@"app",@"网址",@"短信",@"邮件"/*,@"位置"*/,@"WIFI",@"文本"] andIconArr:nil];
+        CGFloat width =  self.view.frame.size.width * 0.27;
+        width = width > 100 ? 100 : width;
+        _selectView = [[DXSelectView alloc] initWithFrame:CGRectMake(0, 80, width,IS_IPAD ? 500 : 360) titleArr:@[@"名片",@"app",@"网址",@"短信",@"邮件"/*,@"位置"*/,@"WIFI",@"文本"] andIconArr:nil];
         
     }
     return _selectView;
@@ -206,7 +210,7 @@
 - (UIButton *)createBtn {
     if (!_createBtn) {
         _createBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-        _createBtn.frame = CGRectMake(self.view.frame.size.width/2 - createBtnWidth/2, self.view.frame.size.height - 49 - 50 - createBtnWidth *1.2/4, createBtnWidth, createBtnWidth*1.2/4);
+        _createBtn.frame = CGRectMake(self.view.frame.size.width/2 - createBtnWidth/2, self.view.frame.size.height - 49 - 30 - createBtnWidth *1.2/4, createBtnWidth, createBtnWidth*1.2/4);
         [_createBtn setTitle:@"创建" forState:UIControlStateNormal];
         [_createBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         [_createBtn addTarget:self action:@selector(createBtnClick:) forControlEvents:UIControlEventTouchUpInside];
