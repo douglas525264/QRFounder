@@ -7,7 +7,8 @@
 //
 
 #import "RecommendViewController.h"
-
+#import "ShareManager.h"
+#import "DXHelper.h"
 @interface RecommendViewController ()
 
 @end
@@ -23,10 +24,18 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     QRModel *model = [[QRModel alloc] initWithQrStr: [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@",@"1152798225"]];
+    
+    model.logo = [UIImage imageNamed:@"appIcon_180"];
+    
     self.qrView.qrModel = model;
+    
     self.view.backgroundColor = RGB(0, 0, 0, 0.4);
 
     // Do any additional setup after loading the view.
+}
+- (IBAction)shareBtnClick:(id)sender {
+    UIImage *image = [[DXHelper shareInstance] normalImageFromView:self.qrView];
+    [[ShareManager shareInstance] shareQrimage:image withView:IS_IPAD ? self.qrView : nil];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -58,7 +58,7 @@
     //diffAngle = linewidthAngle / 2; //框外面4个角，与框有缝隙
     //diffAngle = linewidthAngle/2;  //框4个角 在线上加4个角效果
     //diffAngle = 0;//与矩形框重合
-    CGContextSetStrokeColorWithColor(ctx,RGB(33,188,225,1).CGColor);
+    CGContextSetStrokeColorWithColor(ctx,RGB(87, 82, 127, 1).CGColor);
     CGContextSetRGBFillColor(ctx, 1.0, 1.0, 1.0, 1.0);
     
     // Draw them with a 2.0 stroke width so they are a bit more visible.

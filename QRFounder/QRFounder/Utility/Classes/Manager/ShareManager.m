@@ -73,8 +73,8 @@ static ShareManager *sManager;
                                             authType:SSDKAuthTypeBoth];
                  break;
              case SSDKPlatformTypeWechat:
-                 [appInfo SSDKSetupWeChatByAppId:@"wxb183ac53ca68eccd"
-                                       appSecret:@"db9ee5340c7f25e5e9f4cd2d7771d896"];
+                 [appInfo SSDKSetupWeChatByAppId:@"wx03565949c4ef222b"
+                                       appSecret:@"00ecaa559e5352f49cfaadcede09a7d4"];
                  break;
              case SSDKPlatformTypeQQ:
                  [appInfo SSDKSetupQQByAppId:@"1105673876"
@@ -99,7 +99,7 @@ static ShareManager *sManager;
 
 
 }
-- (void)shareQrimage:(UIImage *)image {
+- (void)shareQrimage:(UIImage *)image withView:(UIView *)view {
 
     CGSize  imagesize = image.size;
     NSLog(@"w : %.2f l : %.2f",imagesize.width, imagesize.height);
@@ -134,7 +134,8 @@ static ShareManager *sManager;
     [shareParams SSDKSetupWeChatParamsByText:@"二维码" title:@"二维码" url:[NSURL URLWithString:@"http://www.baidu.com"] thumbImage:thumImage image:image musicFileURL:nil extInfo:nil fileData:nil emoticonData:nil type:SSDKContentTypeImage forPlatformSubType:SSDKPlatformSubTypeWechatSession];
     [shareParams SSDKSetupQQParamsByText:@"" title:@"" url:nil thumbImage:thumImage image:image type:SSDKContentTypeImage forPlatformSubType:SSDKPlatformTypeQQ];
     //2、分享（可以弹出我们的分享菜单和编辑界面）
-    [ShareSDK showShareActionSheet:nil //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响
+    
+    [ShareSDK showShareActionSheet:view //要显示菜单的视图, iPad版中此参数作为弹出菜单的参照视图，只有传这个才可以弹出我们的分享菜单，可以传分享的按钮对象或者自己创建小的view 对象，iPhone可以传nil不会影响
                              items:@[@(SSDKPlatformSubTypeWechatSession),@(SSDKPlatformSubTypeWechatTimeline),@(SSDKPlatformSubTypeQQFriend),@(SSDKPlatformTypeSinaWeibo)]
                        shareParams:shareParams
                onShareStateChanged:^(SSDKResponseState state, SSDKPlatformType platformType, NSDictionary *userData, SSDKContentEntity *contentEntity, NSError *error, BOOL end) {

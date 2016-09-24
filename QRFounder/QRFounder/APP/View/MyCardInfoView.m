@@ -10,8 +10,9 @@
 #import "MyCardInfoView.h"
 #import "CardInfoTableViewCell.h"
 #import <AddressBookUI/AddressBookUI.h>
+#import <ContactsUI/ContactsUI.h>
 #import "MainViewController.h"
-@interface MyCardInfoView()<ABPeoplePickerNavigationControllerDelegate>
+@interface MyCardInfoView()<ABPeoplePickerNavigationControllerDelegate,CNContactPickerDelegate>
 @property (nonatomic, strong) NSMutableArray *cells;
 @end
 @implementation MyCardInfoView
@@ -36,9 +37,19 @@
 }
 - (IBAction)addBtnClick:(id)sender {
     
+    if (IS_IOS9) {
+        CNContactPickerViewController *cnController = [CNContactPickerViewController new];
+        cnController.delegate = self;
+//        NSArray *arrKeys = @[CNContactPhoneNumbersKey];
+//        cnController.displayedPropertyKeys = arrKeys;
+        [[MainViewController shareInstance] presentViewController:cnController animated:YES completion:nil];
+  
+    } else {
+        
     ABPeoplePickerNavigationController *peoplePicker = [[ABPeoplePickerNavigationController alloc] init];
     peoplePicker.peoplePickerDelegate = self;
     [[MainViewController shareInstance] presentViewController:peoplePicker animated:YES completion:nil];
+    }
 
 }
 - (void)drawRect:(CGRect)rect {
@@ -196,6 +207,58 @@
     
     return resultStr;
 }
+#pragma mark - 
+- (void)contactPickerDidCancel:(CNContactPickerViewController *)picker
+{
+    [picker dismissViewControllerAnimated:YES completion:nil];
+}
+- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContact:(CNContact *)contact {
+    NSString *givenName = contact.givenName;
+    givenName = givenName ? givenName : @"";
+    NSString *familyName = contact.familyName;
+    familyName = familyName ? familyName : @"";
+    
+    NSString *fullname = [NSString stringWithFormat:@"%@%@",familyName,givenName];
+    
+    NSMutableString *telephoneStr = [[NSMutableString alloc] init];
+    NSArray *arr = contact.phoneNumbers;
+    NSInteger i = 0;
+    for (CNContactProperty * p in arr) {
+         CNPhoneNumber *phoneNumber = p.value;
+         NSString *phoneNO = phoneNumber.stringValue;
+        if (i == 0) {
+          [telephoneStr appendString:[self getPhoneNumber:phoneNO]];
+        } else {
+            [telephoneStr appendFormat:@",%@",[self getPhoneNumber:phoneNO]];
+        }
+        
+        i++;
+    }
+    nameTextView.text = fullname;
+    NSArray *emails = contact.emailAddresses;
+    NSMutableString *emailStr = [[NSMutableString alloc] init];
+    telephoneTextView.text = telephoneStr;
+   // mailTextView.text = emailStr;
+
+    
+    
+}
+//- (void)contactPicker:(CNContactPickerViewController *)picker didSelectContactProperty:(CNContactProperty *)contactProperty
+//{
+//    CNPhoneNumber *phoneNumber = contactProperty.value;
+//    NSString *phoneNO = phoneNumber.stringValue;
+//    [self getPhoneNumber:phoneNO];
+//}
+
+- (NSString *)getPhoneNumber:(NSString *)phoneNO
+{
+    if ([phoneNO hasPrefix:@"+"]) {
+        phoneNO = [phoneNO substringFromIndex:3];
+    }
+    phoneNO = [phoneNO stringByReplacingOccurrencesOfString:@"-" withString:@""];
+    NSLog(@"%@", phoneNO);
+    return phoneNO;
+}
 #pragma mark - ABPeoplePickerNavigationControllerDelegate
 - (void)peoplePickerNavigationController:(ABPeoplePickerNavigationController*)peoplePicker didSelectPerson:(ABRecordRef)person {
     //获取个人名字
@@ -244,7 +307,7 @@
             }
 //            switch (j) {
 //                case 0: {// Phone number
-//                    
+//
 //                }break;
 //                case 1: {// Email
 //                    NSString *mail = (__bridge NSString*)value;

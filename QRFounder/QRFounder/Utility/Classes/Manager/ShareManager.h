@@ -11,5 +11,5 @@
 @interface ShareManager : NSObject
 + (ShareManager *)shareInstance;
 - (void)startSDK;
-- (void)shareQrimage:(UIImage *)image;
+- (void)shareQrimage:(UIImage *)image withView:(UIView *)view;
 @end
