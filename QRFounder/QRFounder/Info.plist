@@ -70,7 +70,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1.0.0</string>
+	<string>1.0.3</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>sinaweibo</string>
@@ -105,13 +105,13 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string></string>
+	<string>iOS10请求访问相机</string>
 	<key>NSContactsUsageDescription</key>
-	<string></string>
+	<string>iOS10请求访问通讯录</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string></string>
+	<string>iOS10请求访问地理位置</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string></string>
+	<string>iOS10请求访问相册</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
