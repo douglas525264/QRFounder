@@ -70,11 +70,8 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-<<<<<<< HEAD
-	<string>1.0.1</string>
-=======
+
 	<string>1.0.3</string>
->>>>>>> origin/master
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>sinaweibo</string>
