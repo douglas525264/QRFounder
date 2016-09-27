@@ -51,7 +51,7 @@
 //        
 //        return self.otherOSTextView.text;
 //    } else {
-//        return [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@",self.iOSInputTextFiled.text];
+//        return [NSString stringWithFormat:@"https://itunes.apple.com/app/id%@",self.iOSInputTextFiled.text];
 //    }
 }
 @end
