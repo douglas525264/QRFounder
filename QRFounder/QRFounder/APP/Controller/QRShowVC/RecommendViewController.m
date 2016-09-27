@@ -13,10 +13,6 @@
 
 @end
 @implementation RecommendViewController
-- (void)awakeFromNib {
-
-    
-}
 - (void)touchesBegan:(NSSet<UITouch *> *)touches withEvent:(UIEvent *)event {
 
     [self.view removeFromSuperview];
