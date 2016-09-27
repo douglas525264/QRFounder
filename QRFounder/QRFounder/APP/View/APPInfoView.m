@@ -16,7 +16,7 @@
 */
 - (void)drawRect:(CGRect)rect {
     // Drawing code
-    self.otherOSTextView.placeHolder = @"请输入其他APP应用平台链接";
+    self.otherOSTextView.placeHolder = @"请输入安卓包名,注意程序需要提交至应用宝才会自动跳转";
     self.iOSInputTextFiled.placeholder = @"请输入iOS AppID";
     self.iOSInputTextFiled.textColor = [UIColor whiteColor];
     [self.sControl addTarget:self action:@selector(selectChange:) forControlEvents:UIControlEventValueChanged];
@@ -43,10 +43,15 @@
 }
 - (NSString *)getResultInfoStr {
 
-    if (self.sControl.selectedSegmentIndex == 1) {
-        return self.otherOSTextView.text;
-    } else {
-        return [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@",self.iOSInputTextFiled.text];
-    }
+    NSString *packStr = self.otherOSTextView.text.length > 0 ? self.otherOSTextView.text : @"";
+    NSString *appid = self.iOSInputTextFiled.text > 0 ? self.iOSInputTextFiled.text : @"";
+    return  [NSString stringWithFormat:appUrl,packStr,appid];
+    
+//    if (self.sControl.selectedSegmentIndex == 1) {
+//        
+//        return self.otherOSTextView.text;
+//    } else {
+//        return [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@",self.iOSInputTextFiled.text];
+//    }
 }
 @end

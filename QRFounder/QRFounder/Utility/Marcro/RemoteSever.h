@@ -12,8 +12,8 @@
  *  服务器宏定义
  */
 #define Schema @"http://"
-#define weiWuHost @"www.latin5.com"
-#define mainURL [NSString stringWithFormat:@"%@%@%@",Schema,weiWuHost,@"/app.html"]
-
+#define weiWuHost @"120.55.81.59"
+#define mainURL [NSString stringWithFormat:@"%@%@%@",Schema,weiWuHost,@"index/appJump?device?android&package=%@&appid=@%"]
+#define appUrl [NSString stringWithFormat:@"%@%@/%@",Schema,weiWuHost,@"index/appJump?device?android&package=%@&appid=%@"]
 
 #endif /* RemoteSever_h */

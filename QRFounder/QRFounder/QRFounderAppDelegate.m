@@ -95,7 +95,7 @@
 {
     NSDictionary *infoDict = [[NSBundle mainBundle] infoDictionary];
     
-    NSString *nowVersion = [infoDict objectForKey:@"CFBundleVersion"];
+    NSString *nowVersion = [infoDict objectForKey:@"CFBundleShortVersionString"];
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"http://itunes.apple.com/lookup?id=%@", @"1152798225"]];
     NSString * file =  [NSString stringWithContentsOfURL:url encoding:NSUTF8StringEncoding error:nil];
     if (file &&  [file rangeOfString:@"\"version\":\""].length > 0) {
