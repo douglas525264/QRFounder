@@ -16,6 +16,7 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+    //测试加上就卡卡刷卡
     // Do any additional setup after loading the view, typically from a nib.
 }
 
