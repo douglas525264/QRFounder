@@ -49,6 +49,10 @@
     return _webView;
 }
 #pragma maek - UIWebViewDelegate
+- (BOOL)webView:(UIWebView *)webView shouldStartLoadWithRequest:(NSURLRequest *)request navigationType:(UIWebViewNavigationType)navigationType {
+    NSLog(@"should load : %@",request.URL.absoluteString);
+    return YES;
+}
 - (void)webViewDidStartLoad:(UIWebView *)webView {
     NSLog(@"start load : %@",webView.request.URL.absoluteString);
     NSString *theTitle=[webView stringByEvaluatingJavaScriptFromString:@"document.title"];

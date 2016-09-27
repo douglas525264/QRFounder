@@ -23,7 +23,8 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
-    QRModel *model = [[QRModel alloc] initWithQrStr: [NSString stringWithFormat:@"http://itunes.apple.com/app/id%@",@"1152798225"]];
+    //com.onlybeyond.QRcode
+    QRModel *model = [[QRModel alloc] initWithQrStr:[NSString stringWithFormat:appUrl,@"com.onlybeyond.QRcode",@"1152798225"]];
     
     model.logo = [UIImage imageNamed:@"appIcon_180"];
     
