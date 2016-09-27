@@ -70,7 +70,6 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-
 	<string>1.0.3</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
@@ -106,13 +105,15 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>iOS10请求访问相机</string>
+	<string>请求访问</string>
 	<key>NSContactsUsageDescription</key>
-	<string>iOS10请求访问通讯录</string>
+	<string>请求访问</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>iOS10请求访问地理位置</string>
+	<string>请求访问</string>
+	<key>NSMicrophoneUsageDescription</key>
+	<string>请求访问</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>iOS10请求访问相册</string>
+	<string>请求访问</string>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
