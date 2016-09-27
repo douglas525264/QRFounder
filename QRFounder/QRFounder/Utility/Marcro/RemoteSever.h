@@ -14,6 +14,6 @@
 #define Schema @"http://"
 #define weiWuHost @"120.55.81.59"
 #define mainURL [NSString stringWithFormat:@"%@%@%@",Schema,weiWuHost,@"index/appJump?device?android&package=%@&appid=@%"]
-#define appUrl [NSString stringWithFormat:@"%@%@/%@",Schema,weiWuHost,@"index/appJump?device?android&package=%@&appid=%@"]
+#define appUrl [NSString stringWithFormat:@"%@%@/%@",Schema,weiWuHost,@"index/appJump?device=?android&package=%@&appleId=%@"]
 
 #endif /* RemoteSever_h */
