@@ -18,9 +18,12 @@
 {
     
     UIView *_bgView;
+    NSInteger backNumber;
 }
 @property (nonatomic, strong)BaiduMobAdSplash *splash;
 @property (nonatomic, retain) UIView *customSplashView;
+@property (nonatomic, strong) UIButton *jumpBtn;
+@property (nonatomic, strong) NSTimer *backTimer;
 @end
 
 @implementation QRFounderAppDelegate
@@ -70,7 +73,7 @@
     splash.AdUnitTag = @"2873611";//@"2058492";
     splash.canSplashClick = YES;
     self.splash = splash;
-    
+    backNumber = 5;
     //可以在customSplashView上显示包含icon的自定义开屏
     self.customSplashView = _bgView;
   
@@ -84,10 +87,20 @@
     
     [self.customSplashView addSubview:baiduSplashContainer];
     
-
+    self.jumpBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+    self.jumpBtn.frame = CGRectMake(screenWidth - 100, 40, 80, 30);
+    self.jumpBtn.layer.cornerRadius = 10;
+    self.jumpBtn.layer.masksToBounds = YES;
+    [self.jumpBtn addTarget:self action:@selector(tryDisMissAd) forControlEvents:UIControlEventTouchUpInside];
+    self.jumpBtn.backgroundColor = RGB(0, 0, 0, 0.4);
+    [self.jumpBtn setTitle:@"跳过" forState:UIControlStateNormal];
+    [self.jumpBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+    [self.customSplashView addSubview:self.jumpBtn];
+    self.jumpBtn.hidden = YES;
     [splash loadAndDisplayUsingContainerView:baiduSplashContainer];
-    [self performSelector:@selector(tryDisMissAd) withObject:nil afterDelay:3];
-    [self checkAppUpdate];
+    
+    [self performSelector:@selector(tryDisMissAd) withObject:nil afterDelay:10];
+    //[self checkAppUpdate];
 
 
 }
@@ -169,6 +182,11 @@
     return @"ff5809c5";//@"ccb60059";
 
 }
+- (void)changeJumpLable {
+    
+    backNumber --;
+    [self.jumpBtn setTitle:[NSString stringWithFormat:@"%ld 跳过",backNumber] forState:UIControlStateNormal];
+}
 /**
  *  广告展示成功
  */
@@ -177,6 +195,11 @@
 //    if (_bgView) {
 //        [_bgView removeFromSuperview];
 //    }
+    self.jumpBtn.hidden = NO;
+    
+    self.backTimer = [NSTimer scheduledTimerWithTimeInterval:1 target:self selector:@selector(changeJumpLable) userInfo:nil repeats:YES];
+    [self.jumpBtn setTitle:@"5 跳过" forState:UIControlStateNormal];
+    
 }
 
 /**
@@ -199,12 +222,13 @@
  *  广告展示结束
  */
 - (void)splashDidDismissScreen:(BaiduMobAdSplash *)splash {
-[self tryDisMissAd];
+    [self tryDisMissAd];
 }
 
 /**
  *  广告详情页消失
  */
+
 - (void)splashDidDismissLp:(BaiduMobAdSplash *)splash {
     [self tryDisMissAd];
 }

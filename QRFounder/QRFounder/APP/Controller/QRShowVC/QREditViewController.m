@@ -260,7 +260,7 @@
 }
 - (NSString *)publisherId {
 
-    return @"ff5809c5";//@"ccb60059";//
+    return @"ff5809c5";//@"ff5809c5ff5809c5ccb60059";//
 }
 - (void)dealloc
 {
