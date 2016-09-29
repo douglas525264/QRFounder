@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QRFounder/QRFounderAppDelegate.m"
-            timestampString = "496820295.823507"
+            timestampString = "496822207.471652"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "210"
-            endingLineNumber = "210"
+            startingLineNumber = "212"
+            endingLineNumber = "212"
             landmarkName = "-splashlFailPresentScreen:withError:"
             landmarkType = "7">
          </BreakpointContent>

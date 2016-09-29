@@ -19,6 +19,7 @@
     
     UIView *_bgView;
     NSInteger backNumber;
+    BOOL hasHide;
 }
 @property (nonatomic, strong)BaiduMobAdSplash *splash;
 @property (nonatomic, retain) UIView *customSplashView;
@@ -57,6 +58,7 @@
     return YES;
 }
 - (void)addAD {
+    hasHide = NO;
     UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     LaViewController *lVC = [mainStory instantiateViewControllerWithIdentifier:@"LaViewController"];
     lVC.view.frame = self.window.bounds;
@@ -99,7 +101,7 @@
     self.jumpBtn.hidden = YES;
     [splash loadAndDisplayUsingContainerView:baiduSplashContainer];
     
-    [self performSelector:@selector(tryDisMissAd) withObject:nil afterDelay:10];
+    [self performSelector:@selector(dismissAd) withObject:nil afterDelay:3];
     //[self checkAppUpdate];
 
 
@@ -233,15 +235,25 @@
     [self tryDisMissAd];
 }
 - (void)tryDisMissAd {
-    if (_bgView) {
-        [_bgView removeFromSuperview];
+    
+    if (_bgView && !hasHide) {
+        hasHide = YES;
+        [UIView animateWithDuration:0.5 animations:^{
+            _bgView.alpha = 0;
+        } completion:^(BOOL finished) {
+            [_bgView removeFromSuperview];
+        }];
+        
     }
 
 
 }
+
 // Sent when an splash ad request success to loaded an ad
 - (void)dismissAd{
 
-    [_bgView removeFromSuperview];
+    if (!self.backTimer) {
+        [self tryDisMissAd];
+    }
 }
 @end
