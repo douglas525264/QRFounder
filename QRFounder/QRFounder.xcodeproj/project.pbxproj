@@ -129,6 +129,7 @@
 		A5D76F841D3795D400AA8006 /* DmSearchCriteria.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F7E1D3795D400AA8006 /* DmSearchCriteria.m */; };
 		A5D76F851D3795D400AA8006 /* NSManagedObject+NSManagedObject_BaseType.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F801D3795D400AA8006 /* NSManagedObject+NSManagedObject_BaseType.m */; };
 		A5D76F881D379E8D00AA8006 /* NSDictionary+DXHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F871D379E8D00AA8006 /* NSDictionary+DXHelper.m */; };
+		A5E180BD1DA3740400360A89 /* QRFounderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A5E180BC1DA3740400360A89 /* QRFounderAppDelegate.m */; };
 		A5E315851D89553E00925D52 /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E315621D89553E00925D52 /* ShareSDK.framework */; };
 		A5E315861D89553E00925D52 /* ShareSDKExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E315651D89553E00925D52 /* ShareSDKExtension.framework */; };
 		A5E315871D89553E00925D52 /* ShareSDKUI.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5E315661D89553E00925D52 /* ShareSDKUI.bundle */; };
@@ -150,7 +151,6 @@
 		D72A3BB71CA00287001DB11F /* QREditViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D72A3BB61CA00287001DB11F /* QREditViewController.m */; };
 		D74AAA151CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = D74AAA141CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.m */; };
 		D784185A1C74551200850129 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D78418591C74551200850129 /* main.m */; };
-		D784185D1C74551200850129 /* QRFounderAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = D784185C1C74551200850129 /* QRFounderAppDelegate.m */; };
 		D78418601C74551200850129 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D784185F1C74551200850129 /* ViewController.m */; };
 		D78418631C74551200850129 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78418611C74551200850129 /* Main.storyboard */; };
 		D78418651C74551200850129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78418641C74551200850129 /* Assets.xcassets */; };
@@ -359,6 +359,8 @@
 		A5D76F801D3795D400AA8006 /* NSManagedObject+NSManagedObject_BaseType.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSManagedObject+NSManagedObject_BaseType.m"; sourceTree = "<group>"; };
 		A5D76F861D379E8D00AA8006 /* NSDictionary+DXHelper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDictionary+DXHelper.h"; sourceTree = "<group>"; };
 		A5D76F871D379E8D00AA8006 /* NSDictionary+DXHelper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSDictionary+DXHelper.m"; sourceTree = "<group>"; };
+		A5E180BB1DA3740400360A89 /* QRFounderAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QRFounderAppDelegate.h; path = QRFounder/QRFounderAppDelegate.h; sourceTree = SOURCE_ROOT; };
+		A5E180BC1DA3740400360A89 /* QRFounderAppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QRFounderAppDelegate.m; path = QRFounder/QRFounderAppDelegate.m; sourceTree = SOURCE_ROOT; };
 		A5E315621D89553E00925D52 /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDK.framework; sourceTree = "<group>"; };
 		A5E315651D89553E00925D52 /* ShareSDKExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKExtension.framework; sourceTree = "<group>"; };
 		A5E315661D89553E00925D52 /* ShareSDKUI.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDKUI.bundle; sourceTree = "<group>"; };
@@ -401,8 +403,6 @@
 		D74AAA141CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UINavigationController+FDFullscreenPopGesture.m"; sourceTree = "<group>"; };
 		D78418551C74551200850129 /* QRFounder.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRFounder.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D78418591C74551200850129 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D784185B1C74551200850129 /* QRFounderAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = QRFounderAppDelegate.h; path = ../QRFounderAppDelegate.h; sourceTree = "<group>"; };
-		D784185C1C74551200850129 /* QRFounderAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = QRFounderAppDelegate.m; path = ../QRFounderAppDelegate.m; sourceTree = "<group>"; };
 		D784185E1C74551200850129 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D784185F1C74551200850129 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		D78418621C74551200850129 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -1098,8 +1098,8 @@
 		D784189B1C74560000850129 /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				D784185B1C74551200850129 /* QRFounderAppDelegate.h */,
-				D784185C1C74551200850129 /* QRFounderAppDelegate.m */,
+				A5E180BB1DA3740400360A89 /* QRFounderAppDelegate.h */,
+				A5E180BC1DA3740400360A89 /* QRFounderAppDelegate.m */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -1267,7 +1267,7 @@
 					D78418541C74551200850129 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = B6H7GPKGQJ;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 						SystemCapabilities = {
 							com.apple.Wallet = {
 								enabled = 0;
@@ -1485,6 +1485,7 @@
 				D7130D9E1C9A99BD0096768B /* QRModel.m in Sources */,
 				D78418C41C746FD900850129 /* MyCardInfoView.m in Sources */,
 				D78418D01C74705E00850129 /* TextInfoView.m in Sources */,
+				A5E180BD1DA3740400360A89 /* QRFounderAppDelegate.m in Sources */,
 				A57609A71CB287F8006F3F1B /* QRSourceManager.m in Sources */,
 				D78418B81C746D2000850129 /* DXHelper.m in Sources */,
 				A50459B71D338A17006C7D31 /* ShareManager.m in Sources */,
@@ -1513,7 +1514,6 @@
 				A5D76F761D3793C900AA8006 /* NSString+DXTool.m in Sources */,
 				A554246F1D3E0A7900081141 /* DXBottomActionView.m in Sources */,
 				A540A0D31D239F4B0012EEB0 /* MsgView.m in Sources */,
-				D784185D1C74551200850129 /* QRFounderAppDelegate.m in Sources */,
 				D7FC156F1CA93F51009EAB4C /* DXScrollMenu.m in Sources */,
 				A5D76F821D3795D400AA8006 /* DBManager.m in Sources */,
 				A50258F01CC76A68007B00E3 /* CardInfoTableViewCell.m in Sources */,
@@ -1677,8 +1677,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: xin dong (B6H7GPKGQJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = B6H7GPKGQJ;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1706,8 +1706,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.qrcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "dd2f16ee-b982-4383-a2cf-0f4ab5440a89";
+				PROVISIONING_PROFILE_SPECIFIER = QRDIS;
 			};
 			name = Debug;
 		};
@@ -1717,8 +1717,8 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: xin dong (B6H7GPKGQJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
+				DEVELOPMENT_TEAM = B6H7GPKGQJ;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1746,8 +1746,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.qrcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "dd2f16ee-b982-4383-a2cf-0f4ab5440a89";
+				PROVISIONING_PROFILE_SPECIFIER = QRDIS;
 			};
 			name = Release;
 		};
