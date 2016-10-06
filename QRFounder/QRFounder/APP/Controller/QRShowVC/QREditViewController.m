@@ -11,7 +11,10 @@
 #import "QRSourceManager.h"
 #import "BaiduMobAdSDK/BaiduMobAdView.h"
 #import "BaiduMobAdSDK/BaiduMobAdDelegateProtocol.h"
+
+#import "BaiduMobAdSDK/BaiduMobAdSetting.h"
 #import "DXHelper.h"
+
 @interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,BaiduMobAdViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 
@@ -40,8 +43,10 @@
 }
 
 - (void)createAD {
+    
+    [BaiduMobAdSetting setLpStyle:BaiduMobAdLpStyleDefault];
     sharedAdView = [[BaiduMobAdView alloc] init]; //把在mssp.baidu.com上创建后获得的代码位id写到这里
-    sharedAdView.AdUnitTag = @"2873611";// @"2015347";//
+    sharedAdView.AdUnitTag = @"2873785";// @"2873611";//
     sharedAdView.AdType = BaiduMobAdViewTypeBanner;
     sharedAdView.frame = CGRectMake(0, 20, self.view.bounds.size.width, 64);
     sharedAdView.backgroundColor = [UIColor clearColor];
@@ -260,7 +265,7 @@
 }
 - (NSString *)publisherId {
 
-    return @"ff5809c5";//@"ff5809c5ff5809c5ccb60059";//
+    return @"ff5809c5";//@"ff5809c5";//
 }
 - (void)dealloc
 {
