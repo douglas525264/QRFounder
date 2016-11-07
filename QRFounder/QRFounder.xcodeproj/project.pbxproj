@@ -28,6 +28,8 @@
 		A540A0D51D239F740012EEB0 /* MsgView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A540A0D41D239F740012EEB0 /* MsgView.xib */; };
 		A540A0D71D23A0C30012EEB0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A540A0D61D23A0C30012EEB0 /* MessageUI.framework */; };
 		A54305701D753C18001E5906 /* LaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A543056F1D753C18001E5906 /* LaViewController.m */; };
+		A54516AE1DD0626C00B38B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54516AA1DD0626C00B38B3F /* LaunchScreen.storyboard */; };
+		A54516AF1DD0626C00B38B3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54516AC1DD0626C00B38B3F /* Main.storyboard */; };
 		A549E7371D7FFAC800651D23 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A50459B01D3376DB006C7D31 /* libc++.tbd */; };
 		A549E7391D7FFAE500651D23 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E7381D7FFAE500651D23 /* AdSupport.framework */; };
 		A549E73B1D7FFAF300651D23 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73A1D7FFAF300651D23 /* CoreMotion.framework */; };
@@ -152,9 +154,7 @@
 		D74AAA151CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.m in Sources */ = {isa = PBXBuildFile; fileRef = D74AAA141CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.m */; };
 		D784185A1C74551200850129 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = D78418591C74551200850129 /* main.m */; };
 		D78418601C74551200850129 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D784185F1C74551200850129 /* ViewController.m */; };
-		D78418631C74551200850129 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78418611C74551200850129 /* Main.storyboard */; };
 		D78418651C74551200850129 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D78418641C74551200850129 /* Assets.xcassets */; };
-		D78418681C74551200850129 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D78418661C74551200850129 /* LaunchScreen.storyboard */; };
 		D78418731C74551200850129 /* QRFounderTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D78418721C74551200850129 /* QRFounderTests.m */; };
 		D784187E1C74551200850129 /* QRFounderUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D784187D1C74551200850129 /* QRFounderUITests.m */; };
 		D784189F1C745B9400850129 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D784189E1C745B9400850129 /* MainViewController.m */; };
@@ -235,10 +235,10 @@
 		A540A0D21D239F4B0012EEB0 /* MsgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MsgView.m; sourceTree = "<group>"; };
 		A540A0D41D239F740012EEB0 /* MsgView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MsgView.xib; sourceTree = "<group>"; };
 		A540A0D61D23A0C30012EEB0 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
-		A540A0D81D23D4020012EEB0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/LaunchScreen.strings"; sourceTree = "<group>"; };
-		A540A0D91D23D4020012EEB0 /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/Main.strings"; sourceTree = "<group>"; };
 		A543056E1D753C18001E5906 /* LaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaViewController.h; sourceTree = "<group>"; };
 		A543056F1D753C18001E5906 /* LaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaViewController.m; sourceTree = "<group>"; };
+		A54516AB1DD0626C00B38B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QRFounder/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
+		A54516AD1DD0626C00B38B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QRFounder/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		A549E7381D7FFAE500651D23 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		A549E73A1D7FFAF300651D23 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		A549E73C1D7FFB0300651D23 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -405,9 +405,7 @@
 		D78418591C74551200850129 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		D784185E1C74551200850129 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		D784185F1C74551200850129 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		D78418621C74551200850129 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D78418641C74551200850129 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		D78418671C74551200850129 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D78418691C74551200850129 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D784186E1C74551200850129 /* QRFounderTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = QRFounderTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D78418721C74551200850129 /* QRFounderTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QRFounderTests.m; sourceTree = "<group>"; };
@@ -987,8 +985,8 @@
 		D784188E1C7455BA00850129 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
-				D78418661C74551200850129 /* LaunchScreen.storyboard */,
-				D78418611C74551200850129 /* Main.storyboard */,
+				A54516AA1DD0626C00B38B3F /* LaunchScreen.storyboard */,
+				A54516AC1DD0626C00B38B3F /* Main.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -1315,6 +1313,7 @@
 				A53340531D95215200AEF0DA /* InfoPlist.strings in Resources */,
 				A56FFA0E1D50986300F61BD6 /* birthday001.png in Resources */,
 				A56FFA251D50986300F61BD6 /* mouse02.png in Resources */,
+				A54516AF1DD0626C00B38B3F /* Main.storyboard in Resources */,
 				A56FFA2E1D50986300F61BD6 /* mouse06_icon.png in Resources */,
 				A56FFA221D50986300F61BD6 /* hello004_icon.png in Resources */,
 				D78418DD1C7487AF00850129 /* APPInfoView.xib in Resources */,
@@ -1331,7 +1330,6 @@
 				A57609E11CB28E18006F3F1B /* weixin.png in Resources */,
 				A56FFA1C1D50986300F61BD6 /* hello001_icon.png in Resources */,
 				A54DE7161D79682C00481822 /* batterfly04.png in Resources */,
-				D78418681C74551200850129 /* LaunchScreen.storyboard in Resources */,
 				D78418DF1C7487BE00850129 /* MyCardInfoView.xib in Resources */,
 				A54DE7121D79682C00481822 /* batterfly02.png in Resources */,
 				A5E3158A1D89553E00925D52 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
@@ -1361,7 +1359,6 @@
 				D78418E71C74884900850129 /* TextinfoView.xib in Resources */,
 				A57609DD1CB28E18006F3F1B /* tianmaoIcon.png in Resources */,
 				D78418DB1C74879800850129 /* CommenInfoView.xib in Resources */,
-				D78418631C74551200850129 /* Main.storyboard in Resources */,
 				A54E2C391D74465800667C1E /* mouse.png in Resources */,
 				A54DE7131D79682C00481822 /* batterfly02_icon.png in Resources */,
 				A57609D91CB28E18006F3F1B /* album.png in Resources */,
@@ -1392,6 +1389,7 @@
 				A56FFA271D50986300F61BD6 /* mouse03.png in Resources */,
 				A57609DC1CB28E18006F3F1B /* tianmao.png in Resources */,
 				A54DE7101D79682C00481822 /* batterfly01.png in Resources */,
+				A54516AE1DD0626C00B38B3F /* LaunchScreen.storyboard in Resources */,
 				A5E3158F1D89553E00925D52 /* README.txt in Resources */,
 				A56FFA291D50986300F61BD6 /* mouse04.png in Resources */,
 			);
@@ -1566,24 +1564,20 @@
 			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
-		D78418611C74551200850129 /* Main.storyboard */ = {
+		A54516AA1DD0626C00B38B3F /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				D78418621C74551200850129 /* Base */,
-				A540A0D91D23D4020012EEB0 /* zh-Hans */,
-			);
-			name = Main.storyboard;
-			path = ../..;
-			sourceTree = "<group>";
-		};
-		D78418661C74551200850129 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D78418671C74551200850129 /* Base */,
-				A540A0D81D23D4020012EEB0 /* zh-Hans */,
+				A54516AB1DD0626C00B38B3F /* Base */,
 			);
 			name = LaunchScreen.storyboard;
-			path = ../..;
+			sourceTree = "<group>";
+		};
+		A54516AC1DD0626C00B38B3F /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A54516AD1DD0626C00B38B3F /* Base */,
+			);
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
