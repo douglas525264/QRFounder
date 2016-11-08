@@ -116,45 +116,40 @@ static QRSourceManager *qManager;
             [resultArr addObject:menuItem];
         }break;
         case QREditTypeDIY:{
-            NSArray *colors = @[[UIColor yellowColor]];
+            
+            
+            
+            sourcepath = [[NSBundle mainBundle] pathForResource:@"DIYImageSource" ofType:@"plist"];
+            NSDictionary *infoDic = [NSDictionary dictionaryWithContentsOfFile:sourcepath];
+            NSArray *items = [infoDic objectForKey:@"items"];
+            NSMutableArray *menulist = [[NSMutableArray alloc] init];
             DXmenuItem *menuItem = [[DXmenuItem alloc] init];
             menuItem.color = [UIColor yellowColor];
-            NSMutableArray *menulist = [[NSMutableArray alloc] init];
-            for (UIColor *c in colors) {
+
+            for (NSDictionary *info in items) {
                 DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
-                subItem.normalImage = [[DXHelper shareInstance] getColorImageWithColor:c andSize:CGSizeMake(40, 40)];
-                subItem.color = c;
+                subItem.normalImage = [UIImage imageNamed:[info objectForKey:@"iconName"]];;
+                subItem.color = [UIColor greenColor];
                 DIYSubModel *boarderItem = [[DIYSubModel alloc] init];
-                boarderItem.image = [UIImage imageNamed:@"boarder"];
-                
-                DIYSubModel *item1 = [[DIYSubModel alloc] init];
-                item1.image = [UIImage imageNamed:@"item01"];
-                item1.size = CGSizeMake(2, 1);
-                item1.probability = 0.2;
-                DIYSubModel *item2 = [[DIYSubModel alloc] init];
-                item2.image = [UIImage imageNamed:@"item02"];
-                item2.size = CGSizeMake(1, 1);
-                item2.probability = 1.0;
-                DIYSubModel *item3 = [[DIYSubModel alloc] init];
-                item3.image = [UIImage imageNamed:@"item03"];
-                item3.size = CGSizeMake(2, 2);
-                item3.probability = 0.06;
-                
-                DIYSubModel *item4 = [[DIYSubModel alloc] init];
-                item4.image = [UIImage imageNamed:@"item04"];
-                item4.size = CGSizeMake(2, 2);
-                item4.probability = 0.06;
-                DIYSubModel *item5 = [[DIYSubModel alloc] init];
-                item5.image = [UIImage imageNamed:@"item05"];
-                item5.size = CGSizeMake(1, 2);
-                item5.probability = 0.2;
+                boarderItem.image = [UIImage imageNamed:[info objectForKey:@"boardername"]];
+                NSArray *subMenuInfos = [info objectForKey:@"menuList"];
+                NSMutableArray *items = [[NSMutableArray alloc] init];
+                for (NSDictionary *subInfo in subMenuInfos) {
+                    DIYSubModel *item = [[DIYSubModel alloc] init];
+                    item.image = [UIImage imageNamed:[subInfo objectForKey:@"imageSourceName"]];
+                    item.size = CGSizeMake([[subInfo objectForKey:@"sizex"] floatValue], [[subInfo objectForKey:@"sizey"] floatValue]);
+                    item.probability = [[subInfo objectForKey:@"probability"] floatValue];
+                    [items addObject:item];
+                }
                 DIYModel *diyModel = [[DIYModel alloc] init];
                 diyModel.boarderModel = boarderItem;
-                diyModel.itemArrays = @[item1,item2,item3,item4,item5];
+                diyModel.itemArrays = items;
                 subItem.diyModel = diyModel;
                 [menulist addObject:subItem];
+                
             }
             menuItem.items = menulist;
+            
             [resultArr addObject:menuItem];
         }break;
 
