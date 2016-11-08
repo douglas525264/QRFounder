@@ -126,8 +126,77 @@
                     }
                 }
             }
+            
             NSInteger preCount = count * subModel.probability/subModel.sizeCount;
             if (preCount < willUseArr.count) {
+                
+                if (subModel.sizeCount >= 4 && willUseArr.count > 0) {
+                    
+                    NSInteger index = 0;
+                    while (lastUseArr.count < preCount) {
+                        
+                        NSInteger middleIndex = willUseArr.count/2;
+                        QROnePoint *pp = willUseArr[middleIndex];
+                        [lastUseArr addObject:pp];
+                        [self markPoint:pp withDIYItem:subModel status:1];
+                        
+                        [willUseArr removeObject:pp];
+                        if (lastUseArr.count == preCount) {
+                            break;
+                        }
+                        QROnePoint *pp1 = willUseArr.firstObject;
+                        [lastUseArr addObject:pp1];
+                        [self markPoint:pp1 withDIYItem:subModel status:1];
+                        
+                        [willUseArr removeObject:pp1];
+                        if (lastUseArr.count == preCount) {
+                            break;
+                        }
+                        QROnePoint *pp2 = willUseArr.lastObject;
+                        [lastUseArr addObject:pp2];
+                        [self markPoint:pp2 withDIYItem:subModel status:1];
+                        
+                        [willUseArr removeObject:pp2];
+                        if (lastUseArr.count == preCount) {
+                            break;
+                        }
+
+
+                        
+                        
+                        index ++;
+                    }
+                    for (QROnePoint  *currentP in willUseArr) {
+//                        if (lastUseArr.count < preCount) {
+//                            [lastUseArr addObject:currentP];
+//                            [self markPoint:currentP withDIYItem:subModel status:1];
+//                            
+//                        } else {
+                            [self markPoint:currentP withDIYItem:subModel status:3];
+                        //}
+                    }
+
+//                    NSInteger middleIndex = willUseArr.count/2;
+//                    QROnePoint *pp = willUseArr[middleIndex];
+//                    [lastUseArr addObject:pp];
+//                    [self markPoint:pp withDIYItem:subModel status:1];
+//                    
+//                    [willUseArr removeObject:pp];
+//                    
+//                    [willUseArr sortUsingComparator:^NSComparisonResult(QROnePoint  *obj1, QROnePoint  *obj2) {
+//                        return [obj1 disWithOtherpoint:pp] < [obj2 disWithOtherpoint:pp];
+//                    }];
+//                    for (QROnePoint  *currentP in willUseArr) {
+//                        if (lastUseArr.count < preCount) {
+//                            [lastUseArr addObject:currentP];
+//                            [self markPoint:currentP withDIYItem:subModel status:1];
+// 
+//                        } else {
+//                        [self markPoint:currentP withDIYItem:subModel status:3];
+//                        }
+//                    }
+                } else {
+
                 NSInteger more = willUseArr.count - preCount;
                 NSInteger tag = more/preCount;
                 if (tag < 1) {
@@ -146,6 +215,7 @@
                         [self markPoint:currentPoint withDIYItem:subModel status:3];
                     }
 
+                }
                 }
                 
             } else {

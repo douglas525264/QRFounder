@@ -138,12 +138,12 @@ static QRSourceManager *qManager;
                 DIYSubModel *item3 = [[DIYSubModel alloc] init];
                 item3.image = [UIImage imageNamed:@"item03"];
                 item3.size = CGSizeMake(2, 2);
-                item3.probability = 0.1;
+                item3.probability = 0.06;
                 
                 DIYSubModel *item4 = [[DIYSubModel alloc] init];
                 item4.image = [UIImage imageNamed:@"item04"];
                 item4.size = CGSizeMake(2, 2);
-                item4.probability = 0.1;
+                item4.probability = 0.06;
                 DIYSubModel *item5 = [[DIYSubModel alloc] init];
                 item5.image = [UIImage imageNamed:@"item05"];
                 item5.size = CGSizeMake(1, 2);
