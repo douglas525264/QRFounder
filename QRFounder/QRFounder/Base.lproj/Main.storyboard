@@ -72,7 +72,7 @@
                         <viewControllerLayoutGuide type="bottom" id="P2w-S4-Wfj"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="cWy-tf-gh2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Qj1-ml-VRq">
@@ -223,6 +223,19 @@
                                     </mask>
                                 </variation>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LY7-3b-0z7">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="46" id="8VC-e2-rqu"/>
+                                    <constraint firstAttribute="height" constant="30" id="zK2-aK-t2C"/>
+                                </constraints>
+                                <state key="normal" title="DIY">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="DIYBtnClick:" destination="73s-M2-5Ug" eventType="touchUpInside" id="CUj-gY-ftc"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.3094507104" green="1" blue="0.13805990400000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
@@ -248,6 +261,7 @@
                             <constraint firstItem="4BH-Vb-OOL" firstAttribute="centerX" secondItem="cWy-tf-gh2" secondAttribute="centerX" constant="92" id="WSy-IR-k2p">
                                 <variation key="widthClass=compact" constant="47"/>
                             </constraint>
+                            <constraint firstItem="LY7-3b-0z7" firstAttribute="centerX" secondItem="cWy-tf-gh2" secondAttribute="centerX" id="b3G-MV-E63"/>
                             <constraint firstItem="P2w-S4-Wfj" firstAttribute="top" secondItem="D4w-vl-usy" secondAttribute="bottom" constant="41" id="dUX-3k-upf">
                                 <variation key="widthClass=compact" constant="15"/>
                             </constraint>
@@ -258,6 +272,7 @@
                             <constraint firstItem="P2w-S4-Wfj" firstAttribute="top" secondItem="cdg-Q1-GJe" secondAttribute="bottom" constant="41" id="nl4-Me-GFE">
                                 <variation key="widthClass=compact" constant="15"/>
                             </constraint>
+                            <constraint firstItem="P2w-S4-Wfj" firstAttribute="top" secondItem="LY7-3b-0z7" secondAttribute="bottom" constant="84" id="tNj-gn-99D"/>
                             <constraint firstItem="Ncc-i1-1v8" firstAttribute="centerX" secondItem="cWy-tf-gh2" secondAttribute="centerX" id="xj0-Ed-Qjq"/>
                             <constraint firstItem="Ncc-i1-1v8" firstAttribute="centerX" secondItem="cWy-tf-gh2" secondAttribute="centerX" id="yJ7-tW-z2U">
                                 <variation key="widthClass=compact" constant="5"/>
@@ -294,6 +309,8 @@
                             </mask>
                         </variation>
                     </view>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="600" height="600"/>
                     <connections>
                         <outlet property="qrView" destination="Ncc-i1-1v8" id="5Y6-np-pTE"/>
                     </connections>

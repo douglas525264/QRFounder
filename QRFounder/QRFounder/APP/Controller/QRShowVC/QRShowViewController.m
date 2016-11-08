@@ -117,6 +117,18 @@
     }];
 
 }
+- (IBAction)DIYBtnClick:(id)sender {
+    UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    QREditViewController *qVC = [story instantiateViewControllerWithIdentifier:@"QREditViewController"];
+    qVC.qrModel = [self.qrModel copy];
+    qVC.editType = QREditTypeDIY;
+    [qVC setFinishedBlock:^(QRModel *model) {
+        self.qrModel = model;
+    }];
+    [self presentViewController:qVC animated:YES completion:^{
+        
+    }];
+}
 - (IBAction)logoBtnClick:(id)sender {
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     QREditViewController *qVC = [story instantiateViewControllerWithIdentifier:@"QREditViewController"];

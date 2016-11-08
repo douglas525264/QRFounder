@@ -68,6 +68,11 @@
     self.qrView.qrModel = self.qrModel;
     
 }
+- (void)setQRDiyModel:(DIYModel *)diy {
+
+    self.qrModel.diyModel = diy;
+    self.qrView.qrModel = self.qrModel;
+}
 - (void)setQRColor:(UIColor *)color {
 
     self.qrModel.codeColor = color;
@@ -126,6 +131,9 @@
                     }break;
                     case QREditTypeColor:{
                         [strongSelf setQRColor:subitem.color];
+                    }break;
+                    case QREditTypeDIY:{
+                        [strongSelf setQRDiyModel:subitem.diyModel];
                     }break;
 
                         

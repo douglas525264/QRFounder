@@ -30,6 +30,9 @@
 		A54305701D753C18001E5906 /* LaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A543056F1D753C18001E5906 /* LaViewController.m */; };
 		A54516AE1DD0626C00B38B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54516AA1DD0626C00B38B3F /* LaunchScreen.storyboard */; };
 		A54516AF1DD0626C00B38B3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54516AC1DD0626C00B38B3F /* Main.storyboard */; };
+		A54516B21DD0676900B38B3F /* DIYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A54516B11DD0676900B38B3F /* DIYModel.m */; };
+		A54516B51DD0679600B38B3F /* DIYSubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A54516B41DD0679600B38B3F /* DIYSubModel.m */; };
+		A54516B81DD0696600B38B3F /* QRPointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A54516B71DD0696600B38B3F /* QRPointModel.m */; };
 		A549E7371D7FFAC800651D23 /* libc++.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A50459B01D3376DB006C7D31 /* libc++.tbd */; };
 		A549E7391D7FFAE500651D23 /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E7381D7FFAE500651D23 /* AdSupport.framework */; };
 		A549E73B1D7FFAF300651D23 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73A1D7FFAF300651D23 /* CoreMotion.framework */; };
@@ -239,6 +242,12 @@
 		A543056F1D753C18001E5906 /* LaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaViewController.m; sourceTree = "<group>"; };
 		A54516AB1DD0626C00B38B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QRFounder/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		A54516AD1DD0626C00B38B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QRFounder/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
+		A54516B01DD0676900B38B3F /* DIYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYModel.h; sourceTree = "<group>"; };
+		A54516B11DD0676900B38B3F /* DIYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYModel.m; sourceTree = "<group>"; };
+		A54516B31DD0679600B38B3F /* DIYSubModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYSubModel.h; sourceTree = "<group>"; };
+		A54516B41DD0679600B38B3F /* DIYSubModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYSubModel.m; sourceTree = "<group>"; };
+		A54516B61DD0696600B38B3F /* QRPointModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRPointModel.h; sourceTree = "<group>"; };
+		A54516B71DD0696600B38B3F /* QRPointModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRPointModel.m; sourceTree = "<group>"; };
 		A549E7381D7FFAE500651D23 /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
 		A549E73A1D7FFAF300651D23 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = System/Library/Frameworks/CoreMotion.framework; sourceTree = SDKROOT; };
 		A549E73C1D7FFB0300651D23 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
@@ -978,6 +987,12 @@
 			children = (
 				D7130D9C1C9A99BD0096768B /* QRModel.h */,
 				D7130D9D1C9A99BD0096768B /* QRModel.m */,
+				A54516B01DD0676900B38B3F /* DIYModel.h */,
+				A54516B11DD0676900B38B3F /* DIYModel.m */,
+				A54516B31DD0679600B38B3F /* DIYSubModel.h */,
+				A54516B41DD0679600B38B3F /* DIYSubModel.m */,
+				A54516B61DD0696600B38B3F /* QRPointModel.h */,
+				A54516B71DD0696600B38B3F /* QRPointModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -1486,8 +1501,10 @@
 				A5E180BD1DA3740400360A89 /* QRFounderAppDelegate.m in Sources */,
 				A57609A71CB287F8006F3F1B /* QRSourceManager.m in Sources */,
 				D78418B81C746D2000850129 /* DXHelper.m in Sources */,
+				A54516B21DD0676900B38B3F /* DIYModel.m in Sources */,
 				A50459B71D338A17006C7D31 /* ShareManager.m in Sources */,
 				A50459B41D3378F3006C7D31 /* AnalyticsManager.m in Sources */,
+				A54516B81DD0696600B38B3F /* QRPointModel.m in Sources */,
 				D78418D61C74708100850129 /* WIFIInfoView.m in Sources */,
 				A5D76F6B1D373D2200AA8006 /* AboutTableViewController.m in Sources */,
 				A5D76F731D378DC900AA8006 /* QRdatabase.xcdatamodeld in Sources */,
@@ -1512,6 +1529,7 @@
 				A5D76F761D3793C900AA8006 /* NSString+DXTool.m in Sources */,
 				A554246F1D3E0A7900081141 /* DXBottomActionView.m in Sources */,
 				A540A0D31D239F4B0012EEB0 /* MsgView.m in Sources */,
+				A54516B51DD0679600B38B3F /* DIYSubModel.m in Sources */,
 				D7FC156F1CA93F51009EAB4C /* DXScrollMenu.m in Sources */,
 				A5D76F821D3795D400AA8006 /* DBManager.m in Sources */,
 				A50258F01CC76A68007B00E3 /* CardInfoTableViewCell.m in Sources */,

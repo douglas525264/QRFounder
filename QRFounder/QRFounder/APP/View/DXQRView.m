@@ -8,6 +8,7 @@
 
 #import "DXQRView.h"
 #import "qrencode.h"
+#import "QRPointModel.h"
 #define BGAPLAH 0.7 //四周黑框颜色 以及白边透明度
 #define SMALLBGPLAH 0.2 //小背景透明度
 #define SMALLPLAH 0.5 //小块透明度
@@ -51,6 +52,9 @@ enum {
     if (_qrModel.QRStr.length > 128) {
         lef = QR_ECLEVEL_L;
     }
+    if (_qrModel.QRStr.length < 4) {
+        lef = QR_ECLEVEL_H;
+    }
     
     QRcode *code = QRcode_encodeString([_qrModel.QRStr UTF8String], 0, lef, QR_MODE_8, 1);
     [self drawQRCode:code context:cxt size:rect.size.width];
@@ -58,8 +62,10 @@ enum {
 
 - (void)drawQRCode:(QRcode *)code context:(CGContextRef)ctx size:(CGFloat)size {
     
+    if (_qrModel.diyModel) {
+        [self drawDIYQRCode:code context:ctx size:size];
     
-    if (_qrModel.bgImage && !_qrModel.codeColor) {
+    } else if (_qrModel.bgImage && !_qrModel.codeColor) {
         [self drawBgQRCode:code context:ctx size:size];
     } else {
         unsigned char *data = 0;
@@ -99,7 +105,14 @@ enum {
     }
 }
 
+- (void)drawDIYQRCode:(QRcode *)code context:(CGContextRef)ctx size:(CGFloat)size {
 
+    QRPointModel *pModel = [[QRPointModel alloc] initWithQRCode:code diyModel:self.qrModel.diyModel andSize:size];
+    NSArray *resultArr = [pModel getResultArr];
+    for (QRResultPoint *resPoint in resultArr) {
+        [resPoint.image drawInRect:resPoint.frame];
+    }
+}
 
 - (void)drawBgQRCode:(QRcode *)code context:(CGContextRef)ctx size:(CGFloat)size {
     unsigned char *data = 0;

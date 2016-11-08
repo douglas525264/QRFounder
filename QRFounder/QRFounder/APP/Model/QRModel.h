@@ -9,6 +9,7 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 #import "DXCommenHelper.h"
+#import "DIYModel.h"
 #import "NSString+DXTool.h"
 @interface QRModel : NSObject<NSCopying>
 //二维码字符串
@@ -29,6 +30,9 @@
 @property (nonatomic, assign) int64_t createTime;
 
 @property (nonatomic, assign) BOOL isScanResult;
+
+//ext
+@property (nonatomic, strong) DIYModel *diyModel;
 
 - (instancetype)initWithQrStr:(NSString *)qrStr;
 
