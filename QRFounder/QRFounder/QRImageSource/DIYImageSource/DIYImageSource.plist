@@ -156,7 +156,7 @@
 			<key>boardername</key>
 			<string>cron_boarder</string>
 			<key>iconName</key>
-			<string>mouse-icon</string>
+			<string>corn_icon</string>
 			<key>menuList</key>
 			<array>
 				<dict>
