@@ -5,6 +5,16 @@
 	<key>items</key>
 	<array>
 		<dict>
+			<key>bgr</key>
+			<integer>255</integer>
+			<key>bga</key>
+			<integer>1</integer>
+			<key>bgg</key>
+			<integer>255</integer>
+			<key>bgb</key>
+			<integer>255</integer>
+			<key>isChangeBlack</key>
+			<false/>
 			<key>boardername</key>
 			<string>cookie_boarder</string>
 			<key>iconName</key>
@@ -64,6 +74,16 @@
 			</array>
 		</dict>
 		<dict>
+			<key>bgr</key>
+			<integer>255</integer>
+			<key>bga</key>
+			<integer>1</integer>
+			<key>bgg</key>
+			<integer>255</integer>
+			<key>bgb</key>
+			<integer>255</integer>
+			<key>isChangeBlack</key>
+			<false/>
 			<key>boardername</key>
 			<string>mouse_Boarder</string>
 			<key>iconName</key>
@@ -119,6 +139,35 @@
 					<integer>3</integer>
 					<key>imageSourceName</key>
 					<string>mouse_item05</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>bgb</key>
+			<integer>0</integer>
+			<key>bga</key>
+			<integer>1</integer>
+			<key>bgg</key>
+			<integer>0</integer>
+			<key>bgr</key>
+			<integer>0</integer>
+			<key>isChangeBlack</key>
+			<true/>
+			<key>boardername</key>
+			<string>cron_boarder</string>
+			<key>iconName</key>
+			<string>mouse-icon</string>
+			<key>menuList</key>
+			<array>
+				<dict>
+					<key>probability</key>
+					<integer>1</integer>
+					<key>sizey</key>
+					<integer>1</integer>
+					<key>sizex</key>
+					<integer>1</integer>
+					<key>imageSourceName</key>
+					<string>cron_item01</string>
 				</dict>
 			</array>
 		</dict>

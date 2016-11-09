@@ -32,6 +32,7 @@ enum {
 
     _qrModel = qrModel;
     [self setNeedsDisplay];
+    self.backgroundColor = [UIColor clearColor];
 }
 - (void)drawRect:(CGRect)rect {
     // Drawing code
@@ -40,11 +41,12 @@ enum {
     }
     CGContextRef cxt = UIGraphicsGetCurrentContext();
     UIGraphicsPushContext(cxt);
-    //CGRect rectDraw = CGRectMake(0, 0, zoom, zoom);
+//    //CGRect rectDraw = CGRectMake(0, 0, zoom, zoom);
+//    
+//    CGContextSetFillColorWithColor(cxt, [UIColor clearColor].CGColor);
+//    CGContextAddRect(cxt,rect);
+//    CGContextFillPath(cxt);
     
-    CGContextSetFillColorWithColor(cxt, [UIColor whiteColor].CGColor);
-    CGContextAddRect(cxt,rect);
-    CGContextFillPath(cxt);
     QRecLevel lef = QR_ECLEVEL_Q;
     if (_qrModel.QRStr.length > 64) {
         lef = QR_ECLEVEL_M;
@@ -107,7 +109,14 @@ enum {
 
 - (void)drawDIYQRCode:(QRcode *)code context:(CGContextRef)ctx size:(CGFloat)size {
 
-    QRPointModel *pModel = [[QRPointModel alloc] initWithQRCode:code diyModel:self.qrModel.diyModel andSize:size];
+    
+//    
+    CGContextSetFillColorWithColor(ctx, self.qrModel.diyModel.bgColor.CGColor);
+    CGFloat oneLine = size/(code->width +2);
+    CGContextAddRect(ctx,CGRectMake(0, 0, size ,  size ));
+    CGContextFillPath(ctx);
+    
+    QRPointModel *pModel = [[QRPointModel alloc] initWithQRCode:code diyModel:self.qrModel.diyModel andSize:size isChangeBlack:self.qrModel.diyModel.isChangeBlack];
     NSArray *resultArr = [pModel getResultArr];
     for (QRResultPoint *resPoint in resultArr) {
         [resPoint.image drawInRect:resPoint.frame];

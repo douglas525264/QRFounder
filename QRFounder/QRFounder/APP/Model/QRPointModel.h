@@ -11,11 +11,13 @@
 #import "qrencode.h"
 #import "DIYModel.h"
 @interface QRPointModel : NSObject
+@property (nonatomic, assign) BOOL isChangeBlack;
 @property (nonatomic, assign) CGFloat size;
 @property (nonatomic, assign) QRcode *code;
 @property (nonatomic, assign) CGFloat qr_margin;
 @property (nonatomic, strong) DIYModel *diymodel;
 -(id)initWithQRCode:(QRcode *)code diyModel:(DIYModel *)diymodel andSize:(CGFloat)size;
+-(id)initWithQRCode:(QRcode *)code diyModel:(DIYModel *)diymodel andSize:(CGFloat)size isChangeBlack:(BOOL)isChange;
 - (NSArray *)getResultArr;
 @end
 

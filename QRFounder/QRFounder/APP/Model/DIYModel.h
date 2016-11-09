@@ -12,5 +12,6 @@
 
 @property(nonatomic, strong) DIYSubModel *boarderModel;
 @property(nonatomic, strong) NSArray *itemArrays;
-
+@property(nonatomic, strong) UIColor *bgColor;
+@property(nonatomic, assign) BOOL isChangeBlack;
 @end

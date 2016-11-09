@@ -9,5 +9,11 @@
 #import "DIYModel.h"
 
 @implementation DIYModel
+- (UIColor *)bgColor {
 
+    if (!_bgColor) {
+        _bgColor = [UIColor whiteColor];
+    }
+    return _bgColor;
+}
 @end

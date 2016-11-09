@@ -142,6 +142,8 @@ static QRSourceManager *qManager;
                     [items addObject:item];
                 }
                 DIYModel *diyModel = [[DIYModel alloc] init];
+                diyModel.bgColor = RGB([[info objectForKey:@"bgr"] floatValue], [[info objectForKey:@"bgg"] floatValue], [[info objectForKey:@"bgb"] floatValue], [[info objectForKey:@"bga"] floatValue]);
+                diyModel.isChangeBlack = [[info objectForKey:@"isChangeBlack"] boolValue];
                 diyModel.boarderModel = boarderItem;
                 diyModel.itemArrays = items;
                 subItem.diyModel = diyModel;

@@ -15,7 +15,7 @@
 @property (nonatomic, assign) CGFloat oneWidth;
 @end
 @implementation QRPointModel
--(id)initWithQRCode:(QRcode *)code diyModel:(DIYModel *)diymodel andSize:(CGFloat)size {
+-(id)initWithQRCode:(QRcode *)code diyModel:(DIYModel *)diymodel andSize:(CGFloat)size isChangeBlack:(BOOL)isChange {
 
     self = [super init];
     if (self) {
@@ -24,55 +24,72 @@
         self.diymodel = diymodel;
         unsigned char *data = 0;
         int width;
-        
+        self.isChangeBlack = isChange;
         data = code->data;
         width = code->width;
-        self.width = width;
+        self.width = width + 2;
         self.boardWidth = 0;
         BOOL hasEnd = NO;
         NSMutableString *str = [[NSMutableString alloc] init];
-        for(int i = 0; i < width; ++i) {
-            for(int j = 0; j < width; ++j) {
+        for(int i = 0; i < self.width; ++i) {
+            for(int j = 0; j < self.width; ++j) {
                 QROnePoint *point = [[QROnePoint alloc] init];
-                if(*data & 1) {
-                    
-                    point.isBlack = YES;
-                    if (!hasEnd) {
-                        self.boardWidth ++;
+                
+                if ((i == 0) || (j == 0) || (i == (width + 1)) || (j == (width + 1))) {
+                    point.isBlack = self.isChangeBlack;
+                } else {
+                    if(*data & 1) {
+                        
+                        point.isBlack = !self.isChangeBlack;
+                        if (!hasEnd) {
+                            self.boardWidth ++;
+                        }
+                    }else {
+                        
+                        hasEnd = YES;
+                        point.isBlack = self.isChangeBlack;
                     }
-                }else {
                     
-                    hasEnd = YES;
-                    point.isBlack = NO;
+                    ++data;
                 }
                 point.position = [NSIndexPath indexPathForRow:j inSection:i];
                 //[str appendFormat:@"(%ld,%ld)",i,j];
                 point.isInUse = NO;
                 [self.pointArr addObject:point];
-                ++data;
             }
             
         }
-        for(int i = 0; i < width; ++i) {
-            for(int j = 0; j < width; ++j) {
-                QROnePoint *testPoint = self.pointArr[i * self.width + j];
+        for(int i = 0; i < self.width; ++i) {
+            for(int j = 0; j < self.width; ++j) {
+                QROnePoint *testPoint = self.pointArr[i * (self.width) + j];
                 if (testPoint.isBlack) {
                     [str appendString:@"1 "];
                 }else {
-                [str appendString:@"0 "];
+                    [str appendString:@"0 "];
                 }
             }
-            [str appendFormat:@"\n"];
+            [str appendFormat:@"\n "];
         }
         NSLog(str);
-        self.qr_margin = 1;
-        self.oneWidth = size/(self.width + 2 * self.qr_margin);
         
-
+        self.oneWidth = size/self.width;
+        if (self.isChangeBlack) {
+         // self.width += 2;
+          self.qr_margin = 0;
+          self.boardWidth += 2;
+        }else {
+            self.qr_margin = 1;
+        }
+        
+        
         
         
     }
     return self;
+
+}
+-(id)initWithQRCode:(QRcode *)code diyModel:(DIYModel *)diymodel andSize:(CGFloat)size {
+    return  [self initWithQRCode:code diyModel:diymodel andSize:size isChangeBlack:NO];
 }
 - (NSArray *)getResultArr {
     
@@ -82,23 +99,38 @@
     b1.image = self.diymodel.boarderModel.image;
     b1.frame = CGRectMake(self.qr_margin * self.oneWidth, self.qr_margin * self.oneWidth, self.boardWidth * self.oneWidth, self.boardWidth * self.oneWidth);
     QROnePoint *bp1 = [[QROnePoint alloc] init];
-    bp1.position = [NSIndexPath indexPathForRow:0 inSection:0];
+    if (self.isChangeBlack) {
+       bp1.position = [NSIndexPath indexPathForRow:0 inSection:0];
+    } else {
+       bp1.position = [NSIndexPath indexPathForRow:1 inSection:1];
+    }
+    
     [self markPoint:bp1 withDIYItem:self.diymodel.boarderModel status:1];
     
     
     
     QRResultPoint *b2 = [[QRResultPoint alloc] init];
     b2.image = self.diymodel.boarderModel.image;
-    b2.frame = CGRectMake((self.width + self.qr_margin - self.boardWidth)* self.oneWidth, self.qr_margin * self.oneWidth, self.boardWidth * self.oneWidth, self.boardWidth * self.oneWidth);
+    b2.frame = CGRectMake((self.width - self.qr_margin - self.boardWidth)* self.oneWidth, self.qr_margin * self.oneWidth, self.boardWidth * self.oneWidth, self.boardWidth * self.oneWidth);
     QROnePoint *bp2 = [[QROnePoint alloc] init];
-    bp2.position = [NSIndexPath indexPathForRow:self.width - self.boardWidth inSection:0];
+    if (self.isChangeBlack) {
+        bp2.position = [NSIndexPath indexPathForRow:self.width - self.boardWidth inSection:0];
+    } else {
+        bp2.position = [NSIndexPath indexPathForRow:self.width - self.boardWidth - self.qr_margin inSection:1];
+    }
+    
     [self markPoint:bp2 withDIYItem:self.diymodel.boarderModel status:1];
     
     QRResultPoint *b3 = [[QRResultPoint alloc] init];
     b3.image = self.diymodel.boarderModel.image;
-    b3.frame = CGRectMake(self.qr_margin * self.oneWidth, (self.width + self.qr_margin - self.boardWidth) * self.oneWidth, self.boardWidth * self.oneWidth, self.boardWidth * self.oneWidth);
+    b3.frame = CGRectMake(self.qr_margin * self.oneWidth, (self.width - self.qr_margin - self.boardWidth) * self.oneWidth, self.boardWidth * self.oneWidth, self.boardWidth * self.oneWidth);
     QROnePoint *bp3 = [[QROnePoint alloc] init];
-    bp3.position = [NSIndexPath indexPathForRow:0 inSection:self.width - self.boardWidth];
+    if (self.isChangeBlack) {
+      bp3.position = [NSIndexPath indexPathForRow:0 inSection:self.width - self.boardWidth];
+    } else {
+      bp3.position = [NSIndexPath indexPathForRow:1 inSection:self.width - self.boardWidth - self.qr_margin];
+    }
+    
     [self markPoint:bp3 withDIYItem:self.diymodel.boarderModel status:1];
     
     [self.resultArr addObject:b1];
@@ -230,7 +262,7 @@
             for (QROnePoint *last in lastUseArr) {
                 QRResultPoint *bx = [[QRResultPoint alloc] init];
                 bx.image = subModel.image;
-                bx.frame = CGRectMake((self.qr_margin + last.position.row) * self.oneWidth, (self.qr_margin + last.position.section) * self.oneWidth, subModel.size.width * self.oneWidth, subModel.size.height * self.oneWidth);
+                bx.frame = CGRectMake((last.position.row) * self.oneWidth, (last.position.section) * self.oneWidth, subModel.size.width * self.oneWidth, subModel.size.height * self.oneWidth);
                 [self.resultArr addObject:bx];
 
             }
@@ -244,16 +276,16 @@
 - (BOOL)isOKinPoint:(QROnePoint *)onePoint withDIYItem:(DIYSubModel *)diyItem {
     BOOL result = YES;
     
-    if (onePoint.position.section +diyItem.size.height > (self.width - 1)) {
+    if (onePoint.position.section +diyItem.size.height > (self.width)) {
         return NO;
     }
-    if (onePoint.position.row +diyItem.size.width > (self.width - 1)) {
+    if (onePoint.position.row +diyItem.size.width > (self.width)) {
         return NO;
     }
     for (NSInteger i = onePoint.position.section; i < onePoint.position.section +diyItem.size.height; i++) {
         for (NSInteger j = onePoint.position.row; j < onePoint.position.row +diyItem.size.width; j++) {
             
-            NSInteger index = i * self.width + j;
+            NSInteger index = i * (self.width) + j;
             
             QROnePoint *model = self.pointArr[index];
             if (model.isBlack && !model.isInUse && !model.willInUse) {

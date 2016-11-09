@@ -138,6 +138,8 @@
 		A5A8F49B1CF7021500019A7E /* NSString+DXCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A8F49A1CF7021500019A7E /* NSString+DXCheck.m */; };
 		A5A8F4A21CF7056100019A7E /* DXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A8F4A11CF7056100019A7E /* DXWebViewController.m */; };
 		A5A8F4A41CF7059400019A7E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A8F4A31CF7059400019A7E /* WebKit.framework */; };
+		A5ABA29C1DD3105A00419D44 /* cron_boarder.png in Resources */ = {isa = PBXBuildFile; fileRef = A5ABA29A1DD3105A00419D44 /* cron_boarder.png */; };
+		A5ABA29D1DD3105A00419D44 /* cron_item01.png in Resources */ = {isa = PBXBuildFile; fileRef = A5ABA29B1DD3105A00419D44 /* cron_item01.png */; };
 		A5B76D711D0C312A00A68667 /* DXTextInfovViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B76D701D0C312A00A68667 /* DXTextInfovViewController.m */; };
 		A5B76D741D0C314500A68667 /* DXScanresultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B76D731D0C314500A68667 /* DXScanresultViewController.m */; };
 		A5D76F6B1D373D2200AA8006 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F6A1D373D2200AA8006 /* AboutTableViewController.m */; };
@@ -377,6 +379,8 @@
 		A5A8F4A01CF7056100019A7E /* DXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXWebViewController.h; sourceTree = "<group>"; };
 		A5A8F4A11CF7056100019A7E /* DXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXWebViewController.m; sourceTree = "<group>"; };
 		A5A8F4A31CF7059400019A7E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		A5ABA29A1DD3105A00419D44 /* cron_boarder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cron_boarder.png; sourceTree = "<group>"; };
+		A5ABA29B1DD3105A00419D44 /* cron_item01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cron_item01.png; sourceTree = "<group>"; };
 		A5B76D6F1D0C312A00A68667 /* DXTextInfovViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTextInfovViewController.h; sourceTree = "<group>"; };
 		A5B76D701D0C312A00A68667 /* DXTextInfovViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTextInfovViewController.m; sourceTree = "<group>"; };
 		A5B76D721D0C314500A68667 /* DXScanresultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXScanresultViewController.h; sourceTree = "<group>"; };
@@ -585,6 +589,7 @@
 		A50E3CFD1DD1883F005FD39D /* DIYImageSource */ = {
 			isa = PBXGroup;
 			children = (
+				A5ABA2991DD3105A00419D44 /* corn */,
 				A50E3D0F1DD1A043005FD39D /* mouse */,
 				A50E3CFE1DD1883F005FD39D /* cookie */,
 				A50E3D061DD1883F005FD39D /* DIYImageSource.plist */,
@@ -805,6 +810,15 @@
 				A5B76D731D0C314500A68667 /* DXScanresultViewController.m */,
 			);
 			name = QRReadVC;
+			sourceTree = "<group>";
+		};
+		A5ABA2991DD3105A00419D44 /* corn */ = {
+			isa = PBXGroup;
+			children = (
+				A5ABA29A1DD3105A00419D44 /* cron_boarder.png */,
+				A5ABA29B1DD3105A00419D44 /* cron_item01.png */,
+			);
+			path = corn;
 			sourceTree = "<group>";
 		};
 		A5E315611D89553E00925D52 /* ShareSDK */ = {
@@ -1443,10 +1457,12 @@
 				D78418E91C74885A00850129 /* PositionInfoView.xib in Resources */,
 				A56FFA101D50986300F61BD6 /* birthday002.png in Resources */,
 				A50E3D1D1DD1A073005FD39D /* mouse_item01.png in Resources */,
+				A5ABA29C1DD3105A00419D44 /* cron_boarder.png in Resources */,
 				A57609DE1CB28E18006F3F1B /* QRBgSource.plist in Resources */,
 				D78418E71C74884900850129 /* TextinfoView.xib in Resources */,
 				A57609DD1CB28E18006F3F1B /* tianmaoIcon.png in Resources */,
 				D78418DB1C74879800850129 /* CommenInfoView.xib in Resources */,
+				A5ABA29D1DD3105A00419D44 /* cron_item01.png in Resources */,
 				A54E2C391D74465800667C1E /* mouse.png in Resources */,
 				A50E3D0D1DD1883F005FD39D /* cookie_item05.png in Resources */,
 				A54DE7131D79682C00481822 /* batterfly02_icon.png in Resources */,
@@ -1774,7 +1790,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: xin dong (B6H7GPKGQJ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = B6H7GPKGQJ;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1814,7 +1830,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: xin dong (B6H7GPKGQJ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = B6H7GPKGQJ;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
