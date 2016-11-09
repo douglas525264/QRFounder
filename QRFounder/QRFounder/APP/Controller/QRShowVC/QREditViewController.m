@@ -60,6 +60,7 @@
 - (void)setBgImage:(UIImage *)image {
     self.qrModel.bgImage = image;
     self.qrModel.codeColor = nil;
+    self.qrModel.diyModel = nil;
     self.qrView.qrModel = self.qrModel;
 
 }
