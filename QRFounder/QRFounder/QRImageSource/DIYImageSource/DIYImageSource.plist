@@ -269,7 +269,7 @@
 			<key>bgb</key>
 			<integer>0</integer>
 			<key>bga</key>
-			<integer>0</integer>
+			<integer>1</integer>
 			<key>bgg</key>
 			<integer>0</integer>
 			<key>bgr</key>
