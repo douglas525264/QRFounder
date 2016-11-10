@@ -22,6 +22,7 @@
     qr.createTime = self.createTime;
     qr.isScanResult = self.isScanResult;
     qr.diyModel = self.diyModel;
+    qr.colorModel = self.colorModel;
     return qr;
 }
 - (instancetype)initWithQrStr:(NSString *)qrStr {
