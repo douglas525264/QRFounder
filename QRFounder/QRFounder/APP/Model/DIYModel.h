@@ -10,7 +10,7 @@
 #import "DIYSubModel.h"
 @interface DIYModel : NSObject
 
-@property(nonatomic, strong) DIYSubModel *boarderModel;
+@property(nonatomic, strong) NSArray *boarderItems;
 @property(nonatomic, strong) NSArray *itemArrays;
 @property(nonatomic, strong) UIColor *bgColor;
 @property(nonatomic, assign) BOOL isChangeBlack;

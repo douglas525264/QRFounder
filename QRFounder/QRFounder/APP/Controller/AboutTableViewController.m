@@ -42,7 +42,8 @@
 
     UIView *headerView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, self.view.frame.size.width, 140)];
     self.imageView.frame = CGRectMake(self.view.frame.size.width/2 - 30, 30, 60, 60);
-    self.imageView.layer.cornerRadius = 5;
+    self.imageView.layer.cornerRadius = 10;
+    self.imageView.layer.masksToBounds = YES;
     self.imageView.image = [UIImage imageNamed:@"appIcon_180"];
     [headerView addSubview:self.imageView];
     self.versionLable.frame = CGRectMake(0, self.imageView.frame.origin.y + self.imageView.frame.size.height + 10, self.view.frame.size.width, 20);

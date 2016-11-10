@@ -130,8 +130,8 @@ static QRSourceManager *qManager;
                 DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
                 subItem.normalImage = [UIImage imageNamed:[info objectForKey:@"iconName"]];;
                 subItem.color = [UIColor greenColor];
-                DIYSubModel *boarderItem = [[DIYSubModel alloc] init];
-                boarderItem.image = [UIImage imageNamed:[info objectForKey:@"boardername"]];
+//                DIYSubModel *boarderItem = [[DIYSubModel alloc] init];
+//                boarderItem.image = [UIImage imageNamed:[info objectForKey:@"boardername"]];
                 NSArray *subMenuInfos = [info objectForKey:@"menuList"];
                 NSMutableArray *items = [[NSMutableArray alloc] init];
                 for (NSDictionary *subInfo in subMenuInfos) {
@@ -144,7 +144,14 @@ static QRSourceManager *qManager;
                 DIYModel *diyModel = [[DIYModel alloc] init];
                 diyModel.bgColor = RGB([[info objectForKey:@"bgr"] floatValue], [[info objectForKey:@"bgg"] floatValue], [[info objectForKey:@"bgb"] floatValue], [[info objectForKey:@"bga"] floatValue]);
                 diyModel.isChangeBlack = [[info objectForKey:@"isChangeBlack"] boolValue];
-                diyModel.boarderModel = boarderItem;
+                NSArray *arr = [info objectForKey:@"borderlist"];
+                NSMutableArray *borderList = [[NSMutableArray alloc] init];
+                for (NSDictionary *info in arr) {
+                    DIYSubModel *boarderItem = [[DIYSubModel alloc] init];
+                    boarderItem.image = [UIImage imageNamed:[info objectForKey:@"boardername"]];
+                    [borderList addObject:boarderItem];
+                }
+                diyModel.boarderItems = borderList;
                 diyModel.itemArrays = items;
                 subItem.diyModel = diyModel;
                 [menulist addObject:subItem];

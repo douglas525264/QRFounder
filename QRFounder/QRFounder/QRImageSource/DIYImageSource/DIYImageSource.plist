@@ -15,10 +15,23 @@
 			<integer>255</integer>
 			<key>isChangeBlack</key>
 			<false/>
-			<key>boardername</key>
-			<string>cookie_boarder</string>
 			<key>iconName</key>
 			<string>cookie_icon</string>
+			<key>borderlist</key>
+			<array>
+				<dict>
+					<key>boardername</key>
+					<string>cookie_boarder</string>
+				</dict>
+				<dict>
+					<key>boardername</key>
+					<string>cookie_boarder</string>
+				</dict>
+				<dict>
+					<key>boardername</key>
+					<string>cookie_boarder</string>
+				</dict>
+			</array>
 			<key>menuList</key>
 			<array>
 				<dict>
@@ -74,6 +87,21 @@
 			</array>
 		</dict>
 		<dict>
+			<key>borderlist</key>
+			<array>
+				<dict>
+					<key>boardername</key>
+					<string>mouse_Boarder</string>
+				</dict>
+				<dict>
+					<key>boardername</key>
+					<string>mouse_Boarder</string>
+				</dict>
+				<dict>
+					<key>boardername</key>
+					<string>mouse_Boarder</string>
+				</dict>
+			</array>
 			<key>bgr</key>
 			<integer>255</integer>
 			<key>bga</key>
@@ -84,8 +112,6 @@
 			<integer>255</integer>
 			<key>isChangeBlack</key>
 			<false/>
-			<key>boardername</key>
-			<string>mouse_Boarder</string>
 			<key>iconName</key>
 			<string>mouse-icon</string>
 			<key>menuList</key>
@@ -143,18 +169,113 @@
 			</array>
 		</dict>
 		<dict>
+			<key>borderlist</key>
+			<array>
+				<dict>
+					<key>boardername</key>
+					<string>colorBoarderItem01</string>
+				</dict>
+				<dict>
+					<key>boardername</key>
+					<string>colorBoarderItem02</string>
+				</dict>
+				<dict>
+					<key>boardername</key>
+					<string>colorBoarderItem03</string>
+				</dict>
+			</array>
+			<key>bgb</key>
+			<integer>255</integer>
+			<key>bga</key>
+			<integer>1</integer>
+			<key>bgg</key>
+			<integer>255</integer>
+			<key>bgr</key>
+			<integer>255</integer>
+			<key>isChangeBlack</key>
+			<false/>
+			<key>iconName</key>
+			<string>corn_icon</string>
+			<key>menuList</key>
+			<array>
+				<dict>
+					<key>probability</key>
+					<real>0.03</real>
+					<key>sizey</key>
+					<integer>2</integer>
+					<key>sizex</key>
+					<integer>2</integer>
+					<key>imageSourceName</key>
+					<string>colorItem01</string>
+				</dict>
+				<dict>
+					<key>probability</key>
+					<real>0.1</real>
+					<key>sizey</key>
+					<integer>1</integer>
+					<key>sizex</key>
+					<integer>1</integer>
+					<key>imageSourceName</key>
+					<string>colorItem02</string>
+				</dict>
+				<dict>
+					<key>probability</key>
+					<real>0.2</real>
+					<key>sizey</key>
+					<integer>1</integer>
+					<key>sizex</key>
+					<integer>1</integer>
+					<key>imageSourceName</key>
+					<string>colorItem03</string>
+				</dict>
+				<dict>
+					<key>probability</key>
+					<real>0.02</real>
+					<key>sizey</key>
+					<integer>2</integer>
+					<key>sizex</key>
+					<integer>1</integer>
+					<key>imageSourceName</key>
+					<string>colorItem04</string>
+				</dict>
+				<dict>
+					<key>probability</key>
+					<real>0.05</real>
+					<key>sizey</key>
+					<integer>2</integer>
+					<key>sizex</key>
+					<integer>1</integer>
+					<key>imageSourceName</key>
+					<string>colorItem05</string>
+				</dict>
+			</array>
+		</dict>
+		<dict>
+			<key>borderlist</key>
+			<array>
+				<dict>
+					<key>boardername</key>
+					<string>cron_boarder</string>
+				</dict>
+				<dict>
+					<key>boardername</key>
+					<string>cron_boarder</string>
+				</dict>
+				<dict>
+					<key>boardername</key>
+					<string>cron_boarder</string>
+				</dict>
+			</array>
 			<key>bgb</key>
 			<integer>0</integer>
 			<key>bga</key>
-			<integer>1</integer>
+			<integer>0</integer>
 			<key>bgg</key>
 			<integer>0</integer>
 			<key>bgr</key>
 			<integer>0</integer>
 			<key>isChangeBlack</key>
 			<true/>
-			<key>boardername</key>
-			<string>cron_boarder</string>
 			<key>iconName</key>
 			<string>corn_icon</string>
 			<key>menuList</key>

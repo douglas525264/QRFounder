@@ -94,9 +94,10 @@
 - (NSArray *)getResultArr {
     
     //Boarder
-    self.diymodel.boarderModel.size = CGSizeMake(self.boardWidth, self.boardWidth);
+    DIYSubModel *borderModel01 = self.diymodel.boarderItems[0];
+    borderModel01.size = CGSizeMake(self.boardWidth, self.boardWidth);
     QRResultPoint *b1 = [[QRResultPoint alloc] init];
-    b1.image = self.diymodel.boarderModel.image;
+    b1.image = borderModel01.image;
     b1.frame = CGRectMake(self.qr_margin * self.oneWidth, self.qr_margin * self.oneWidth, self.boardWidth * self.oneWidth, self.boardWidth * self.oneWidth);
     QROnePoint *bp1 = [[QROnePoint alloc] init];
     if (self.isChangeBlack) {
@@ -105,12 +106,14 @@
        bp1.position = [NSIndexPath indexPathForRow:1 inSection:1];
     }
     
-    [self markPoint:bp1 withDIYItem:self.diymodel.boarderModel status:1];
+    [self markPoint:bp1 withDIYItem:borderModel01 status:1];
     
     
     
     QRResultPoint *b2 = [[QRResultPoint alloc] init];
-    b2.image = self.diymodel.boarderModel.image;
+    DIYSubModel *borderModel02 = self.diymodel.boarderItems[1];
+    borderModel02.size = CGSizeMake(self.boardWidth, self.boardWidth);
+    b2.image = borderModel02.image;
     b2.frame = CGRectMake((self.width - self.qr_margin - self.boardWidth)* self.oneWidth, self.qr_margin * self.oneWidth, self.boardWidth * self.oneWidth, self.boardWidth * self.oneWidth);
     QROnePoint *bp2 = [[QROnePoint alloc] init];
     if (self.isChangeBlack) {
@@ -119,10 +122,12 @@
         bp2.position = [NSIndexPath indexPathForRow:self.width - self.boardWidth - self.qr_margin inSection:1];
     }
     
-    [self markPoint:bp2 withDIYItem:self.diymodel.boarderModel status:1];
+    [self markPoint:bp2 withDIYItem:borderModel02 status:1];
     
     QRResultPoint *b3 = [[QRResultPoint alloc] init];
-    b3.image = self.diymodel.boarderModel.image;
+    DIYSubModel *borderModel03 = self.diymodel.boarderItems[2];
+    borderModel03.size = CGSizeMake(self.boardWidth, self.boardWidth);
+    b3.image = borderModel03.image;
     b3.frame = CGRectMake(self.qr_margin * self.oneWidth, (self.width - self.qr_margin - self.boardWidth) * self.oneWidth, self.boardWidth * self.oneWidth, self.boardWidth * self.oneWidth);
     QROnePoint *bp3 = [[QROnePoint alloc] init];
     if (self.isChangeBlack) {
@@ -131,7 +136,7 @@
       bp3.position = [NSIndexPath indexPathForRow:1 inSection:self.width - self.boardWidth - self.qr_margin];
     }
     
-    [self markPoint:bp3 withDIYItem:self.diymodel.boarderModel status:1];
+    [self markPoint:bp3 withDIYItem:borderModel03 status:1];
     
     [self.resultArr addObject:b1];
     [self.resultArr addObject:b2];
