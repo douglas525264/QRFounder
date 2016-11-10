@@ -11,6 +11,7 @@
 #import "DXCommenHelper.h"
 #import "DIYModel.h"
 #import "NSString+DXTool.h"
+#import "ColorModel.h"
 @interface QRModel : NSObject<NSCopying>
 //二维码字符串
 @property (nonatomic, copy) NSString *QRStr;
@@ -33,7 +34,7 @@
 
 //ext
 @property (nonatomic, strong) DIYModel *diyModel;
-
+@property (nonatomic, strong) ColorModel *colorModel;
 - (instancetype)initWithQrStr:(NSString *)qrStr;
 
 @end

@@ -8,11 +8,13 @@
 
 #import "DXCommenQRView.h"
 #import "DXQRView.h"
+#import "QRColorBgView.h"
 #define logoWidth (60.0f/320 * self.qrView.frame.size.width)
 @interface DXCommenQRView ()
 @property (nonatomic, strong) UIImageView *boarderImageView;
 @property (nonatomic, strong) UIImageView *logoImageView;
 @property (nonatomic, strong) DXQRView *qrView;
+@property (nonatomic, strong) QRColorBgView *colorBgView;
 @end
 @implementation DXCommenQRView
 
@@ -24,6 +26,10 @@
         self.QRFrame = CGRectMake(0, 0, 1, 1);
         self.qrView.frame = self.bounds;
     }
+    if (_colorBgView) {
+        [_colorBgView removeFromSuperview];
+        _colorBgView = nil;
+    }
     if (_qrModel.boarderImage) {
         self.boarderImage = _qrModel.boarderImage;
     }
@@ -31,7 +37,13 @@
     if (_qrModel.logo) {
         self.logo = _qrModel.logo;
     }
-    
+    if (_qrModel.colorModel) {
+        self.colorBgView.type = _qrModel.colorModel.colortype;
+        self.colorBgView.angle = _qrModel.colorModel.angle;
+        self.colorBgView.colors = _qrModel.colorModel.colors;
+        [self insertSubview:self.colorBgView belowSubview:self.qrView];
+        
+    }
     self.qrView.qrModel = _qrModel;
 
 }
@@ -84,6 +96,13 @@
         [self addSubview:_qrView];
     }
     return _qrView;
+}
+- (QRColorBgView *)colorBgView {
+
+    if (!_colorBgView) {
+        _colorBgView = [[QRColorBgView alloc] initWithFrame:self.bounds];
+    }
+    return _colorBgView;
 }
 - (UIImageView*)boarderImageView {
 

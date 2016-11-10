@@ -341,7 +341,7 @@
 
 @implementation QROnePoint
 - (CGFloat)disWithOtherpoint:(QROnePoint *)point {
-    double k = ldexp((point.position.section - self.position.section), 1);
+    
     return [self longWithWidth:(point.position.section - self.position.section) andHigh:(point.position.row - self.position.row)];
 }
 - (double)longWithWidth:(CGFloat) width andHigh:(CGFloat)high {

@@ -64,7 +64,9 @@ enum {
 
 - (void)drawQRCode:(QRcode *)code context:(CGContextRef)ctx size:(CGFloat)size {
     
-    if (_qrModel.diyModel) {
+    if (_qrModel.colorModel) {
+        [self drawColorQRCode:code context:ctx size:size];
+    }else if (_qrModel.diyModel) {
         [self drawDIYQRCode:code context:ctx size:size];
     
     } else if (_qrModel.bgImage && !_qrModel.codeColor) {
@@ -121,6 +123,64 @@ enum {
     for (QRResultPoint *resPoint in resultArr) {
         [resPoint.image drawInRect:resPoint.frame];
     }
+}
+- (void)drawColorQRCode:(QRcode *)code context:(CGContextRef)ctx size:(CGFloat)size {
+
+    
+    unsigned char *data = 0;
+    int width;
+    
+    data = code->data;
+    width = code->width;
+    float zoom = (double)size / (code->width + 2.0 * qr_margin);
+    UIGraphicsPushContext(ctx);
+    CGRect rectDraw = CGRectMake(0, 0, zoom, zoom);
+    
+//    CGContextSetFillColorWithColor(ctx, [UIColor blueColor].CGColor);
+//    CGContextAddRect(ctx, CGRectMake(0, 0, size, size));
+//    CGContextFillPath(ctx);
+//    
+    
+    CGContextSetFillColorWithColor(ctx,RGB(0, 0, 0, 0.2).CGColor);
+
+    for(int i = 0; i < width; ++i) {
+        for(int j = 0; j < width; ++j) {
+            if(*data & 1) {
+                rectDraw.origin = CGPointMake((j + qr_margin) * zoom,(i + qr_margin) * zoom);
+                CGContextAddRect(ctx, rectDraw);
+                
+            }else {
+                
+                
+            }
+            ++data;
+        }
+    }
+    CGContextFillPath(ctx);
+    data = code->data;
+    CGContextSetFillColorWithColor(ctx,RGB(255, 255, 255, 1).CGColor);
+    for(int i = 0; i < (width + qr_margin*2); ++i) {
+        for(int j = 0; j < (width + qr_margin*2); ++j) {
+            if (i == 0 || j ==0 || i == (width +1) || j == (width +1)) {
+                rectDraw.origin = CGPointMake((j) * zoom,(i) * zoom);
+                CGContextAddRect(ctx, rectDraw);
+            }else {
+            if(*data & 1) {
+                
+                
+            }else {
+                
+                rectDraw.origin = CGPointMake((j) * zoom,(i) * zoom);
+                CGContextAddRect(ctx, rectDraw);
+            }
+            ++data;
+            }
+        }
+    }
+    
+    
+    CGContextFillPath(ctx);
+
 }
 
 - (void)drawBgQRCode:(QRcode *)code context:(CGContextRef)ctx size:(CGFloat)size {

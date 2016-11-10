@@ -10,6 +10,7 @@
 #import "DXmenuItem.h"
 #import "DXSubMenuItem.h"
 #import "DXHelper.h"
+#import "ColorModel.h"
 static QRSourceManager *qManager;
 @implementation QRSourceManager
 
@@ -112,6 +113,33 @@ static QRSourceManager *qManager;
                 subItem.color = c;
                 [menulist addObject:subItem];
             }
+            DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
+            subItem.normalImage = [[DXHelper shareInstance] getColorImageWithColor:[UIColor redColor] andSize:CGSizeMake(40, 40)];
+            ColorModel *cModel = [[ColorModel alloc] init];
+            cModel.colortype = BgColorTypeRound;
+            cModel.angle = M_PI_2/2;
+            cModel.colors =  @[[UIColor orangeColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor],[UIColor purpleColor],[UIColor magentaColor]];
+            subItem.colorModel = cModel;
+            [menulist addObject:subItem];
+            
+            
+            DXSubMenuItem *subItem1 = [[DXSubMenuItem alloc] init];
+            subItem1.normalImage = [[DXHelper shareInstance] getColorImageWithColor:[UIColor redColor] andSize:CGSizeMake(40, 40)];
+            ColorModel *cModel1 = [[ColorModel alloc] init];
+            cModel1.colortype = BgColorTypegradual;
+           // cModel1.angle = M_PI *3/8;
+            cModel1.colors =    @[[UIColor orangeColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor],[UIColor purpleColor],[UIColor magentaColor]];
+            subItem1.colorModel = cModel1;
+            [menulist addObject:subItem1];
+            
+            DXSubMenuItem *subItem2 = [[DXSubMenuItem alloc] init];
+            subItem2.normalImage = [[DXHelper shareInstance] getColorImageWithColor:[UIColor redColor] andSize:CGSizeMake(40, 40)];
+            ColorModel *cModel2 = [[ColorModel alloc] init];
+            cModel2.colortype = BgColorTypegradual;
+            cModel2.angle = M_PI_2/2;
+            cModel2.colors =  @[[UIColor orangeColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor],[UIColor purpleColor],[UIColor magentaColor]];
+            subItem2.colorModel = cModel2;
+            [menulist addObject:subItem2];
             menuItem.items = menulist;
             [resultArr addObject:menuItem];
         }break;
