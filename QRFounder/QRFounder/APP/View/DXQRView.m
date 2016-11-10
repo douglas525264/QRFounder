@@ -9,6 +9,7 @@
 #import "DXQRView.h"
 #import "qrencode.h"
 #import "QRPointModel.h"
+#import "QRColorBgView.h"
 #define BGAPLAH 0.7 //四周黑框颜色 以及白边透明度
 #define SMALLBGPLAH 0.2 //小背景透明度
 #define SMALLPLAH 0.5 //小块透明度
@@ -17,7 +18,7 @@ enum {
 };
 
 @interface DXQRView()
-
+@property (nonatomic, strong) QRColorBgView *colorBgView;
 @property (nonatomic, strong) UIColor *QRColor;
 
 @end
@@ -126,14 +127,28 @@ enum {
 }
 - (void)drawColorQRCode:(QRcode *)code context:(CGContextRef)ctx size:(CGFloat)size {
 
-    
     unsigned char *data = 0;
     int width;
     
     data = code->data;
     width = code->width;
-    float zoom = (double)size / (code->width + 2.0 * qr_margin);
     UIGraphicsPushContext(ctx);
+    float zoom = (double)size / (code->width + 2.0 * qr_margin);
+
+    if (_colorBgView) {
+        [_colorBgView removeFromSuperview];
+        _colorBgView = nil;
+    }
+    if (_qrModel.colorModel) {
+        self.colorBgView.frame = CGRectMake(zoom, zoom, size - zoom, size - zoom);
+        self.colorBgView.type = _qrModel.colorModel.colortype;
+        self.colorBgView.angle = _qrModel.colorModel.angle;
+        self.colorBgView.colors = _qrModel.colorModel.colors;
+        
+    }
+
+    [self.colorBgView.layer renderInContext:ctx];
+    
     CGRect rectDraw = CGRectMake(0, 0, zoom, zoom);
     
 //    CGContextSetFillColorWithColor(ctx, [UIColor blueColor].CGColor);
@@ -489,4 +504,12 @@ enum {
     
     return qrImage;
 }
+- (QRColorBgView *)colorBgView {
+    
+    if (!_colorBgView) {
+        _colorBgView = [[QRColorBgView alloc] initWithFrame:self.bounds];
+    }
+    return _colorBgView;
+}
+
 @end
