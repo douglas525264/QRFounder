@@ -28,4 +28,6 @@
 - (void)scanQREventWithType:(QRType)type;
 - (void)beginqLoadVC:(UIViewController *)vc;
 - (void)endLoadVC:(UIViewController *)vc;
+- (void)shareEvent;
+- (void)editEventWithType:(QREditType)type;
 @end

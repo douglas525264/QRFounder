@@ -111,8 +111,36 @@ static AnalyticsManager *aManager;
 }
 - (void)endLoadVC:(UIViewController *)vc {
     [MobClick endLogPageView:NSStringFromClass([vc class])];
-
+    
 }
-
+- (void)shareEvent{
+    [MobClick event:@"qr_share"];
+    
+}
+- (void)editEventWithType:(QREditType)type {
+    switch (type) {
+        case QREditTypeBg:{
+         [MobClick event:@"qr_product_background"];
+        }break;
+        case QREditTypeMoreColor:{
+          [MobClick event:@"qr_share"];
+        }break;
+        case QREditTypeBoarder:{
+          [MobClick event:@"qr_product_border"];
+        }break;
+        case QREditTypeLogo:{
+          [MobClick event:@"qr_product_logo"];
+        }break;
+        case QREditTypeColor:{
+          [MobClick event:@"qr_product_color"];
+        }break;
+        case QREditTypeDIY:{
+          [MobClick event:@"qr_product_DIY"];
+        }break;
+            
+        default:
+            break;
+    }
+}
 
 @end

@@ -22,7 +22,7 @@
 //UI
 #import <ShareSDKUI/ShareSDK+SSUI.h>
 #define ShareKey @"14ce79e790265"
-
+#import "AnalyticsManager.h"
 static ShareManager *sManager;
 @implementation ShareManager
 
@@ -166,6 +166,7 @@ static ShareManager *sManager;
                    }
                }
      ];
+    [[AnalyticsManager shareInstance] shareEvent];
 }
 
 @end

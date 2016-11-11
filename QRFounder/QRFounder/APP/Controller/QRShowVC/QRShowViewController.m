@@ -12,6 +12,7 @@
 #import "DXHelper.h"
 #import "ShareManager.h"
 #import "UIActionSheet+RACExtends.h"
+#import "AnalyticsManager.h"
 @interface QRShowViewController ()
 
 @end
@@ -92,6 +93,7 @@
     
 }
 - (IBAction)bgBtnClick:(id)sender {
+    [[AnalyticsManager shareInstance] editEventWithType:QREditTypeBg];
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     QREditViewController *qVC = [story instantiateViewControllerWithIdentifier:@"QREditViewController"];
     qVC.qrModel = [self.qrModel copy];
@@ -104,7 +106,7 @@
     }];
 }
 - (IBAction)borderBtnClick:(id)sender {
-    
+    [[AnalyticsManager shareInstance] editEventWithType:QREditTypeBoarder];
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     QREditViewController *qVC = [story instantiateViewControllerWithIdentifier:@"QREditViewController"];
     qVC.qrModel = [self.qrModel copy];
@@ -118,6 +120,7 @@
 
 }
 - (IBAction)DIYBtnClick:(id)sender {
+    [[AnalyticsManager shareInstance] editEventWithType:QREditTypeDIY];
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     QREditViewController *qVC = [story instantiateViewControllerWithIdentifier:@"QREditViewController"];
     qVC.qrModel = [self.qrModel copy];
@@ -130,6 +133,7 @@
     }];
 }
 - (IBAction)logoBtnClick:(id)sender {
+    [[AnalyticsManager shareInstance] editEventWithType:QREditTypeLogo];
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     QREditViewController *qVC = [story instantiateViewControllerWithIdentifier:@"QREditViewController"];
     qVC.qrModel = [self.qrModel copy];
@@ -144,7 +148,7 @@
 
 }
 - (IBAction)colorBtnClick:(id)sender {
-    
+    [[AnalyticsManager shareInstance] editEventWithType:QREditTypeColor];
     UIStoryboard *story = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     QREditViewController *qVC = [story instantiateViewControllerWithIdentifier:@"QREditViewController"];
     qVC.qrModel = [self.qrModel copy];
