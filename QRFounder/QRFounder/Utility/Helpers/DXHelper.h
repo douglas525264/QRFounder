@@ -31,4 +31,9 @@
 + (NSString *)getVersionCode;
 
 - (UIImage *)getBgImage;
+
+
+- (BOOL)isFirstTimeStart;
+- (BOOL)needShowLike;
+- (void)showLikeInVC:(UIViewController *)vc;
 @end

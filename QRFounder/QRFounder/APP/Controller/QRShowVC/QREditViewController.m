@@ -81,9 +81,13 @@
     
 }
 - (void)setColorModel:(ColorModel *)colors {
-
+    if ([[DXHelper shareInstance] needShowLike]) {
+        [[DXHelper shareInstance] showLikeInVC:self];
+    } else {
     self.qrModel.colorModel = colors;
     self.qrView.qrModel = self.qrModel;
+    }
+    
 }
 - (void)setQRDiyModel:(DIYModel *)diy {
 
@@ -153,7 +157,7 @@
                         if (subitem.colorModel) {
                             [strongSelf setColorModel:subitem.colorModel];
                         }else {
-                        [strongSelf setQRColor:subitem.color];
+                            [strongSelf setQRColor:subitem.color];
                         }
                     }break;
                     case QREditTypeDIY:{

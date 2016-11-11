@@ -9,6 +9,7 @@
 #import "DXHelper.h"
 #import "DXCommenQRView.h"
 #import "NSString+DXCheck.h"
+#import "DXAlertAction.h"
 @interface DXHelper()
 @property (nonatomic, strong) DXCommenQRView *qrView;
 @property (nonatomic, strong) UIImage *bgImage;
@@ -403,5 +404,77 @@ static DXHelper *helper;
         self.bgImage = [self imageFromView:self.bgImageView];;
     }
     return self.bgImage;
+}
+
+- (BOOL)isFirstTimeStart {
+    NSUserDefaults *de = [NSUserDefaults standardUserDefaults];
+    NSString *currentVersion = [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"];
+    NSString *localVersion = [de objectForKey:@"localProVersion"];
+    
+    if (!localVersion || ![currentVersion isEqualToString:localVersion]) {
+        [de setValue:currentVersion forKey:@"localProVersion"];
+        [de synchronize];
+        return YES;
+    }
+    return NO;
+}
+- (BOOL)needShowLike {
+    BOOL result = YES;
+    NSUserDefaults *de = [NSUserDefaults standardUserDefaults];
+    if ([self isFirstTimeStart]) {
+        result = YES;
+        [de setObject:@(NO) forKey:@"hasClikLike"];
+        [de setObject:@(NO) forKey:@"hasRefuse"];
+        [de setObject:@([[NSDate date] timeIntervalSince1970]) forKey:@"askNextTime"];
+        [de synchronize];
+    } else {
+        
+        BOOL hasClick = [[de objectForKey:@"hasClikLike"] boolValue];
+        if (hasClick) {
+            return NO;
+        }
+        
+        
+        BOOL hasRefuse = [[de objectForKey:@"hasRefuse"] boolValue];
+        if (hasRefuse) {
+            return NO;
+        }
+        int64_t askNextTime = [[de objectForKey:@"askNextTime"] longLongValue];
+        if (([[NSDate date] timeIntervalSince1970] - askNextTime) > 60 * 60 *24) {
+            result = YES;
+        }else {
+            result = NO;
+        }
+        
+    }
+    return result;
+}
+- (void)showLikeInVC:(UIViewController *)vc {
+
+   // if ([self needShowLike]) {
+    NSUserDefaults *de = [NSUserDefaults standardUserDefaults];
+    [DXAlertAction showAlertWithTitle:@"提示" msg:@"对我们的二维码样式是否满意" inVC:vc chooseBlock:^(NSInteger buttonIdx) {
+            switch (buttonIdx) {
+                case 0:{
+                    NSString *strUrl = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id1152798225"];
+                    NSURL *url = [NSURL URLWithString:strUrl];
+                    [[UIApplication sharedApplication] openURL:url];
+                    [de setObject:@(YES) forKey:@"hasClikLike"];
+   
+                }break;
+                case 1:{
+                 [de setObject:@([[NSDate date] timeIntervalSince1970]) forKey:@"askNextTime"];
+                }break;
+                case 2:{
+                 [de setObject:@(YES) forKey:@"hasRefuse"];
+                }break;
+
+                    
+                default:
+                    break;
+            }
+        } buttonsStatement:@"满意，赞一个",@"下次再说",@"残忍拒绝",nil];
+    [de synchronize];
+  //  }
 }
 @end
