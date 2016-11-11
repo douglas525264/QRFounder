@@ -14,8 +14,8 @@
 
 #import "BaiduMobAdSDK/BaiduMobAdSetting.h"
 #import "DXHelper.h"
-
-@interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,BaiduMobAdViewDelegate>
+#import "GDTMobBannerView.h"
+@interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,BaiduMobAdViewDelegate,GDTMobBannerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 
 @property (nonatomic, strong) DXScrollMenu *scrollMenu;
@@ -27,6 +27,7 @@
 @implementation QREditViewController
 {
     BaiduMobAdView *sharedAdView;
+    GDTMobBannerView *_bannerView;
 
 }
 - (void)viewDidLoad {
@@ -44,17 +45,26 @@
 
 - (void)createAD {
     
-    [BaiduMobAdSetting setLpStyle:BaiduMobAdLpStyleDefault];
-    sharedAdView = [[BaiduMobAdView alloc] init]; //把在mssp.baidu.com上创建后获得的代码位id写到这里
-    sharedAdView.AdUnitTag = @"2873785";// @"2873611";//
-    sharedAdView.AdType = BaiduMobAdViewTypeBanner;
-    sharedAdView.frame = CGRectMake(0, 20, self.view.bounds.size.width, 64);
-    sharedAdView.backgroundColor = [UIColor clearColor];
-    sharedAdView.delegate = self;
-    [self.view addSubview:sharedAdView];
-    sharedAdView.hidden = YES;
-    [sharedAdView start];
+    //    [BaiduMobAdSetting setLpStyle:BaiduMobAdLpStyleDefault];
+    //    sharedAdView = [[BaiduMobAdView alloc] init]; //把在mssp.baidu.com上创建后获得的代码位id写到这里
+    //    sharedAdView.AdUnitTag = @"2873785";// @"2873611";//
+    //    sharedAdView.AdType = BaiduMobAdViewTypeBanner;
+    //    sharedAdView.frame = CGRectMake(0, 20, self.view.bounds.size.width, 64);
+    //    sharedAdView.backgroundColor = [UIColor clearColor];
+    //    sharedAdView.delegate = self;
+    //    [self.view addSubview:sharedAdView];
+    //    sharedAdView.hidden = YES;
+    //    [sharedAdView start];
+    _bannerView = [[GDTMobBannerView alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, GDTMOB_AD_SUGGEST_SIZE_320x50.height) appkey:@"1105762104" placementId:@"4070911578232017"];
+    _bannerView.delegate = self; // 设置Delegate
+    _bannerView.currentViewController = self; //设置当前的ViewController
+    _bannerView.interval = 30; //【可选】设置广告轮播时间;范围为30~120秒，0表示不轮 播
+    _bannerView.isGpsOn = NO; //【可选】开启GPS定位;默认关闭 _bannerView.showCloseBtn = YES; //【可选】展示关闭按钮;默认显示 _bannerView.isAnimationOn = YES; //【可选】开启banner轮播和展现时的动画效果;
+    //_bannerView.hidden = YES;
+    // 默认开启
+    [self.view addSubview:_bannerView]; //添加到当前的view中
     
+    [_bannerView loadAdAndShow]; //加载广告并展示
 }
 
 - (void)setBgImage:(UIImage *)image {
@@ -293,10 +303,16 @@
 
     return @"ff5809c5";//@"ff5809c5";//
 }
+- (void)bannerViewDidReceived {
+    // _bannerView.hidden = NO;
+}
+
 - (void)dealloc
 {
-    sharedAdView.delegate = nil;
-    sharedAdView = nil;
+//    sharedAdView.delegate = nil;
+//    sharedAdView = nil;
+    _bannerView.delegate = nil;
+    _bannerView = nil;
 }
 /*
 #pragma mark - Navigation
