@@ -38,6 +38,8 @@
 		A50E3D1D1DD1A073005FD39D /* mouse_item01.png in Resources */ = {isa = PBXBuildFile; fileRef = A50E3D1C1DD1A073005FD39D /* mouse_item01.png */; };
 		A50FDA361CC789380027188C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA351CC789380027188C /* AddressBook.framework */; };
 		A50FDA381CC7893D0027188C /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA371CC7893D0027188C /* AddressBookUI.framework */; };
+		A52B83341DD569A20050BF4F /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A52B83331DD569A20050BF4F /* libGDTMobSDK.a */; };
+		A52B83361DD569F10050BF4F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52B83351DD569F10050BF4F /* Security.framework */; };
 		A53340531D95215200AEF0DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A53340551D95215200AEF0DA /* InfoPlist.strings */; };
 		A5383F181DD46037008B4650 /* colorBoarderItem01.png in Resources */ = {isa = PBXBuildFile; fileRef = A5383F101DD46037008B4650 /* colorBoarderItem01.png */; };
 		A5383F191DD46037008B4650 /* colorBoarderItem02.png in Resources */ = {isa = PBXBuildFile; fileRef = A5383F111DD46037008B4650 /* colorBoarderItem02.png */; };
@@ -275,6 +277,13 @@
 		A50E3D1C1DD1A073005FD39D /* mouse_item01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = mouse_item01.png; sourceTree = "<group>"; };
 		A50FDA351CC789380027188C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		A50FDA371CC7893D0027188C /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		A52B832E1DD569A20050BF4F /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
+		A52B832F1DD569A20050BF4F /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
+		A52B83301DD569A20050BF4F /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
+		A52B83311DD569A20050BF4F /* GDTSplashAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTSplashAd.h; sourceTree = "<group>"; };
+		A52B83321DD569A20050BF4F /* GDTTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTTrack.h; sourceTree = "<group>"; };
+		A52B83331DD569A20050BF4F /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
+		A52B83351DD569F10050BF4F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A53340541D95215200AEF0DA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A53340561D95215500AEF0DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A5383F101DD46037008B4650 /* colorBoarderItem01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorBoarderItem01.png; sourceTree = "<group>"; };
@@ -544,17 +553,19 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A5682CD81D35E02B00E0AD8C /* StoreKit.framework in Frameworks */,
+				A52B83361DD569F10050BF4F /* Security.framework in Frameworks */,
+				A549E73F1D7FFB0F00651D23 /* CoreTelephony.framework in Frameworks */,
+				A5682CE21D35E06200E0AD8C /* SystemConfiguration.framework in Frameworks */,
+				A5682CD21D35E00B00E0AD8C /* QuartzCore.framework in Frameworks */,
+				A549E73D1D7FFB0300651D23 /* CoreLocation.framework in Frameworks */,
 				A549E73B1D7FFAF300651D23 /* CoreMotion.framework in Frameworks */,
 				A554719F1D8FF5E700E4AF74 /* Contacts.framework in Frameworks */,
-				A5682CE21D35E06200E0AD8C /* SystemConfiguration.framework in Frameworks */,
-				A549E73F1D7FFB0F00651D23 /* CoreTelephony.framework in Frameworks */,
-				A549E73D1D7FFB0300651D23 /* CoreLocation.framework in Frameworks */,
 				A5E315881D89553E00925D52 /* ShareSDKUI.framework in Frameworks */,
 				A540A0D71D23A0C30012EEB0 /* MessageUI.framework in Frameworks */,
 				A5E3158B1D89553E00925D52 /* libWeiboSDK.a in Frameworks */,
 				A5E315861D89553E00925D52 /* ShareSDKExtension.framework in Frameworks */,
 				A549E7391D7FFAE500651D23 /* AdSupport.framework in Frameworks */,
-				A5682CD81D35E02B00E0AD8C /* StoreKit.framework in Frameworks */,
 				A549E7371D7FFAC800651D23 /* libc++.tbd in Frameworks */,
 				A5682CE41D35E07300E0AD8C /* Foundation.framework in Frameworks */,
 				A5E315921D89553E00925D52 /* ShareSDKConnector.framework in Frameworks */,
@@ -566,7 +577,6 @@
 				A5682CD61D35E02300E0AD8C /* CoreGraphics.framework in Frameworks */,
 				A5682CD41D35E01A00E0AD8C /* CoreText.framework in Frameworks */,
 				A5E315891D89553E00925D52 /* TencentOpenAPI.framework in Frameworks */,
-				A5682CD21D35E00B00E0AD8C /* QuartzCore.framework in Frameworks */,
 				A5682CD01D35DFF700E0AD8C /* CoreMedia.framework in Frameworks */,
 				A5E315901D89553E00925D52 /* MOBFoundation.framework in Frameworks */,
 				A508DBD41DA64874004550BB /* BaiduMobAdSDK.framework in Frameworks */,
@@ -581,6 +591,7 @@
 				A50FDA361CC789380027188C /* AddressBook.framework in Frameworks */,
 				D72A3BB41C9FA130001DB11F /* AVFoundation.framework in Frameworks */,
 				6F47158C73E0701CA9C33A1D /* libPods.a in Frameworks */,
+				A52B83341DD569A20050BF4F /* libGDTMobSDK.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -657,6 +668,19 @@
 				A5D76F6A1D373D2200AA8006 /* AboutTableViewController.m */,
 			);
 			name = About;
+			sourceTree = "<group>";
+		};
+		A52B832D1DD569A20050BF4F /* GDTLib */ = {
+			isa = PBXGroup;
+			children = (
+				A52B832E1DD569A20050BF4F /* GDTMobBannerView.h */,
+				A52B832F1DD569A20050BF4F /* GDTMobInterstitial.h */,
+				A52B83301DD569A20050BF4F /* GDTNativeAd.h */,
+				A52B83311DD569A20050BF4F /* GDTSplashAd.h */,
+				A52B83321DD569A20050BF4F /* GDTTrack.h */,
+				A52B83331DD569A20050BF4F /* libGDTMobSDK.a */,
+			);
+			path = GDTLib;
 			sourceTree = "<group>";
 		};
 		A5383F0F1DD46037008B4650 /* color */ = {
@@ -956,6 +980,7 @@
 		CC25F21FA19289206F13E26A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A52B83351DD569F10050BF4F /* Security.framework */,
 				A508DBD31DA64874004550BB /* BaiduMobAdSDK.framework */,
 				A554719E1D8FF5E700E4AF74 /* Contacts.framework */,
 				A549E73E1D7FFB0F00651D23 /* CoreTelephony.framework */,
@@ -1212,6 +1237,7 @@
 		D78418951C7455C400850129 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				A52B832D1DD569A20050BF4F /* GDTLib */,
 				A5E315611D89553E00925D52 /* ShareSDK */,
 			);
 			path = Libs;
@@ -1871,6 +1897,7 @@
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/MobiSageSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/QRFounder/Utility/Libs/GDTLib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.qrcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1911,6 +1938,7 @@
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/MobiSageSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/PlatformSDK/WeChatSDK",
+					"$(PROJECT_DIR)/QRFounder/Utility/Libs/GDTLib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.qrcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
