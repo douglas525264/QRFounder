@@ -8,11 +8,14 @@
 
 #import "DXCommenQRView.h"
 #import "DXQRView.h"
+
+#import <ReactiveCocoa.h>
 #define logoWidth (60.0f/320 * self.qrView.frame.size.width)
 @interface DXCommenQRView ()
 @property (nonatomic, strong) UIImageView *boarderImageView;
 @property (nonatomic, strong) UIImageView *logoImageView;
 @property (nonatomic, strong) DXQRView *qrView;
+
 @end
 @implementation DXCommenQRView
 
@@ -24,14 +27,13 @@
         self.QRFrame = CGRectMake(0, 0, 1, 1);
         self.qrView.frame = self.bounds;
     }
-    if (_qrModel.boarderImage) {
+        if (_qrModel.boarderImage) {
         self.boarderImage = _qrModel.boarderImage;
     }
     
     if (_qrModel.logo) {
         self.logo = _qrModel.logo;
     }
-    
     self.qrView.qrModel = _qrModel;
 
 }
@@ -85,6 +87,7 @@
     }
     return _qrView;
 }
+
 - (UIImageView*)boarderImageView {
 
     if (!_boarderImageView) {

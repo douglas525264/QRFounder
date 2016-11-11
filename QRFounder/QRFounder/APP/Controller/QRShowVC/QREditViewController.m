@@ -60,6 +60,8 @@
 - (void)setBgImage:(UIImage *)image {
     self.qrModel.bgImage = image;
     self.qrModel.codeColor = nil;
+    self.qrModel.diyModel = nil;
+    self.qrModel.colorModel = nil;
     self.qrView.qrModel = self.qrModel;
 
 }
@@ -68,9 +70,22 @@
     self.qrView.qrModel = self.qrModel;
     
 }
+- (void)setColorModel:(ColorModel *)colors {
+
+    self.qrModel.colorModel = colors;
+    self.qrView.qrModel = self.qrModel;
+}
+- (void)setQRDiyModel:(DIYModel *)diy {
+
+    self.qrModel.diyModel = diy;
+    self.qrModel.colorModel = nil;
+    self.qrView.qrModel = self.qrModel;
+}
 - (void)setQRColor:(UIColor *)color {
 
     self.qrModel.codeColor = color;
+    self.qrModel.colorModel = nil;
+    self.qrModel.diyModel = nil;
      self.qrView.qrModel = self.qrModel;
 }
 - (void)setBoarderImage:(UIImage *)image withQRFrame:(CGRect)qrFrame {
@@ -125,8 +140,19 @@
                         [strongSelf setLogoImage:image];
                     }break;
                     case QREditTypeColor:{
+                        if (subitem.colorModel) {
+                            [strongSelf setColorModel:subitem.colorModel];
+                        }else {
                         [strongSelf setQRColor:subitem.color];
+                        }
                     }break;
+                    case QREditTypeDIY:{
+                        [strongSelf setQRDiyModel:subitem.diyModel];
+                    }break;
+                    case QREditTypeMoreColor:{
+                        
+                    }break;
+
 
                         
                     default:

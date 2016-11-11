@@ -10,6 +10,7 @@
 #import "DXmenuItem.h"
 #import "DXSubMenuItem.h"
 #import "DXHelper.h"
+#import "ColorModel.h"
 static QRSourceManager *qManager;
 @implementation QRSourceManager
 
@@ -112,9 +113,83 @@ static QRSourceManager *qManager;
                 subItem.color = c;
                 [menulist addObject:subItem];
             }
+            DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
+            subItem.normalImage = [[DXHelper shareInstance] getColorImageWithColor:[UIColor redColor] andSize:CGSizeMake(40, 40)];
+            ColorModel *cModel = [[ColorModel alloc] init];
+            cModel.colortype = BgColorTypeRound;
+            cModel.angle = M_PI_2/2;
+            cModel.colors =  @[[UIColor orangeColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor],[UIColor purpleColor],[UIColor magentaColor]];
+            subItem.colorModel = cModel;
+            [menulist addObject:subItem];
+            
+            
+            DXSubMenuItem *subItem1 = [[DXSubMenuItem alloc] init];
+            subItem1.normalImage = [[DXHelper shareInstance] getColorImageWithColor:[UIColor redColor] andSize:CGSizeMake(40, 40)];
+            ColorModel *cModel1 = [[ColorModel alloc] init];
+            cModel1.colortype = BgColorTypegradual;
+           // cModel1.angle = M_PI *3/8;
+            cModel1.colors =    @[[UIColor orangeColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor],[UIColor purpleColor],[UIColor magentaColor]];
+            subItem1.colorModel = cModel1;
+            [menulist addObject:subItem1];
+            
+            DXSubMenuItem *subItem2 = [[DXSubMenuItem alloc] init];
+            subItem2.normalImage = [[DXHelper shareInstance] getColorImageWithColor:[UIColor redColor] andSize:CGSizeMake(40, 40)];
+            ColorModel *cModel2 = [[ColorModel alloc] init];
+            cModel2.colortype = BgColorTypegradual;
+            cModel2.angle = M_PI_2/2;
+            cModel2.colors =  @[[UIColor orangeColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor],[UIColor purpleColor],[UIColor magentaColor]];
+            subItem2.colorModel = cModel2;
+            [menulist addObject:subItem2];
             menuItem.items = menulist;
             [resultArr addObject:menuItem];
         }break;
+        case QREditTypeDIY:{
+            
+            
+            
+            sourcepath = [[NSBundle mainBundle] pathForResource:@"DIYImageSource" ofType:@"plist"];
+            NSDictionary *infoDic = [NSDictionary dictionaryWithContentsOfFile:sourcepath];
+            NSArray *items = [infoDic objectForKey:@"items"];
+            NSMutableArray *menulist = [[NSMutableArray alloc] init];
+            DXmenuItem *menuItem = [[DXmenuItem alloc] init];
+            menuItem.color = [UIColor yellowColor];
+
+            for (NSDictionary *info in items) {
+                DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
+                subItem.normalImage = [UIImage imageNamed:[info objectForKey:@"iconName"]];;
+                subItem.color = [UIColor greenColor];
+//                DIYSubModel *boarderItem = [[DIYSubModel alloc] init];
+//                boarderItem.image = [UIImage imageNamed:[info objectForKey:@"boardername"]];
+                NSArray *subMenuInfos = [info objectForKey:@"menuList"];
+                NSMutableArray *items = [[NSMutableArray alloc] init];
+                for (NSDictionary *subInfo in subMenuInfos) {
+                    DIYSubModel *item = [[DIYSubModel alloc] init];
+                    item.image = [UIImage imageNamed:[subInfo objectForKey:@"imageSourceName"]];
+                    item.size = CGSizeMake([[subInfo objectForKey:@"sizex"] floatValue], [[subInfo objectForKey:@"sizey"] floatValue]);
+                    item.probability = [[subInfo objectForKey:@"probability"] floatValue];
+                    [items addObject:item];
+                }
+                DIYModel *diyModel = [[DIYModel alloc] init];
+                diyModel.bgColor = RGB([[info objectForKey:@"bgr"] floatValue], [[info objectForKey:@"bgg"] floatValue], [[info objectForKey:@"bgb"] floatValue], [[info objectForKey:@"bga"] floatValue]);
+                diyModel.isChangeBlack = [[info objectForKey:@"isChangeBlack"] boolValue];
+                NSArray *arr = [info objectForKey:@"borderlist"];
+                NSMutableArray *borderList = [[NSMutableArray alloc] init];
+                for (NSDictionary *info in arr) {
+                    DIYSubModel *boarderItem = [[DIYSubModel alloc] init];
+                    boarderItem.image = [UIImage imageNamed:[info objectForKey:@"boardername"]];
+                    [borderList addObject:boarderItem];
+                }
+                diyModel.boarderItems = borderList;
+                diyModel.itemArrays = items;
+                subItem.diyModel = diyModel;
+                [menulist addObject:subItem];
+                
+            }
+            menuItem.items = menulist;
+            
+            [resultArr addObject:menuItem];
+        }break;
+
         default:
             break;
     }

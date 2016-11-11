@@ -86,7 +86,13 @@ typedef NS_ENUM(NSInteger,QREditType) {
     /**
      *  color
      */
-    QREditTypeColor
+    QREditTypeColor,
+    /**
+     *  DIY
+     */
+    QREditTypeDIY,
+    //moreColor
+    QREditTypeMoreColor
 };
 
 //MyCard

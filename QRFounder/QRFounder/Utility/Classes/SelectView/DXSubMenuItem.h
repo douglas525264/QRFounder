@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "DIYModel.h"
 #import <UIKit/UIKit.h>
+#import "ColorModel.h"
 @interface DXSubMenuItem : NSObject
 
 @property (nonatomic, strong) UIImage *normalImage;
@@ -17,5 +18,6 @@
 @property (nonatomic, assign) CGRect QRFrame;
 @property (nonatomic, strong) UIColor *color;
 //这里也可扩展命令类型
-
+@property (nonatomic, strong) DIYModel *diyModel;
+@property (nonatomic, strong) ColorModel *colorModel;
 @end
