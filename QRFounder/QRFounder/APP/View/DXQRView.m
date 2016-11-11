@@ -58,7 +58,9 @@ enum {
     if (_qrModel.QRStr.length < 4) {
         lef = QR_ECLEVEL_H;
     }
-    
+    if ([_qrModel.QRStr isEqualToString:@"*1"]) {
+        lef = QR_ECLEVEL_L;
+    }
     QRcode *code = QRcode_encodeString([_qrModel.QRStr UTF8String], 0, lef, QR_MODE_8, 1);
     [self drawQRCode:code context:cxt size:rect.size.width];
 }

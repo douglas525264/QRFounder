@@ -11,6 +11,8 @@
 #import "DXSubMenuItem.h"
 #import "DXHelper.h"
 #import "ColorModel.h"
+#import "QRColorBgView.h"
+#import "DXQRView.h"
 static QRSourceManager *qManager;
 @implementation QRSourceManager
 
@@ -103,9 +105,10 @@ static QRSourceManager *qManager;
  
         }break;
         case QREditTypeColor:{
-            NSArray *colors = @[[UIColor redColor],[UIColor greenColor],[UIColor yellowColor],[UIColor orangeColor],[UIColor darkGrayColor],[UIColor purpleColor],[UIColor magentaColor],[UIColor blueColor],[UIColor brownColor],[UIColor darkGrayColor]];
+            NSArray *colors = @[[UIColor orangeColor],[UIColor greenColor],[UIColor yellowColor],[UIColor redColor],[UIColor darkGrayColor],[UIColor purpleColor],[UIColor magentaColor],[UIColor blueColor],[UIColor brownColor],[UIColor darkGrayColor]];
             DXmenuItem *menuItem = [[DXmenuItem alloc] init];
-            menuItem.color = [UIColor yellowColor];
+            menuItem.menuIcon = [[DXHelper shareInstance] getColorImageWithColor:[UIColor greenColor] andSize:CGSizeMake(40, 40)];
+            //menuItem.color = [UIColor yellowColor];
              NSMutableArray *menulist = [[NSMutableArray alloc] init];
             for (UIColor *c in colors) {
                DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
@@ -113,35 +116,34 @@ static QRSourceManager *qManager;
                 subItem.color = c;
                 [menulist addObject:subItem];
             }
-            DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
-            subItem.normalImage = [[DXHelper shareInstance] getColorImageWithColor:[UIColor redColor] andSize:CGSizeMake(40, 40)];
-            ColorModel *cModel = [[ColorModel alloc] init];
-            cModel.colortype = BgColorTypeRound;
-            cModel.angle = M_PI_2/2;
-            cModel.colors =  @[[UIColor orangeColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor],[UIColor purpleColor],[UIColor magentaColor]];
-            subItem.colorModel = cModel;
-            [menulist addObject:subItem];
-            
-            
-            DXSubMenuItem *subItem1 = [[DXSubMenuItem alloc] init];
-            subItem1.normalImage = [[DXHelper shareInstance] getColorImageWithColor:[UIColor redColor] andSize:CGSizeMake(40, 40)];
-            ColorModel *cModel1 = [[ColorModel alloc] init];
-            cModel1.colortype = BgColorTypegradual;
-           // cModel1.angle = M_PI *3/8;
-            cModel1.colors =    @[[UIColor orangeColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor],[UIColor purpleColor],[UIColor magentaColor]];
-            subItem1.colorModel = cModel1;
-            [menulist addObject:subItem1];
-            
-            DXSubMenuItem *subItem2 = [[DXSubMenuItem alloc] init];
-            subItem2.normalImage = [[DXHelper shareInstance] getColorImageWithColor:[UIColor redColor] andSize:CGSizeMake(40, 40)];
-            ColorModel *cModel2 = [[ColorModel alloc] init];
-            cModel2.colortype = BgColorTypegradual;
-            cModel2.angle = M_PI_2/2;
-            cModel2.colors =  @[[UIColor orangeColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor],[UIColor purpleColor],[UIColor magentaColor]];
-            subItem2.colorModel = cModel2;
-            [menulist addObject:subItem2];
             menuItem.items = menulist;
             [resultArr addObject:menuItem];
+            
+            
+            
+            
+            
+            
+            menulist = [[NSMutableArray alloc] init];
+            DXmenuItem *menuItem1 = [[DXmenuItem alloc] init];
+            menuItem1.menuIcon = [UIImage imageNamed:@"moreColor_icon"];
+            NSArray *colorArr3 = @[[UIColor orangeColor],[UIColor greenColor],[UIColor blueColor]];
+            NSArray *colorArr2 = @[[UIColor orangeColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor]];
+            NSArray *colorArr = @[[UIColor orangeColor],[UIColor yellowColor],[UIColor greenColor],[UIColor blueColor],[UIColor purpleColor],[UIColor magentaColor]];
+            
+            NSArray *allColors = @[colorArr3,colorArr2,colorArr];
+            for (NSArray *colors in allColors) {
+                [menulist addObject:[self getSubItemWIthColors:colors angle:M_PI_2/2 type:BgColorTypeRound]];
+                [menulist addObject:[self getSubItemWIthColors:colors angle:M_PI*3/8 type:BgColorTypeLine]];
+                 [menulist addObject:[self getSubItemWIthColors:colors angle:0 type:BgColorTypegradual]];
+                 [menulist addObject:[self getSubItemWIthColors:colors angle:M_PI_2/2 type:BgColorTypegradual]];
+            }
+            
+            menuItem1.items = menulist;
+            
+            [resultArr addObject:menuItem1];
+
+            
         }break;
         case QREditTypeDIY:{
             
@@ -197,6 +199,32 @@ static QRSourceManager *qManager;
     
     
     return resultArr;
+}
+- (DXSubMenuItem *)getSubItemWIthColors:(NSArray *)colors angle:(CGFloat)ang type:(BgColorType)type {
+    DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
+    
+    ColorModel *cModel = [[ColorModel alloc] init];
+    cModel.colortype = type;
+    cModel.angle = ang;
+    cModel.colors =  colors;
+    subItem.normalImage = [self getImageWithModel:cModel withSize:CGSizeMake(40, 40)];
+    subItem.colorModel = cModel;
+
+    return subItem;
+}
+- (UIImage *)getImageWithModel:(ColorModel *)model withSize:(CGSize)size{
+    @synchronized (self) {
+        
+    
+    DXQRView *view = [[DXQRView alloc] initWithFrame:CGRectMake(0, 0, size.width, size.height)];
+    QRModel *qrm = [[QRModel alloc] init];
+    qrm.colorModel = model;
+    qrm.QRStr = @"*1";
+    view.qrModel = qrm;
+    
+    [[DXHelper shareInstance] imageFromView:view];
+    return [[DXHelper shareInstance] imageFromView:view];;
+    }
 }
 - (DXmenuItem *)getAlbumItem{
 

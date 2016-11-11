@@ -139,16 +139,16 @@
 
         [self.menuScrollView addSubview:subScrollView];
         CGRect subFrame = subScrollView.frame;
-        if (pageCount > 1) {
-            UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(subFrame.origin.x , subFrame.origin.y + subFrame.size.height - 9, subFrame.size.width, 4)];
-            pageControl.numberOfPages = pageCount;
-            pageControl.tag = i;
-            pageControl.currentPage = 0;
-            pageControl.pageIndicatorTintColor = [UIColor grayColor];
-            pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
-            [self.menuScrollView addSubview:pageControl];
-            [self.pageControls addObject:pageControl];
-        }
+//        if (pageCount > 1) {
+//            UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(subFrame.origin.x , subFrame.origin.y + subFrame.size.height - 9, subFrame.size.width, 4)];
+//            pageControl.numberOfPages = pageCount;
+//            pageControl.tag = i;
+//            pageControl.currentPage = 0;
+//            pageControl.pageIndicatorTintColor = [UIColor grayColor];
+//            pageControl.currentPageIndicatorTintColor = [UIColor whiteColor];
+//            [self.menuScrollView addSubview:pageControl];
+//            [self.pageControls addObject:pageControl];
+//        }
         
         i ++;
     }
