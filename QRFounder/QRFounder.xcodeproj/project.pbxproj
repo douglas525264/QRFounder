@@ -40,6 +40,7 @@
 		A50FDA381CC7893D0027188C /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA371CC7893D0027188C /* AddressBookUI.framework */; };
 		A52B83341DD569A20050BF4F /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A52B83331DD569A20050BF4F /* libGDTMobSDK.a */; };
 		A52B83361DD569F10050BF4F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52B83351DD569F10050BF4F /* Security.framework */; };
+		A52B83381DD56DF80050BF4F /* colordiy_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A52B83371DD56DF80050BF4F /* colordiy_icon.png */; };
 		A53340531D95215200AEF0DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = A53340551D95215200AEF0DA /* InfoPlist.strings */; };
 		A5383F181DD46037008B4650 /* colorBoarderItem01.png in Resources */ = {isa = PBXBuildFile; fileRef = A5383F101DD46037008B4650 /* colorBoarderItem01.png */; };
 		A5383F191DD46037008B4650 /* colorBoarderItem02.png in Resources */ = {isa = PBXBuildFile; fileRef = A5383F111DD46037008B4650 /* colorBoarderItem02.png */; };
@@ -284,6 +285,7 @@
 		A52B83321DD569A20050BF4F /* GDTTrack.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTTrack.h; sourceTree = "<group>"; };
 		A52B83331DD569A20050BF4F /* libGDTMobSDK.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libGDTMobSDK.a; sourceTree = "<group>"; };
 		A52B83351DD569F10050BF4F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		A52B83371DD56DF80050BF4F /* colordiy_icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colordiy_icon.png; sourceTree = "<group>"; };
 		A53340541D95215200AEF0DA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A53340561D95215500AEF0DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A5383F101DD46037008B4650 /* colorBoarderItem01.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = colorBoarderItem01.png; sourceTree = "<group>"; };
@@ -686,6 +688,7 @@
 		A5383F0F1DD46037008B4650 /* color */ = {
 			isa = PBXGroup;
 			children = (
+				A52B83371DD56DF80050BF4F /* colordiy_icon.png */,
 				A5383F101DD46037008B4650 /* colorBoarderItem01.png */,
 				A5383F111DD46037008B4650 /* colorBoarderItem02.png */,
 				A5383F121DD46037008B4650 /* colorBoarderItem03.png */,
@@ -1509,6 +1512,7 @@
 				A54DE7161D79682C00481822 /* batterfly04.png in Resources */,
 				D78418DF1C7487BE00850129 /* MyCardInfoView.xib in Resources */,
 				A5383F1C1DD46037008B4650 /* colorItem02.png in Resources */,
+				A52B83381DD56DF80050BF4F /* colordiy_icon.png in Resources */,
 				A54DE7121D79682C00481822 /* batterfly02.png in Resources */,
 				A5E3158A1D89553E00925D52 /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				A54DE7141D79682C00481822 /* batterfly03.png in Resources */,
