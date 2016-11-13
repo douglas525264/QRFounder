@@ -202,7 +202,7 @@
     if (!_selectView) {
         CGFloat width =  self.view.frame.size.width * 0.27;
         width = width > 100 ? 100 : width;
-        _selectView = [[DXSelectView alloc] initWithFrame:CGRectMake(0, 80, width,IS_IPAD ? 500 : 360) titleArr:@[@"名片",@"app",@"网址",@"短信",@"邮件"/*,@"位置"*/,@"WIFI",@"文本"] andIconArr:nil];
+        _selectView = [[DXSelectView alloc] initWithFrame:CGRectMake(0, 80, width,IS_IPAD ? 500 : 360) titleArr:@[@"文本",@"名片",@"app",@"网址",@"短信",@"邮件"/*,@"位置"*/,@"WIFI"] andIconArr:nil];
         
     }
     return _selectView;

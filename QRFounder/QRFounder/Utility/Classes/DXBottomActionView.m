@@ -136,12 +136,15 @@
 
 - (void)showInView:(UIView *)view {
     CGFloat height = [self getheightWithWidth];
-    
+    if (height == 0) {
+        height = 49;
+    }
     self.frame = CGRectMake(0,  view.frame.size.height, view.frame.size.width, height);
     
     [view addSubview:self];
     [UIView animateWithDuration:0.3 animations:^{
         self.frame = CGRectMake(0, view.frame.size.height - height, view.frame.size.width, height);
+        [view bringSubviewToFront:self];
     }];
 }
 - (void)dismisswithAnimation:(BOOL)animation {

@@ -35,6 +35,10 @@
  */
 typedef NS_ENUM(NSInteger,QRType) {
     /**
+     *  普通文本类型
+     */
+    QRTypeText,
+    /**
      *  身份信息
      */
     QRTypeMyCard,
@@ -61,11 +65,8 @@ typedef NS_ENUM(NSInteger,QRType) {
     /**
      *  wifi 类型
      */
-    QRTypeWIFI,
-    /**
-     *  普通文本类型
-     */
-    QRTypeText
+    QRTypeWIFI
+    
 };
 /**
  *  编辑类型
