@@ -20,7 +20,7 @@
 @property (nonatomic, strong) NSMutableArray *selectArr;
 @property (nonatomic, assign) BOOL isScanShow;
 @property (nonatomic, weak) UIButton *rightBtn;
-@property (nonatomic, weak) DXBottomActionView *bottomView;
+@property (nonatomic, strong) DXBottomActionView *bottomView;
 @end
 
 @implementation HistoryViewController
@@ -263,7 +263,6 @@
 }
 - (void)showPop{
 
-    
     [self.bottomView showInView:self.view];
     CGFloat y = self.sourceSegment.frame.origin.y + self.sourceSegment.frame.size.height;
     
@@ -324,7 +323,7 @@
                         [strongSelf.createArr removeObjectsInArray:strongSelf.selectArr];
                         bpc.allcount = strongSelf.createArr.count;
                     }
-                    [[DBManager shareManager] deleteModels:[NSArray arrayWithArray:self.selectArr]];
+                    [[DBManager shareManager] deleteModels:[NSArray arrayWithArray:strongSelf.selectArr]];
                     
                     [strongSelf.selectArr removeAllObjects];
                     [strongSelf.tableView deleteRowsAtIndexPaths:deleteArr withRowAnimation:UITableViewRowAnimationFade];
