@@ -708,48 +708,6 @@
 				</dict>
 			</array>
 		</dict>
-		<dict>
-			<key>borderlist</key>
-			<array>
-				<dict>
-					<key>boardername</key>
-					<string>cron_boarder</string>
-				</dict>
-				<dict>
-					<key>boardername</key>
-					<string>cron_boarder</string>
-				</dict>
-				<dict>
-					<key>boardername</key>
-					<string>cron_boarder</string>
-				</dict>
-			</array>
-			<key>bgb</key>
-			<integer>0</integer>
-			<key>bga</key>
-			<integer>1</integer>
-			<key>bgg</key>
-			<integer>0</integer>
-			<key>bgr</key>
-			<integer>0</integer>
-			<key>isChangeBlack</key>
-			<true/>
-			<key>iconName</key>
-			<string>corn_icon</string>
-			<key>menuList</key>
-			<array>
-				<dict>
-					<key>probability</key>
-					<integer>1</integer>
-					<key>sizey</key>
-					<integer>1</integer>
-					<key>sizex</key>
-					<integer>1</integer>
-					<key>imageSourceName</key>
-					<string>cron_item01</string>
-				</dict>
-			</array>
-		</dict>
 	</array>
 </dict>
 </plist>

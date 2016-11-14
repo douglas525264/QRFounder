@@ -462,6 +462,7 @@
 		A52F9D4B1DD9A3F800E1C651 /* intelitem07.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intelitem07.png; sourceTree = "<group>"; };
 		A52F9D4C1DD9A3F800E1C651 /* intelitem09.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intelitem09.png; sourceTree = "<group>"; };
 		A52F9D4D1DD9A3F800E1C651 /* intelitem10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = intelitem10.png; sourceTree = "<group>"; };
+		A52F9D5A1DD9AA1A00E1C651 /* QRFounder.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = QRFounder.entitlements; sourceTree = "<group>"; };
 		A53340541D95215200AEF0DA /* zh-Hans */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hans"; path = "zh-Hans.lproj/InfoPlist.strings"; sourceTree = "<group>"; };
 		A53340561D95215500AEF0DA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		A5383F621DD4B26B008B4650 /* ColorModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ColorModel.h; sourceTree = "<group>"; };
@@ -1255,6 +1256,7 @@
 		D78418571C74551200850129 /* QRFounder */ = {
 			isa = PBXGroup;
 			children = (
+				A52F9D5A1DD9AA1A00E1C651 /* QRFounder.entitlements */,
 				D784189B1C74560000850129 /* AppDelegate */,
 				D78418991C7455E500850129 /* WorkLog */,
 				D78418901C7455C400850129 /* Utility */,
@@ -1634,6 +1636,9 @@
 						DevelopmentTeam = B6H7GPKGQJ;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
 							com.apple.Wallet = {
 								enabled = 0;
 							};
@@ -2120,6 +2125,7 @@
 			baseConfigurationReference = 5E4F2B2A688A4033626C109B /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = QRFounder/QRFounder.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: xin dong (B6H7GPKGQJ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B6H7GPKGQJ;
@@ -2161,6 +2167,7 @@
 			baseConfigurationReference = D2F73D3798209558300E55FF /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = QRFounder/QRFounder.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: xin dong (B6H7GPKGQJ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEVELOPMENT_TEAM = B6H7GPKGQJ;
