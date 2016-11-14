@@ -90,10 +90,13 @@
     
 }
 - (void)setQRDiyModel:(DIYModel *)diy {
-
+    if ([[DXHelper shareInstance] needShowLike]) {
+        [[DXHelper shareInstance] showLikeInVC:self];
+    } else {
     self.qrModel.diyModel = diy;
     self.qrModel.colorModel = nil;
     self.qrView.qrModel = self.qrModel;
+    }
 }
 - (void)setQRColor:(UIColor *)color {
 
