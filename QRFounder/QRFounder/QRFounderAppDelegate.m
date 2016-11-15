@@ -44,12 +44,18 @@
     [[UINavigationBar appearance] setBarStyle:UIBarStyleBlack];
     [[AnalyticsManager shareInstance] startUMSDK];
     [[ShareManager shareInstance] startSDK];
+    [self enableJpush:launchOptions];
+    return YES;
+}
+- (void)enableJpush:(NSDictionary *) launchOptions{
+
+    
     //Required
     if ([[UIDevice currentDevice].systemVersion floatValue] >= 10.0) {
 #ifdef NSFoundationVersionNumber_iOS_9_x_Max
         JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];
         entity.types = UNAuthorizationOptionAlert|UNAuthorizationOptionBadge|UNAuthorizationOptionSound;
-         [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
+        [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];
         
 #endif
     } else if ([[UIDevice currentDevice].systemVersion floatValue] >= 8.0) {
@@ -68,8 +74,19 @@
                  apsForProduction:NO
             advertisingIdentifier:nil];
 
-    return YES;
+    NSNotificationCenter *defaultCenter = [NSNotificationCenter defaultCenter];
+    [defaultCenter addObserver:self selector:@selector(networkDidReceiveMessage:) name:kJPFNetworkDidReceiveMessageNotification object:nil];
+
 }
+- (void)networkDidReceiveMessage:(NSNotification *)notification {
+    
+    NSDictionary * userInfo = [notification userInfo];
+//    NSString *content = [userInfo valueForKey:@"content"];
+//    NSDictionary *extras = [userInfo valueForKey:@"extras"];
+//    NSString *customizeField1 = [extras valueForKey:@"customizeField1"]; //服务端传递的Extras附加字段，key是自己定义的
+    NSLog(@"get msg : %@",userInfo);
+}
+
 - (void)addAD {
     hasHide = NO;
     UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
