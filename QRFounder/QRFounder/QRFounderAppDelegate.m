@@ -64,7 +64,7 @@
                                               categories:nil];
     }
     [JPUSHService setupWithOption:launchOptions appKey:@"60d3cc145c063150ad77c2db"
-                          channel:@""
+                          channel:@"pushChannel1"
                  apsForProduction:NO
             advertisingIdentifier:nil];
 
@@ -197,11 +197,12 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
-    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
+    
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
