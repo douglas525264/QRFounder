@@ -67,20 +67,7 @@
                           channel:@""
                  apsForProduction:NO
             advertisingIdentifier:nil];
-//    BaiduMobAdSplash *splash = [[BaiduMobAdSplash alloc] init];
-//    splash.delegate = self; //把在mssp.baidu.com上创建后获得的代码位id写到这里 splash.AdUnitTag = @"2058492";
-//    splash.AdUnitTag = @"2058492";//@"2873611";
-//    splash.canSplashClick = YES;
-//    [splash loadAndDisplayUsingKeyWindow:self.window];
-//    self.splash = splash;
-    //});
-//
 
- // [NSThread sleepForTimeInterval:2.0];
-  //  [_window makeKeyAndVisible];
-
-   // [UINavigationBar appearance].translucent = NO;
-   // [[UINavigationBar appearance] setBarStyle:UIBarStyleBlackTranslucent];
     return YES;
 }
 - (void)addAD {
@@ -210,6 +197,7 @@
 }
 
 - (void)applicationWillEnterForeground:(UIApplication *)application {
+    [[UIApplication sharedApplication] setApplicationIconBadgeNumber:0];
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
