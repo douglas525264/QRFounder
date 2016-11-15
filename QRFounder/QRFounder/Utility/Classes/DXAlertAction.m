@@ -124,7 +124,113 @@
 
 
 }
++ (void)showActionSheetWithTitle:(NSString*)title msg:(NSString*)message inVC:(UIViewController *)vc sourceView:(UIView *)view  chooseBlock:(void (^)(NSInteger buttonIdx))block  buttonsStatement:(NSString*)cancelString, ... {
+    NSMutableArray* argsArray = [[NSMutableArray alloc] initWithCapacity:2];
+    [argsArray addObject:cancelString];
+    id arg;
+    va_list argList;
+    if(cancelString)
+    {
+        va_start(argList,cancelString);
+        while ((arg = va_arg(argList,id)))
+        {
+            [argsArray addObject:arg];
+        }
+        va_end(argList);
+    }
+    
+    if ( [[[UIDevice currentDevice] systemVersion] floatValue] >= 8.0)
+    {
+        //UIAlertController style
+        
+        UIAlertController* alertController = [UIAlertController alertControllerWithTitle:title message:message preferredStyle:UIAlertControllerStyleActionSheet];
+        for (int i = 0; i < [argsArray count]; i++)
+        {
+            UIAlertActionStyle style =  (0 == i)? UIAlertActionStyleCancel: UIAlertActionStyleDefault;
+            // Create the actions.
+            UIAlertAction *action = [UIAlertAction actionWithTitle:[argsArray objectAtIndex:i] style:style handler:^(UIAlertAction *action) {
+                if (block) {
+                    block(i);
+                }
+            }];
+            [alertController addAction:action];
+        }
+        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+            UIPopoverPresentationController *pop = [alertController popoverPresentationController];
+            pop.sourceView = view;
+            pop.sourceRect = view.bounds;
+        }
+        [vc presentViewController:alertController animated:YES completion:nil];
+        return;
+    }
+    
+    if (argsArray.count > 7)
+    {
+        UIAlertView* alert = [[UIAlertView alloc]initWithTitle:@"" message:@"UIAlertView按钮过多，请修改源代码" delegate:nil cancelButtonTitle:@"知道了" otherButtonTitles:nil, nil];
+        [alert show];
+        return;
+    }
+    
+    //UIAlertView style
+    
+    UIActionSheet* actionSheet = nil;
+    
+    switch ([argsArray count])
+    {
+        case 1:
+        {
+            actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:nil otherButtonTitles:nil, nil];
+//            actionSheet = [[UIActionSheet alloc]initWithTitle:title message:message
+//                                                 delegate:nil cancelButtonTitle:cancelString otherButtonTitles:nil, nil];
+        }
+            break;
+        case 2:
+        {
+            actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:nil otherButtonTitles:argsArray[1], nil];
+        }
+            break;
+        case 3:
+        {
+            actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:nil otherButtonTitles:argsArray[1],argsArray[2],nil];
+        }
+            break;
+        case 4:
+        {
+            actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:nil otherButtonTitles:argsArray[1],argsArray[2],argsArray[3],nil];
+            
+        }
+            break;
+        case 5:
+        {
+            actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:nil otherButtonTitles:argsArray[1],argsArray[2],argsArray[3],argsArray[4],nil];
+            
+        }
+            break;
+        case 6:
+        {
+            actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:nil otherButtonTitles:argsArray[1],argsArray[2],argsArray[3],argsArray[4],argsArray[5],nil];
+        }
+            break;
+        case 7:
+        {
+            actionSheet = [[UIActionSheet alloc] initWithTitle:title delegate:nil cancelButtonTitle:cancelString destructiveButtonTitle:nil otherButtonTitles:argsArray[1],argsArray[2],argsArray[3],argsArray[4],argsArray[5],argsArray[6],nil];
+        }
+            break;
+            
+        default:
+            break;
+    }
+    [actionSheet.rac_buttonClickedSignal subscribeNext:^(NSNumber *clickIndex) {
+        if (block) {
+            block(clickIndex.integerValue);
+        }
+        
+    }];
 
+    [actionSheet showInView:view];
+
+    
+}
 + (UIViewController*)getTopViewController
 {
     UIViewController *result = nil;

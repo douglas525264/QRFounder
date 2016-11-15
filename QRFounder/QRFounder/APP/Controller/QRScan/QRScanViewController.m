@@ -29,7 +29,11 @@
 {
     ZBarReaderView *readView;
 }
-
+- (void)awakeFromNib {
+    [super awakeFromNib];
+    self.isShowAlbum = YES;
+    self.isShowBack = NO;
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createUI];
@@ -51,8 +55,36 @@
     rightBtn.frame = CGRectMake(0, 0, 22, 22);
     [rightBtn setImage:[UIImage imageNamed:@"albumIcon"] forState:UIControlStateNormal];
     [rightBtn addTarget:self action:@selector(openAlbumBtnClick:) forControlEvents:UIControlEventTouchUpInside];
-    self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:leftbtn];
-    self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    
+    UIBarButtonItem *leftItem = [[UIBarButtonItem alloc] initWithCustomView:leftbtn];
+    UIBarButtonItem *rightItem = [[UIBarButtonItem alloc] initWithCustomView:rightBtn];
+    if (self.isShowBack) {
+        if (self.isShowAlbum) {
+            self.navigationItem.leftBarButtonItems = @[leftItem,rightItem];
+        }else {
+            
+            self.navigationItem.leftBarButtonItem = leftItem;
+        }
+        UIButton *cancelBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        cancelBtn.frame = CGRectMake(0, 0, 44, 22);
+        [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
+        [cancelBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        
+        //[leftbtn setImage:[UIImage imageNamed:@"lightIcon"] forState:UIControlStateNormal];
+        [cancelBtn addTarget:self action:@selector(cancelBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:cancelBtn];
+
+      
+    } else {
+        if (self.isShowAlbum) {
+            self.navigationItem.leftBarButtonItem = leftItem;
+            self.navigationItem.rightBarButtonItem = rightItem;
+        }else {
+            self.navigationItem.rightBarButtonItem = leftItem;
+        }
+    }
+    
+    
 
     [self initCapture];
 //    readView = [ZBarReaderView new];
@@ -75,6 +107,12 @@
     self.alertLable.text = @"将二维码放入框中，即可自动扫描";
     [self.view addSubview:self.alertLable];
     
+}
+- (void)cancelBtnClick:(id)sender {
+
+    [self dismissViewControllerAnimated:YES completion:^{
+        
+    }];
 }
 - (void)initCapture
 {
@@ -145,7 +183,9 @@
 }
 - (void)viewDidAppear:(BOOL)animated {
     [super viewDidAppear:animated];
+    if (!self.isShowBack) {
     [MainViewController shareInstance].btn.hidden = NO;
+    }
     // self.tabBarController.tabBar.hidden = NO;
 }
 
@@ -229,17 +269,6 @@
     if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
         [self loadSourceWithType:UIImagePickerControllerSourceTypePhotoLibrary];
         
-//        ZBarReaderController *reader = [ZBarReaderController new];
-//        
-//        reader.allowsEditing = NO   ;
-//        
-//        reader.showsHelpOnFail = NO;
-//        
-//        reader.readerDelegate = self;
-//    
-//        reader.sourceType = UIImagePickerControllerSourceTypePhotoLibrary;
-//        
-//        [self presentViewController:reader animated:YES completion:nil];
 
     }else{
         NSLog(@"相册不可用");
@@ -310,6 +339,11 @@
 
 
 - (void)getResult:(NSString *)result {
+    if (self.scanBlock) {
+        self.scanBlock(result);
+        [self cancelBtnClick:nil];
+        
+    }else {
     QRModel *qr = [[QRModel alloc] initWithQrStr:result];
     qr.isScanResult = YES;
     [[DBManager shareManager] saveModel:qr];
@@ -330,6 +364,7 @@
             [self.navigationController pushViewController:dVC animated:YES];
 
         }break;
+        }
     }
 }
 - (void)loadSourceWithType:(UIImagePickerControllerSourceType)sourceType{

@@ -8,7 +8,9 @@
 
 #import "CommenInfoView.h"
 #import "DXInputTextView.h"
+#import <ReactiveCocoa.h>
 @interface TextInfoView : CommenInfoView<UITextViewDelegate>
 @property (weak, nonatomic) IBOutlet DXInputTextView *textInfoTextView;
-
+@property (weak, nonatomic) IBOutlet UIButton *addBtn;
+@property (nonatomic, copy) void(^commendCallBlock)(NSInteger index);
 @end

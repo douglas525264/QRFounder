@@ -7,6 +7,9 @@
 //
 
 #import "TextInfoView.h"
+#import "DXAlertAction.h"
+#import "MainViewController.h"
+#import "QRScanViewController.h"
 
 @implementation TextInfoView
 
@@ -17,6 +20,21 @@
     // Drawing code
 }
 */
+- (IBAction)addBtnClick:(id)sender {
+    
+    @weakify(self);
+    [DXAlertAction showActionSheetWithTitle:@"操作" msg:nil inVC:[MainViewController shareInstance] sourceView:self.addBtn chooseBlock:^(NSInteger buttonIdx) {
+        
+        @strongify(self);
+        if (self.commendCallBlock) {
+            self.commendCallBlock(buttonIdx);
+        }
+    } buttonsStatement:@"取消",@"从相册读取二维码",@"扫描获取二维码",nil];
+}
+- (void)showAlbum{
+
+    
+}
 - (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
     if ([text isEqualToString:@"\n"]) {
         [textView resignFirstResponder];

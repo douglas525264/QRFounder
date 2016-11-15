@@ -27,8 +27,10 @@
 #import "DBManager.h"
 #import "DXHelper.h"
 #import "QRFounderAppDelegate.h"
+#import <ZBarSDK.h>
+#import "QRScanViewController.h"
 #define createBtnWidth 120
-@interface QRCreateViewController ()
+@interface QRCreateViewController ()<UIImagePickerControllerDelegate>
 @property (nonatomic, strong)DXSelectView *selectView;
 @property (nonatomic, strong)CommenInfoView *currentInfoView;
 @property (nonatomic, strong) NSMutableArray *views;
@@ -157,6 +159,23 @@
         }break;
         case QRTypeText:{
             result = [[[NSBundle mainBundle] loadNibNamed:@"TextinfoView" owner:self options:nil] lastObject];
+            TextInfoView *tt = (TextInfoView *)result;
+            @weakify(self);
+            [tt setCommendCallBlock:^(NSInteger index) {
+                @strongify(self);
+                switch (index) {
+                    case 1:{
+                        [self showAlbum];
+                    }break;
+                    case 2:{
+                        [self showCamera];
+                        
+                    }break;
+                        
+                    default:
+                        break;
+                }
+            }];
         }break;
             result = nil;
         default:
@@ -171,6 +190,42 @@
 
     
 }
+- (void)showCamera{
+    
+    QRScanViewController *sVC = [[QRScanViewController alloc] init];
+    sVC.isShowBack = YES;
+    sVC.isShowAlbum = NO;
+    @weakify(self);
+    [sVC setScanBlock:^(NSString *result) {
+      @strongify(self);
+        [self getResult:result];
+    }];
+    [self presentViewController:[[UINavigationController alloc] initWithRootViewController:sVC] animated:YES completion:^{
+        
+    }];
+}
+- (void)showAlbum{
+    if ([UIImagePickerController isSourceTypeAvailable:UIImagePickerControllerSourceTypePhotoLibrary]) {
+        [self loadSourceWithType:UIImagePickerControllerSourceTypePhotoLibrary];
+        
+        
+    }else{
+        NSLog(@"相册不可用");
+        // [self showAlterWithMessage:@"相册不可用"];
+    }
+}
+- (void)loadSourceWithType:(UIImagePickerControllerSourceType)sourceType{
+    UIImagePickerController *picker = [[UIImagePickerController alloc]init];
+    picker.sourceType = sourceType;
+    picker.delegate = self;
+    //    是否对相册资源进行自动处理
+    // picker.allowsEditing = YES;
+    //
+    [self presentViewController:picker animated:YES completion:^{
+        
+    }];
+}
+
 - (void)createBtnClick:(UIButton *)sender {
 
     NSString *qrStr = [self.currentInfoView getResultInfoStr];
@@ -230,6 +285,59 @@
     }
     return _views;
 }
+- (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info{
+    //    先判断资源是否是图片资源
+    
+    //NSString *mediaType = info[UIImagePickerControllerMediaType];
+    //    系统预置的图片类型常量
+    UIImage *image = info[UIImagePickerControllerOriginalImage];
+    
+    //    if ([mediaType isEqualToString:(NSString *)kUTTypeImage]) {
+    //        //        取得图片
+    //        UIImage *image = info[UIImagePickerControllerEditedImage];
+    //        [self.view setBackgroundColor:[UIColor colorWithPatternImage:image]];
+    //    }
+    //    ZBarImageScanner *scanner = [[ZBarImageScanner alloc] init];
+    //    [scanner setSymbology: ZBAR_I25
+    //                   config: ZBAR_CFG_ENABLE
+    //                       to: 0];
+    //    [scanner scanImage:[[ZBarImage alloc] initWithCGImage:image.CGImage]];
+    //
+    //
+    ZBarReaderController *read = [ZBarReaderController new];
+    CGImageRef cgImageRef = image.CGImage;
+    ZBarSymbol* symbol = nil;
+    for(symbol in [read scanImage:cgImageRef]){
+        break;
+    }
+    //    ZBarSymbol *zs = nil;
+    //    for (zs in info[ZBarReaderControllerResults]) {
+    //        break;
+    //    }
+    
+    // ZBarSymbol *resSymbol = resul
+    NSLog(@"%@",symbol.data);
+    
+    [picker dismissViewControllerAnimated:NO completion:^{
+        
+    }];
+    if (symbol.data == nil) {
+        [[DXHelper shareInstance] makeAlterWithTitle:@"无法识别图片" andIsShake:NO];
+        NSLog(@"无法识别图片");
+    }else {
+        [[AnalyticsManager shareInstance] scanQRCodeWithAlbumEvent];
+        [self getResult:symbol.data];
+    }
+    
+    
+}
+- (void)getResult:(NSString *)result {
+    if ([self.currentInfoView isKindOfClass:[TextInfoView class]]) {
+        TextInfoView *textView = (TextInfoView *)self.currentInfoView;
+        textView.textInfoTextView.text = result;
+    }
+}
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

@@ -10,4 +10,7 @@
 
 @interface QRScanViewController : DXCommenViewController
 @property (nonatomic, assign) BOOL isScanning;
+@property (nonatomic, assign) BOOL isShowAlbum;
+@property (nonatomic, assign) BOOL isShowBack;
+@property (nonatomic, copy) void (^scanBlock)(NSString *result);
 @end

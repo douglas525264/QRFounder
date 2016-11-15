@@ -12,5 +12,5 @@
 
 
 + (void)showAlertWithTitle:(NSString*)title msg:(NSString*)msg inVC:(UIViewController *)vc  chooseBlock:(void (^)(NSInteger buttonIdx))block  buttonsStatement:(NSString*)cancelString, ...;
-
++ (void)showActionSheetWithTitle:(NSString*)title msg:(NSString*)msg inVC:(UIViewController *)vc sourceView:(UIView *)view  chooseBlock:(void (^)(NSInteger buttonIdx))block  buttonsStatement:(NSString*)cancelString, ...;
 @end

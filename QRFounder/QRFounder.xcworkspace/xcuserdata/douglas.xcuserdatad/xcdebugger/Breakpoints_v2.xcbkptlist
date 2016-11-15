@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QRFounder/APP/Controller/QRCreate/QRCreateViewController.m"
-            timestampString = "496648050.950364"
+            timestampString = "500891958.262961"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "177"
-            endingLineNumber = "177"
+            startingLineNumber = "232"
+            endingLineNumber = "232"
             landmarkName = "-createBtnClick:"
             landmarkType = "7">
          </BreakpointContent>
