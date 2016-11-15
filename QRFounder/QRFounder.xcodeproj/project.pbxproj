@@ -231,6 +231,11 @@
 		A5E315901D89553E00925D52 /* MOBFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E315821D89553E00925D52 /* MOBFoundation.framework */; };
 		A5E315911D89553E00925D52 /* ShareSDK.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A5E315831D89553E00925D52 /* ShareSDK.bundle */; };
 		A5E315921D89553E00925D52 /* ShareSDKConnector.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5E315841D89553E00925D52 /* ShareSDKConnector.framework */; };
+		A5EE9C9C1DDADAA500753F90 /* jpush-ios-2.2.0.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EE9C9A1DDADAA500753F90 /* jpush-ios-2.2.0.a */; };
+		A5EE9C9E1DDADADD00753F90 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EE9C9D1DDADADD00753F90 /* CFNetwork.framework */; };
+		A5EE9CA01DDADAEA00753F90 /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EE9C9F1DDADAEA00753F90 /* CoreFoundation.framework */; };
+		A5EE9CA21DDADB1B00753F90 /* UserNotifications.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EE9CA11DDADB1B00753F90 /* UserNotifications.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		A5EE9CA41DDADB3800753F90 /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A5EE9CA31DDADB3800753F90 /* libresolv.tbd */; };
 		D7130D9E1C9A99BD0096768B /* QRModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130D9D1C9A99BD0096768B /* QRModel.m */; };
 		D7130DA11C9A9E8D0096768B /* DXQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130DA01C9A9E8D0096768B /* DXQRView.m */; };
 		D7130DA61C9AA5A50096768B /* QRShowViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D7130DA51C9AA5A50096768B /* QRShowViewController.m */; };
@@ -571,6 +576,12 @@
 		A5E315821D89553E00925D52 /* MOBFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = MOBFoundation.framework; sourceTree = "<group>"; };
 		A5E315831D89553E00925D52 /* ShareSDK.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = ShareSDK.bundle; sourceTree = "<group>"; };
 		A5E315841D89553E00925D52 /* ShareSDKConnector.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = ShareSDKConnector.framework; sourceTree = "<group>"; };
+		A5EE9C9A1DDADAA500753F90 /* jpush-ios-2.2.0.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = "jpush-ios-2.2.0.a"; sourceTree = "<group>"; };
+		A5EE9C9B1DDADAA500753F90 /* JPUSHService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JPUSHService.h; sourceTree = "<group>"; };
+		A5EE9C9D1DDADADD00753F90 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		A5EE9C9F1DDADAEA00753F90 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
+		A5EE9CA11DDADB1B00753F90 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
+		A5EE9CA31DDADB3800753F90 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
 		D2F73D3798209558300E55FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		D7130D9C1C9A99BD0096768B /* QRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRModel.h; sourceTree = "<group>"; };
 		D7130D9D1C9A99BD0096768B /* QRModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRModel.m; sourceTree = "<group>"; };
@@ -659,10 +670,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A5682CD81D35E02B00E0AD8C /* StoreKit.framework in Frameworks */,
+				A5EE9CA41DDADB3800753F90 /* libresolv.tbd in Frameworks */,
+				A5EE9CA21DDADB1B00753F90 /* UserNotifications.framework in Frameworks */,
+				A50459EA1D338FC3006C7D31 /* libz.tbd in Frameworks */,
 				A52B83361DD569F10050BF4F /* Security.framework in Frameworks */,
-				A549E73F1D7FFB0F00651D23 /* CoreTelephony.framework in Frameworks */,
+				A5682CD61D35E02300E0AD8C /* CoreGraphics.framework in Frameworks */,
 				A5682CE21D35E06200E0AD8C /* SystemConfiguration.framework in Frameworks */,
+				A549E73F1D7FFB0F00651D23 /* CoreTelephony.framework in Frameworks */,
+				A5EE9CA01DDADAEA00753F90 /* CoreFoundation.framework in Frameworks */,
+				A5EE9C9E1DDADADD00753F90 /* CFNetwork.framework in Frameworks */,
+				A5682CD81D35E02B00E0AD8C /* StoreKit.framework in Frameworks */,
 				A5682CD21D35E00B00E0AD8C /* QuartzCore.framework in Frameworks */,
 				A549E73D1D7FFB0300651D23 /* CoreLocation.framework in Frameworks */,
 				A549E73B1D7FFAF300651D23 /* CoreMotion.framework in Frameworks */,
@@ -680,13 +697,11 @@
 				A5E3158D1D89553E00925D52 /* libWeChatSDK.a in Frameworks */,
 				A5682CDE1D35E04600E0AD8C /* EventKit.framework in Frameworks */,
 				A5682CDC1D35E03D00E0AD8C /* Social.framework in Frameworks */,
-				A5682CD61D35E02300E0AD8C /* CoreGraphics.framework in Frameworks */,
 				A5682CD41D35E01A00E0AD8C /* CoreText.framework in Frameworks */,
 				A5E315891D89553E00925D52 /* TencentOpenAPI.framework in Frameworks */,
 				A5682CD01D35DFF700E0AD8C /* CoreMedia.framework in Frameworks */,
 				A5E315901D89553E00925D52 /* MOBFoundation.framework in Frameworks */,
 				A508DBD41DA64874004550BB /* BaiduMobAdSDK.framework in Frameworks */,
-				A50459EA1D338FC3006C7D31 /* libz.tbd in Frameworks */,
 				A50459F11D339009006C7D31 /* libsqlite3.tbd in Frameworks */,
 				A50459F01D338FFF006C7D31 /* ImageIO.framework in Frameworks */,
 				A50459EE1D338FDB006C7D31 /* JavaScriptCore.framework in Frameworks */,
@@ -698,6 +713,7 @@
 				D72A3BB41C9FA130001DB11F /* AVFoundation.framework in Frameworks */,
 				6F47158C73E0701CA9C33A1D /* libPods.a in Frameworks */,
 				A52B83341DD569A20050BF4F /* libGDTMobSDK.a in Frameworks */,
+				A5EE9C9C1DDADAA500753F90 /* jpush-ios-2.2.0.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1174,9 +1190,22 @@
 			path = Required;
 			sourceTree = "<group>";
 		};
+		A5EE9C991DDADAA500753F90 /* JPushLib */ = {
+			isa = PBXGroup;
+			children = (
+				A5EE9C9A1DDADAA500753F90 /* jpush-ios-2.2.0.a */,
+				A5EE9C9B1DDADAA500753F90 /* JPUSHService.h */,
+			);
+			path = JPushLib;
+			sourceTree = "<group>";
+		};
 		CC25F21FA19289206F13E26A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A5EE9CA31DDADB3800753F90 /* libresolv.tbd */,
+				A5EE9CA11DDADB1B00753F90 /* UserNotifications.framework */,
+				A5EE9C9F1DDADAEA00753F90 /* CoreFoundation.framework */,
+				A5EE9C9D1DDADADD00753F90 /* CFNetwork.framework */,
 				A52B83351DD569F10050BF4F /* Security.framework */,
 				A508DBD31DA64874004550BB /* BaiduMobAdSDK.framework */,
 				A554719E1D8FF5E700E4AF74 /* Contacts.framework */,
@@ -1437,6 +1466,7 @@
 		D78418951C7455C400850129 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				A5EE9C991DDADAA500753F90 /* JPushLib */,
 				A52B832D1DD569A20050BF4F /* GDTLib */,
 				A5E315611D89553E00925D52 /* ShareSDK */,
 			);
@@ -2128,7 +2158,7 @@
 				CODE_SIGN_ENTITLEMENTS = QRFounder/QRFounder.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: xin dong (B6H7GPKGQJ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = B6H7GPKGQJ;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2154,6 +2184,7 @@
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/GDTLib",
+					"$(PROJECT_DIR)/QRFounder/Utility/Libs/JPushLib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.qrcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -2170,7 +2201,7 @@
 				CODE_SIGN_ENTITLEMENTS = QRFounder/QRFounder.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: xin dong (B6H7GPKGQJ)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = B6H7GPKGQJ;
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -2196,6 +2227,7 @@
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/PlatformSDK/SinaWeiboSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/PlatformSDK/WeChatSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/GDTLib",
+					"$(PROJECT_DIR)/QRFounder/Utility/Libs/JPushLib",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.qrcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
