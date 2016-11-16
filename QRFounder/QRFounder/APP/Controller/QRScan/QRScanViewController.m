@@ -308,6 +308,8 @@
 //
 //    
     ZBarReaderController *read = [ZBarReaderController new];
+    ZBarImageScanner *sa = read.scanner;
+    [sa setSymbology:ZBAR_I25 config:ZBAR_CFG_ENABLE to:0];
     CGImageRef cgImageRef = image.CGImage;
     ZBarSymbol* symbol = nil;
     for(symbol in [read scanImage:cgImageRef]){
