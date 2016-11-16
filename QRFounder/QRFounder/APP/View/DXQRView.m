@@ -49,10 +49,10 @@ enum {
 //    CGContextFillPath(cxt);
     
     QRecLevel lef = QR_ECLEVEL_Q;
-    if (_qrModel.QRStr.length > 64) {
+    if (_qrModel.QRStr.length > 64 && !_qrModel.diyModel) {
         lef = QR_ECLEVEL_M;
     }
-    if (_qrModel.QRStr.length > 128) {
+    if (_qrModel.QRStr.length > 128 && !_qrModel.diyModel) {
         lef = QR_ECLEVEL_L;
     }
     if (_qrModel.QRStr.length < 4) {
