@@ -33,7 +33,7 @@ static DXHelper *helper;
     
     UIImage *image = [self normalImageFromView:theView withScale:scale];
     NSData *da = UIImagePNGRepresentation(image);
-    while (da.length > 800 * 1024) {
+    while (da.length > 1024 * 1024) {
         scale /= 1.2;
         image = [self normalImageFromView:theView withScale:scale];
         da = UIImagePNGRepresentation(image);
