@@ -37,15 +37,18 @@
     [[DBManager shareManager] getAllQRModelwithFinishBlock:^(BOOL isOK, NSArray *resultArr) {
         __strong HistoryViewController *strongSelf = weakSelf;
         if (isOK) {
-            for (QRModel *model in resultArr) {
-                if (model.isScanResult) {
-                    [strongSelf.scanArr addObject:model];
-                } else {
-                    [strongSelf.createArr addObject:model];
+            dispatch_async(dispatch_get_main_queue(), ^{
+                for (QRModel *model in resultArr) {
+                    if (model.isScanResult) {
+                        [strongSelf.scanArr addObject:model];
+                    } else {
+                        [strongSelf.createArr addObject:model];
+                    }
                 }
-            }
-            [strongSelf reloadUI];
-            [strongSelf cheakEnable];
+                [strongSelf reloadUI];
+                [strongSelf cheakEnable];
+            });
+            
         }
     }];
     

@@ -16,7 +16,8 @@
 #import "GDTSplashAd.h"
 #import "JPUSHService.h"
 #import <UserNotifications/UserNotifications.h>
-@interface QRFounderAppDelegate ()<GDTSplashAdDelegate,JPUSHRegisterDelegate>
+#import "ADManager.h"
+@interface QRFounderAppDelegate ()<GDTSplashAdDelegate,JPUSHRegisterDelegate,BaiduMobAdSplashDelegate>
 
 {
     
@@ -81,7 +82,13 @@
 - (void)networkDidReceiveMessage:(NSNotification *)notification {
     
     NSDictionary * userInfo = [notification userInfo];
-//    NSString *content = [userInfo valueForKey:@"content"];
+    NSString *content = [userInfo valueForKey:@"content"];
+    NSDictionary *dic = [NSJSONSerialization JSONObjectWithData:[content dataUsingEncoding:NSUTF8StringEncoding] options:NSJSONReadingMutableContainers error:nil];
+    if ([dic objectForKey:@"adtype"]) {
+        NSUserDefaults *de = [NSUserDefaults standardUserDefaults] ;
+        [de setValue:[dic objectForKey:@"adtype"] forKey:@"showADType"];
+        [de synchronize];
+    }
 //    NSDictionary *extras = [userInfo valueForKey:@"extras"];
 //    NSString *customizeField1 = [extras valueForKey:@"customizeField1"]; //服务端传递的Extras附加字段，key是自己定义的
     NSLog(@"get msg : %@",userInfo);
@@ -99,50 +106,55 @@
     _bgView.backgroundColor = bgColor;
     
     [_window addSubview:_bgView];
-    
-    //    BaiduMobAdSplash *splash = [[BaiduMobAdSplash alloc] init];
-    //    splash.delegate = self;
-    //    splash.AdUnitTag = @"2873611";//@"2058492";
-    //    splash.canSplashClick = YES;
-    //    self.splash = splash;
-    //    backNumber = 5;
-    //    //可以在customSplashView上显示包含icon的自定义开屏
-    self.customSplashView = _bgView;
-    
-    
-    
     CGFloat screenWidth = self.window.frame.size.width;
-    // CGFloat screenHeight = self.window.frame.size.height;
     
-    //在baiduSplashContainer用做上展现百度广告的容器，注意尺寸必须大于200*200，并且baiduSplashContainer需要全部在window内，同时开机画面不建议旋转
-    //    UIView * baiduSplashContainer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight - 150)];
-    //
-    //    [self.customSplashView addSubview:baiduSplashContainer];
-    //
-    //    self.jumpBtn = [UIButton buttonWithType:UIButtonTypeCustom];
-    //    self.jumpBtn.frame = CGRectMake(screenWidth - 100, 40, 80, 30);
-    //    self.jumpBtn.layer.cornerRadius = 10;
-    //    self.jumpBtn.layer.masksToBounds = YES;
-    //    [self.jumpBtn addTarget:self action:@selector(tryDisMissAd) forControlEvents:UIControlEventTouchUpInside];
-    //    self.jumpBtn.backgroundColor = RGB(0, 0, 0, 0.4);
-    //    [self.jumpBtn setTitle:@"跳过" forState:UIControlStateNormal];
-    //    [self.jumpBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
-    //    [self.customSplashView addSubview:self.jumpBtn];
-    //    self.jumpBtn.hidden = YES;
-    //    [splash loadAndDisplayUsingContainerView:baiduSplashContainer];
-    _bottomView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 150)];
-    _bottomView.image = image;
-    _bottomView.contentMode = UIViewContentModeBottom;
-    _bottomView.clipsToBounds = YES;
-    _bottomView.backgroundColor = [UIColor redColor];
+    if ([[ADManager shareInstance] getAdType] == ADTypeBaidu) {
+        BaiduMobAdSplash *splash = [[BaiduMobAdSplash alloc] init];
+        splash.delegate = self;
+        splash.AdUnitTag = @"2873611";//@"2058492";
+        splash.canSplashClick = YES;
+        self.splash = splash;
+        backNumber = 5;
+        //可以在customSplashView上显示包含icon的自定义开屏
+        self.customSplashView = _bgView;
+        
+        CGFloat screenHeight = self.window.frame.size.height;
+        
+        //  在baiduSplashContainer用做上展现百度广告的容器，注意尺寸必须大于200*200，并且baiduSplashContainer需要全部在window内，同时开机画面不建议旋转
+        UIView * baiduSplashContainer = [[UIView alloc]initWithFrame:CGRectMake(0, 0, screenWidth, screenHeight - 150)];
+        
+        [self.customSplashView addSubview:baiduSplashContainer];
+        
+        self.jumpBtn = [UIButton buttonWithType:UIButtonTypeCustom];
+        self.jumpBtn.frame = CGRectMake(screenWidth - 100, 40, 80, 30);
+        self.jumpBtn.layer.cornerRadius = 10;
+        self.jumpBtn.layer.masksToBounds = YES;
+        [self.jumpBtn addTarget:self action:@selector(tryDisMissAd) forControlEvents:UIControlEventTouchUpInside];
+        self.jumpBtn.backgroundColor = RGB(0, 0, 0, 0.4);
+        [self.jumpBtn setTitle:@"跳过" forState:UIControlStateNormal];
+        [self.jumpBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
+        [self.customSplashView addSubview:self.jumpBtn];
+        self.jumpBtn.hidden = YES;
+        [splash loadAndDisplayUsingContainerView:baiduSplashContainer];
+        
+    } else {
+        _gdtSplash = [[GDTSplashAd alloc] initWithAppkey:@"1105762104" placementId:@"4040019558038143"];
+        _gdtSplash.delegate = self;//设置代理
+        
+        //设置开屏拉取时长限制，若超时则不再展示广告
+        _gdtSplash.fetchDelay = 3;
+        //拉取并展示
+        _bottomView = [[UIImageView alloc] initWithFrame:CGRectMake(0, 0, screenWidth, 150)];
+        _bottomView.image = image;
+        _bottomView.contentMode = UIViewContentModeBottom;
+        _bottomView.clipsToBounds = YES;
+        _bottomView.backgroundColor = [UIColor redColor];
+
+        [_gdtSplash loadAdAndShowInWindow:self.window withBottomView:_bottomView];
+        
+
+    }
     
-    _gdtSplash = [[GDTSplashAd alloc] initWithAppkey:@"1105762104" placementId:@"4040019558038143"];
-    _gdtSplash.delegate = self;//设置代理
-    
-    //设置开屏拉取时长限制，若超时则不再展示广告
-    _gdtSplash.fetchDelay = 3;
-    //拉取并展示
-    [_gdtSplash loadAdAndShowInWindow:self.window withBottomView:_bottomView];
     
     
     

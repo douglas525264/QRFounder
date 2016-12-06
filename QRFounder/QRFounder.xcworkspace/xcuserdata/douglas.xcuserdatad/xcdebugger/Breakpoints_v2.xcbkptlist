@@ -26,11 +26,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QRFounder/QRFounderAppDelegate.m"
-            timestampString = "500886195.683249"
+            timestampString = "502705963.935276"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "321"
-            endingLineNumber = "321"
+            startingLineNumber = "333"
+            endingLineNumber = "333"
             landmarkName = "-splashlFailPresentScreen:withError:"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QRFounder/APP/Controller/QRShowVC/QREditViewController.m"
-            timestampString = "500803474.390973"
+            timestampString = "502706090.335879"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "154"
-            endingLineNumber = "154"
+            startingLineNumber = "157"
+            endingLineNumber = "157"
             landmarkName = "-setEditType:"
             landmarkType = "7">
          </BreakpointContent>

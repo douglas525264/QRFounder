@@ -205,6 +205,7 @@
 		A5A8F49B1CF7021500019A7E /* NSString+DXCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A8F49A1CF7021500019A7E /* NSString+DXCheck.m */; };
 		A5A8F4A21CF7056100019A7E /* DXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A8F4A11CF7056100019A7E /* DXWebViewController.m */; };
 		A5A8F4A41CF7059400019A7E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A8F4A31CF7059400019A7E /* WebKit.framework */; };
+		A5AFD8AE1DF6AC4500903F25 /* ADManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5AFD8AD1DF6AC4500903F25 /* ADManager.m */; };
 		A5B76D711D0C312A00A68667 /* DXTextInfovViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B76D701D0C312A00A68667 /* DXTextInfovViewController.m */; };
 		A5B76D741D0C314500A68667 /* DXScanresultViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5B76D731D0C314500A68667 /* DXScanresultViewController.m */; };
 		A5D76F6B1D373D2200AA8006 /* AboutTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5D76F6A1D373D2200AA8006 /* AboutTableViewController.m */; };
@@ -525,6 +526,8 @@
 		A5A8F4A01CF7056100019A7E /* DXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXWebViewController.h; sourceTree = "<group>"; };
 		A5A8F4A11CF7056100019A7E /* DXWebViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXWebViewController.m; sourceTree = "<group>"; };
 		A5A8F4A31CF7059400019A7E /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		A5AFD8AC1DF6AC4500903F25 /* ADManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ADManager.h; sourceTree = "<group>"; };
+		A5AFD8AD1DF6AC4500903F25 /* ADManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ADManager.m; sourceTree = "<group>"; };
 		A5B76D6F1D0C312A00A68667 /* DXTextInfovViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXTextInfovViewController.h; sourceTree = "<group>"; };
 		A5B76D701D0C312A00A68667 /* DXTextInfovViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXTextInfovViewController.m; sourceTree = "<group>"; };
 		A5B76D721D0C314500A68667 /* DXScanresultViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXScanresultViewController.h; sourceTree = "<group>"; };
@@ -1073,6 +1076,8 @@
 				A50459B21D3378F3006C7D31 /* AnalyticsManager.h */,
 				A50459B51D338A17006C7D31 /* ShareManager.h */,
 				A50459B61D338A17006C7D31 /* ShareManager.m */,
+				A5AFD8AC1DF6AC4500903F25 /* ADManager.h */,
+				A5AFD8AD1DF6AC4500903F25 /* ADManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -1971,6 +1976,7 @@
 				D78418B81C746D2000850129 /* DXHelper.m in Sources */,
 				A5383F671DD4B310008B4650 /* QRColorBgView.m in Sources */,
 				A54516B21DD0676900B38B3F /* DIYModel.m in Sources */,
+				A5AFD8AE1DF6AC4500903F25 /* ADManager.m in Sources */,
 				A50459B71D338A17006C7D31 /* ShareManager.m in Sources */,
 				A50459B41D3378F3006C7D31 /* AnalyticsManager.m in Sources */,
 				A54516B81DD0696600B38B3F /* QRPointModel.m in Sources */,

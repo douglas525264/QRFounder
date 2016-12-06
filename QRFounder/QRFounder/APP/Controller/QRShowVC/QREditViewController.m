@@ -15,6 +15,7 @@
 #import "BaiduMobAdSDK/BaiduMobAdSetting.h"
 #import "DXHelper.h"
 #import "GDTMobBannerView.h"
+#import "ADManager.h"
 @interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,BaiduMobAdViewDelegate,GDTMobBannerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 
@@ -44,17 +45,18 @@
 }
 
 - (void)createAD {
-    
-    //    [BaiduMobAdSetting setLpStyle:BaiduMobAdLpStyleDefault];
-    //    sharedAdView = [[BaiduMobAdView alloc] init]; //把在mssp.baidu.com上创建后获得的代码位id写到这里
-    //    sharedAdView.AdUnitTag = @"2873785";// @"2873611";//
-    //    sharedAdView.AdType = BaiduMobAdViewTypeBanner;
-    //    sharedAdView.frame = CGRectMake(0, 20, self.view.bounds.size.width, 64);
-    //    sharedAdView.backgroundColor = [UIColor clearColor];
-    //    sharedAdView.delegate = self;
-    //    [self.view addSubview:sharedAdView];
-    //    sharedAdView.hidden = YES;
-    //    [sharedAdView start];
+        if ([[ADManager shareInstance] getAdType] == ADTypeBaidu) {
+        [BaiduMobAdSetting setLpStyle:BaiduMobAdLpStyleDefault];
+        sharedAdView = [[BaiduMobAdView alloc] init]; //把在mssp.baidu.com上创建后获得的代码位id写到这里
+        sharedAdView.AdUnitTag = @"2873785";// @"2873611";//
+        sharedAdView.AdType = BaiduMobAdViewTypeBanner;
+        sharedAdView.frame = CGRectMake(0, 20, self.view.bounds.size.width, 64);
+        sharedAdView.backgroundColor = [UIColor clearColor];
+        sharedAdView.delegate = self;
+        [self.view addSubview:sharedAdView];
+        sharedAdView.hidden = YES;
+        [sharedAdView start];
+        } else {
     _bannerView = [[GDTMobBannerView alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, GDTMOB_AD_SUGGEST_SIZE_320x50.height) appkey:@"1105762104" placementId:@"4070911578232017"];
     _bannerView.delegate = self; // 设置Delegate
     _bannerView.currentViewController = self; //设置当前的ViewController
@@ -65,6 +67,7 @@
     [self.view addSubview:_bannerView]; //添加到当前的view中
     
     [_bannerView loadAdAndShow]; //加载广告并展示
+        }
 }
 
 - (void)setBgImage:(UIImage *)image {
@@ -316,10 +319,15 @@
 
 - (void)dealloc
 {
-//    sharedAdView.delegate = nil;
-//    sharedAdView = nil;
-    _bannerView.delegate = nil;
-    _bannerView = nil;
+    if (sharedAdView) {
+        sharedAdView.delegate = nil;
+        sharedAdView = nil;
+    }
+    if (_bannerView) {
+        _bannerView.delegate = nil;
+        _bannerView = nil;
+  
+    }
 }
 /*
 #pragma mark - Navigation
