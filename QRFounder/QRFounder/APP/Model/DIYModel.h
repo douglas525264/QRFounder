@@ -14,4 +14,7 @@
 @property(nonatomic, strong) NSArray *itemArrays;
 @property(nonatomic, strong) UIColor *bgColor;
 @property(nonatomic, assign) BOOL isChangeBlack;
+//ext for big border
+@property(nonatomic, copy)   NSString *bigBorderImage;
+@property(nonatomic, assign) CGRect QRframe;
 @end

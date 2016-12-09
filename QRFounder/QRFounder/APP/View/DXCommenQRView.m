@@ -23,12 +23,19 @@
 - (void)drawRect:(CGRect)rect {
     if (_qrModel.QRFrame.origin.x > 0) {
         self.QRFrame = _qrModel.QRFrame;
-    }else {
+    }else if(_qrModel.diyModel.QRframe.origin.x > 0) {
+    
+        self.QRFrame = _qrModel.diyModel.QRframe;
+    } else
+    {
         self.QRFrame = CGRectMake(0, 0, 1, 1);
         self.qrView.frame = self.bounds;
     }
-        if (_qrModel.boarderImage) {
+    
+    if (_qrModel.boarderImage) {
         self.boarderImage = _qrModel.boarderImage;
+    }else if (_qrModel.diyModel.bigBorderImage) {
+        self.boarderImage = [[UIImage alloc] initWithContentsOfFile:_qrModel.diyModel.bigBorderImage];
     }
     
     if (_qrModel.logo) {

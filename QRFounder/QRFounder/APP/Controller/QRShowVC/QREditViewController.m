@@ -98,6 +98,10 @@
     } else {
     self.qrModel.diyModel = diy;
     self.qrModel.colorModel = nil;
+        if (diy.bigBorderImage) {
+            self.qrModel.boarderImage = nil;
+            self.qrModel.QRFrame = CGRectZero;
+        }
     self.qrView.qrModel = self.qrModel;
     }
 }

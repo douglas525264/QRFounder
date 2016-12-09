@@ -152,44 +152,64 @@ static QRSourceManager *qManager;
             sourcepath = [[NSBundle mainBundle] pathForResource:@"DIYImageSource" ofType:@"plist"];
             NSDictionary *infoDic = [NSDictionary dictionaryWithContentsOfFile:sourcepath];
             NSArray *items = [infoDic objectForKey:@"items"];
-            NSMutableArray *menulist = [[NSMutableArray alloc] init];
-            DXmenuItem *menuItem = [[DXmenuItem alloc] init];
-            menuItem.color = [UIColor yellowColor];
+            
+            for (NSDictionary *itemInfo in items) {
+                NSMutableArray *menulist = [[NSMutableArray alloc] init];
+                DXmenuItem *menuItem = [[DXmenuItem alloc] init];
+                menuItem.menuIcon = [UIImage imageNamed:[itemInfo objectForKey:@"iconName"]];
+                for (NSDictionary *subInfo in itemInfo[@"menulist"]) {
+                    DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
+                    subItem.normalImage = [UIImage imageNamed:[subInfo objectForKey:@"iconName"]];;
+                    subItem.color = [UIColor greenColor];
+                    //                DIYSubModel *boarderItem = [[DIYSubModel alloc] init];
+                    //                boarderItem.image = [UIImage imageNamed:[info objectForKey:@"boardername"]];
+                    NSArray *subMenuInfos = [subInfo objectForKey:@"menuList"];
+                    NSMutableArray *items = [[NSMutableArray alloc] init];
+                    for (NSDictionary *subInfo in subMenuInfos) {
+                        DIYSubModel *item = [[DIYSubModel alloc] init];
+                        item.image = [UIImage imageNamed:[subInfo objectForKey:@"imageSourceName"]];
+                        item.size = CGSizeMake([[subInfo objectForKey:@"sizex"] floatValue], [[subInfo objectForKey:@"sizey"] floatValue]);
+                        item.probability = [[subInfo objectForKey:@"probability"] floatValue];
+                        [items addObject:item];
+                    }
+                    DIYModel *diyModel = [[DIYModel alloc] init];
+                    diyModel.bgColor = RGB([[subInfo objectForKey:@"bgr"] floatValue], [[subInfo objectForKey:@"bgg"] floatValue], [[subInfo objectForKey:@"bgb"] floatValue], [[subInfo objectForKey:@"bga"] floatValue]);
+                    diyModel.isChangeBlack = [[subInfo objectForKey:@"isChangeBlack"] boolValue];
+                    NSArray *arr = [subInfo objectForKey:@"borderlist"];
+                    NSMutableArray *borderList = [[NSMutableArray alloc] init];
+                    for (NSDictionary *info in arr) {
+                        DIYSubModel *boarderItem = [[DIYSubModel alloc] init];
+                        boarderItem.image = [UIImage imageNamed:[info objectForKey:@"boardername"]];
+                        [borderList addObject:boarderItem];
+                    }
+                    diyModel.boarderItems = borderList;
+                    diyModel.itemArrays = items;
+                    
+                    //bigBorder
+                    NSDictionary *bugBorderInfo = subInfo[@"bigBorderInfo"];
+                    diyModel.bigBorderImage = [[NSBundle mainBundle] pathForResource:[bugBorderInfo objectForKey:@"imageSourceName"] ofType:@"png"];
+                    diyModel.QRframe  = CGRectMake([[bugBorderInfo objectForKey:@"xScale"] floatValue],
+                                                  [[bugBorderInfo objectForKey:@"yScale"] floatValue],[[bugBorderInfo objectForKey:@"wScale"] floatValue], [[bugBorderInfo objectForKey:@"hScale"] floatValue]);
+                    
+                    subItem.diyModel = diyModel;
+                    [menulist addObject:subItem];
 
-            for (NSDictionary *info in items) {
-                DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
-                subItem.normalImage = [UIImage imageNamed:[info objectForKey:@"iconName"]];;
-                subItem.color = [UIColor greenColor];
-//                DIYSubModel *boarderItem = [[DIYSubModel alloc] init];
-//                boarderItem.image = [UIImage imageNamed:[info objectForKey:@"boardername"]];
-                NSArray *subMenuInfos = [info objectForKey:@"menuList"];
-                NSMutableArray *items = [[NSMutableArray alloc] init];
-                for (NSDictionary *subInfo in subMenuInfos) {
-                    DIYSubModel *item = [[DIYSubModel alloc] init];
-                    item.image = [UIImage imageNamed:[subInfo objectForKey:@"imageSourceName"]];
-                    item.size = CGSizeMake([[subInfo objectForKey:@"sizex"] floatValue], [[subInfo objectForKey:@"sizey"] floatValue]);
-                    item.probability = [[subInfo objectForKey:@"probability"] floatValue];
-                    [items addObject:item];
                 }
-                DIYModel *diyModel = [[DIYModel alloc] init];
-                diyModel.bgColor = RGB([[info objectForKey:@"bgr"] floatValue], [[info objectForKey:@"bgg"] floatValue], [[info objectForKey:@"bgb"] floatValue], [[info objectForKey:@"bga"] floatValue]);
-                diyModel.isChangeBlack = [[info objectForKey:@"isChangeBlack"] boolValue];
-                NSArray *arr = [info objectForKey:@"borderlist"];
-                NSMutableArray *borderList = [[NSMutableArray alloc] init];
-                for (NSDictionary *info in arr) {
-                    DIYSubModel *boarderItem = [[DIYSubModel alloc] init];
-                    boarderItem.image = [UIImage imageNamed:[info objectForKey:@"boardername"]];
-                    [borderList addObject:boarderItem];
-                }
-                diyModel.boarderItems = borderList;
-                diyModel.itemArrays = items;
-                subItem.diyModel = diyModel;
-                [menulist addObject:subItem];
+                menuItem.items = menulist;
+                
+                [resultArr addObject:menuItem];
                 
             }
-            menuItem.items = menulist;
             
-            [resultArr addObject:menuItem];
+//            NSMutableArray *menulist = [[NSMutableArray alloc] init];
+//            DXmenuItem *menuItem = [[DXmenuItem alloc] init];
+//            menuItem.color = [UIColor yellowColor];
+//
+//            for (NSDictionary *info in items) {
+//                
+//            }
+            
+            
         }break;
 
         default:
