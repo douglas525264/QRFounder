@@ -262,7 +262,6 @@
 		A5682CD21D35E00B00E0AD8C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD11D35E00B00E0AD8C /* QuartzCore.framework */; };
 		A5682CD41D35E01A00E0AD8C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD31D35E01A00E0AD8C /* CoreText.framework */; };
 		A5682CD61D35E02300E0AD8C /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD51D35E02300E0AD8C /* CoreGraphics.framework */; };
-		A5682CD81D35E02B00E0AD8C /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD71D35E02B00E0AD8C /* StoreKit.framework */; };
 		A5682CDC1D35E03D00E0AD8C /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CDB1D35E03D00E0AD8C /* Social.framework */; };
 		A5682CDE1D35E04600E0AD8C /* EventKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CDD1D35E04600E0AD8C /* EventKit.framework */; };
 		A5682CE01D35E05D00E0AD8C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CDF1D35E05D00E0AD8C /* AudioToolbox.framework */; };
@@ -274,6 +273,7 @@
 		A57609A71CB287F8006F3F1B /* QRSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A57609A61CB287F8006F3F1B /* QRSourceManager.m */; };
 		A579DBD91D388D8100561CD3 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A579DBD81D388D8100561CD3 /* HistoryViewController.m */; };
 		A58A55F91CA2EED6003C97B7 /* DXCommenQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */; };
+		A599E1FE1DFAC5EE00F43834 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A599E1FD1DFAC5ED00F43834 /* StoreKit.framework */; };
 		A5A8F49B1CF7021500019A7E /* NSString+DXCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A8F49A1CF7021500019A7E /* NSString+DXCheck.m */; };
 		A5A8F4A21CF7056100019A7E /* DXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A8F4A11CF7056100019A7E /* DXWebViewController.m */; };
 		A5A8F4A41CF7059400019A7E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A8F4A31CF7059400019A7E /* WebKit.framework */; };
@@ -648,7 +648,6 @@
 		A5682CD11D35E00B00E0AD8C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A5682CD31D35E01A00E0AD8C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
 		A5682CD51D35E02300E0AD8C /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		A5682CD71D35E02B00E0AD8C /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A5682CDB1D35E03D00E0AD8C /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		A5682CDD1D35E04600E0AD8C /* EventKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = EventKit.framework; path = System/Library/Frameworks/EventKit.framework; sourceTree = SDKROOT; };
 		A5682CDF1D35E05D00E0AD8C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -665,6 +664,7 @@
 		A579DBD81D388D8100561CD3 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		A58A55F71CA2EED6003C97B7 /* DXCommenQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXCommenQRView.h; sourceTree = "<group>"; };
 		A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXCommenQRView.m; sourceTree = "<group>"; };
+		A599E1FD1DFAC5ED00F43834 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		A5A8F4991CF7021500019A7E /* NSString+DXCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DXCheck.h"; sourceTree = "<group>"; };
 		A5A8F49A1CF7021500019A7E /* NSString+DXCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DXCheck.m"; sourceTree = "<group>"; };
 		A5A8F4A01CF7056100019A7E /* DXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXWebViewController.h; sourceTree = "<group>"; };
@@ -826,7 +826,6 @@
 				A549E73F1D7FFB0F00651D23 /* CoreTelephony.framework in Frameworks */,
 				A5EE9CA01DDADAEA00753F90 /* CoreFoundation.framework in Frameworks */,
 				A5EE9C9E1DDADADD00753F90 /* CFNetwork.framework in Frameworks */,
-				A5682CD81D35E02B00E0AD8C /* StoreKit.framework in Frameworks */,
 				A5682CD21D35E00B00E0AD8C /* QuartzCore.framework in Frameworks */,
 				A549E73D1D7FFB0300651D23 /* CoreLocation.framework in Frameworks */,
 				A549E73B1D7FFAF300651D23 /* CoreMotion.framework in Frameworks */,
@@ -861,6 +860,7 @@
 				6F47158C73E0701CA9C33A1D /* libPods.a in Frameworks */,
 				A52B83341DD569A20050BF4F /* libGDTMobSDK.a in Frameworks */,
 				A5EE9C9C1DDADAA500753F90 /* jpush-ios-2.2.0.a in Frameworks */,
+				A599E1FE1DFAC5EE00F43834 /* StoreKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1471,6 +1471,7 @@
 		CC25F21FA19289206F13E26A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				A599E1FD1DFAC5ED00F43834 /* StoreKit.framework */,
 				A5EE9CA31DDADB3800753F90 /* libresolv.tbd */,
 				A5EE9CA11DDADB1B00753F90 /* UserNotifications.framework */,
 				A5EE9C9F1DDADAEA00753F90 /* CoreFoundation.framework */,
@@ -1487,7 +1488,6 @@
 				A5682CDF1D35E05D00E0AD8C /* AudioToolbox.framework */,
 				A5682CDD1D35E04600E0AD8C /* EventKit.framework */,
 				A5682CDB1D35E03D00E0AD8C /* Social.framework */,
-				A5682CD71D35E02B00E0AD8C /* StoreKit.framework */,
 				A5682CD51D35E02300E0AD8C /* CoreGraphics.framework */,
 				A5682CD31D35E01A00E0AD8C /* CoreText.framework */,
 				A5682CD11D35E00B00E0AD8C /* QuartzCore.framework */,
@@ -1936,6 +1936,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
 								enabled = 1;
 							};
 							com.apple.Push = {
