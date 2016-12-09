@@ -115,11 +115,20 @@ enum {
 - (void)drawDIYQRCode:(QRcode *)code context:(CGContextRef)ctx size:(CGFloat)size {
 
     
-//    
-    CGContextSetFillColorWithColor(ctx, self.qrModel.diyModel.bgColor.CGColor);
-    CGFloat oneLine = size/(code->width +2);
-    CGContextAddRect(ctx,CGRectMake(0, 0, size ,  size ));
-    CGContextFillPath(ctx);
+//
+    if (self.qrModel.diyModel.bgImageName) {
+        UIImage *image = [UIImage imageWithContentsOfFile:self.qrModel.diyModel.bgImageName];
+        if (image) {
+            [image drawInRect:CGRectMake(0, 0, size ,  size )];
+        }
+    } else {
+        CGContextSetFillColorWithColor(ctx, self.qrModel.diyModel.bgColor.CGColor);
+        //CGFloat oneLine = size/(code->width +2);
+        CGContextAddRect(ctx,CGRectMake(0, 0, size ,  size ));
+        CGContextFillPath(ctx);
+    
+    }
+    
     
     QRPointModel *pModel = [[QRPointModel alloc] initWithQRCode:code diyModel:self.qrModel.diyModel andSize:size isChangeBlack:self.qrModel.diyModel.isChangeBlack];
     NSArray *resultArr = [pModel getResultArr];

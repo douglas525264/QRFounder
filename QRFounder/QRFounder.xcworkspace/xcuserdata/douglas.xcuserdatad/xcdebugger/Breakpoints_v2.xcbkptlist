@@ -218,11 +218,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QRFounder/Utility/Classes/Manager/QRSourceManager.m"
-            timestampString = "502714915.273739"
+            timestampString = "502943278.700464"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "198"
-            endingLineNumber = "198"
+            startingLineNumber = "208"
+            endingLineNumber = "208"
             landmarkName = "-getSoureceWithEditeType:"
             landmarkType = "7">
          </BreakpointContent>

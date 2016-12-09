@@ -17,4 +17,6 @@
 //ext for big border
 @property(nonatomic, copy)   NSString *bigBorderImage;
 @property(nonatomic, assign) CGRect QRframe;
+
+@property(nonatomic,copy) NSString *bgImageName;
 @end

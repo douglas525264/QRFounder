@@ -187,9 +187,19 @@ static QRSourceManager *qManager;
                     
                     //bigBorder
                     NSDictionary *bugBorderInfo = subInfo[@"bigBorderInfo"];
-                    diyModel.bigBorderImage = [[NSBundle mainBundle] pathForResource:[bugBorderInfo objectForKey:@"imageSourceName"] ofType:@"png"];
-                    diyModel.QRframe  = CGRectMake([[bugBorderInfo objectForKey:@"xScale"] floatValue],
-                                                  [[bugBorderInfo objectForKey:@"yScale"] floatValue],[[bugBorderInfo objectForKey:@"wScale"] floatValue], [[bugBorderInfo objectForKey:@"hScale"] floatValue]);
+                    if (bugBorderInfo) {
+                        diyModel.bigBorderImage = [[NSBundle mainBundle] pathForResource:[bugBorderInfo objectForKey:@"imageSourceName"] ofType:@"png"];
+                        diyModel.QRframe  = CGRectMake([[bugBorderInfo objectForKey:@"xScale"] floatValue],
+                                                       [[bugBorderInfo objectForKey:@"yScale"] floatValue],[[bugBorderInfo objectForKey:@"wScale"] floatValue], [[bugBorderInfo objectForKey:@"hScale"] floatValue]);
+                    }
+
+                    //bgImgae
+                    NSString * bgName = subInfo[@"bgImageName"];
+                    if (bgName) {
+                        diyModel.bgImageName = [[NSBundle mainBundle] pathForResource:bgName ofType:@"png"];
+                    }
+                    
+                
                     
                     subItem.diyModel = diyModel;
                     [menulist addObject:subItem];
