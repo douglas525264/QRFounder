@@ -11,4 +11,5 @@
 @interface QRSourceManager : NSObject
 + (QRSourceManager *)shareInstance;
 - (NSArray *)getSoureceWithEditeType:(QREditType)type;
+- (void)preloadSource;
 @end

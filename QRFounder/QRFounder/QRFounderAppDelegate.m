@@ -17,6 +17,7 @@
 #import "JPUSHService.h"
 #import <UserNotifications/UserNotifications.h>
 #import "ADManager.h"
+#import "QRSourceManager.h"
 @interface QRFounderAppDelegate ()<GDTSplashAdDelegate,JPUSHRegisterDelegate,BaiduMobAdSplashDelegate>
 
 {
@@ -46,6 +47,7 @@
     [[AnalyticsManager shareInstance] startUMSDK];
     [[ShareManager shareInstance] startSDK];
     [self enableJpush:launchOptions];
+    [[QRSourceManager shareInstance] preloadSource];
     return YES;
 }
 - (void)enableJpush:(NSDictionary *) launchOptions{

@@ -268,5 +268,14 @@ static QRSourceManager *qManager;
     menuItem.items = [NSMutableArray arrayWithArray:@[sub1,sub2]];
     return menuItem;
 }
+- (void)preloadSource {
+
+    dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0), ^{
+        NSArray *arr = [self getSoureceWithEditeType:QREditTypeDIY];
+        if (arr.count > 0) {
+            NSLog(@"Source is ready");
+        }
+    });
+}
 
 @end
