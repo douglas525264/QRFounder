@@ -57,12 +57,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QRFounder/APP/Controller/QRShowVC/QREditViewController.m"
-            timestampString = "503052469.16543"
+            filePath = "QRFounder/APP/View/DXCommenQRView.m"
+            timestampString = "503053300.521991"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "326"
-            endingLineNumber = "326"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "-dealloc"
             landmarkType = "7">
          </BreakpointContent>
@@ -73,12 +73,12 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QRFounder/APP/View/DXCommenQRView.m"
-            timestampString = "503053300.521991"
+            filePath = "QRFounder/APP/Controller/QRShowVC/QREditViewController.m"
+            timestampString = "503054351.547208"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "122"
-            endingLineNumber = "122"
+            startingLineNumber = "335"
+            endingLineNumber = "335"
             landmarkName = "-dealloc"
             landmarkType = "7">
          </BreakpointContent>

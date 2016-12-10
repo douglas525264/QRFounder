@@ -56,6 +56,7 @@
         [self.view addSubview:sharedAdView];
         sharedAdView.hidden = YES;
         [sharedAdView start];
+            
         } else {
     _bannerView = [[GDTMobBannerView alloc] initWithFrame:CGRectMake(0, 20, self.view.bounds.size.width, GDTMOB_AD_SUGGEST_SIZE_320x50.height) appkey:@"1105762104" placementId:@"4070911578232017"];
     _bannerView.delegate = self; // 设置Delegate
@@ -242,6 +243,14 @@
 - (IBAction)cancelBtnClick:(id)sender {
     [self dismissViewControllerAnimated:YES completion:^{
         self.finishedBlock = nil;
+        if (_bannerView) {
+            _bannerView.currentViewController = nil;
+            _bannerView.delegate = nil;
+            _bannerView = nil;
+           // _bannerView = nil;
+            
+        }
+
     }];
 }
 - (IBAction)OKbtnClcik:(id)sender {
