@@ -2046,7 +2046,7 @@
 					<key>isChangeBlack</key>
 					<false/>
 					<key>iconName</key>
-					<string>ch12icon</string>
+					<string>ch06icon</string>
 					<key>menuList</key>
 					<array>
 						<dict>
@@ -2191,7 +2191,7 @@
 					<key>isChangeBlack</key>
 					<false/>
 					<key>iconName</key>
-					<string>ch12icon</string>
+					<string>ch06Bordericon</string>
 					<key>menuList</key>
 					<array>
 						<dict>

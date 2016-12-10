@@ -13,6 +13,7 @@
 #import "ColorModel.h"
 #import "QRColorBgView.h"
 #import "DXQRView.h"
+
 static QRSourceManager *qManager;
 @implementation QRSourceManager
 
@@ -41,12 +42,12 @@ static QRSourceManager *qManager;
             NSArray *items = [infoDic objectForKey:@"items"];
             for (NSDictionary *info in items) {
                 DXmenuItem *menuItem = [[DXmenuItem alloc] init];
-                menuItem.menuIcon = [UIImage imageNamed:[info objectForKey:@"iconName"]];
+                menuItem.menuIcon = QRImage([info objectForKey:@"iconName"]);
                 NSMutableArray *menulist = [[NSMutableArray alloc] init];
                 NSArray *subMenuInfos = [info objectForKey:@"menuList"];
                 for (NSDictionary *subInfo in subMenuInfos) {
                     DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
-                    subItem.normalImage = [UIImage imageNamed:[subInfo objectForKey:@"menuIcon"]];
+                    subItem.normalImage = QRImage([subInfo objectForKey:@"menuIcon"]);//[UIImage imageNamed:[subInfo objectForKey:@"menuIcon"]];
                     subItem.ImageName = [[NSBundle mainBundle] pathForResource:[subInfo objectForKey:@"imageSourceName"] ofType:@"png"];
                     [menulist addObject:subItem];
                     
@@ -64,12 +65,12 @@ static QRSourceManager *qManager;
             NSArray *items = [infoDic objectForKey:@"items"];
             for (NSDictionary *info in items) {
                 DXmenuItem *menuItem = [[DXmenuItem alloc] init];
-                menuItem.menuIcon = [UIImage imageNamed:[info objectForKey:@"iconName"]];
+                menuItem.menuIcon = QRImage([info objectForKey:@"iconName"]);//[UIImage imageNamed:[info objectForKey:@"iconName"]];
                 NSMutableArray *menulist = [[NSMutableArray alloc] init];
                 NSArray *subMenuInfos = [info objectForKey:@"menuList"];
                 for (NSDictionary *subInfo in subMenuInfos) {
                     DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
-                    subItem.normalImage = [UIImage imageNamed:[subInfo objectForKey:@"menuIcon"]];
+                    subItem.normalImage = QRImage([subInfo objectForKey:@"menuIcon"]);// [UIImage imageNamed:[subInfo objectForKey:@"menuIcon"]];
                     subItem.ImageName = [[NSBundle mainBundle] pathForResource:[subInfo objectForKey:@"imageSourceName"] ofType:@"png"];
                     subItem.QRFrame  = CGRectMake([[subInfo objectForKey:@"xScale"] floatValue],
                                                   [[subInfo objectForKey:@"yScale"] floatValue],[[subInfo objectForKey:@"wScale"] floatValue], [[subInfo objectForKey:@"hScale"] floatValue]);
@@ -89,12 +90,12 @@ static QRSourceManager *qManager;
             NSArray *items = [infoDic objectForKey:@"items"];
             for (NSDictionary *info in items) {
                 DXmenuItem *menuItem = [[DXmenuItem alloc] init];
-                menuItem.menuIcon = [UIImage imageNamed:[info objectForKey:@"iconName"]];
+                menuItem.menuIcon = QRImage([info objectForKey:@"iconName"]);// [UIImage imageNamed:[info objectForKey:@"iconName"]];
                 NSMutableArray *menulist = [[NSMutableArray alloc] init];
                 NSArray *subMenuInfos = [info objectForKey:@"menuList"];
                 for (NSDictionary *subInfo in subMenuInfos) {
                     DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
-                    subItem.normalImage = [UIImage imageNamed:[subInfo objectForKey:@"menuIcon"]];
+                    subItem.normalImage = QRImage([info objectForKey:@"menuIcon"]);// [UIImage imageNamed:[subInfo objectForKey:@"menuIcon"]];
                     subItem.ImageName = [[NSBundle mainBundle] pathForResource:[subInfo objectForKey:@"imageSourceName"] ofType:@"png"];
                     [menulist addObject:subItem];
                     
@@ -156,10 +157,10 @@ static QRSourceManager *qManager;
             for (NSDictionary *itemInfo in items) {
                 NSMutableArray *menulist = [[NSMutableArray alloc] init];
                 DXmenuItem *menuItem = [[DXmenuItem alloc] init];
-                menuItem.menuIcon = [UIImage imageNamed:[itemInfo objectForKey:@"iconName"]];
+                menuItem.menuIcon = QRImage([itemInfo objectForKey:@"iconName"]);//[UIImage imageNamed:[itemInfo objectForKey:@"iconName"]];
                 for (NSDictionary *subInfo in itemInfo[@"menulist"]) {
                     DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
-                    subItem.normalImage = [UIImage imageNamed:[subInfo objectForKey:@"iconName"]];;
+                    subItem.normalImage = QRImage([subInfo objectForKey:@"iconName"]);//[UIImage imageNamed:[subInfo objectForKey:@"iconName"]];;
                     subItem.color = [UIColor greenColor];
                     //                DIYSubModel *boarderItem = [[DIYSubModel alloc] init];
                     //                boarderItem.image = [UIImage imageNamed:[info objectForKey:@"boardername"]];
@@ -167,7 +168,7 @@ static QRSourceManager *qManager;
                     NSMutableArray *items = [[NSMutableArray alloc] init];
                     for (NSDictionary *subInfo in subMenuInfos) {
                         DIYSubModel *item = [[DIYSubModel alloc] init];
-                        item.image = [UIImage imageNamed:[subInfo objectForKey:@"imageSourceName"]];
+                        item.image = QRImage([subInfo objectForKey:@"imageSourceName"]);//[UIImage imageNamed:[subInfo objectForKey:@"imageSourceName"]];
                         item.size = CGSizeMake([[subInfo objectForKey:@"sizex"] floatValue], [[subInfo objectForKey:@"sizey"] floatValue]);
                         item.probability = [[subInfo objectForKey:@"probability"] floatValue];
                         [items addObject:item];
@@ -179,7 +180,7 @@ static QRSourceManager *qManager;
                     NSMutableArray *borderList = [[NSMutableArray alloc] init];
                     for (NSDictionary *info in arr) {
                         DIYSubModel *boarderItem = [[DIYSubModel alloc] init];
-                        boarderItem.image = [UIImage imageNamed:[info objectForKey:@"boardername"]];
+                        boarderItem.image = QRImage([info objectForKey:@"boardername"]);//[UIImage imageNamed:[info objectForKey:@"boardername"]];
                         [borderList addObject:boarderItem];
                     }
                     diyModel.boarderItems = borderList;

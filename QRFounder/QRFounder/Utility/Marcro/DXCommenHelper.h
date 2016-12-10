@@ -29,7 +29,7 @@
 #define RGB(x,y,z,a) [UIColor colorWithRed:x/255.0 green:y/255.0 blue:z/255.0 alpha:a]
 //RGB(33,188,225,1)
 #define DefaultColor [UIColor colorWithPatternImage:[[DXHelper shareInstance] getBgImage]]
-
+#define QRImage(a) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:a ofType:@"png"]]
 /**
  *  二维码种类
  */
