@@ -30,6 +30,12 @@
 //RGB(33,188,225,1)
 #define DefaultColor [UIColor colorWithPatternImage:[[DXHelper shareInstance] getBgImage]]
 #define QRImage(a) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:a ofType:@"png"]]
+
+#if QRFounderPRO
+#define isQRFounderPRO YES
+#else
+#define isQRFounderPRO NO
+#endif
 /**
  *  二维码种类
  */
