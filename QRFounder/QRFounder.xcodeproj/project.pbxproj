@@ -470,6 +470,7 @@
 		A55C5EAA1DFE53820081A8DF /* intelItem01.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A7D61DFC0A7600041A3C /* intelItem01.png */; };
 		A55C5EAB1DFE53820081A8DF /* mouse01_icon.png in Resources */ = {isa = PBXBuildFile; fileRef = A52B83811DD5CFC90050BF4F /* mouse01_icon.png */; };
 		A55C5EAC1DFE53820081A8DF /* xiaoxinitem06.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A8081DFC0A7600041A3C /* xiaoxinitem06.png */; };
+		A55C5EF51DFE89980081A8DF /* APPStoreManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A55C5EF41DFE89980081A8DF /* APPStoreManager.m */; };
 		A5682CD01D35DFF700E0AD8C /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CCF1D35DFF700E0AD8C /* CoreMedia.framework */; };
 		A5682CD21D35E00B00E0AD8C /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD11D35E00B00E0AD8C /* QuartzCore.framework */; };
 		A5682CD41D35E01A00E0AD8C /* CoreText.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CD31D35E01A00E0AD8C /* CoreText.framework */; };
@@ -874,6 +875,8 @@
 		A554719E1D8FF5E700E4AF74 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		A55C5EB21DFE53820081A8DF /* QRFounderPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRFounderPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A55C5EB31DFE53820081A8DF /* QRFounderPro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "QRFounderPro-Info.plist"; path = "/Users/douglas/Desktop/QRFounder001/QRFounder/QRFounderPro-Info.plist"; sourceTree = "<absolute>"; };
+		A55C5EF31DFE89980081A8DF /* APPStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPStoreManager.h; sourceTree = "<group>"; };
+		A55C5EF41DFE89980081A8DF /* APPStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPStoreManager.m; sourceTree = "<group>"; };
 		A5682CCF1D35DFF700E0AD8C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
 		A5682CD11D35E00B00E0AD8C /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 		A5682CD31D35E01A00E0AD8C /* CoreText.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreText.framework; path = System/Library/Frameworks/CoreText.framework; sourceTree = SDKROOT; };
@@ -1520,6 +1523,8 @@
 				A50459B61D338A17006C7D31 /* ShareManager.m */,
 				A5AFD8AC1DF6AC4500903F25 /* ADManager.h */,
 				A5AFD8AD1DF6AC4500903F25 /* ADManager.m */,
+				A55C5EF31DFE89980081A8DF /* APPStoreManager.h */,
+				A55C5EF41DFE89980081A8DF /* APPStoreManager.m */,
 			);
 			path = Manager;
 			sourceTree = "<group>";
@@ -3208,6 +3213,7 @@
 				D78418D01C74705E00850129 /* TextInfoView.m in Sources */,
 				A5E180BD1DA3740400360A89 /* QRFounderAppDelegate.m in Sources */,
 				A52B833B1DD56F3C0050BF4F /* DXAlertAction.m in Sources */,
+				A55C5EF51DFE89980081A8DF /* APPStoreManager.m in Sources */,
 				A57609A71CB287F8006F3F1B /* QRSourceManager.m in Sources */,
 				D78418B81C746D2000850129 /* DXHelper.m in Sources */,
 				A5383F671DD4B310008B4650 /* QRColorBgView.m in Sources */,
