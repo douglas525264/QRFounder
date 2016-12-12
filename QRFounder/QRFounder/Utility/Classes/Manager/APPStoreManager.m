@@ -122,7 +122,12 @@ static APPStoreManager *apManager;
     
     
     //创建请求到苹果官方进行购买验证
+#ifdef DEBUG
     NSURL *url=[NSURL URLWithString:SANDBOX];
+#else
+    NSURL *url=[NSURL URLWithString:AppStore];
+#endif
+    
     NSMutableURLRequest *requestM=[NSMutableURLRequest requestWithURL:url];
     requestM.HTTPBody=bodyData;
     requestM.HTTPMethod=@"POST";
