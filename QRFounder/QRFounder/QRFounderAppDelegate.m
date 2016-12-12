@@ -72,7 +72,13 @@
         [JPUSHService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)
                                               categories:nil];
     }
-    [JPUSHService setupWithOption:launchOptions appKey:@"60d3cc145c063150ad77c2db"
+    NSString *appkey = @"60d3cc145c063150ad77c2db";
+#if QRFounderPRO
+    appkey = @"33493e653a92bedeb7c792b8";
+#else
+    
+#endif
+    [JPUSHService setupWithOption:launchOptions appKey:appkey
                           channel:@"pushChannel1"
                  apsForProduction:NO
             advertisingIdentifier:nil];

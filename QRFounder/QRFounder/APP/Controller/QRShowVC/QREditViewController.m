@@ -37,8 +37,12 @@
     self.toolView.backgroundColor = [UIColor clearColor];
     self.view.backgroundColor = DefaultColor;
     if (ADENABLE) {
-
-     [self createAD];
+#if QRFounderPRO
+        
+#else
+        [self createAD];
+#endif
+     
     }
     
     // Do any additional setup after loading the view.

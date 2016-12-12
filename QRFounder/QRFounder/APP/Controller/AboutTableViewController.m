@@ -44,7 +44,12 @@
     self.imageView.frame = CGRectMake(self.view.frame.size.width/2 - 30, 30, 60, 60);
     self.imageView.layer.cornerRadius = 10;
     self.imageView.layer.masksToBounds = YES;
+#if QRFounderPRO
+    self.imageView.image = [UIImage imageNamed:@"newiconPro_180"];
+#else 
     self.imageView.image = [UIImage imageNamed:@"appIcon_180"];
+#endif
+    
     [headerView addSubview:self.imageView];
     self.versionLable.frame = CGRectMake(0, self.imageView.frame.origin.y + self.imageView.frame.size.height + 10, self.view.frame.size.width, 20);
     self.versionLable.textColor = [UIColor whiteColor];
