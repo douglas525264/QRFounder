@@ -82,9 +82,12 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:profileBtn];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(historyBtnClick:)];
-    
+#if QRFounderPRO
+   
+#else
     QRFounderAppDelegate *appde = [UIApplication sharedApplication].delegate;
     [appde addAD];
+#endif
 
     
 }
