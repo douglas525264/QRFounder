@@ -2481,9 +2481,9 @@
 			projectRoot = "";
 			targets = (
 				D78418541C74551200850129 /* QRFounder */,
+				A55C5D431DFE53820081A8DF /* QRFounderPro */,
 				D784186D1C74551200850129 /* QRFounderTests */,
 				D78418781C74551200850129 /* QRFounderUITests */,
-				A55C5D431DFE53820081A8DF /* QRFounderPro */,
 			);
 		};
 /* End PBXProject section */
