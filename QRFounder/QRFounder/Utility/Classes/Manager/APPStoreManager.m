@@ -11,6 +11,7 @@
 static APPStoreManager *apManager;
 @interface APPStoreManager()<SKProductsRequestDelegate,SKPaymentTransactionObserver>
 @property (nonatomic, copy) NSString *currentProId;
+@property (nonatomic, copy) buyStatusCallBackBlock staBlock;
 @end
 @implementation APPStoreManager
 + (APPStoreManager *)shareInstance {
@@ -24,12 +25,16 @@ static APPStoreManager *apManager;
     }
     return apManager;
 }
-- (void)buyProductByid:(NSString *)pid {
-
+- (void)buyProductByid:(NSString *)pid withStatusBlock:(buyStatusCallBackBlock)status{
+    self.staBlock = status;
     [[SKPaymentQueue defaultQueue] addTransactionObserver:self];
    
     if([SKPaymentQueue canMakePayments]){
         [self requestProductData:pid];
+        if (self.staBlock) {
+            self.staBlock(buyStatusBuying);
+        }
+
     }else{
         NSLog(@"不允许程序内付费");
     }
@@ -75,11 +80,18 @@ static APPStoreManager *apManager;
             p = pro;
         }
     }
-    
-    SKPayment *payment = [SKPayment paymentWithProduct:p];
-    
-    NSLog(@"发送购买请求");
-    [[SKPaymentQueue defaultQueue] addPayment:payment];
+    if (p) {
+        SKPayment *payment = [SKPayment paymentWithProduct:p];
+        
+        NSLog(@"发送购买请求");
+        [[SKPaymentQueue defaultQueue] addPayment:payment];
+  
+    } else {
+        if (self.staBlock) {
+            self.staBlock(buyStatusFauiler);
+        }
+
+    }
 }
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error{
    
@@ -125,6 +137,10 @@ static APPStoreManager *apManager;
     NSLog(@"%@",dic);
     if([dic[@"status"] intValue]==0){
         NSLog(@"购买成功！");
+        
+        if (self.staBlock) {
+            self.staBlock(buyStatusSuccess);
+        }
         NSDictionary *dicReceipt= dic[@"receipt"];
         NSDictionary *dicInApp=[dicReceipt[@"in_app"] firstObject];
         NSString *productIdentifier= dicInApp[@"product_id"];//读取产品标识
@@ -140,6 +156,10 @@ static APPStoreManager *apManager;
         //在此处对购买记录进行存储，可以存储到开发商的服务器端
     }else{
         NSLog(@"购买失败，未通过验证！");
+        if (self.staBlock) {
+            self.staBlock(buyStatusFauiler);
+        }
+
     }
 }
 //监听购买结果
@@ -152,6 +172,7 @@ static APPStoreManager *apManager;
                 [self verifyPurchaseWithPaymentTransaction];
                 [[SKPaymentQueue defaultQueue] finishTransaction:tran];
                 
+                
             }
                 break;
             case SKPaymentTransactionStatePurchasing:
@@ -160,12 +181,19 @@ static APPStoreManager *apManager;
                 break;
             case SKPaymentTransactionStateRestored:{
                 NSLog(@"已经购买过商品");
-                
+                if (self.staBlock) {
+                    self.staBlock(buyStatusSuccess);
+                }
+ 
                 [[SKPaymentQueue defaultQueue] finishTransaction:tran];
             }
                 break;
             case SKPaymentTransactionStateFailed:{
                 NSLog(@"交易失败");
+                if (self.staBlock) {
+                    self.staBlock(buyStatusFauiler);
+                }
+
                 [[SKPaymentQueue defaultQueue] finishTransaction:tran];
                
             }

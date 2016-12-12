@@ -7,10 +7,18 @@
 //
 
 #import <Foundation/Foundation.h>
-//typedef void (^buyStatusCallBackBloc)()
+typedef NS_ENUM(NSInteger, BuyStatus)  {
+    //购买成功
+    buyStatusSuccess,
+    //购买中...
+    buyStatusBuying,
+    //购买失败
+    buyStatusFauiler
+};
+typedef void (^buyStatusCallBackBlock)(BuyStatus status);
 @interface APPStoreManager : NSObject
 
 + (APPStoreManager *)shareInstance;
 
-- (void)buyProductByid:(NSString *)pid;
+- (void)buyProductByid:(NSString *)pid withStatusBlock:(buyStatusCallBackBlock)status;
 @end
