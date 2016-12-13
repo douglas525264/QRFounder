@@ -13,7 +13,7 @@
 #import "ColorModel.h"
 #import "QRColorBgView.h"
 #import "DXQRView.h"
-
+#import "Lockmanager.h"
 static QRSourceManager *qManager;
 @implementation QRSourceManager
 
@@ -157,10 +157,39 @@ static QRSourceManager *qManager;
             for (NSDictionary *itemInfo in items) {
                 NSMutableArray *menulist = [[NSMutableArray alloc] init];
                 DXmenuItem *menuItem = [[DXmenuItem alloc] init];
-                menuItem.menuIcon = QRImage([itemInfo objectForKey:@"iconName"]);//[UIImage imageNamed:[itemInfo objectForKey:@"iconName"]];
+                menuItem.menuIcon = QRImage([itemInfo objectForKey:@"iconName"]);
+                NSString *title = itemInfo[@"sourcename"];
+                NSString *des = itemInfo[@"des"];
+                NSString *sourceID = itemInfo[@"diysourceid"];
+                if (title) {
+                    menuItem.title = title;
+                }
+                if (des) {
+                    menuItem.des = des;
+                }
+                if (sourceID) {
+                    menuItem.itemId = sourceID;
+                }
+                //[UIImage imageNamed:[itemInfo objectForKey:@"iconName"]];
+                NSInteger inde = 0;
                 for (NSDictionary *subInfo in itemInfo[@"menulist"]) {
                     DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
                     subItem.normalImage = QRImage([subInfo objectForKey:@"iconName"]);//[UIImage imageNamed:[subInfo objectForKey:@"iconName"]];;
+                    NSNumber *price = [subInfo objectForKey:@"price"];
+                    subItem.price = price ? price.floatValue : 0;
+                    NSNumber *isLock = subInfo [@"islock"];
+                    if (isLock) {
+                        if (isLock.boolValue) {
+                            subItem.isLock = ![[Lockmanager shareInstance] hasunlock:sourceID atindex:inde];
+                        } else {
+                            subItem.isLock = NO;
+                        }
+                    } else {
+                        subItem.isLock = NO;
+                    }
+                    
+                    
+    
                     subItem.color = [UIColor greenColor];
                     //                DIYSubModel *boarderItem = [[DIYSubModel alloc] init];
                     //                boarderItem.image = [UIImage imageNamed:[info objectForKey:@"boardername"]];
@@ -204,11 +233,13 @@ static QRSourceManager *qManager;
                     
                     subItem.diyModel = diyModel;
                     [menulist addObject:subItem];
+                     inde ++;
 
                 }
                 menuItem.items = menulist;
                 
                 [resultArr addObject:menuItem];
+               
                 
             }
             

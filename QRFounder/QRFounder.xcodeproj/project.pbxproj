@@ -480,6 +480,8 @@
 		A5682CE01D35E05D00E0AD8C /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CDF1D35E05D00E0AD8C /* AudioToolbox.framework */; };
 		A5682CE21D35E06200E0AD8C /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CE11D35E06200E0AD8C /* SystemConfiguration.framework */; };
 		A5682CE41D35E07300E0AD8C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5682CE31D35E07300E0AD8C /* Foundation.framework */; };
+		A568C1E21E0002E700A58EE6 /* Lockmanager.m in Sources */ = {isa = PBXBuildFile; fileRef = A568C1E11E0002E700A58EE6 /* Lockmanager.m */; };
+		A568C1E31E0002E700A58EE6 /* Lockmanager.m in Sources */ = {isa = PBXBuildFile; fileRef = A568C1E11E0002E700A58EE6 /* Lockmanager.m */; };
 		A56FF93F1D50422500F61BD6 /* RecommendViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A56FF93E1D50422500F61BD6 /* RecommendViewController.m */; };
 		A56FFA311D50B65B00F61BD6 /* AboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A56FFA301D50B65B00F61BD6 /* AboutTableViewCell.m */; };
 		A56FFA331D50B67A00F61BD6 /* AboutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A56FFA321D50B67A00F61BD6 /* AboutTableViewCell.xib */; };
@@ -886,6 +888,8 @@
 		A5682CDF1D35E05D00E0AD8C /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
 		A5682CE11D35E06200E0AD8C /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		A5682CE31D35E07300E0AD8C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		A568C1E01E0002E700A58EE6 /* Lockmanager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Lockmanager.h; sourceTree = "<group>"; };
+		A568C1E11E0002E700A58EE6 /* Lockmanager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Lockmanager.m; sourceTree = "<group>"; };
 		A56FF93D1D50422500F61BD6 /* RecommendViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RecommendViewController.h; sourceTree = "<group>"; };
 		A56FF93E1D50422500F61BD6 /* RecommendViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RecommendViewController.m; sourceTree = "<group>"; };
 		A56FFA2F1D50B65B00F61BD6 /* AboutTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AboutTableViewCell.h; sourceTree = "<group>"; };
@@ -1515,6 +1519,8 @@
 		A57609A41CB287DB006F3F1B /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A568C1E01E0002E700A58EE6 /* Lockmanager.h */,
+				A568C1E11E0002E700A58EE6 /* Lockmanager.m */,
 				A57609A51CB287F8006F3F1B /* QRSourceManager.h */,
 				A57609A61CB287F8006F3F1B /* QRSourceManager.m */,
 				A50459B31D3378F3006C7D31 /* AnalyticsManager.m */,
@@ -3134,6 +3140,7 @@
 				A55C5D4F1DFE53820081A8DF /* AboutTableViewCell.m in Sources */,
 				A55C5D501DFE53820081A8DF /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				A55C5D511DFE53820081A8DF /* DXTextInfovViewController.m in Sources */,
+				A568C1E31E0002E700A58EE6 /* Lockmanager.m in Sources */,
 				A55C5D521DFE53820081A8DF /* DmDatabaseOperation.m in Sources */,
 				A55C5D531DFE53820081A8DF /* dxBgView.m in Sources */,
 				A55C5D541DFE53820081A8DF /* DXScanresultViewController.m in Sources */,
@@ -3248,6 +3255,7 @@
 				A554246F1D3E0A7900081141 /* DXBottomActionView.m in Sources */,
 				A540A0D31D239F4B0012EEB0 /* MsgView.m in Sources */,
 				A54516B51DD0679600B38B3F /* DIYSubModel.m in Sources */,
+				A568C1E21E0002E700A58EE6 /* Lockmanager.m in Sources */,
 				D7FC156F1CA93F51009EAB4C /* DXScrollMenu.m in Sources */,
 				A5D76F821D3795D400AA8006 /* DBManager.m in Sources */,
 				A50258F01CC76A68007B00E3 /* CardInfoTableViewCell.m in Sources */,

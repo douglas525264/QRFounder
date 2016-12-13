@@ -16,6 +16,7 @@
 #import "DXHelper.h"
 #import "GDTMobBannerView.h"
 #import "ADManager.h"
+#import "Lockmanager.h"
 @interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,BaiduMobAdViewDelegate,GDTMobBannerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 
@@ -98,6 +99,8 @@
     
 }
 - (void)setQRDiyModel:(DIYModel *)diy {
+    
+    
     if ([[DXHelper shareInstance] needShowLike]) {
         [[DXHelper shareInstance] showLikeInVC:self];
     } else {
@@ -176,7 +179,12 @@
                         }
                     }break;
                     case QREditTypeDIY:{
-                        [strongSelf setQRDiyModel:subitem.diyModel];
+                        if (!subitem.isLock) {
+                           [strongSelf setQRDiyModel:subitem.diyModel];
+                        } else {
+                            [strongSelf showUnlockWithItem:item AndIndex:path.row];
+                        }
+                        
                     }break;
                     case QREditTypeMoreColor:{
                         
@@ -193,6 +201,16 @@
         }
     }];
 
+}
+- (void)showUnlockWithItem:(DXmenuItem *)menu AndIndex:(NSInteger)index {
+    
+    [[Lockmanager shareInstance] unlock:menu.itemId atIndex:index];
+    NSIndexPath *path  = [NSIndexPath indexPathForRow:index inSection:[self.sourceArr indexOfObject:menu]];
+    
+    [self.scrollMenu unLockAtIndexPaths:@[path]];
+//    NSArray *items = [self loaddata];
+//    self.sourceArr = [NSMutableArray arrayWithArray:items];
+//    self.scrollMenu.menuItems = items;
 }
 - (IBAction)albumBtnClick:(id)sender {
     

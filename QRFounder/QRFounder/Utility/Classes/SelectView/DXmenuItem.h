@@ -14,6 +14,10 @@
 @property (nonatomic, strong) UIImage *menuIcon;
 
 @property (nonatomic, copy)   NSString *title;
+
+@property (nonatomic, copy)  NSString *des;
+
+@property (nonatomic, copy)  NSString *itemId;
 //这里放的是 subMenuItems
 @property (nonatomic, strong) NSMutableArray *items;
 

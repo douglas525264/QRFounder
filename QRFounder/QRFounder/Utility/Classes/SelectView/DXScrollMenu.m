@@ -39,11 +39,16 @@
 
     _menuItems = menuItems;
     
-    
-    [self.iconScrollView removeFromSuperview];
-    self.iconScrollView = nil;
-    [self.menuScrollView removeFromSuperview];
-    self.menuScrollView = nil;
+    if (_iconScrollView) {
+        [self.iconScrollView removeFromSuperview];
+        _iconScrollView = nil;
+
+    }
+    if (_menuScrollView) {
+        [_menuScrollView removeFromSuperview];
+        _menuScrollView = nil;
+ 
+    }
     
     DXmenuItem *mainMenu = menuItems[0];
     if (mainMenu.color) {
@@ -130,6 +135,20 @@
             [iconBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
             
             [subScrollView addSubview:iconBtn];
+            if (subMenu.isLock) {
+                DXMenuBtn *lockBtn = [DXMenuBtn buttonWithType:UIButtonTypeCustom];
+                lockBtn.tag = -2;
+                lockBtn.path = [NSIndexPath indexPathForRow:j inSection:i];
+                
+                lockBtn.frame = CGRectMake(j * iconW , 0 , iconW, self.menuScrollView.frame.size.height);
+                
+                [lockBtn setImage:[UIImage imageNamed:@"lock"] forState:UIControlStateNormal];
+                
+                [lockBtn addTarget:self action:@selector(btnClick:) forControlEvents:UIControlEventTouchUpInside];
+                
+                [subScrollView addSubview:lockBtn];
+
+            }
             
 
           j++;
@@ -138,7 +157,7 @@
         subScrollView.contentSize = CGSizeMake(subScrollView.frame.size.width *pageCount, subScrollView.frame.size.height);
 
         [self.menuScrollView addSubview:subScrollView];
-        CGRect subFrame = subScrollView.frame;
+     //   CGRect subFrame = subScrollView.frame;
 //        if (pageCount > 1) {
 //            UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(subFrame.origin.x , subFrame.origin.y + subFrame.size.height - 9, subFrame.size.width, 4)];
 //            pageControl.numberOfPages = pageCount;
@@ -174,6 +193,27 @@
         }
     }
     
+}
+- (void)unLockAtIndexPaths:(NSArray*)array {
+
+    for (NSIndexPath *path in array) {
+        for (UIView *subView in self.menuScrollView.subviews) {
+            if ([subView isKindOfClass:[UIScrollView class]]) {
+                if (subView.tag == path.section) {
+                    
+                    for (UIView *view in subView.subviews) {
+                        if (view.tag == -2 && [view isKindOfClass:[DXMenuBtn class]]) {
+                            DXMenuBtn *btn = (DXMenuBtn *)view;
+                            if (btn.path.row == path.row) {
+                                [btn removeFromSuperview];
+                                break;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 - (void)selectIconWithTag:(NSInteger)tag {
 
