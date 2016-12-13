@@ -211,7 +211,7 @@
     [self.scrollMenu unLockAtIndexPaths:@[path]];
     NSArray *items = [self loaddata];
     self.sourceArr = [NSMutableArray arrayWithArray:items];
-    [self.scrollMenu setMenuItems:items isReload:NO];
+
 }
 - (IBAction)albumBtnClick:(id)sender {
     
