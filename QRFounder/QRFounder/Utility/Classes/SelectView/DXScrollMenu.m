@@ -35,6 +35,11 @@
     // Drawing code
 }
 */
+- (void)setMenuItems:(NSArray *)menuItems isReload:(BOOL)isreload {
+    
+    _menuItems = menuItems;
+
+}
 - (void)setMenuItems:(NSArray *)menuItems {
 
     _menuItems = menuItems;

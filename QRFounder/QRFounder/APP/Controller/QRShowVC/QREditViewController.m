@@ -203,14 +203,15 @@
 
 }
 - (void)showUnlockWithItem:(DXmenuItem *)menu AndIndex:(NSInteger)index {
+    //正常弹出详情界面
     
     [[Lockmanager shareInstance] unlock:menu.itemId atIndex:index];
     NSIndexPath *path  = [NSIndexPath indexPathForRow:index inSection:[self.sourceArr indexOfObject:menu]];
     
     [self.scrollMenu unLockAtIndexPaths:@[path]];
-//    NSArray *items = [self loaddata];
-//    self.sourceArr = [NSMutableArray arrayWithArray:items];
-//    self.scrollMenu.menuItems = items;
+    NSArray *items = [self loaddata];
+    self.sourceArr = [NSMutableArray arrayWithArray:items];
+    [self.scrollMenu setMenuItems:items isReload:NO];
 }
 - (IBAction)albumBtnClick:(id)sender {
     
