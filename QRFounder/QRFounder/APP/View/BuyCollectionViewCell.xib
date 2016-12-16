@@ -11,14 +11,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="BuyCollectionViewCell" id="gTV-IL-0wX" customClass="BuyCollectionViewCell">
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" restorationIdentifier="BuyCollectionViewCell" reuseIdentifier="BuyCollectionViewCell" id="gTV-IL-0wX" customClass="BuyCollectionViewCell">
             <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
             <autoresizingMask key="autoresizingMask"/>
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="93" height="93"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" restorationIdentifier="BuyCollectionViewCell" translatesAutoresizingMaskIntoConstraints="NO" id="vah-q7-4EA">
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vah-q7-4EA">
                         <rect key="frame" x="0.0" y="1" width="93" height="93"/>
                     </imageView>
                 </subviews>
@@ -33,7 +33,7 @@
             <connections>
                 <outlet property="bugitemAvatarImageView" destination="vah-q7-4EA" id="hYC-9f-nXe"/>
             </connections>
-            <point key="canvasLocation" x="54" y="72"/>
+            <point key="canvasLocation" x="53.5" y="71.5"/>
         </collectionViewCell>
     </objects>
 </document>

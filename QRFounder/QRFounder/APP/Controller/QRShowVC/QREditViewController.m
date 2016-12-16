@@ -213,6 +213,7 @@
     //正常弹出详情界面
     UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     BuyItemViewController *byVC = [mainStory instantiateViewControllerWithIdentifier:@"BuyItemViewController"];
+    byVC.sourceItem = menu;
    // UINavigationController *rootnav = [[UINavigationController alloc] initWithRootViewController:byVC];
     [self.navigationController pushViewController:byVC animated:YES];
   /*  [[Lockmanager shareInstance] unlock:menu.itemId atIndex:index];

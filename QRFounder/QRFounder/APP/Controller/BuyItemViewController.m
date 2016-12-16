@@ -8,6 +8,7 @@
 
 #import "BuyItemViewController.h"
 #import "BuyCollectionViewCell.h"
+#import "DXHelper.h"
 @interface BuyItemViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @end
@@ -16,9 +17,15 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    
+    [self.view addSubview:self.collectionView];
+    self.view.backgroundColor = DefaultColor;
     // Do any additional setup after loading the view.
+}
+- (void)setSourceItem:(DXmenuItem *)sourceItem {
+
+    _sourceItem = sourceItem;
+    self.navigationItem.title = _sourceItem.title;
+    [self.collectionView reloadData];
 }
 - (void)viewWillAppear:(BOOL)animated {
 
@@ -36,8 +43,32 @@
     }
     return 0;
 }
+- (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+}
+
+- (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
+    UICollectionReusableView *collResView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"View" forIndexPath:indexPath];
+    UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, 40, 20)];
+    lable.text = @"描述:";
+    lable.textColor = [UIColor whiteColor];
+    lable.font = [UIFont systemFontOfSize:14];
+    [collResView addSubview:lable];
+    UILabel *deslab = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, self.view.frame.size.width - 40 - 10, 90)];
+    
+    deslab.text = self.sourceItem.des;
+    deslab.textColor = [UIColor whiteColor];
+    deslab.textAlignment = NSTextAlignmentLeft;
+    deslab.font = [UIFont systemFontOfSize:14];
+    deslab.lineBreakMode = NSLineBreakByCharWrapping;
+    deslab.numberOfLines = 0;
+    deslab.backgroundColor = [UIColor clearColor];
+    [collResView addSubview:deslab];
+    return collResView;
+}
 - (__kindof UICollectionViewCell *)collectionView:(UICollectionView *)collectionView cellForItemAtIndexPath:(NSIndexPath *)indexPath{
     BuyCollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:@"BuyCollectionViewCell" forIndexPath:indexPath];
+    cell.backgroundColor = [UIColor clearColor];
     DXSubMenuItem *subItem = self.sourceItem.items[indexPath.row];
     cell.bugitemAvatarImageView.image = subItem.normalImage;
     return cell;
@@ -48,12 +79,15 @@
     if (!_collectionView) {
         UICollectionViewFlowLayout *grid = [[UICollectionViewFlowLayout alloc] init];
         grid.itemSize = CGSizeMake(93.0, 93.0);
-        grid.sectionInset = UIEdgeInsetsMake(40.0, 40.0, 40.0, 40.0);
-        
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 0,self.view.frame.size.width , self.view.frame.size.height - self.bottomView.frame.size.height) collectionViewLayout:grid];
+        grid.sectionInset = UIEdgeInsetsMake(0.0, 20.0, 20.0, 20.0);
+        grid.headerReferenceSize = CGSizeMake( self.view.frame.size.width, 100);
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64,self.view.frame.size.width , self.view.frame.size.height - self.bottomView.frame.size.height - 64) collectionViewLayout:grid];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
-        [_collectionView registerClass:[BuyCollectionViewCell class] forCellWithReuseIdentifier:@"BuyCollectionViewCell"];
+        _collectionView.backgroundColor = [UIColor clearColor];
+        _collectionView.alwaysBounceVertical = YES;
+        [_collectionView registerClass:[UICollectionReusableView class] forSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"View"];
+        [_collectionView  registerNib:[UINib nibWithNibName:@"BuyCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"BuyCollectionViewCell"];
     }
     return _collectionView;
 }
