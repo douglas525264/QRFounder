@@ -101,7 +101,9 @@
     [qVC setFinishedBlock:^(QRModel *model) {
         self.qrModel = model;
     }];
-    [self presentViewController:qVC animated:YES completion:^{
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:qVC];
+    
+    [self presentViewController:nav animated:YES completion:^{
         
     }];
 }
@@ -128,7 +130,8 @@
     [qVC setFinishedBlock:^(QRModel *model) {
         self.qrModel = model;
     }];
-    [self presentViewController:qVC animated:YES completion:^{
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:qVC];
+    [self presentViewController:nav animated:YES completion:^{
         
     }];
 }

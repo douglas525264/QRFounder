@@ -100,7 +100,6 @@
 		A540A0D71D23A0C30012EEB0 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A540A0D61D23A0C30012EEB0 /* MessageUI.framework */; };
 		A54305701D753C18001E5906 /* LaViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A543056F1D753C18001E5906 /* LaViewController.m */; };
 		A54516AE1DD0626C00B38B3F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54516AA1DD0626C00B38B3F /* LaunchScreen.storyboard */; };
-		A54516AF1DD0626C00B38B3F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54516AC1DD0626C00B38B3F /* Main.storyboard */; };
 		A54516B21DD0676900B38B3F /* DIYModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A54516B11DD0676900B38B3F /* DIYModel.m */; };
 		A54516B51DD0679600B38B3F /* DIYSubModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A54516B41DD0679600B38B3F /* DIYSubModel.m */; };
 		A54516B81DD0696600B38B3F /* QRPointModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A54516B71DD0696600B38B3F /* QRPointModel.m */; };
@@ -110,6 +109,14 @@
 		A549E73D1D7FFB0300651D23 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73C1D7FFB0300651D23 /* CoreLocation.framework */; };
 		A549E73F1D7FFB0F00651D23 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73E1D7FFB0F00651D23 /* CoreTelephony.framework */; };
 		A54BBBE81D8680D900E38764 /* dxBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54BBBE71D8680D900E38764 /* dxBgView.m */; };
+		A5520E1A1E03D2D00099670B /* BuyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5520E181E03D2D00099670B /* BuyCollectionViewCell.m */; };
+		A5520E1B1E03D2D00099670B /* BuyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5520E181E03D2D00099670B /* BuyCollectionViewCell.m */; };
+		A5520E1C1E03D2D00099670B /* BuyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5520E191E03D2D00099670B /* BuyCollectionViewCell.xib */; };
+		A5520E1D1E03D2D00099670B /* BuyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5520E191E03D2D00099670B /* BuyCollectionViewCell.xib */; };
+		A5520E281E03E7610099670B /* BuyItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5520E271E03E7610099670B /* BuyItemViewController.m */; };
+		A5520E291E03E7610099670B /* BuyItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5520E271E03E7610099670B /* BuyItemViewController.m */; };
+		A5520E2C1E03E77B0099670B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5520E2A1E03E77B0099670B /* Main.storyboard */; };
+		A5520E2D1E03E77B0099670B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A5520E2A1E03E77B0099670B /* Main.storyboard */; };
 		A554246F1D3E0A7900081141 /* DXBottomActionView.m in Sources */ = {isa = PBXBuildFile; fileRef = A554246E1D3E0A7900081141 /* DXBottomActionView.m */; };
 		A55424721D3E3C1B00081141 /* UIActionSheet+RACExtends.m in Sources */ = {isa = PBXBuildFile; fileRef = A55424711D3E3C1B00081141 /* UIActionSheet+RACExtends.m */; };
 		A554719F1D8FF5E700E4AF74 /* Contacts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A554719E1D8FF5E700E4AF74 /* Contacts.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
@@ -239,7 +246,6 @@
 		A55C5DC31DFE53820081A8DF /* intelitem02.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A7D71DFC0A7600041A3C /* intelitem02.png */; };
 		A55C5DC41DFE53820081A8DF /* huanreitem06.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A7C71DFC0A7600041A3C /* huanreitem06.png */; };
 		A55C5DC51DFE53820081A8DF /* intelitem10.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A7DE1DFC0A7600041A3C /* intelitem10.png */; };
-		A55C5DC61DFE53820081A8DF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A54516AC1DD0626C00B38B3F /* Main.storyboard */; };
 		A55C5DC71DFE53820081A8DF /* xiaoxin_border02.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A8001DFC0A7600041A3C /* xiaoxin_border02.png */; };
 		A55C5DC81DFE53820081A8DF /* ch01_item012.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A7661DFC0A7600041A3C /* ch01_item012.png */; };
 		A55C5DC91DFE53820081A8DF /* APPInfoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = D78418DC1C7487AF00850129 /* APPInfoView.xib */; };
@@ -487,7 +493,6 @@
 		A56FFA331D50B67A00F61BD6 /* AboutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A56FFA321D50B67A00F61BD6 /* AboutTableViewCell.xib */; };
 		A57609A71CB287F8006F3F1B /* QRSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A57609A61CB287F8006F3F1B /* QRSourceManager.m */; };
 		A579DBD91D388D8100561CD3 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A579DBD81D388D8100561CD3 /* HistoryViewController.m */; };
-		A589D01B1E00E8C200FB5168 /* BuyItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A589D01A1E00E8C200FB5168 /* BuyItemViewController.m */; };
 		A58A55F91CA2EED6003C97B7 /* DXCommenQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */; };
 		A592A8091DFC0A7600041A3C /* ch01_bigborder.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A7591DFC0A7600041A3C /* ch01_bigborder.png */; };
 		A592A80A1DFC0A7600041A3C /* ch01_chitemBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A75A1DFC0A7600041A3C /* ch01_chitemBorder.png */; };
@@ -858,7 +863,6 @@
 		A543056E1D753C18001E5906 /* LaViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LaViewController.h; sourceTree = "<group>"; };
 		A543056F1D753C18001E5906 /* LaViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LaViewController.m; sourceTree = "<group>"; };
 		A54516AB1DD0626C00B38B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QRFounder/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
-		A54516AD1DD0626C00B38B3F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QRFounder/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		A54516B01DD0676900B38B3F /* DIYModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYModel.h; sourceTree = "<group>"; };
 		A54516B11DD0676900B38B3F /* DIYModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DIYModel.m; sourceTree = "<group>"; };
 		A54516B31DD0679600B38B3F /* DIYSubModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DIYSubModel.h; sourceTree = "<group>"; };
@@ -871,6 +875,12 @@
 		A549E73E1D7FFB0F00651D23 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A54BBBE61D8680D900E38764 /* dxBgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dxBgView.h; sourceTree = "<group>"; };
 		A54BBBE71D8680D900E38764 /* dxBgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dxBgView.m; sourceTree = "<group>"; };
+		A5520E171E03D2D00099670B /* BuyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyCollectionViewCell.h; sourceTree = "<group>"; };
+		A5520E181E03D2D00099670B /* BuyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyCollectionViewCell.m; sourceTree = "<group>"; };
+		A5520E191E03D2D00099670B /* BuyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyCollectionViewCell.xib; sourceTree = "<group>"; };
+		A5520E261E03E7610099670B /* BuyItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyItemViewController.h; sourceTree = "<group>"; };
+		A5520E271E03E7610099670B /* BuyItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyItemViewController.m; sourceTree = "<group>"; };
+		A5520E2B1E03E77B0099670B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = QRFounder/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		A554246D1D3E0A7900081141 /* DXBottomActionView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXBottomActionView.h; sourceTree = "<group>"; };
 		A554246E1D3E0A7900081141 /* DXBottomActionView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXBottomActionView.m; sourceTree = "<group>"; };
 		A55424701D3E3C1B00081141 /* UIActionSheet+RACExtends.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIActionSheet+RACExtends.h"; sourceTree = "<group>"; };
@@ -900,8 +910,6 @@
 		A57609A61CB287F8006F3F1B /* QRSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRSourceManager.m; sourceTree = "<group>"; };
 		A579DBD71D388D8100561CD3 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		A579DBD81D388D8100561CD3 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
-		A589D0191E00E8C200FB5168 /* BuyItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyItemViewController.h; sourceTree = "<group>"; };
-		A589D01A1E00E8C200FB5168 /* BuyItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyItemViewController.m; sourceTree = "<group>"; };
 		A58A55F71CA2EED6003C97B7 /* DXCommenQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXCommenQRView.h; sourceTree = "<group>"; };
 		A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXCommenQRView.m; sourceTree = "<group>"; };
 		A592A7591DFC0A7600041A3C /* ch01_bigborder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ch01_bigborder.png; sourceTree = "<group>"; };
@@ -1519,6 +1527,16 @@
 			path = moreColor;
 			sourceTree = "<group>";
 		};
+		A5520E111E03D2550099670B /* buycell */ = {
+			isa = PBXGroup;
+			children = (
+				A5520E171E03D2D00099670B /* BuyCollectionViewCell.h */,
+				A5520E181E03D2D00099670B /* BuyCollectionViewCell.m */,
+				A5520E191E03D2D00099670B /* BuyCollectionViewCell.xib */,
+			);
+			name = buycell;
+			sourceTree = "<group>";
+		};
 		A57609A41CB287DB006F3F1B /* Manager */ = {
 			isa = PBXGroup;
 			children = (
@@ -1550,8 +1568,8 @@
 		A589D0181E00E8A700FB5168 /* Buy */ = {
 			isa = PBXGroup;
 			children = (
-				A589D0191E00E8C200FB5168 /* BuyItemViewController.h */,
-				A589D01A1E00E8C200FB5168 /* BuyItemViewController.m */,
+				A5520E261E03E7610099670B /* BuyItemViewController.h */,
+				A5520E271E03E7610099670B /* BuyItemViewController.m */,
 			);
 			name = Buy;
 			sourceTree = "<group>";
@@ -2155,8 +2173,8 @@
 		D784188E1C7455BA00850129 /* StoryBoard */ = {
 			isa = PBXGroup;
 			children = (
+				A5520E2A1E03E77B0099670B /* Main.storyboard */,
 				A54516AA1DD0626C00B38B3F /* LaunchScreen.storyboard */,
-				A54516AC1DD0626C00B38B3F /* Main.storyboard */,
 			);
 			path = StoryBoard;
 			sourceTree = "<group>";
@@ -2164,6 +2182,7 @@
 		D784188F1C7455BA00850129 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A5520E111E03D2550099670B /* buycell */,
 				D78418D91C74872000850129 /* InfoView */,
 				D7130D9F1C9A9E8D0096768B /* DXQRView.h */,
 				D7130DA01C9A9E8D0096768B /* DXQRView.m */,
@@ -2536,7 +2555,6 @@
 				A55C5DC31DFE53820081A8DF /* intelitem02.png in Resources */,
 				A55C5DC41DFE53820081A8DF /* huanreitem06.png in Resources */,
 				A55C5DC51DFE53820081A8DF /* intelitem10.png in Resources */,
-				A55C5DC61DFE53820081A8DF /* Main.storyboard in Resources */,
 				A55C5DC71DFE53820081A8DF /* xiaoxin_border02.png in Resources */,
 				A55C5DC81DFE53820081A8DF /* ch01_item012.png in Resources */,
 				A55C5DC91DFE53820081A8DF /* APPInfoView.xib in Resources */,
@@ -2687,6 +2705,7 @@
 				A55C5E5A1DFE53820081A8DF /* ch06icon.png in Resources */,
 				A55C5E5B1DFE53820081A8DF /* MsgView.xib in Resources */,
 				A55C5E5C1DFE53820081A8DF /* hello003_icon.png in Resources */,
+				A5520E2D1E03E77B0099670B /* Main.storyboard in Resources */,
 				A55C5E5D1DFE53820081A8DF /* weixincircle.png in Resources */,
 				A55C5E5E1DFE53820081A8DF /* ch06item02.png in Resources */,
 				A55C5E5F1DFE53820081A8DF /* intelItem04.png in Resources */,
@@ -2699,6 +2718,7 @@
 				A55C5E661DFE53820081A8DF /* MsgInfoView.xib in Resources */,
 				A55C5E671DFE53820081A8DF /* huangren_icon.png in Resources */,
 				A55C5E681DFE53820081A8DF /* intelItem03.png in Resources */,
+				A5520E1D1E03D2D00099670B /* BuyCollectionViewCell.xib in Resources */,
 				A55C5E691DFE53820081A8DF /* mouse02_icon.png in Resources */,
 				A55C5E6A1DFE53820081A8DF /* mouse_item01.png in Resources */,
 				A55C5E6B1DFE53820081A8DF /* ch01_item002.png in Resources */,
@@ -2793,7 +2813,6 @@
 				A592A87C1DFC0A7700041A3C /* intelitem02.png in Resources */,
 				A592A86D1DFC0A7700041A3C /* huanreitem06.png in Resources */,
 				A592A8831DFC0A7700041A3C /* intelitem10.png in Resources */,
-				A54516AF1DD0626C00B38B3F /* Main.storyboard in Resources */,
 				A592A8A11DFC0A7700041A3C /* xiaoxin_border02.png in Resources */,
 				A592A8161DFC0A7600041A3C /* ch01_item012.png in Resources */,
 				D78418DD1C7487AF00850129 /* APPInfoView.xib in Resources */,
@@ -2944,6 +2963,7 @@
 				A592A8271DFC0A7600041A3C /* ch06icon.png in Resources */,
 				A540A0D51D239F740012EEB0 /* MsgView.xib in Resources */,
 				A52B83E11DD5CFC90050BF4F /* hello003_icon.png in Resources */,
+				A5520E2C1E03E77B0099670B /* Main.storyboard in Resources */,
 				A52B83BE1DD5CFC90050BF4F /* weixincircle.png in Resources */,
 				A592A8291DFC0A7600041A3C /* ch06item02.png in Resources */,
 				A592A87E1DFC0A7700041A3C /* intelItem04.png in Resources */,
@@ -2956,6 +2976,7 @@
 				D78418E11C7487C900850129 /* MsgInfoView.xib in Resources */,
 				A592A86C1DFC0A7700041A3C /* huangren_icon.png in Resources */,
 				A592A87D1DFC0A7700041A3C /* intelItem03.png in Resources */,
+				A5520E1C1E03D2D00099670B /* BuyCollectionViewCell.xib in Resources */,
 				A52B83E81DD5CFC90050BF4F /* mouse02_icon.png in Resources */,
 				A592A8861DFC0A7700041A3C /* mouse_item01.png in Resources */,
 				A592A80D1DFC0A7600041A3C /* ch01_item002.png in Resources */,
@@ -3158,10 +3179,12 @@
 				A55C5D531DFE53820081A8DF /* dxBgView.m in Sources */,
 				A55C5D541DFE53820081A8DF /* DXScanresultViewController.m in Sources */,
 				A55C5D551DFE53820081A8DF /* DmSearchCriteria.m in Sources */,
+				A5520E1B1E03D2D00099670B /* BuyCollectionViewCell.m in Sources */,
 				A55C5D561DFE53820081A8DF /* QRModel.m in Sources */,
 				A55C5D571DFE53820081A8DF /* MyCardInfoView.m in Sources */,
 				A55C5D581DFE53820081A8DF /* TextInfoView.m in Sources */,
 				A55C5D591DFE53820081A8DF /* QRFounderAppDelegate.m in Sources */,
+				A5520E291E03E7610099670B /* BuyItemViewController.m in Sources */,
 				A55C5D5A1DFE53820081A8DF /* DXAlertAction.m in Sources */,
 				A55C5D5B1DFE53820081A8DF /* QRSourceManager.m in Sources */,
 				A55C5D5C1DFE53820081A8DF /* DXHelper.m in Sources */,
@@ -3213,6 +3236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A5A8F49B1CF7021500019A7E /* NSString+DXCheck.m in Sources */,
+				A5520E281E03E7610099670B /* BuyItemViewController.m in Sources */,
 				D78418C11C746FC700850129 /* APPInfoView.m in Sources */,
 				A55424721D3E3C1B00081141 /* UIActionSheet+RACExtends.m in Sources */,
 				D78418CD1C74703A00850129 /* HttpInfoView.m in Sources */,
@@ -3234,7 +3258,6 @@
 				A5E180BD1DA3740400360A89 /* QRFounderAppDelegate.m in Sources */,
 				A52B833B1DD56F3C0050BF4F /* DXAlertAction.m in Sources */,
 				A55C5EF51DFE89980081A8DF /* APPStoreManager.m in Sources */,
-				A589D01B1E00E8C200FB5168 /* BuyItemViewController.m in Sources */,
 				A57609A71CB287F8006F3F1B /* QRSourceManager.m in Sources */,
 				D78418B81C746D2000850129 /* DXHelper.m in Sources */,
 				A5383F671DD4B310008B4650 /* QRColorBgView.m in Sources */,
@@ -3267,6 +3290,7 @@
 				D78418BB1C746D2D00850129 /* QRHelper.m in Sources */,
 				A5D76F761D3793C900AA8006 /* NSString+DXTool.m in Sources */,
 				A554246F1D3E0A7900081141 /* DXBottomActionView.m in Sources */,
+				A5520E1A1E03D2D00099670B /* BuyCollectionViewCell.m in Sources */,
 				A540A0D31D239F4B0012EEB0 /* MsgView.m in Sources */,
 				A54516B51DD0679600B38B3F /* DIYSubModel.m in Sources */,
 				A568C1E21E0002E700A58EE6 /* Lockmanager.m in Sources */,
@@ -3330,10 +3354,10 @@
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
-		A54516AC1DD0626C00B38B3F /* Main.storyboard */ = {
+		A5520E2A1E03E77B0099670B /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				A54516AD1DD0626C00B38B3F /* Base */,
+				A5520E2B1E03E77B0099670B /* Base */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";

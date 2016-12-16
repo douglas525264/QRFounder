@@ -17,6 +17,7 @@
 #import "GDTMobBannerView.h"
 #import "ADManager.h"
 #import "Lockmanager.h"
+#import "BuyItemViewController.h"
 @interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,BaiduMobAdViewDelegate,GDTMobBannerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 
@@ -32,9 +33,15 @@
     GDTMobBannerView *_bannerView;
 
 }
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+   
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.qrView.qrModel = self.qrModel;
+    
     self.toolView.backgroundColor = [UIColor clearColor];
     self.view.backgroundColor = DefaultColor;
     if (ADENABLE) {
@@ -45,7 +52,7 @@
 #endif
      
     }
-    
+
     // Do any additional setup after loading the view.
 }
 
@@ -204,13 +211,16 @@
 }
 - (void)showUnlockWithItem:(DXmenuItem *)menu AndIndex:(NSInteger)index {
     //正常弹出详情界面
-    
-    [[Lockmanager shareInstance] unlock:menu.itemId atIndex:index];
+    UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    BuyItemViewController *byVC = [mainStory instantiateViewControllerWithIdentifier:@"BuyItemViewController"];
+   // UINavigationController *rootnav = [[UINavigationController alloc] initWithRootViewController:byVC];
+    [self.navigationController pushViewController:byVC animated:YES];
+  /*  [[Lockmanager shareInstance] unlock:menu.itemId atIndex:index];
     NSIndexPath *path  = [NSIndexPath indexPathForRow:index inSection:[self.sourceArr indexOfObject:menu]];
     
     [self.scrollMenu unLockAtIndexPaths:@[path]];
     NSArray *items = [self loaddata];
-    self.sourceArr = [NSMutableArray arrayWithArray:items];
+    self.sourceArr = [NSMutableArray arrayWithArray:items];*/
 
 }
 - (IBAction)albumBtnClick:(id)sender {

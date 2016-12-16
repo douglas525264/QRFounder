@@ -1073,7 +1073,7 @@
         <!--Buy Item View Controller-->
         <scene sceneID="cKR-wp-gTr">
             <objects>
-                <viewController id="XOD-rp-qS2" customClass="BuyItemViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BuyItemViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="XOD-rp-qS2" customClass="BuyItemViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7Ry-Pd-vBP"/>
                         <viewControllerLayoutGuide type="bottom" id="ine-b5-5Bi"/>
