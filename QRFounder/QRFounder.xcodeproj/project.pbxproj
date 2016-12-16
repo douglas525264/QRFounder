@@ -487,6 +487,7 @@
 		A56FFA331D50B67A00F61BD6 /* AboutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A56FFA321D50B67A00F61BD6 /* AboutTableViewCell.xib */; };
 		A57609A71CB287F8006F3F1B /* QRSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A57609A61CB287F8006F3F1B /* QRSourceManager.m */; };
 		A579DBD91D388D8100561CD3 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A579DBD81D388D8100561CD3 /* HistoryViewController.m */; };
+		A589D01B1E00E8C200FB5168 /* BuyItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A589D01A1E00E8C200FB5168 /* BuyItemViewController.m */; };
 		A58A55F91CA2EED6003C97B7 /* DXCommenQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */; };
 		A592A8091DFC0A7600041A3C /* ch01_bigborder.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A7591DFC0A7600041A3C /* ch01_bigborder.png */; };
 		A592A80A1DFC0A7600041A3C /* ch01_chitemBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A75A1DFC0A7600041A3C /* ch01_chitemBorder.png */; };
@@ -899,6 +900,8 @@
 		A57609A61CB287F8006F3F1B /* QRSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRSourceManager.m; sourceTree = "<group>"; };
 		A579DBD71D388D8100561CD3 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		A579DBD81D388D8100561CD3 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		A589D0191E00E8C200FB5168 /* BuyItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyItemViewController.h; sourceTree = "<group>"; };
+		A589D01A1E00E8C200FB5168 /* BuyItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyItemViewController.m; sourceTree = "<group>"; };
 		A58A55F71CA2EED6003C97B7 /* DXCommenQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXCommenQRView.h; sourceTree = "<group>"; };
 		A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXCommenQRView.m; sourceTree = "<group>"; };
 		A592A7591DFC0A7600041A3C /* ch01_bigborder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ch01_bigborder.png; sourceTree = "<group>"; };
@@ -1544,6 +1547,15 @@
 			name = History;
 			sourceTree = "<group>";
 		};
+		A589D0181E00E8A700FB5168 /* Buy */ = {
+			isa = PBXGroup;
+			children = (
+				A589D0191E00E8C200FB5168 /* BuyItemViewController.h */,
+				A589D01A1E00E8C200FB5168 /* BuyItemViewController.m */,
+			);
+			name = Buy;
+			sourceTree = "<group>";
+		};
 		A592A7561DFC0A7600041A3C /* DIYImageSource */ = {
 			isa = PBXGroup;
 			children = (
@@ -2105,6 +2117,7 @@
 		D784188C1C7455BA00850129 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A589D0181E00E8A700FB5168 /* Buy */,
 				A579DBD61D388D6900561CD3 /* History */,
 				A51191431D364BBF004C2697 /* About */,
 				A5A8F49C1CF702EB00019A7E /* QRReadVC */,
@@ -3221,6 +3234,7 @@
 				A5E180BD1DA3740400360A89 /* QRFounderAppDelegate.m in Sources */,
 				A52B833B1DD56F3C0050BF4F /* DXAlertAction.m in Sources */,
 				A55C5EF51DFE89980081A8DF /* APPStoreManager.m in Sources */,
+				A589D01B1E00E8C200FB5168 /* BuyItemViewController.m in Sources */,
 				A57609A71CB287F8006F3F1B /* QRSourceManager.m in Sources */,
 				D78418B81C746D2000850129 /* DXHelper.m in Sources */,
 				A5383F671DD4B310008B4650 /* QRColorBgView.m in Sources */,

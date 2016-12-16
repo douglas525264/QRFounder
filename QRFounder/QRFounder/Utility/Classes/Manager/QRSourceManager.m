@@ -95,7 +95,7 @@ static QRSourceManager *qManager;
                 NSArray *subMenuInfos = [info objectForKey:@"menuList"];
                 for (NSDictionary *subInfo in subMenuInfos) {
                     DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
-                    subItem.normalImage = QRImage([info objectForKey:@"menuIcon"]);// [UIImage imageNamed:[subInfo objectForKey:@"menuIcon"]];
+                    subItem.normalImage = QRImage([subInfo objectForKey:@"menuIcon"]);// [UIImage imageNamed:[subInfo objectForKey:@"menuIcon"]];
                     subItem.ImageName = [[NSBundle mainBundle] pathForResource:[subInfo objectForKey:@"imageSourceName"] ofType:@"png"];
                     [menulist addObject:subItem];
                     
