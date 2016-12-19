@@ -51,7 +51,7 @@
 #pragma mark - UITableViewDelegate
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
-    PayWayTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PayWayTableViewCell" forIndexPath:indexPath];
+    PayWayTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PayWayTableViewCell"];
     switch (indexPath.row) {
         case 0:{
             cell.iconImageView.image = [UIImage imageNamed:@"绿色logo"];
