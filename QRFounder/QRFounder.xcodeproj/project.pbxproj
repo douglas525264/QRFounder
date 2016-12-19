@@ -22,6 +22,10 @@
 		A508DBD41DA64874004550BB /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A508DBD31DA64874004550BB /* BaiduMobAdSDK.framework */; };
 		A50FDA361CC789380027188C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA351CC789380027188C /* AddressBook.framework */; };
 		A50FDA381CC7893D0027188C /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA371CC7893D0027188C /* AddressBookUI.framework */; };
+		A5141AC31E07C4A200C4C23B /* PayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5141AC21E07C4A200C4C23B /* PayViewController.m */; };
+		A5141AC41E07C4A200C4C23B /* PayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5141AC21E07C4A200C4C23B /* PayViewController.m */; };
+		A5141AC71E07D15300C4C23B /* PayWayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5141AC61E07D15300C4C23B /* PayWayTableViewCell.m */; };
+		A5141AC81E07D15300C4C23B /* PayWayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5141AC61E07D15300C4C23B /* PayWayTableViewCell.m */; };
 		A52B83341DD569A20050BF4F /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A52B83331DD569A20050BF4F /* libGDTMobSDK.a */; };
 		A52B83361DD569F10050BF4F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52B83351DD569F10050BF4F /* Security.framework */; };
 		A52B833B1DD56F3C0050BF4F /* DXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B833A1DD56F3C0050BF4F /* DXAlertAction.m */; };
@@ -773,6 +777,10 @@
 		A508DBD31DA64874004550BB /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
 		A50FDA351CC789380027188C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		A50FDA371CC7893D0027188C /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
+		A5141AC11E07C4A200C4C23B /* PayViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayViewController.h; sourceTree = "<group>"; };
+		A5141AC21E07C4A200C4C23B /* PayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayViewController.m; sourceTree = "<group>"; };
+		A5141AC51E07D15300C4C23B /* PayWayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayWayTableViewCell.h; sourceTree = "<group>"; };
+		A5141AC61E07D15300C4C23B /* PayWayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayWayTableViewCell.m; sourceTree = "<group>"; };
 		A52B832E1DD569A20050BF4F /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
 		A52B832F1DD569A20050BF4F /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
 		A52B83301DD569A20050BF4F /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
@@ -1533,6 +1541,8 @@
 				A5520E171E03D2D00099670B /* BuyCollectionViewCell.h */,
 				A5520E181E03D2D00099670B /* BuyCollectionViewCell.m */,
 				A5520E191E03D2D00099670B /* BuyCollectionViewCell.xib */,
+				A5141AC51E07D15300C4C23B /* PayWayTableViewCell.h */,
+				A5141AC61E07D15300C4C23B /* PayWayTableViewCell.m */,
 			);
 			name = buycell;
 			sourceTree = "<group>";
@@ -1570,6 +1580,8 @@
 			children = (
 				A5520E261E03E7610099670B /* BuyItemViewController.h */,
 				A5520E271E03E7610099670B /* BuyItemViewController.m */,
+				A5141AC11E07C4A200C4C23B /* PayViewController.h */,
+				A5141AC21E07C4A200C4C23B /* PayViewController.m */,
 			);
 			name = Buy;
 			sourceTree = "<group>";
@@ -3176,7 +3188,9 @@
 				A55C5D511DFE53820081A8DF /* DXTextInfovViewController.m in Sources */,
 				A568C1E31E0002E700A58EE6 /* Lockmanager.m in Sources */,
 				A55C5D521DFE53820081A8DF /* DmDatabaseOperation.m in Sources */,
+				A5141AC41E07C4A200C4C23B /* PayViewController.m in Sources */,
 				A55C5D531DFE53820081A8DF /* dxBgView.m in Sources */,
+				A5141AC81E07D15300C4C23B /* PayWayTableViewCell.m in Sources */,
 				A55C5D541DFE53820081A8DF /* DXScanresultViewController.m in Sources */,
 				A55C5D551DFE53820081A8DF /* DmSearchCriteria.m in Sources */,
 				A5520E1B1E03D2D00099670B /* BuyCollectionViewCell.m in Sources */,
@@ -3238,6 +3252,7 @@
 				A5A8F49B1CF7021500019A7E /* NSString+DXCheck.m in Sources */,
 				A5520E281E03E7610099670B /* BuyItemViewController.m in Sources */,
 				D78418C11C746FC700850129 /* APPInfoView.m in Sources */,
+				A5141AC31E07C4A200C4C23B /* PayViewController.m in Sources */,
 				A55424721D3E3C1B00081141 /* UIActionSheet+RACExtends.m in Sources */,
 				D78418CD1C74703A00850129 /* HttpInfoView.m in Sources */,
 				D7130DA61C9AA5A50096768B /* QRShowViewController.m in Sources */,
@@ -3296,6 +3311,7 @@
 				A568C1E21E0002E700A58EE6 /* Lockmanager.m in Sources */,
 				D7FC156F1CA93F51009EAB4C /* DXScrollMenu.m in Sources */,
 				A5D76F821D3795D400AA8006 /* DBManager.m in Sources */,
+				A5141AC71E07D15300C4C23B /* PayWayTableViewCell.m in Sources */,
 				A50258F01CC76A68007B00E3 /* CardInfoTableViewCell.m in Sources */,
 				D78418BE1C746FAF00850129 /* CommenInfoView.m in Sources */,
 				A5D76F881D379E8D00AA8006 /* NSDictionary+DXHelper.m in Sources */,

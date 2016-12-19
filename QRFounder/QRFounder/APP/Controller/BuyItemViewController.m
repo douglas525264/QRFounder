@@ -9,6 +9,7 @@
 #import "BuyItemViewController.h"
 #import "BuyCollectionViewCell.h"
 #import "DXHelper.h"
+#import "PayViewController.h"
 @interface BuyItemViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @end
@@ -90,6 +91,10 @@
         [_collectionView  registerNib:[UINib nibWithNibName:@"BuyCollectionViewCell" bundle:[NSBundle mainBundle]] forCellWithReuseIdentifier:@"BuyCollectionViewCell"];
     }
     return _collectionView;
+}
+- (IBAction)paybtnCLick:(id)sender {
+    PayViewController *pvc = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"PayViewController"];
+    [self.navigationController pushViewController:pvc animated:YES];
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
