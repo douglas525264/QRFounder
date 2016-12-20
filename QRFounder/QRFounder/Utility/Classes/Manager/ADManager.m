@@ -30,10 +30,10 @@ static ADManager *amanager;
                 return  type;
                 break;
             default:
-                return ADTypeBaidu;
+                return ADTypeTencent;
                 break;
         }
     }
-    return ADTypeBaidu;
+    return ADTypeTencent;
 }
 @end
