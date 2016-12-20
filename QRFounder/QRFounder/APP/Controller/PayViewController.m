@@ -27,7 +27,6 @@
     
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
-    [self.tableView registerNib:[UINib nibWithNibName:@"PayWayTableViewCell" bundle:[NSBundle mainBundle]] forCellReuseIdentifier:@"PayWayTableViewCell"];
     self.tableView.backgroundColor = [UIColor clearColor];
     self.payBtn.layer.cornerRadius = 5;
     self.payBtn.layer.borderWidth = 1;
@@ -49,6 +48,11 @@
     return 60;
 }
 #pragma mark - UITableViewDelegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    [tableView deselectRowAtIndexPath:indexPath animated:YES];
+    currentIndex = indexPath.row;
+    [tableView reloadData];
+}
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
 
     PayWayTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:@"PayWayTableViewCell"];
@@ -69,11 +73,13 @@
         default:
             break;
     }
-    if (indexPath.row == currentIndex){
+    if (indexPath.row != currentIndex){
         cell.selectImageView.image = [UIImage imageNamed:@"selectNormalImage"];
     } else {
         cell.selectImageView.image = [UIImage imageNamed:@"selectedImage"];
     }
+    cell.backgroundColor = [UIColor clearColor];
+    
     return cell;
 }
 - (IBAction)payBtnClick:(id)sender {
