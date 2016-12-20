@@ -19,6 +19,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createUI];
+    self.navigationItem.title = @"付款方式";
     // Do any additional setup after loading the view.
 }
 - (void)createUI{

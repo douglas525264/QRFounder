@@ -10,6 +10,7 @@
 #import "BuyCollectionViewCell.h"
 #import "DXHelper.h"
 #import "PayViewController.h"
+#import "UILabel+ZYTool.h"
 @interface BuyItemViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @end
@@ -20,6 +21,13 @@
     [super viewDidLoad];
     [self.view addSubview:self.collectionView];
     self.view.backgroundColor = DefaultColor;
+    
+    UIBarButtonItem *backItem = [[UIBarButtonItem alloc] init];
+    backItem.title = @"返回";
+    self.navigationItem.backBarButtonItem = backItem;
+    self.payBtn.layer.borderWidth = 1;
+    self.payBtn.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.payBtn.layer.cornerRadius = 5;
     // Do any additional setup after loading the view.
 }
 - (void)setSourceItem:(DXmenuItem *)sourceItem {
@@ -49,13 +57,7 @@
 }
 
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath {
-    UICollectionReusableView *collResView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"View" forIndexPath:indexPath];
-    UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, 40, 20)];
-    lable.text = @"描述:";
-    lable.textColor = [UIColor whiteColor];
-    lable.font = [UIFont systemFontOfSize:14];
-    [collResView addSubview:lable];
-    UILabel *deslab = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, self.view.frame.size.width - 40 - 10, 90)];
+    UILabel *deslab = [[UILabel alloc] initWithFrame:CGRectMake(50, 20, self.view.frame.size.width - 40 - 10, 90)];
     
     deslab.text = self.sourceItem.des;
     deslab.textColor = [UIColor whiteColor];
@@ -64,6 +66,17 @@
     deslab.lineBreakMode = NSLineBreakByCharWrapping;
     deslab.numberOfLines = 0;
     deslab.backgroundColor = [UIColor clearColor];
+    [deslab AdjustCurrentFont];
+    
+    
+    UICollectionReusableView *collResView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"View" forIndexPath:indexPath];
+    UILabel *lable = [[UILabel alloc] initWithFrame:CGRectMake(10, 20, 40, 20)];
+    lable.text = @"描述:";
+    
+    lable.textColor = [UIColor whiteColor];
+    lable.font = [UIFont systemFontOfSize:14];
+    [lable AdjustCurrentFont];
+    [collResView addSubview:lable];
     [collResView addSubview:deslab];
     return collResView;
 }
@@ -81,7 +94,14 @@
         UICollectionViewFlowLayout *grid = [[UICollectionViewFlowLayout alloc] init];
         grid.itemSize = CGSizeMake(93.0, 93.0);
         grid.sectionInset = UIEdgeInsetsMake(0.0, 20.0, 20.0, 20.0);
-        grid.headerReferenceSize = CGSizeMake( self.view.frame.size.width, 100);
+        
+        UILabel *deslab = [[UILabel alloc] initWithFrame:CGRectMake(50, 10, self.view.frame.size.width - 40 - 10, 90)];
+        
+        deslab.text = self.sourceItem.des;
+        deslab.font = [UIFont systemFontOfSize:14];
+        [deslab AdjustCurrentFont];
+        
+        grid.headerReferenceSize = CGSizeMake( self.view.frame.size.width, deslab.frame.size.height + 40);
         _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64,self.view.frame.size.width , self.view.frame.size.height - self.bottomView.frame.size.height - 64) collectionViewLayout:grid];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;

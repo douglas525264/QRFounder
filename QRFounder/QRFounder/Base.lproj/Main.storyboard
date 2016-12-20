@@ -1096,7 +1096,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="订单金额：" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KjU-cI-6Uo">
-                                        <rect key="frame" x="8" y="53" width="96" height="21"/>
+                                        <rect key="frame" x="8" y="64" width="96" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="width" constant="96" id="Leo-Jv-qaQ"/>
                                             <constraint firstAttribute="height" constant="21" id="dFW-CI-YJW"/>
@@ -1115,7 +1115,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="￥6.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZzZ-h3-hBp">
-                                        <rect key="frame" x="91" y="53" width="276" height="21"/>
+                                        <rect key="frame" x="91" y="64" width="276" height="21"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="21" id="iuq-R1-drd"/>
                                         </constraints>
@@ -1124,16 +1124,15 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstItem="ZzZ-h3-hBp" firstAttribute="leading" secondItem="Pcn-dF-1Cf" secondAttribute="leading" constant="91" id="1ea-er-fu9"/>
                                     <constraint firstItem="TZq-I4-ecb" firstAttribute="top" secondItem="Pcn-dF-1Cf" secondAttribute="top" constant="25" id="NGJ-ZS-qMb"/>
                                     <constraint firstItem="9BH-eG-RIz" firstAttribute="leading" secondItem="Pcn-dF-1Cf" secondAttribute="leading" constant="91" id="PTU-y0-SwV"/>
-                                    <constraint firstItem="ZzZ-h3-hBp" firstAttribute="top" secondItem="9BH-eG-RIz" secondAttribute="bottom" constant="7" id="W0E-wK-TZb"/>
+                                    <constraint firstItem="ZzZ-h3-hBp" firstAttribute="top" secondItem="9BH-eG-RIz" secondAttribute="bottom" constant="18" id="W0E-wK-TZb"/>
                                     <constraint firstAttribute="trailing" secondItem="9BH-eG-RIz" secondAttribute="trailing" constant="18" id="bQO-kA-jLK"/>
                                     <constraint firstItem="KjU-cI-6Uo" firstAttribute="leading" secondItem="Pcn-dF-1Cf" secondAttribute="leading" constant="8" id="eHZ-C3-57g"/>
                                     <constraint firstItem="9BH-eG-RIz" firstAttribute="top" secondItem="Pcn-dF-1Cf" secondAttribute="top" constant="25" id="f6J-Sj-yL0"/>
-                                    <constraint firstItem="KjU-cI-6Uo" firstAttribute="top" secondItem="9BH-eG-RIz" secondAttribute="bottom" constant="7" id="g8Z-Ib-4hZ"/>
+                                    <constraint firstItem="KjU-cI-6Uo" firstAttribute="top" secondItem="9BH-eG-RIz" secondAttribute="bottom" constant="18" id="g8Z-Ib-4hZ"/>
                                     <constraint firstItem="TZq-I4-ecb" firstAttribute="leading" secondItem="Pcn-dF-1Cf" secondAttribute="leading" constant="8" id="gbJ-Jf-tet"/>
                                     <constraint firstAttribute="trailing" secondItem="ZzZ-h3-hBp" secondAttribute="trailing" constant="8" id="gqc-Mj-7L2"/>
                                     <constraint firstAttribute="height" constant="90" id="tVR-Cg-uWg"/>
@@ -1262,11 +1261,12 @@
                                 <rect key="frame" x="0.0" y="588" width="375" height="79"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIz-xu-4ug">
-                                        <rect key="frame" x="118" y="24" width="139" height="30"/>
+                                        <rect key="frame" x="72" y="19" width="230" height="41"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Nsz-Gf-wtI"/>
-                                            <constraint firstAttribute="width" constant="139" id="k8W-nc-H71"/>
+                                            <constraint firstAttribute="height" constant="41" id="Nsz-Gf-wtI"/>
+                                            <constraint firstAttribute="width" constant="230" id="k8W-nc-H71"/>
                                         </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="19"/>
                                         <state key="normal" title="立即支付(6元)">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         </state>
@@ -1275,7 +1275,6 @@
                                         </connections>
                                     </button>
                                 </subviews>
-                                <color key="backgroundColor" red="0.3094507104" green="1" blue="0.13805990400000001" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstItem="bIz-xu-4ug" firstAttribute="centerX" secondItem="22W-h8-9LJ" secondAttribute="centerX" id="PaP-PX-kGO"/>
                                     <constraint firstItem="bIz-xu-4ug" firstAttribute="centerY" secondItem="22W-h8-9LJ" secondAttribute="centerY" id="Ww6-s9-vqx"/>

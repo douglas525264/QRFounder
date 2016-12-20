@@ -660,6 +660,8 @@
 		A592A8A81DFC0A7700041A3C /* xiaoxinItem05.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A8071DFC0A7600041A3C /* xiaoxinItem05.png */; };
 		A592A8A91DFC0A7700041A3C /* xiaoxinitem06.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A8081DFC0A7600041A3C /* xiaoxinitem06.png */; };
 		A599E1FE1DFAC5EE00F43834 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A599E1FD1DFAC5ED00F43834 /* StoreKit.framework */; };
+		A59BFC731E08DAC200FC39D5 /* UILabel+ZYTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A59BFC721E08DAC200FC39D5 /* UILabel+ZYTool.m */; };
+		A59BFC741E08DAC200FC39D5 /* UILabel+ZYTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A59BFC721E08DAC200FC39D5 /* UILabel+ZYTool.m */; };
 		A5A8F49B1CF7021500019A7E /* NSString+DXCheck.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A8F49A1CF7021500019A7E /* NSString+DXCheck.m */; };
 		A5A8F4A21CF7056100019A7E /* DXWebViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5A8F4A11CF7056100019A7E /* DXWebViewController.m */; };
 		A5A8F4A41CF7059400019A7E /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5A8F4A31CF7059400019A7E /* WebKit.framework */; };
@@ -1082,6 +1084,8 @@
 		A592A8071DFC0A7600041A3C /* xiaoxinItem05.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiaoxinItem05.png; sourceTree = "<group>"; };
 		A592A8081DFC0A7600041A3C /* xiaoxinitem06.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = xiaoxinitem06.png; sourceTree = "<group>"; };
 		A599E1FD1DFAC5ED00F43834 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		A59BFC711E08DAC200FC39D5 /* UILabel+ZYTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UILabel+ZYTool.h"; sourceTree = "<group>"; };
+		A59BFC721E08DAC200FC39D5 /* UILabel+ZYTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UILabel+ZYTool.m"; sourceTree = "<group>"; };
 		A5A8F4991CF7021500019A7E /* NSString+DXCheck.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSString+DXCheck.h"; sourceTree = "<group>"; };
 		A5A8F49A1CF7021500019A7E /* NSString+DXCheck.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSString+DXCheck.m"; sourceTree = "<group>"; };
 		A5A8F4A01CF7056100019A7E /* DXWebViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXWebViewController.h; sourceTree = "<group>"; };
@@ -2229,6 +2233,8 @@
 		D78418911C7455C400850129 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				A59BFC711E08DAC200FC39D5 /* UILabel+ZYTool.h */,
+				A59BFC721E08DAC200FC39D5 /* UILabel+ZYTool.m */,
 				A55424701D3E3C1B00081141 /* UIActionSheet+RACExtends.h */,
 				A55424711D3E3C1B00081141 /* UIActionSheet+RACExtends.m */,
 				D74AAA131CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.h */,
@@ -3184,6 +3190,7 @@
 				A55C5D4D1DFE53820081A8DF /* NSManagedObject+NSManagedObject_BaseType.m in Sources */,
 				A55C5D4E1DFE53820081A8DF /* DXMenuBtn.m in Sources */,
 				A55C5D4F1DFE53820081A8DF /* AboutTableViewCell.m in Sources */,
+				A59BFC741E08DAC200FC39D5 /* UILabel+ZYTool.m in Sources */,
 				A55C5D501DFE53820081A8DF /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				A55C5D511DFE53820081A8DF /* DXTextInfovViewController.m in Sources */,
 				A568C1E31E0002E700A58EE6 /* Lockmanager.m in Sources */,
@@ -3292,6 +3299,7 @@
 				D78418601C74551200850129 /* ViewController.m in Sources */,
 				A5A8F4A21CF7056100019A7E /* DXWebViewController.m in Sources */,
 				D78418B31C745DB900850129 /* QRCreateViewController.m in Sources */,
+				A59BFC731E08DAC200FC39D5 /* UILabel+ZYTool.m in Sources */,
 				D78418EF1C7488D300850129 /* DXSelectView.m in Sources */,
 				A56FF93F1D50422500F61BD6 /* RecommendViewController.m in Sources */,
 				A5383F641DD4B26B008B4650 /* ColorModel.m in Sources */,
