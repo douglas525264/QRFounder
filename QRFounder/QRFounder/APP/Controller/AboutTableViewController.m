@@ -57,6 +57,14 @@
     self.versionLable.textAlignment = NSTextAlignmentCenter;
     [headerView addSubview:self.versionLable];
     self.tableView.tableHeaderView = headerView;
+    UILabel *corLable = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width , 100)];
+    corLable.numberOfLines = 0;
+    
+    corLable.text = @"北京予诚易信科技有限公司版权所有\n\nCopyright©2016-2020 YuChengYiXin.Inc.\n\nAll Rights Reserved";
+    corLable.textAlignment = NSTextAlignmentCenter;
+    corLable.textColor = [UIColor whiteColor];
+    corLable.font = [UIFont systemFontOfSize:12];
+    [self.view addSubview:corLable];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
