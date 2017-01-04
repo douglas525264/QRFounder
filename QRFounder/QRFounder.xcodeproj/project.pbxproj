@@ -26,6 +26,24 @@
 		A5141AC41E07C4A200C4C23B /* PayViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5141AC21E07C4A200C4C23B /* PayViewController.m */; };
 		A5141AC71E07D15300C4C23B /* PayWayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5141AC61E07D15300C4C23B /* PayWayTableViewCell.m */; };
 		A5141AC81E07D15300C4C23B /* PayWayTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5141AC61E07D15300C4C23B /* PayWayTableViewCell.m */; };
+		A529A1FD1E1CA5E40036E492 /* BCConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A529A1F41E1CA5E40036E492 /* BCConnectorBundle.framework */; };
+		A529A1FE1E1CA5E40036E492 /* BCConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A529A1F41E1CA5E40036E492 /* BCConnectorBundle.framework */; };
+		A529A1FF1E1CA5E40036E492 /* BCHybridWebViewFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A529A1F51E1CA5E40036E492 /* BCHybridWebViewFMWK.framework */; };
+		A529A2001E1CA5E40036E492 /* BCHybridWebViewFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A529A1F51E1CA5E40036E492 /* BCHybridWebViewFMWK.framework */; };
+		A529A2011E1CA5E40036E492 /* SecurityGuardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A529A1F61E1CA5E40036E492 /* SecurityGuardSDK.framework */; };
+		A529A2021E1CA5E40036E492 /* SecurityGuardSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A529A1F61E1CA5E40036E492 /* SecurityGuardSDK.framework */; };
+		A529A2031E1CA5E40036E492 /* SGMain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A529A1F71E1CA5E40036E492 /* SGMain.framework */; };
+		A529A2041E1CA5E40036E492 /* SGMain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A529A1F71E1CA5E40036E492 /* SGMain.framework */; };
+		A529A2051E1CA5E40036E492 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A529A1F81E1CA5E40036E492 /* UTDID.framework */; };
+		A529A2061E1CA5E40036E492 /* UTDID.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A529A1F81E1CA5E40036E492 /* UTDID.framework */; };
+		A529A2071E1CA5E40036E492 /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A529A1F91E1CA5E40036E492 /* UTMini.framework */; };
+		A529A2081E1CA5E40036E492 /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A529A1F91E1CA5E40036E492 /* UTMini.framework */; };
+		A529A20B1E1CA5E40036E492 /* YWFeedbackBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A529A1FB1E1CA5E40036E492 /* YWFeedbackBundle.bundle */; };
+		A529A20C1E1CA5E40036E492 /* YWFeedbackBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A529A1FB1E1CA5E40036E492 /* YWFeedbackBundle.bundle */; };
+		A529A20D1E1CA5E40036E492 /* YWFeedbackFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A529A1FC1E1CA5E40036E492 /* YWFeedbackFMWK.framework */; };
+		A529A20E1E1CA5E40036E492 /* YWFeedbackFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A529A1FC1E1CA5E40036E492 /* YWFeedbackFMWK.framework */; };
+		A529A2101E1CAABD0036E492 /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A529A20F1E1CAABD0036E492 /* yw_1222.jpg */; };
+		A529A2111E1CAABD0036E492 /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A529A20F1E1CAABD0036E492 /* yw_1222.jpg */; };
 		A52B83341DD569A20050BF4F /* libGDTMobSDK.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A52B83331DD569A20050BF4F /* libGDTMobSDK.a */; };
 		A52B83361DD569F10050BF4F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52B83351DD569F10050BF4F /* Security.framework */; };
 		A52B833B1DD56F3C0050BF4F /* DXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B833A1DD56F3C0050BF4F /* DXAlertAction.m */; };
@@ -783,6 +801,15 @@
 		A5141AC21E07C4A200C4C23B /* PayViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayViewController.m; sourceTree = "<group>"; };
 		A5141AC51E07D15300C4C23B /* PayWayTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayWayTableViewCell.h; sourceTree = "<group>"; };
 		A5141AC61E07D15300C4C23B /* PayWayTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayWayTableViewCell.m; sourceTree = "<group>"; };
+		A529A1F41E1CA5E40036E492 /* BCConnectorBundle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BCConnectorBundle.framework; sourceTree = "<group>"; };
+		A529A1F51E1CA5E40036E492 /* BCHybridWebViewFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BCHybridWebViewFMWK.framework; sourceTree = "<group>"; };
+		A529A1F61E1CA5E40036E492 /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
+		A529A1F71E1CA5E40036E492 /* SGMain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGMain.framework; sourceTree = "<group>"; };
+		A529A1F81E1CA5E40036E492 /* UTDID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTDID.framework; sourceTree = "<group>"; };
+		A529A1F91E1CA5E40036E492 /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
+		A529A1FB1E1CA5E40036E492 /* YWFeedbackBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YWFeedbackBundle.bundle; sourceTree = "<group>"; };
+		A529A1FC1E1CA5E40036E492 /* YWFeedbackFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YWFeedbackFMWK.framework; sourceTree = "<group>"; };
+		A529A20F1E1CAABD0036E492 /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = "<group>"; };
 		A52B832E1DD569A20050BF4F /* GDTMobBannerView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobBannerView.h; sourceTree = "<group>"; };
 		A52B832F1DD569A20050BF4F /* GDTMobInterstitial.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTMobInterstitial.h; sourceTree = "<group>"; };
 		A52B83301DD569A20050BF4F /* GDTNativeAd.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GDTNativeAd.h; sourceTree = "<group>"; };
@@ -1238,9 +1265,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A529A2001E1CA5E40036E492 /* BCHybridWebViewFMWK.framework in Frameworks */,
 				A55C5D861DFE53820081A8DF /* libresolv.tbd in Frameworks */,
 				A55C5D871DFE53820081A8DF /* UserNotifications.framework in Frameworks */,
 				A55C5D881DFE53820081A8DF /* libz.tbd in Frameworks */,
+				A529A2021E1CA5E40036E492 /* SecurityGuardSDK.framework in Frameworks */,
 				A55C5D891DFE53820081A8DF /* Security.framework in Frameworks */,
 				A55C5D8A1DFE53820081A8DF /* CoreGraphics.framework in Frameworks */,
 				A55C5D8B1DFE53820081A8DF /* SystemConfiguration.framework in Frameworks */,
@@ -1248,7 +1277,9 @@
 				A55C5D8D1DFE53820081A8DF /* CoreFoundation.framework in Frameworks */,
 				A55C5D8E1DFE53820081A8DF /* CFNetwork.framework in Frameworks */,
 				A55C5D8F1DFE53820081A8DF /* QuartzCore.framework in Frameworks */,
+				A529A2061E1CA5E40036E492 /* UTDID.framework in Frameworks */,
 				A55C5D901DFE53820081A8DF /* CoreLocation.framework in Frameworks */,
+				A529A2081E1CA5E40036E492 /* UTMini.framework in Frameworks */,
 				A55C5D911DFE53820081A8DF /* CoreMotion.framework in Frameworks */,
 				A55C5D921DFE53820081A8DF /* Contacts.framework in Frameworks */,
 				A55C5D931DFE53820081A8DF /* ShareSDKUI.framework in Frameworks */,
@@ -1257,17 +1288,20 @@
 				A55C5D961DFE53820081A8DF /* ShareSDKExtension.framework in Frameworks */,
 				A55C5D971DFE53820081A8DF /* AdSupport.framework in Frameworks */,
 				A55C5D981DFE53820081A8DF /* libc++.tbd in Frameworks */,
+				A529A20E1E1CA5E40036E492 /* YWFeedbackFMWK.framework in Frameworks */,
 				A55C5D991DFE53820081A8DF /* Foundation.framework in Frameworks */,
 				A55C5D9A1DFE53820081A8DF /* ShareSDKConnector.framework in Frameworks */,
 				A55C5D9B1DFE53820081A8DF /* ShareSDK.framework in Frameworks */,
 				A55C5D9C1DFE53820081A8DF /* AudioToolbox.framework in Frameworks */,
 				A55C5D9D1DFE53820081A8DF /* libWeChatSDK.a in Frameworks */,
 				A55C5D9E1DFE53820081A8DF /* EventKit.framework in Frameworks */,
+				A529A2041E1CA5E40036E492 /* SGMain.framework in Frameworks */,
 				A55C5D9F1DFE53820081A8DF /* Social.framework in Frameworks */,
 				A55C5DA01DFE53820081A8DF /* CoreText.framework in Frameworks */,
 				A55C5DA11DFE53820081A8DF /* TencentOpenAPI.framework in Frameworks */,
 				A55C5DA21DFE53820081A8DF /* CoreMedia.framework in Frameworks */,
 				A55C5DA31DFE53820081A8DF /* MOBFoundation.framework in Frameworks */,
+				A529A1FE1E1CA5E40036E492 /* BCConnectorBundle.framework in Frameworks */,
 				A55C5DA41DFE53820081A8DF /* BaiduMobAdSDK.framework in Frameworks */,
 				A55C5DA51DFE53820081A8DF /* libsqlite3.tbd in Frameworks */,
 				A55C5DA61DFE53820081A8DF /* ImageIO.framework in Frameworks */,
@@ -1289,9 +1323,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A529A1FF1E1CA5E40036E492 /* BCHybridWebViewFMWK.framework in Frameworks */,
 				A5EE9CA41DDADB3800753F90 /* libresolv.tbd in Frameworks */,
 				A5EE9CA21DDADB1B00753F90 /* UserNotifications.framework in Frameworks */,
 				A50459EA1D338FC3006C7D31 /* libz.tbd in Frameworks */,
+				A529A2011E1CA5E40036E492 /* SecurityGuardSDK.framework in Frameworks */,
 				A52B83361DD569F10050BF4F /* Security.framework in Frameworks */,
 				A5682CD61D35E02300E0AD8C /* CoreGraphics.framework in Frameworks */,
 				A5682CE21D35E06200E0AD8C /* SystemConfiguration.framework in Frameworks */,
@@ -1299,7 +1335,9 @@
 				A5EE9CA01DDADAEA00753F90 /* CoreFoundation.framework in Frameworks */,
 				A5EE9C9E1DDADADD00753F90 /* CFNetwork.framework in Frameworks */,
 				A5682CD21D35E00B00E0AD8C /* QuartzCore.framework in Frameworks */,
+				A529A2051E1CA5E40036E492 /* UTDID.framework in Frameworks */,
 				A549E73D1D7FFB0300651D23 /* CoreLocation.framework in Frameworks */,
+				A529A2071E1CA5E40036E492 /* UTMini.framework in Frameworks */,
 				A549E73B1D7FFAF300651D23 /* CoreMotion.framework in Frameworks */,
 				A554719F1D8FF5E700E4AF74 /* Contacts.framework in Frameworks */,
 				A5E315881D89553E00925D52 /* ShareSDKUI.framework in Frameworks */,
@@ -1308,17 +1346,20 @@
 				A5E315861D89553E00925D52 /* ShareSDKExtension.framework in Frameworks */,
 				A549E7391D7FFAE500651D23 /* AdSupport.framework in Frameworks */,
 				A549E7371D7FFAC800651D23 /* libc++.tbd in Frameworks */,
+				A529A20D1E1CA5E40036E492 /* YWFeedbackFMWK.framework in Frameworks */,
 				A5682CE41D35E07300E0AD8C /* Foundation.framework in Frameworks */,
 				A5E315921D89553E00925D52 /* ShareSDKConnector.framework in Frameworks */,
 				A5E315851D89553E00925D52 /* ShareSDK.framework in Frameworks */,
 				A5682CE01D35E05D00E0AD8C /* AudioToolbox.framework in Frameworks */,
 				A5E3158D1D89553E00925D52 /* libWeChatSDK.a in Frameworks */,
 				A5682CDE1D35E04600E0AD8C /* EventKit.framework in Frameworks */,
+				A529A2031E1CA5E40036E492 /* SGMain.framework in Frameworks */,
 				A5682CDC1D35E03D00E0AD8C /* Social.framework in Frameworks */,
 				A5682CD41D35E01A00E0AD8C /* CoreText.framework in Frameworks */,
 				A5E315891D89553E00925D52 /* TencentOpenAPI.framework in Frameworks */,
 				A5682CD01D35DFF700E0AD8C /* CoreMedia.framework in Frameworks */,
 				A5E315901D89553E00925D52 /* MOBFoundation.framework in Frameworks */,
+				A529A1FD1E1CA5E40036E492 /* BCConnectorBundle.framework in Frameworks */,
 				A508DBD41DA64874004550BB /* BaiduMobAdSDK.framework in Frameworks */,
 				A50459F11D339009006C7D31 /* libsqlite3.tbd in Frameworks */,
 				A50459F01D338FFF006C7D31 /* ImageIO.framework in Frameworks */,
@@ -1369,6 +1410,22 @@
 				A5D76F6A1D373D2200AA8006 /* AboutTableViewController.m */,
 			);
 			name = About;
+			sourceTree = "<group>";
+		};
+		A529A1F31E1CA5E40036E492 /* BCFeedback */ = {
+			isa = PBXGroup;
+			children = (
+				A529A20F1E1CAABD0036E492 /* yw_1222.jpg */,
+				A529A1F41E1CA5E40036E492 /* BCConnectorBundle.framework */,
+				A529A1F51E1CA5E40036E492 /* BCHybridWebViewFMWK.framework */,
+				A529A1F61E1CA5E40036E492 /* SecurityGuardSDK.framework */,
+				A529A1F71E1CA5E40036E492 /* SGMain.framework */,
+				A529A1F81E1CA5E40036E492 /* UTDID.framework */,
+				A529A1F91E1CA5E40036E492 /* UTMini.framework */,
+				A529A1FB1E1CA5E40036E492 /* YWFeedbackBundle.bundle */,
+				A529A1FC1E1CA5E40036E492 /* YWFeedbackFMWK.framework */,
+			);
+			path = BCFeedback;
 			sourceTree = "<group>";
 		};
 		A52B832D1DD569A20050BF4F /* GDTLib */ = {
@@ -2280,6 +2337,7 @@
 		D78418951C7455C400850129 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				A529A1F31E1CA5E40036E492 /* BCFeedback */,
 				A5EE9C991DDADAA500753F90 /* JPushLib */,
 				A52B832D1DD569A20050BF4F /* GDTLib */,
 				A5E315611D89553E00925D52 /* ShareSDK */,
@@ -2564,6 +2622,7 @@
 				A55C5DBA1DFE53820081A8DF /* ch12icon.png in Resources */,
 				A55C5DBB1DFE53820081A8DF /* chitem005.png in Resources */,
 				A55C5DBC1DFE53820081A8DF /* chitem002.png in Resources */,
+				A529A20C1E1CA5E40036E492 /* YWFeedbackBundle.bundle in Resources */,
 				A55C5DBD1DFE53820081A8DF /*  intelitem08.png in Resources */,
 				A55C5DBE1DFE53820081A8DF /* chitem007.png in Resources */,
 				A55C5DBF1DFE53820081A8DF /* ch08Item001.png in Resources */,
@@ -2713,6 +2772,7 @@
 				A55C5E501DFE53820081A8DF /* huanrenitem05.png in Resources */,
 				A55C5E511DFE53820081A8DF /* batterfly05_icon.png in Resources */,
 				A55C5E521DFE53820081A8DF /* CommenInfoView.xib in Resources */,
+				A529A2111E1CAABD0036E492 /* yw_1222.jpg in Resources */,
 				A55C5E531DFE53820081A8DF /* batterfly06.png in Resources */,
 				A55C5E541DFE53820081A8DF /* ch01_item003.png in Resources */,
 				A55C5E551DFE53820081A8DF /* ch06bigBorder.png in Resources */,
@@ -2822,6 +2882,7 @@
 				A592A8361DFC0A7700041A3C /* ch12icon.png in Resources */,
 				A592A8471DFC0A7700041A3C /* chitem005.png in Resources */,
 				A592A8441DFC0A7700041A3C /* chitem002.png in Resources */,
+				A529A20B1E1CA5E40036E492 /* YWFeedbackBundle.bundle in Resources */,
 				A592A8781DFC0A7700041A3C /*  intelitem08.png in Resources */,
 				A592A8491DFC0A7700041A3C /* chitem007.png in Resources */,
 				A592A8511DFC0A7700041A3C /* ch08Item001.png in Resources */,
@@ -2971,6 +3032,7 @@
 				A592A8741DFC0A7700041A3C /* huanrenitem05.png in Resources */,
 				A52B83CA1DD5CFC90050BF4F /* batterfly05_icon.png in Resources */,
 				D78418DB1C74879800850129 /* CommenInfoView.xib in Resources */,
+				A529A2101E1CAABD0036E492 /* yw_1222.jpg in Resources */,
 				A52B83CB1DD5CFC90050BF4F /* batterfly06.png in Resources */,
 				A592A80E1DFC0A7600041A3C /* ch01_item003.png in Resources */,
 				A592A8221DFC0A7600041A3C /* ch06bigBorder.png in Resources */,
@@ -3410,6 +3472,7 @@
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/Optional",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/QRFounder/Utility/Libs/BCFeedback",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -3459,6 +3522,7 @@
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/Optional",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/QRFounder/Utility/Libs/BCFeedback",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -3590,6 +3654,7 @@
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/Optional",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/QRFounder/Utility/Libs/BCFeedback",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
@@ -3639,6 +3704,7 @@
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/Optional",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/PlatformSDK/QQSDK",
 					"$(PROJECT_DIR)/QRFounder/Utility/Libs/ShareSDK/Support/Required",
+					"$(PROJECT_DIR)/QRFounder/Utility/Libs/BCFeedback",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"$(inherited)",
