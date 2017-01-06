@@ -68,11 +68,23 @@
 				<string>wb4242807488</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLName</key>
+			<string>hsajdas</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>4jipj1WM3Wn2Tjw</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1.2.5</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
+		<string>alipay</string>
+		<string>alipayshare</string>
 		<string>sinaweibo</string>
 		<string>sinaweibohd</string>
 		<string>sinaweibosso</string>

@@ -12,13 +12,13 @@
 #import <UMFeedback.h>
 #import "RecommendViewController.h"
 #import "AboutTableViewCell.h"
-#import <YWFeedbackFMWK/YWFeedbackKit.h>
-#import <YWFeedbackFMWK/YWFeedbackViewController.h>
+//#import <YWFeedbackFMWK/YWFeedbackKit.h>
+//#import <YWFeedbackFMWK/YWFeedbackViewController.h>
 @interface AboutTableViewController ()
 @property(nonatomic, strong) UIImageView *imageView;
 @property(nonatomic, strong) UILabel *versionLable;
 @property(nonatomic, strong) RecommendViewController *rVC;
-@property (nonatomic, strong) YWFeedbackKit *feedbackKit;
+//@property (nonatomic, strong) YWFeedbackKit *feedbackKit;
 @end
 
 @implementation AboutTableViewController
@@ -134,7 +134,7 @@
         }break;
         case 1:{
          
-            self.feedbackKit.extInfo = @{@"loginTime":[[NSDate date] description],
+            /*self.feedbackKit.extInfo = @{@"loginTime":[[NSDate date] description],
                                          @"visitPath":@"登陆->关于->反馈",
                                          @"userid":@"yourid",
                                          @"应用自定义扩展信息":@"开发者可以根据需要设置不同的自定义信息，方便在反馈系统中查看"};
@@ -150,11 +150,11 @@
                     }];
                 } else {
                     /** 使用自定义的方式抛出error时，此部分可以注释掉 */
-                    NSString *title = [error.userInfo objectForKey:@"msg"]?:@"接口调用失败，请保持网络通畅！";
+                   // NSString *title = [error.userInfo objectForKey:@"msg"]?:@"接口调用失败，请保持网络通畅！";
            
-                }
-            }];
-            
+            //    }
+   //         }];*/
+   
 
         }break;
         case 2:{
@@ -202,12 +202,12 @@
     }
     return _rVC;
 }
-- (YWFeedbackKit *)feedbackKit {
+/*- (YWFeedbackKit *)feedbackKit {
     if (!_feedbackKit) {
         _feedbackKit = [[YWFeedbackKit alloc] initWithAppKey:@"23533924"];
     }
     return _feedbackKit;
-}
+}*/
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

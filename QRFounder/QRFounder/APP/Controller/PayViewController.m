@@ -8,6 +8,7 @@
 
 #import "PayViewController.h"
 #import "DXHelper.h"
+#import "PayManager.h"
 @interface PayViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -84,6 +85,8 @@
     return cell;
 }
 - (IBAction)payBtnClick:(id)sender {
+    
+    [[PayManager shareInstance] payFor:@"圣诞节素材包" body:@"圣诞节素材详情" way:kPTWeixinPay amount:0.01];
 }
 
 - (void)didReceiveMemoryWarning {
