@@ -17,6 +17,6 @@
 
 - (NSString *)getFormatOrderId;
 
-- (void)payFor:(NSString *)subject body:(NSString *)body way:(CEPayType)way amount:(CGFloat)money;
+- (void)payFor:(NSString *)subject body:(NSString *)body way:(CEPayType)way amount:(CGFloat)money callBack:(void (^)(CEPaymentStatus status))block;
 
 @end

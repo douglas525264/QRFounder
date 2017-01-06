@@ -18,6 +18,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import "ADManager.h"
 #import "QRSourceManager.h"
+#import "FuqianlaPay.h"
 @interface QRFounderAppDelegate ()<GDTSplashAdDelegate,JPUSHRegisterDelegate,BaiduMobAdSplashDelegate>
 
 {
@@ -306,6 +307,15 @@ fetchCompletionHandler:
     }
     
     completionHandler();  // 系统要求执行这个方法
+}
+//AppDelegate
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    [FuqianlaPay handlePayCallBackUrl:url];
+    return YES;
+}
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
+    [FuqianlaPay handlePayCallBackUrl:url];
+    return YES;
 }
 
 #pragma mark - ADDelegate

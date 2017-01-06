@@ -24,10 +24,10 @@ static PayManager *pManager;
 - (NSString *)getFormatOrderId {
     return [self formatOrderId];
 }
-- (void)payFor:(NSString *)subject body:(NSString *)body way:(CEPayType)way amount:(CGFloat)money {
+- (void)payFor:(NSString *)subject body:(NSString *)body way:(CEPayType)way amount:(CGFloat)money callBack:(void (^)(CEPaymentStatus status))block {
     FuqianlaPay *manager = [FuqianlaPay sharedPayManager];
     [WXApi registerApp:@"wx03565949c4ef222b" withDescription:@"demo 2.0"];
-    manager.showPayStatusView = YES;
+    manager.showPayStatusView = NO;
 
     manager.transactionParams = @{
                                   @"app_id":@"UOIcpKx4jipj1WM3Wn2Tjw", @"order_no":[self formatOrderId],
