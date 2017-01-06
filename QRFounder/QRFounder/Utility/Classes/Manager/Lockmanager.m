@@ -37,6 +37,7 @@ static Lockmanager *lmanager;
         NSUserDefaults *de = [NSUserDefaults standardUserDefaults];
         [de setValue:self.lockInfoDic forKey:@"lockInfo"];
         [de synchronize];
+        [self.rac_LockStatusChangeSingle sendNext:@[@(index)]];
  
     }
     
@@ -63,6 +64,7 @@ static Lockmanager *lmanager;
 
         [de setValue:self.lockInfoDic forKey:@"lockInfo"];
         [de synchronize];
+        [self.rac_LockStatusChangeSingle sendNext:arr];
 
     }
 
@@ -92,4 +94,12 @@ static Lockmanager *lmanager;
     }
     return _lockInfoDic;
 }
+- (RACSubject *)rac_LockStatusChangeSingle {
+    if (!_rac_LockStatusChangeSingle) {
+        // RACSubject *sub = [RACSubject subject];
+        _rac_LockStatusChangeSingle =  [RACSubject subject];
+    }
+    return _rac_LockStatusChangeSingle;
+}
+
 @end

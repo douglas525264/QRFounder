@@ -8,7 +8,7 @@
 
 #import "PayViewController.h"
 #import "DXHelper.h"
-#import "PayManager.h"
+
 @interface PayViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -33,6 +33,8 @@
     self.payBtn.layer.cornerRadius = 5;
     self.payBtn.layer.borderWidth = 1;
     self.payBtn.layer.borderColor = [UIColor whiteColor].CGColor;
+    self.payItemTitleLable.text = self.name;
+    self.payNumLable.text = [NSString stringWithFormat:@"￥%.2f",self.price];
     
     
 }
@@ -86,7 +88,28 @@
 }
 - (IBAction)payBtnClick:(id)sender {
     
-    [[PayManager shareInstance] payFor:@"圣诞节素材包" body:@"圣诞节素材详情" way:kPTWeixinPay amount:0.01];
+    [[PayManager shareInstance] payFor:self.name body:self.name way:kPTWeixinPay amount:0.01 callBack:^(CEPaymentStatus status) {
+        if (self.statusBlock) {
+            self.statusBlock(self.idStr,status);
+        }
+        switch (status) {
+            case kCEPayResultSuccess:{
+                NSLog(@"成功了");
+                [self.payBtn setTitle:@"支付成功" forState:UIControlStateNormal];
+                
+            }break;
+            case kCEPayResultFail:{
+                NSLog(@"失败了");
+            }break;
+            case kCEPayResultCancel:{
+                NSLog(@"取消了");
+            }break;
+
+                
+            default:
+                break;
+        }
+    }];
 }
 
 - (void)didReceiveMemoryWarning {

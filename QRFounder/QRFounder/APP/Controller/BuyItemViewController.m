@@ -11,6 +11,7 @@
 #import "DXHelper.h"
 #import "PayViewController.h"
 #import "UILabel+ZYTool.h"
+#import "Lockmanager.h"
 @interface BuyItemViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @end
@@ -28,6 +29,7 @@
     self.payBtn.layer.borderWidth = 1;
     self.payBtn.layer.borderColor = [UIColor whiteColor].CGColor;
     self.payBtn.layer.cornerRadius = 5;
+    [self.payBtn setTitle:[NSString stringWithFormat:@"解锁全部素材:%.0f元",[self getPrice]] forState:UIControlStateNormal];
     // Do any additional setup after loading the view.
 }
 - (void)setSourceItem:(DXmenuItem *)sourceItem {
@@ -114,7 +116,40 @@
 }
 - (IBAction)paybtnCLick:(id)sender {
     PayViewController *pvc = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"PayViewController"];
+    pvc.name = self.sourceItem.title;
+    pvc.price = [self getPrice];
+    pvc.idStr = self.sourceItem.itemId;
+    pvc.desStr = self.sourceItem.title;
+    [pvc setStatusBlock:^(NSString *idstr, CEPaymentStatus st) {
+        if (st == kCEPayResultSuccess && [self.sourceItem.itemId isEqualToString:idstr]) {
+            
+            NSMutableArray *unlockArr = [[NSMutableArray alloc] init];
+            NSInteger i = 0;
+            for (DXSubMenuItem *sub in self.sourceItem.items) {
+                if (sub.isLock) {
+                    [unlockArr addObject:@(i)];
+                   
+                }
+                i++;
+            }
+            if (unlockArr.count >0) {
+                [[Lockmanager shareInstance]  unlock:idstr atIndexs:unlockArr];
+                [self.navigationController popToRootViewControllerAnimated:YES];
+            }
+            
+        }
+    }];
     [self.navigationController pushViewController:pvc animated:YES];
+}
+- (CGFloat)getPrice{
+
+    CGFloat allPrice = 0;
+    for (DXSubMenuItem *subItem in self.sourceItem.items) {
+        if (subItem.price) {
+            allPrice += subItem.price;
+        }
+    }
+    return allPrice;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

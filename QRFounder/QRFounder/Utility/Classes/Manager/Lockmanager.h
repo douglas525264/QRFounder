@@ -7,8 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import <ReactiveCocoa.h>
 @interface Lockmanager : NSObject
+@property (nonatomic, strong)RACSubject *rac_LockStatusChangeSingle;
 + (Lockmanager *)shareInstance;
 
 - (void)unlock:(NSString *)itemId atIndex:(NSInteger)index;

@@ -24,7 +24,7 @@
 @property (nonatomic, strong) DXScrollMenu *scrollMenu;
 
 @property (nonatomic, strong) NSMutableArray *sourceArr;
-
+@property (nonatomic, strong) DXmenuItem *currentMenuItem;
 @end
 
 @implementation QREditViewController
@@ -52,7 +52,26 @@
 #endif
      
     }
-
+   
+   
+    [[Lockmanager shareInstance].rac_LockStatusChangeSingle subscribeNext:^(NSArray  *arr) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (NSNumber *index  in arr) {
+                if (self.currentMenuItem) {
+                    NSIndexPath *path  = [NSIndexPath indexPathForRow:index.integerValue inSection:[self.sourceArr indexOfObject:self.currentMenuItem]];
+                    
+                    [self.scrollMenu unLockAtIndexPaths:@[path]];
+                    
+                }
+                
+            }
+            
+            NSArray *items = [self loaddata];
+            self.sourceArr = [NSMutableArray arrayWithArray:items];
+            
+  
+        });
+    }];
     // Do any additional setup after loading the view.
 }
 
@@ -214,16 +233,14 @@
     UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     BuyItemViewController *byVC = [mainStory instantiateViewControllerWithIdentifier:@"BuyItemViewController"];
     byVC.sourceItem = menu;
+    self.currentMenuItem = menu;
    // UINavigationController *rootnav = [[UINavigationController alloc] initWithRootViewController:byVC];
     [self.navigationController pushViewController:byVC animated:YES];
-  /*  [[Lockmanager shareInstance] unlock:menu.itemId atIndex:index];
-    NSIndexPath *path  = [NSIndexPath indexPathForRow:index inSection:[self.sourceArr indexOfObject:menu]];
     
-    [self.scrollMenu unLockAtIndexPaths:@[path]];
-    NSArray *items = [self loaddata];
-    self.sourceArr = [NSMutableArray arrayWithArray:items];*/
+    
 
 }
+
 - (IBAction)albumBtnClick:(id)sender {
     
     

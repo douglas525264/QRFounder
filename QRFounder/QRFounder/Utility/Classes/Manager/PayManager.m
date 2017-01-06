@@ -32,21 +32,14 @@ static PayManager *pManager;
     manager.transactionParams = @{
                                   @"app_id":@"UOIcpKx4jipj1WM3Wn2Tjw", @"order_no":[self formatOrderId],
                                   @"pmtTp":@(way),//     app
-                                  @"amount":@"0.01",
+                                  @"amount":[NSString stringWithFormat:@"%.2f",money],
                                   @"subject":subject,
                                   @"body":body,
                                   @"notify_url":@"http://10.100.140.124:8081/adapter-client/receive/notify.htm", };
     manager.payStatusCallBack = ^(CEPaymentStatus payStatus, NSString *result){
-        //如果京东支付切支付成功，保存京东支付token，以便下一次快捷支付
-        if(manager.payType == kPTJDPay && payStatus == kCEPayResultSuccess)
-        {
-            id token = [FuqianlaPay sharedPayManager].callCackParams;
-            NSLog(@"%@", token);
+        if (block) {
+            block(payStatus);
         }
-        if (payStatus == kCEPayResultSuccess) {
-            NSLog(@"支付成功");
-        }
-        NSLog(@"%@", result);
     };
     
     [manager startPayAction];
