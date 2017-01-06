@@ -88,7 +88,7 @@
 }
 - (IBAction)payBtnClick:(id)sender {
     
-    [[PayManager shareInstance] payFor:self.name body:self.name way:kPTWeixinPay amount:0.01 callBack:^(CEPaymentStatus status) {
+    [[PayManager shareInstance] payFor:self.name body:self.name way:kPTWeixinPay amount:self.price callBack:^(CEPaymentStatus status) {
         if (self.statusBlock) {
             self.statusBlock(self.idStr,status);
         }
