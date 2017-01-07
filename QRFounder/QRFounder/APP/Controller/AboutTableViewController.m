@@ -133,7 +133,7 @@
  
         }break;
         case 1:{
-         
+            [UMFeedback showFeedback:self withAppkey:@"57833c7f67e58e11620000ff"];
             /*self.feedbackKit.extInfo = @{@"loginTime":[[NSDate date] description],
                                          @"visitPath":@"登陆->关于->反馈",
                                          @"userid":@"yourid",
