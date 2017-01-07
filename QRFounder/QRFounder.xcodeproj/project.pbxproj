@@ -1157,7 +1157,7 @@
 		A57609A61CB287F8006F3F1B /* QRSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRSourceManager.m; sourceTree = "<group>"; };
 		A579DBD71D388D8100561CD3 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		A579DBD81D388D8100561CD3 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
-		A585877A1E212C200032E5E5 /* QRFounderPro-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "QRFounderPro-Info.plist"; sourceTree = "<group>"; };
+		A585877A1E212C200032E5E5 /* QRFounderPro-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "QRFounderPro-Info.plist"; sourceTree = SOURCE_ROOT; };
 		A58A55F71CA2EED6003C97B7 /* DXCommenQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXCommenQRView.h; sourceTree = "<group>"; };
 		A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXCommenQRView.m; sourceTree = "<group>"; };
 		A592A7591DFC0A7600041A3C /* ch01_bigborder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ch01_bigborder.png; sourceTree = "<group>"; };
@@ -2609,7 +2609,6 @@
 		D784184C1C74551200850129 = {
 			isa = PBXGroup;
 			children = (
-				A585877A1E212C200032E5E5 /* QRFounderPro-Info.plist */,
 				D78418571C74551200850129 /* QRFounder */,
 				D78418711C74551200850129 /* QRFounderTests */,
 				D784187C1C74551200850129 /* QRFounderUITests */,
@@ -2638,6 +2637,7 @@
 				D78418991C7455E500850129 /* WorkLog */,
 				D78418901C7455C400850129 /* Utility */,
 				D784188B1C7455BA00850129 /* APP */,
+				A585877A1E212C200032E5E5 /* QRFounderPro-Info.plist */,
 				D784185E1C74551200850129 /* ViewController.h */,
 				D784185F1C74551200850129 /* ViewController.m */,
 				D78418641C74551200850129 /* Assets.xcassets */,
