@@ -8,7 +8,7 @@
 
 #import "PayViewController.h"
 #import "DXHelper.h"
-
+#import <RACEXTScope.h>
 @interface PayViewController ()<UITableViewDelegate,UITableViewDataSource>
 
 @end
@@ -87,8 +87,9 @@
     return cell;
 }
 - (IBAction)payBtnClick:(id)sender {
-    
+    @weakify(self)
     [[PayManager shareInstance] payFor:self.name body:self.name way:kPTWeixinPay amount:self.price callBack:^(CEPaymentStatus status) {
+        @strongify(self)
         if (self.statusBlock) {
             self.statusBlock(self.idStr,status);
         }

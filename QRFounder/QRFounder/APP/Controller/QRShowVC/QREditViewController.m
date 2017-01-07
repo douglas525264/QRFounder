@@ -17,6 +17,7 @@
 #import "GDTMobBannerView.h"
 #import "ADManager.h"
 #import "Lockmanager.h"
+#import <RACEXTScope.h>
 #import "BuyItemViewController.h"
 @interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,BaiduMobAdViewDelegate,GDTMobBannerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *toolView;
@@ -53,9 +54,10 @@
      
     }
    
-   
+    @weakify(self)
     [[Lockmanager shareInstance].rac_LockStatusChangeSingle subscribeNext:^(NSArray  *arr) {
         dispatch_async(dispatch_get_main_queue(), ^{
+            @strongify(self)
             for (NSNumber *index  in arr) {
                 if (self.currentMenuItem) {
                     NSIndexPath *path  = [NSIndexPath indexPathForRow:index.integerValue inSection:[self.sourceArr indexOfObject:self.currentMenuItem]];
@@ -76,6 +78,7 @@
 }
 
 - (void)createAD {
+    return;
         if ([[ADManager shareInstance] getAdType] == ADTypeBaidu) {
         [BaiduMobAdSetting setLpStyle:BaiduMobAdLpStyleDefault];
         sharedAdView = [[BaiduMobAdView alloc] init]; //把在mssp.baidu.com上创建后获得的代码位id写到这里

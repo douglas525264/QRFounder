@@ -12,6 +12,7 @@
 #import "PayViewController.h"
 #import "UILabel+ZYTool.h"
 #import "Lockmanager.h"
+#import <RACEXTScope.h>
 @interface BuyItemViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView *collectionView;
 @end
@@ -120,7 +121,9 @@
     pvc.price = [self getPrice];
     pvc.idStr = self.sourceItem.itemId;
     pvc.desStr = self.sourceItem.title;
+    @weakify(self)
     [pvc setStatusBlock:^(NSString *idstr, CEPaymentStatus st) {
+        @strongify(self)
         if (st == kCEPayResultSuccess && [self.sourceItem.itemId isEqualToString:idstr]) {
             
             NSMutableArray *unlockArr = [[NSMutableArray alloc] init];
@@ -145,7 +148,7 @@
 
     CGFloat allPrice = 0;
     for (DXSubMenuItem *subItem in self.sourceItem.items) {
-        if (subItem.price) {
+        if (subItem.price && subItem.isLock) {
             allPrice += subItem.price;
         }
     }
