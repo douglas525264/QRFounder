@@ -78,7 +78,6 @@
 }
 
 - (void)createAD {
-    return;
         if ([[ADManager shareInstance] getAdType] == ADTypeBaidu) {
         [BaiduMobAdSetting setLpStyle:BaiduMobAdLpStyleDefault];
         sharedAdView = [[BaiduMobAdView alloc] init]; //把在mssp.baidu.com上创建后获得的代码位id写到这里
