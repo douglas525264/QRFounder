@@ -544,6 +544,7 @@
 		A56FFA331D50B67A00F61BD6 /* AboutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A56FFA321D50B67A00F61BD6 /* AboutTableViewCell.xib */; };
 		A57609A71CB287F8006F3F1B /* QRSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A57609A61CB287F8006F3F1B /* QRSourceManager.m */; };
 		A579DBD91D388D8100561CD3 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A579DBD81D388D8100561CD3 /* HistoryViewController.m */; };
+		A585877B1E212C200032E5E5 /* QRFounderPro-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A585877A1E212C200032E5E5 /* QRFounderPro-Info.plist */; };
 		A58A55F91CA2EED6003C97B7 /* DXCommenQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */; };
 		A592A8091DFC0A7600041A3C /* ch01_bigborder.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A7591DFC0A7600041A3C /* ch01_bigborder.png */; };
 		A592A80A1DFC0A7600041A3C /* ch01_chitemBorder.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A75A1DFC0A7600041A3C /* ch01_chitemBorder.png */; };
@@ -1134,7 +1135,6 @@
 		A55424711D3E3C1B00081141 /* UIActionSheet+RACExtends.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIActionSheet+RACExtends.m"; sourceTree = "<group>"; };
 		A554719E1D8FF5E700E4AF74 /* Contacts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Contacts.framework; path = System/Library/Frameworks/Contacts.framework; sourceTree = SDKROOT; };
 		A55C5EB21DFE53820081A8DF /* QRFounderPro.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = QRFounderPro.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		A55C5EB31DFE53820081A8DF /* QRFounderPro-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "QRFounderPro-Info.plist"; path = "/Users/douglas/Desktop/QRFounder001/QRFounder/QRFounderPro-Info.plist"; sourceTree = "<absolute>"; };
 		A55C5EF31DFE89980081A8DF /* APPStoreManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = APPStoreManager.h; sourceTree = "<group>"; };
 		A55C5EF41DFE89980081A8DF /* APPStoreManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = APPStoreManager.m; sourceTree = "<group>"; };
 		A5682CCF1D35DFF700E0AD8C /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
@@ -1157,6 +1157,7 @@
 		A57609A61CB287F8006F3F1B /* QRSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRSourceManager.m; sourceTree = "<group>"; };
 		A579DBD71D388D8100561CD3 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		A579DBD81D388D8100561CD3 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
+		A585877A1E212C200032E5E5 /* QRFounderPro-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "QRFounderPro-Info.plist"; sourceTree = "<group>"; };
 		A58A55F71CA2EED6003C97B7 /* DXCommenQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXCommenQRView.h; sourceTree = "<group>"; };
 		A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXCommenQRView.m; sourceTree = "<group>"; };
 		A592A7591DFC0A7600041A3C /* ch01_bigborder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ch01_bigborder.png; sourceTree = "<group>"; };
@@ -2608,13 +2609,13 @@
 		D784184C1C74551200850129 = {
 			isa = PBXGroup;
 			children = (
+				A585877A1E212C200032E5E5 /* QRFounderPro-Info.plist */,
 				D78418571C74551200850129 /* QRFounder */,
 				D78418711C74551200850129 /* QRFounderTests */,
 				D784187C1C74551200850129 /* QRFounderUITests */,
 				D78418561C74551200850129 /* Products */,
 				1F2384E57598E60F1ABB9D70 /* Pods */,
 				CC25F21FA19289206F13E26A /* Frameworks */,
-				A55C5EB31DFE53820081A8DF /* QRFounderPro-Info.plist */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3439,6 +3440,7 @@
 				A52B83D71DD5CFC90050BF4F /* birthday005_icon.png in Resources */,
 				A592A83E1DFC0A7700041A3C /* ch12item08.png in Resources */,
 				A52B840C1DD5CFC90050BF4F /* QRlogoSource.plist in Resources */,
+				A585877B1E212C200032E5E5 /* QRFounderPro-Info.plist in Resources */,
 				A52B83BF1DD5CFC90050BF4F /* weixingreen.png in Resources */,
 				A5E432AB1E21183A0010FD71 /* ny03BigBorder.png in Resources */,
 				A5E4329F1E21183A0010FD71 /* ny02BorIcon.png in Resources */,
