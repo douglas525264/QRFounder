@@ -104,7 +104,7 @@
         [deslab AdjustCurrentFont];
         
         grid.headerReferenceSize = CGSizeMake( self.view.frame.size.width, deslab.frame.size.height + 40);
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64,self.view.frame.size.width , self.view.frame.size.height - self.bottomView.frame.size.height - 64) collectionViewLayout:grid];
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(0, 64,ScreenWidth , ScreenHeight - 64 - 64) collectionViewLayout:grid];
         _collectionView.delegate = self;
         _collectionView.dataSource = self;
         _collectionView.backgroundColor = [UIColor clearColor];
