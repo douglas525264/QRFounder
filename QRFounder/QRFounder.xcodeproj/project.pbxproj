@@ -3039,7 +3039,7 @@
 				TargetAttributes = {
 					A55C5D431DFE53820081A8DF = {
 						DevelopmentTeam = B6H7GPKGQJ;
-						ProvisioningStyle = Automatic;
+						ProvisioningStyle = Manual;
 					};
 					D78418541C74551200850129 = {
 						CreatedOnToolsVersion = 7.2;
@@ -4094,7 +4094,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppProIcon;
 				CODE_SIGN_ENTITLEMENTS = QRFounder/QRFounder.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: xin dong (B6H7GPKGQJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = B6H7GPKGQJ;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4145,8 +4145,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.qrcodepro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "780405c6-3eac-4c2b-bd3a-4776c78d8be2";
+				PROVISIONING_PROFILE_SPECIFIER = QRPRODIS;
 			};
 			name = Debug;
 		};
@@ -4157,7 +4157,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppProIcon;
 				CODE_SIGN_ENTITLEMENTS = QRFounder/QRFounder.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: xin dong (B6H7GPKGQJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
 				DEVELOPMENT_TEAM = B6H7GPKGQJ;
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
@@ -4208,8 +4208,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.qrcodepro;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "";
-				PROVISIONING_PROFILE_SPECIFIER = "";
+				PROVISIONING_PROFILE = "780405c6-3eac-4c2b-bd3a-4776c78d8be2";
+				PROVISIONING_PROFILE_SPECIFIER = QRPRODIS;
 			};
 			name = Release;
 		};
