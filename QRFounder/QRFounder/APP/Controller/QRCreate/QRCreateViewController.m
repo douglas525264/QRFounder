@@ -29,6 +29,7 @@
 #import "QRFounderAppDelegate.h"
 #import <ZBarSDK.h>
 #import "QRScanViewController.h"
+#import "APPStoreManager.h"
 #define createBtnWidth 120
 @interface QRCreateViewController ()<UIImagePickerControllerDelegate>
 @property (nonatomic, strong)DXSelectView *selectView;
@@ -82,9 +83,12 @@
     self.navigationItem.leftBarButtonItem = [[UIBarButtonItem alloc] initWithCustomView:profileBtn];
     
     self.navigationItem.rightBarButtonItem = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemRefresh target:self action:@selector(historyBtnClick:)];
-    
+#if QRFounderPRO
+   
+#else
     QRFounderAppDelegate *appde = [UIApplication sharedApplication].delegate;
     [appde addAD];
+#endif
 
     
 }
@@ -227,7 +231,8 @@
 }
 
 - (void)createBtnClick:(UIButton *)sender {
-
+//    [[APPStoreManager shareInstance] buyProductByid:@"qrcodeitem02"];
+//    return;
     NSString *qrStr = [self.currentInfoView getResultInfoStr];
     if (!qrStr || qrStr.length == 0) {
         

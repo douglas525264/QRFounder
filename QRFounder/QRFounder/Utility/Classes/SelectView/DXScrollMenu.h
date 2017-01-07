@@ -13,4 +13,7 @@
 @property (nonatomic, strong) NSArray *menuItems;
 
 @property (nonatomic,copy) void (^selectFinishedCallBack)(NSIndexPath *path,NSInteger tag);
+
+- (void)unLockAtIndexPaths:(NSArray*)array;
+- (void)setMenuItems:(NSArray *)menuItems isReload:(BOOL)isreload;
 @end

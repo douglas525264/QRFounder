@@ -12,10 +12,13 @@
 #import <UMFeedback.h>
 #import "RecommendViewController.h"
 #import "AboutTableViewCell.h"
+//#import <YWFeedbackFMWK/YWFeedbackKit.h>
+//#import <YWFeedbackFMWK/YWFeedbackViewController.h>
 @interface AboutTableViewController ()
 @property(nonatomic, strong) UIImageView *imageView;
 @property(nonatomic, strong) UILabel *versionLable;
 @property(nonatomic, strong) RecommendViewController *rVC;
+//@property (nonatomic, strong) YWFeedbackKit *feedbackKit;
 @end
 
 @implementation AboutTableViewController
@@ -44,7 +47,12 @@
     self.imageView.frame = CGRectMake(self.view.frame.size.width/2 - 30, 30, 60, 60);
     self.imageView.layer.cornerRadius = 10;
     self.imageView.layer.masksToBounds = YES;
+#if QRFounderPRO
+    self.imageView.image = [UIImage imageNamed:@"newiconPro_180"];
+#else 
     self.imageView.image = [UIImage imageNamed:@"appIcon_180"];
+#endif
+    
     [headerView addSubview:self.imageView];
     self.versionLable.frame = CGRectMake(0, self.imageView.frame.origin.y + self.imageView.frame.size.height + 10, self.view.frame.size.width, 20);
     self.versionLable.textColor = [UIColor whiteColor];
@@ -52,14 +60,22 @@
     self.versionLable.textAlignment = NSTextAlignmentCenter;
     [headerView addSubview:self.versionLable];
     self.tableView.tableHeaderView = headerView;
+    UILabel *corLable = [[UILabel alloc] initWithFrame:CGRectMake(0, self.view.frame.size.height - 150, self.view.frame.size.width , 100)];
+    corLable.numberOfLines = 0;
+    
+    corLable.text = @"北京予诚易信科技有限公司版权所有\n\nCopyright©2016-2020 YuChengYiXin.Inc.\n\nAll Rights Reserved";
+    corLable.textAlignment = NSTextAlignmentCenter;
+    corLable.textColor = [UIColor whiteColor];
+    corLable.font = [UIFont systemFontOfSize:12];
+    [self.view addSubview:corLable];
 }
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
 
     return 1;
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-
-    return 4;
+    
+    return isQRFounderPRO ? 4 : 5;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return IS_IPAD ? 65 : 55;
@@ -86,7 +102,15 @@
           cell.actionLable.text = @"推荐给朋友";
         }break;
         case 3:{
-          cell.actionLable.text = @"更多功能敬请期待";
+            if (!isQRFounderPRO) {
+              cell.actionLable.text = @"去除广告";
+            } else {
+              cell.actionLable.text = @"更多功能敬请期待";
+            }
+          
+        }break;
+        case 4:{
+            cell.actionLable.text = @"更多功能敬请期待";
         }break;
         
         default:
@@ -109,11 +133,43 @@
  
         }break;
         case 1:{
-         [UMFeedback showFeedback:self withAppkey:@"57833c7f67e58e11620000ff"];
+         
+            /*self.feedbackKit.extInfo = @{@"loginTime":[[NSDate date] description],
+                                         @"visitPath":@"登陆->关于->反馈",
+                                         @"userid":@"yourid",
+                                         @"应用自定义扩展信息":@"开发者可以根据需要设置不同的自定义信息，方便在反馈系统中查看"};
+            
+            __weak typeof(self) weakSelf = self;
+            [self.feedbackKit makeFeedbackViewControllerWithCompletionBlock:^(YWFeedbackViewController *viewController, NSError *error) {
+                if (viewController != nil) {
+                    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
+                    [weakSelf presentViewController:nav animated:YES completion:nil];
+                    
+                    [viewController setCloseBlock:^(UIViewController *aParentController){
+                        [aParentController dismissViewControllerAnimated:YES completion:nil];
+                    }];
+                } else {
+                    /** 使用自定义的方式抛出error时，此部分可以注释掉 */
+                   // NSString *title = [error.userInfo objectForKey:@"msg"]?:@"接口调用失败，请保持网络通畅！";
+           
+            //    }
+   //         }];*/
+   
+
         }break;
         case 2:{
             [[[UIApplication sharedApplication] keyWindow] addSubview:self.rVC.view];
         }break;
+        case 3:{
+            if (!isQRFounderPRO) {
+                NSString *strUrl = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id1185233985"];
+                NSURL *url = [NSURL URLWithString:strUrl];
+                [[UIApplication sharedApplication] openURL:url];
+
+            }
+           
+        }break;
+
             
         default:
             break;
@@ -146,6 +202,13 @@
     }
     return _rVC;
 }
+/*- (YWFeedbackKit *)feedbackKit {
+    if (!_feedbackKit) {
+        _feedbackKit = [[YWFeedbackKit alloc] initWithAppKey:@"23533924"];
+    }
+    return _feedbackKit;
+}*/
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.

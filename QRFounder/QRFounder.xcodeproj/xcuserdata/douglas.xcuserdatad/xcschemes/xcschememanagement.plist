@@ -6,12 +6,24 @@
 	<dict>
 		<key>QRFounder.xcscheme</key>
 		<dict>
+			<key>isShown</key>
+			<true/>
 			<key>orderHint</key>
 			<integer>0</integer>
+		</dict>
+		<key>QRFounderPro.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>7</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
+		<key>A55C5D431DFE53820081A8DF</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>D78418541C74551200850129</key>
 		<dict>
 			<key>primary</key>

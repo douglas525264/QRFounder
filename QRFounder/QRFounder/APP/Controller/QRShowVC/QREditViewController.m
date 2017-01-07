@@ -16,13 +16,15 @@
 #import "DXHelper.h"
 #import "GDTMobBannerView.h"
 #import "ADManager.h"
+#import "Lockmanager.h"
+#import "BuyItemViewController.h"
 @interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,BaiduMobAdViewDelegate,GDTMobBannerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 
 @property (nonatomic, strong) DXScrollMenu *scrollMenu;
 
 @property (nonatomic, strong) NSMutableArray *sourceArr;
-
+@property (nonatomic, strong) DXmenuItem *currentMenuItem;
 @end
 
 @implementation QREditViewController
@@ -31,16 +33,45 @@
     GDTMobBannerView *_bannerView;
 
 }
+- (void)viewWillAppear:(BOOL)animated {
+    [super viewWillAppear:animated];
+    [self.navigationController setNavigationBarHidden:YES animated:YES];
+   
+}
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.qrView.qrModel = self.qrModel;
+    
     self.toolView.backgroundColor = [UIColor clearColor];
     self.view.backgroundColor = DefaultColor;
     if (ADENABLE) {
-
-     [self createAD];
+#if QRFounderPRO
+        
+#else
+        [self createAD];
+#endif
+     
     }
-    
+   
+   
+    [[Lockmanager shareInstance].rac_LockStatusChangeSingle subscribeNext:^(NSArray  *arr) {
+        dispatch_async(dispatch_get_main_queue(), ^{
+            for (NSNumber *index  in arr) {
+                if (self.currentMenuItem) {
+                    NSIndexPath *path  = [NSIndexPath indexPathForRow:index.integerValue inSection:[self.sourceArr indexOfObject:self.currentMenuItem]];
+                    
+                    [self.scrollMenu unLockAtIndexPaths:@[path]];
+                    
+                }
+                
+            }
+            
+            NSArray *items = [self loaddata];
+            self.sourceArr = [NSMutableArray arrayWithArray:items];
+            
+  
+        });
+    }];
     // Do any additional setup after loading the view.
 }
 
@@ -94,6 +125,8 @@
     
 }
 - (void)setQRDiyModel:(DIYModel *)diy {
+    
+    
     if ([[DXHelper shareInstance] needShowLike]) {
         [[DXHelper shareInstance] showLikeInVC:self];
     } else {
@@ -172,7 +205,12 @@
                         }
                     }break;
                     case QREditTypeDIY:{
-                        [strongSelf setQRDiyModel:subitem.diyModel];
+                        if (!subitem.isLock) {
+                           [strongSelf setQRDiyModel:subitem.diyModel];
+                        } else {
+                            [strongSelf showUnlockWithItem:item AndIndex:path.row];
+                        }
+                        
                     }break;
                     case QREditTypeMoreColor:{
                         
@@ -190,6 +228,19 @@
     }];
 
 }
+- (void)showUnlockWithItem:(DXmenuItem *)menu AndIndex:(NSInteger)index {
+    //正常弹出详情界面
+    UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    BuyItemViewController *byVC = [mainStory instantiateViewControllerWithIdentifier:@"BuyItemViewController"];
+    byVC.sourceItem = menu;
+    self.currentMenuItem = menu;
+   // UINavigationController *rootnav = [[UINavigationController alloc] initWithRootViewController:byVC];
+    [self.navigationController pushViewController:byVC animated:YES];
+    
+    
+
+}
+
 - (IBAction)albumBtnClick:(id)sender {
     
     

@@ -18,6 +18,7 @@
 #import <UserNotifications/UserNotifications.h>
 #import "ADManager.h"
 #import "QRSourceManager.h"
+#import "FuqianlaPay.h"
 @interface QRFounderAppDelegate ()<GDTSplashAdDelegate,JPUSHRegisterDelegate,BaiduMobAdSplashDelegate>
 
 {
@@ -72,7 +73,13 @@
         [JPUSHService registerForRemoteNotificationTypes:(UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound | UIRemoteNotificationTypeAlert)
                                               categories:nil];
     }
-    [JPUSHService setupWithOption:launchOptions appKey:@"60d3cc145c063150ad77c2db"
+    NSString *appkey = @"60d3cc145c063150ad77c2db";
+#if QRFounderPRO
+    appkey = @"33493e653a92bedeb7c792b8";
+#else
+    
+#endif
+    [JPUSHService setupWithOption:launchOptions appKey:appkey
                           channel:@"pushChannel1"
                  apsForProduction:NO
             advertisingIdentifier:nil];
@@ -300,6 +307,15 @@ fetchCompletionHandler:
     }
     
     completionHandler();  // 系统要求执行这个方法
+}
+//AppDelegate
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    [FuqianlaPay handlePayCallBackUrl:url];
+    return YES;
+}
+- (BOOL)application:(UIApplication *)app openURL:(NSURL *)url options:(NSDictionary<NSString *,id> *)options {
+    [FuqianlaPay handlePayCallBackUrl:url];
+    return YES;
 }
 
 #pragma mark - ADDelegate

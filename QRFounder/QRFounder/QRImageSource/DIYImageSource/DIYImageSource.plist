@@ -810,11 +810,21 @@
 			</array>
 		</dict>
 		<dict>
+			<key>des</key>
+			<string>圣诞节素材包是专门为圣诞节定制的一款素材包，赶快动起你的小手，做一款心仪的二维码送上祝福吧</string>
+			<key>sourcename</key>
+			<string>圣诞节素材包</string>
+			<key>diysourceid</key>
+			<string>chrismas001</string>
 			<key>iconName</key>
 			<string>ch08item04</string>
 			<key>menulist</key>
 			<array>
 				<dict>
+					<key>price</key>
+					<integer>0</integer>
+					<key>islock</key>
+					<false/>
 					<key>borderlist</key>
 					<array>
 						<dict>
@@ -927,6 +937,10 @@
 					</array>
 				</dict>
 				<dict>
+					<key>price</key>
+					<integer>0</integer>
+					<key>islock</key>
+					<false/>
 					<key>bigBorderInfo</key>
 					<dict>
 						<key>hScale</key>
@@ -1052,6 +1066,10 @@
 					</array>
 				</dict>
 				<dict>
+					<key>price</key>
+					<integer>0</integer>
+					<key>islock</key>
+					<false/>
 					<key>borderlist</key>
 					<array>
 						<dict>
@@ -1214,6 +1232,10 @@
 					</array>
 				</dict>
 				<dict>
+					<key>price</key>
+					<integer>2</integer>
+					<key>islock</key>
+					<true/>
 					<key>bigBorderInfo</key>
 					<dict>
 						<key>hScale</key>
@@ -1389,6 +1411,10 @@
 					</array>
 				</dict>
 				<dict>
+					<key>islock</key>
+					<false/>
+					<key>price</key>
+					<integer>0</integer>
 					<key>borderlist</key>
 					<array>
 						<dict>
@@ -1481,6 +1507,10 @@
 					</array>
 				</dict>
 				<dict>
+					<key>price</key>
+					<integer>3</integer>
+					<key>islock</key>
+					<true/>
 					<key>bigBorderInfo</key>
 					<dict>
 						<key>hScale</key>
@@ -1586,6 +1616,10 @@
 					</array>
 				</dict>
 				<dict>
+					<key>price</key>
+					<integer>0</integer>
+					<key>islock</key>
+					<false/>
 					<key>borderlist</key>
 					<array>
 						<dict>
@@ -1658,6 +1692,10 @@
 					</array>
 				</dict>
 				<dict>
+					<key>price</key>
+					<integer>2</integer>
+					<key>islock</key>
+					<true/>
 					<key>bigBorderInfo</key>
 					<dict>
 						<key>hScale</key>
@@ -1743,6 +1781,10 @@
 					</array>
 				</dict>
 				<dict>
+					<key>price</key>
+					<integer>0</integer>
+					<key>islock</key>
+					<false/>
 					<key>borderlist</key>
 					<array>
 						<dict>
@@ -1875,6 +1917,10 @@
 					</array>
 				</dict>
 				<dict>
+					<key>price</key>
+					<integer>0</integer>
+					<key>islock</key>
+					<false/>
 					<key>bigBorderInfo</key>
 					<dict>
 						<key>hScale</key>
@@ -2020,6 +2066,10 @@
 					</array>
 				</dict>
 				<dict>
+					<key>price</key>
+					<integer>0</integer>
+					<key>islock</key>
+					<false/>
 					<key>borderlist</key>
 					<array>
 						<dict>
@@ -2152,6 +2202,10 @@
 					</array>
 				</dict>
 				<dict>
+					<key>price</key>
+					<integer>0</integer>
+					<key>islock</key>
+					<false/>
 					<key>bigBorderInfo</key>
 					<dict>
 						<key>hScale</key>
