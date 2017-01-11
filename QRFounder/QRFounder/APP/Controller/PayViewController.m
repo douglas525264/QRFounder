@@ -45,7 +45,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
 
-    return 1;
+    return 2;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
 
@@ -88,7 +88,7 @@
 }
 - (IBAction)payBtnClick:(id)sender {
     @weakify(self)
-    [[PayManager shareInstance] payFor:self.name body:self.name way:kPTWeixinPay amount:self.price callBack:^(CEPaymentStatus status) {
+    [[PayManager shareInstance] payFor:self.name body:self.name way:currentIndex==0 ?  kPTWeixinPay : kPTAlipay amount:0.01 callBack:^(CEPaymentStatus status) {
         @strongify(self)
         if (self.statusBlock) {
             self.statusBlock(self.idStr,status);
