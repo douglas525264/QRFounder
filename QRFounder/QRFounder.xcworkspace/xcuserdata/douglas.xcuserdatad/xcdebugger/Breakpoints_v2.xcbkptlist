@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QRFounder/QRFounderAppDelegate.m"
-            timestampString = "496312595.260099"
+            timestampString = "503215256.612681"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
+            startingLineNumber = "193"
+            endingLineNumber = "193"
             landmarkName = "-checkAppUpdate"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,13 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QRFounder/APP/Controller/QRShowVC/QREditViewController.m"
-            timestampString = "505486721.982225"
+            timestampString = "503573418.573285"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "337"
-            endingLineNumber = "337"
-            landmarkName = "-scrollMenu"
-            landmarkType = "7">
+            startingLineNumber = "368"
+            endingLineNumber = "368">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -89,13 +87,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QRFounder/APP/Controller/BuyItemViewController.m"
-            timestampString = "505482801.603098"
+            filePath = "QRFounder/QRFounderAppDelegate.m"
+            timestampString = "503215304.395945"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "24"
-            endingLineNumber = "24"
-            landmarkName = "-viewDidLoad"
+            startingLineNumber = "92"
+            endingLineNumber = "92"
+            landmarkName = "-networkDidReceiveMessage:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -143,7 +141,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "117"
             endingLineNumber = "117"
-            landmarkName = "-collectionView"
+            landmarkName = "-paybtnCLick:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
