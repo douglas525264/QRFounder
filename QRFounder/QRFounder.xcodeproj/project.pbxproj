@@ -176,6 +176,8 @@
 		A549E73D1D7FFB0300651D23 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73C1D7FFB0300651D23 /* CoreLocation.framework */; };
 		A549E73F1D7FFB0F00651D23 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73E1D7FFB0F00651D23 /* CoreTelephony.framework */; };
 		A54BBBE81D8680D900E38764 /* dxBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54BBBE71D8680D900E38764 /* dxBgView.m */; };
+		A55031111E2605E7006DE647 /* FuqianlaPay+scheme.m in Sources */ = {isa = PBXBuildFile; fileRef = A55031101E2605E7006DE647 /* FuqianlaPay+scheme.m */; };
+		A55031121E2605E7006DE647 /* FuqianlaPay+scheme.m in Sources */ = {isa = PBXBuildFile; fileRef = A55031101E2605E7006DE647 /* FuqianlaPay+scheme.m */; };
 		A5520E1A1E03D2D00099670B /* BuyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5520E181E03D2D00099670B /* BuyCollectionViewCell.m */; };
 		A5520E1B1E03D2D00099670B /* BuyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5520E181E03D2D00099670B /* BuyCollectionViewCell.m */; };
 		A5520E1C1E03D2D00099670B /* BuyCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A5520E191E03D2D00099670B /* BuyCollectionViewCell.xib */; };
@@ -1123,6 +1125,8 @@
 		A549E73E1D7FFB0F00651D23 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A54BBBE61D8680D900E38764 /* dxBgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dxBgView.h; sourceTree = "<group>"; };
 		A54BBBE71D8680D900E38764 /* dxBgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dxBgView.m; sourceTree = "<group>"; };
+		A550310F1E2605E7006DE647 /* FuqianlaPay+scheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FuqianlaPay+scheme.h"; sourceTree = "<group>"; };
+		A55031101E2605E7006DE647 /* FuqianlaPay+scheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FuqianlaPay+scheme.m"; sourceTree = "<group>"; };
 		A5520E171E03D2D00099670B /* BuyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyCollectionViewCell.h; sourceTree = "<group>"; };
 		A5520E181E03D2D00099670B /* BuyCollectionViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BuyCollectionViewCell.m; sourceTree = "<group>"; };
 		A5520E191E03D2D00099670B /* BuyCollectionViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = BuyCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -2772,6 +2776,8 @@
 		D78418911C7455C400850129 /* Category */ = {
 			isa = PBXGroup;
 			children = (
+				A550310F1E2605E7006DE647 /* FuqianlaPay+scheme.h */,
+				A55031101E2605E7006DE647 /* FuqianlaPay+scheme.m */,
 				A59BFC711E08DAC200FC39D5 /* UILabel+ZYTool.h */,
 				A59BFC721E08DAC200FC39D5 /* UILabel+ZYTool.m */,
 				A55424701D3E3C1B00081141 /* UIActionSheet+RACExtends.h */,
@@ -3897,6 +3903,7 @@
 				A55C5D531DFE53820081A8DF /* dxBgView.m in Sources */,
 				A5141AC81E07D15300C4C23B /* PayWayTableViewCell.m in Sources */,
 				A55C5D541DFE53820081A8DF /* DXScanresultViewController.m in Sources */,
+				A55031121E2605E7006DE647 /* FuqianlaPay+scheme.m in Sources */,
 				A5172BFD1E1F7083007E099A /* PayManager.m in Sources */,
 				A55C5D551DFE53820081A8DF /* DmSearchCriteria.m in Sources */,
 				A5520E1B1E03D2D00099670B /* BuyCollectionViewCell.m in Sources */,
@@ -3997,6 +4004,7 @@
 				D78418B01C745D4500850129 /* QRScanViewController.m in Sources */,
 				D78418D31C74706F00850129 /* PositionInfoView.m in Sources */,
 				D78418601C74551200850129 /* ViewController.m in Sources */,
+				A55031111E2605E7006DE647 /* FuqianlaPay+scheme.m in Sources */,
 				A5A8F4A21CF7056100019A7E /* DXWebViewController.m in Sources */,
 				D78418B31C745DB900850129 /* QRCreateViewController.m in Sources */,
 				A59BFC731E08DAC200FC39D5 /* UILabel+ZYTool.m in Sources */,
