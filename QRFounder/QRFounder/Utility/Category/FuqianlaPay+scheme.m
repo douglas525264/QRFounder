@@ -14,7 +14,11 @@
 
 -(NSString*)callBackScheme
 {
-    return @"fqianlaqrcode";
+#if QRFounderPRO
+    return @"fqianlaqrcodepro";
+#else
+   return @"fqianlaqrcode"; 
+#endif
 }
 
 -(void)setCallBackScheme:(NSString *)callBackScheme
