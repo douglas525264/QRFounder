@@ -49,7 +49,7 @@
 #if QRFounderPRO
         
 #else
-        [self createAD];
+       // [self createAD];
 #endif
      
     }

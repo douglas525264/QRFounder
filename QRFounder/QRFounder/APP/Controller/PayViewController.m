@@ -9,18 +9,23 @@
 #import "PayViewController.h"
 #import "DXHelper.h"
 #import <RACEXTScope.h>
+#import <ReactiveCocoa.h>
+#import "UINavigationController+FDFullscreenPopGesture.h"
 @interface PayViewController ()<UITableViewDelegate,UITableViewDataSource>
-
+@property (nonatomic, assign)  NSInteger status;
 @end
 
 @implementation PayViewController
 {
     NSInteger currentIndex;
+   
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self createUI];
+    _status = 0;
     self.navigationItem.title = @"付款方式";
+    self.fd_interactivePopDisabled = YES;
     // Do any additional setup after loading the view.
 }
 - (void)createUI{
@@ -35,7 +40,14 @@
     self.payBtn.layer.borderColor = [UIColor whiteColor].CGColor;
     self.payItemTitleLable.text = self.name;
     self.payNumLable.text = [NSString stringWithFormat:@"￥%.2f",self.price];
+    UIBarButtonItem *item = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemCancel target:self action:@selector(back)];
+    self.navigationItem.leftBarButtonItem = item;
     
+}
+- (void)back{
+    if (self.status == 0) {
+      [self.navigationController popViewControllerAnimated:YES];
+    }
     
 }
 #pragma mark - UITableViewDataSource
@@ -87,8 +99,10 @@
     return cell;
 }
 - (IBAction)payBtnClick:(id)sender {
+    _status = 1;
     @weakify(self)
     [[PayManager shareInstance] payFor:self.name body:self.name way:currentIndex==0 ?  kPTWeixinPay : kPTAlipay amount:self.price callBack:^(CEPaymentStatus status) {
+        self.status = 0;
         @strongify(self)
         if (self.statusBlock) {
             self.statusBlock(self.idStr,status);
