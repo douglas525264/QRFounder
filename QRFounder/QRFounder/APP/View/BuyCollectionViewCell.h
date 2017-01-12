@@ -10,5 +10,6 @@
 
 @interface BuyCollectionViewCell : UICollectionViewCell
 @property (weak, nonatomic) IBOutlet UIImageView *bugitemAvatarImageView;
+@property (weak, nonatomic) IBOutlet UIImageView *selectImageView;
 
 @end

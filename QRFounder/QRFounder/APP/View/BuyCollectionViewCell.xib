@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <objects>
@@ -21,19 +21,30 @@
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="vah-q7-4EA">
                         <rect key="frame" x="0.0" y="1" width="93" height="93"/>
                     </imageView>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="selectNormalImage" translatesAutoresizingMaskIntoConstraints="NO" id="NUg-S9-EPc">
+                        <rect key="frame" x="67" y="0.0" width="26" height="26"/>
+                    </imageView>
                 </subviews>
             </view>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="vah-q7-4EA" secondAttribute="bottom" constant="-1" id="6SM-Mp-ew1"/>
+                <constraint firstItem="NUg-S9-EPc" firstAttribute="height" secondItem="gTV-IL-0wX" secondAttribute="height" constant="-67" id="HAc-MV-oae"/>
+                <constraint firstItem="NUg-S9-EPc" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="HSN-wK-8lh"/>
                 <constraint firstItem="vah-q7-4EA" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="Jn9-Hv-3H6"/>
                 <constraint firstAttribute="trailing" secondItem="vah-q7-4EA" secondAttribute="trailing" id="UMt-2v-XWA"/>
+                <constraint firstAttribute="trailing" secondItem="NUg-S9-EPc" secondAttribute="trailing" id="kUf-mf-JKc"/>
                 <constraint firstItem="vah-q7-4EA" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" constant="1" id="wZz-HG-gcn"/>
+                <constraint firstItem="NUg-S9-EPc" firstAttribute="width" secondItem="gTV-IL-0wX" secondAttribute="width" constant="-67" id="xUB-ha-uLK"/>
             </constraints>
             <size key="customSize" width="90" height="84"/>
             <connections>
                 <outlet property="bugitemAvatarImageView" destination="vah-q7-4EA" id="hYC-9f-nXe"/>
+                <outlet property="selectImageView" destination="NUg-S9-EPc" id="nIg-Or-STf"/>
             </connections>
             <point key="canvasLocation" x="53.5" y="71.5"/>
         </collectionViewCell>
     </objects>
+    <resources>
+        <image name="selectNormalImage" width="40" height="40"/>
+    </resources>
 </document>
