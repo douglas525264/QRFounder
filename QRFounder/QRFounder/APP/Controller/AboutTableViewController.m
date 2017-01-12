@@ -14,6 +14,7 @@
 #import "AboutTableViewCell.h"
 #import <YWFeedbackFMWK/YWFeedbackKit.h>
 #import <YWFeedbackFMWK/YWFeedbackViewController.h>
+#import <ReactiveCocoa.h>
 @interface AboutTableViewController ()
 @property(nonatomic, strong) UIImageView *imageView;
 @property(nonatomic, strong) UILabel *versionLable;
@@ -149,7 +150,18 @@
                 if (viewController != nil) {
                     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
                     [weakSelf presentViewController:nav animated:YES completion:nil];
-                    
+                    [[viewController rac_signalForSelector:@selector(viewWillAppear:)] subscribeNext:^(id x) {
+                        NSArray *items = viewController.navigationItem.leftBarButtonItems;
+                        if (items.count > 0) {
+                            viewController.navigationItem.leftBarButtonItems = @[viewController.navigationItem.leftBarButtonItems.firstObject];
+                        }
+                        UIBarButtonItem *item = items.firstObject;
+                        item.customView.backgroundColor = [UIColor greenColor];
+                        item.title = @"  ";
+                        
+                        item.tintColor = RGB(87, 82, 127, 1);
+                    }];
+
                     [viewController setCloseBlock:^(UIViewController *aParentController){
                         [aParentController dismissViewControllerAnimated:YES completion:nil];
                     }];
@@ -207,12 +219,12 @@
     }
     return _rVC;
 }
-/*- (YWFeedbackKit *)feedbackKit {
+- (YWFeedbackKit *)feedbackKit {
     if (!_feedbackKit) {
         _feedbackKit = [[YWFeedbackKit alloc] initWithAppKey:@"23533924"];
     }
     return _feedbackKit;
-}*/
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -186,12 +186,12 @@
 		A54EC6DB1E2724AD005A459F /* SGMain.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CE1E2724AD005A459F /* SGMain.framework */; };
 		A54EC6DE1E2724AD005A459F /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6D01E2724AD005A459F /* UTMini.framework */; };
 		A54EC6DF1E2724AD005A459F /* UTMini.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6D01E2724AD005A459F /* UTMini.framework */; };
-		A54EC6E01E2724AD005A459F /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A54EC6D11E2724AD005A459F /* yw_1222.jpg */; };
-		A54EC6E11E2724AD005A459F /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A54EC6D11E2724AD005A459F /* yw_1222.jpg */; };
 		A54EC6E21E2724AD005A459F /* YWFeedbackBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A54EC6D21E2724AD005A459F /* YWFeedbackBundle.bundle */; };
 		A54EC6E31E2724AD005A459F /* YWFeedbackBundle.bundle in Resources */ = {isa = PBXBuildFile; fileRef = A54EC6D21E2724AD005A459F /* YWFeedbackBundle.bundle */; };
 		A54EC6E41E2724AD005A459F /* YWFeedbackFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6D31E2724AD005A459F /* YWFeedbackFMWK.framework */; };
 		A54EC6E51E2724AD005A459F /* YWFeedbackFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6D31E2724AD005A459F /* YWFeedbackFMWK.framework */; };
+		A54EC6EA1E272B38005A459F /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A54EC6E91E272B38005A459F /* yw_1222.jpg */; };
+		A54EC6EC1E272B87005A459F /* yw_1222.jpg in Resources */ = {isa = PBXBuildFile; fileRef = A54EC6EB1E272B87005A459F /* yw_1222.jpg */; };
 		A55031111E2605E7006DE647 /* FuqianlaPay+scheme.m in Sources */ = {isa = PBXBuildFile; fileRef = A55031101E2605E7006DE647 /* FuqianlaPay+scheme.m */; };
 		A55031121E2605E7006DE647 /* FuqianlaPay+scheme.m in Sources */ = {isa = PBXBuildFile; fileRef = A55031101E2605E7006DE647 /* FuqianlaPay+scheme.m */; };
 		A5520E1A1E03D2D00099670B /* BuyCollectionViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A5520E181E03D2D00099670B /* BuyCollectionViewCell.m */; };
@@ -1146,9 +1146,10 @@
 		A54EC6CD1E2724AD005A459F /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
 		A54EC6CE1E2724AD005A459F /* SGMain.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SGMain.framework; sourceTree = "<group>"; };
 		A54EC6D01E2724AD005A459F /* UTMini.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = UTMini.framework; sourceTree = "<group>"; };
-		A54EC6D11E2724AD005A459F /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = "<group>"; };
 		A54EC6D21E2724AD005A459F /* YWFeedbackBundle.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = YWFeedbackBundle.bundle; sourceTree = "<group>"; };
 		A54EC6D31E2724AD005A459F /* YWFeedbackFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = YWFeedbackFMWK.framework; sourceTree = "<group>"; };
+		A54EC6E91E272B38005A459F /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = "<group>"; };
+		A54EC6EB1E272B87005A459F /* yw_1222.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = yw_1222.jpg; sourceTree = "<group>"; };
 		A550310F1E2605E7006DE647 /* FuqianlaPay+scheme.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "FuqianlaPay+scheme.h"; sourceTree = "<group>"; };
 		A55031101E2605E7006DE647 /* FuqianlaPay+scheme.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "FuqianlaPay+scheme.m"; sourceTree = "<group>"; };
 		A5520E171E03D2D00099670B /* BuyCollectionViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BuyCollectionViewCell.h; sourceTree = "<group>"; };
@@ -2082,12 +2083,12 @@
 		A54EC6CA1E2724AD005A459F /* BCFeedback */ = {
 			isa = PBXGroup;
 			children = (
+				A54EC6E91E272B38005A459F /* yw_1222.jpg */,
 				A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */,
 				A54EC6CC1E2724AD005A459F /* BCHybridWebViewFMWK.framework */,
 				A54EC6CD1E2724AD005A459F /* SecurityGuardSDK.framework */,
 				A54EC6CE1E2724AD005A459F /* SGMain.framework */,
 				A54EC6D01E2724AD005A459F /* UTMini.framework */,
-				A54EC6D11E2724AD005A459F /* yw_1222.jpg */,
 				A54EC6D21E2724AD005A459F /* YWFeedbackBundle.bundle */,
 				A54EC6D31E2724AD005A459F /* YWFeedbackFMWK.framework */,
 			);
@@ -2876,6 +2877,7 @@
 		D78418951C7455C400850129 /* Libs */ = {
 			isa = PBXGroup;
 			children = (
+				A54EC6EB1E272B87005A459F /* yw_1222.jpg */,
 				A54EC6CA1E2724AD005A459F /* BCFeedback */,
 				A5172BDB1E1F6EC3007E099A /* ShareSDK.framework */,
 				A5172BC71E1F6EBA007E099A /* Optional */,
@@ -3419,7 +3421,6 @@
 				A55C5E771DFE53820081A8DF /* starItem003.png in Resources */,
 				A55C5E781DFE53820081A8DF /* batterfly02_icon.png in Resources */,
 				A5E432B81E21183A0010FD71 /* ny03Item03.png in Resources */,
-				A54EC6E11E2724AD005A459F /* yw_1222.jpg in Resources */,
 				A55C5E791DFE53820081A8DF /* ch01_bigborder.png in Resources */,
 				A55C5E7A1DFE53820081A8DF /* ch06Item05.png in Resources */,
 				A55C5E7B1DFE53820081A8DF /* xiaoxinitem04.png in Resources */,
@@ -3448,6 +3449,7 @@
 				A5172BC21E1F6EA7007E099A /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				A55C5E8D1DFE53820081A8DF /* taobao.png in Resources */,
 				A55C5E8E1DFE53820081A8DF /* chborder.png in Resources */,
+				A54EC6EA1E272B38005A459F /* yw_1222.jpg in Resources */,
 				A55C5E8F1DFE53820081A8DF /* chitem05.png in Resources */,
 				A55C5E901DFE53820081A8DF /* mouse03.png in Resources */,
 				A5E432AA1E21183A0010FD71 /* ny02Item06.png in Resources */,
@@ -3502,6 +3504,7 @@
 				A52B840C1DD5CFC90050BF4F /* QRlogoSource.plist in Resources */,
 				A585877B1E212C200032E5E5 /* QRFounderPro-Info.plist in Resources */,
 				A52B83BF1DD5CFC90050BF4F /* weixingreen.png in Resources */,
+				A54EC6EC1E272B87005A459F /* yw_1222.jpg in Resources */,
 				A5E432AB1E21183A0010FD71 /* ny03BigBorder.png in Resources */,
 				A5E4329F1E21183A0010FD71 /* ny02BorIcon.png in Resources */,
 				A592A8361DFC0A7700041A3C /* ch12icon.png in Resources */,
@@ -3785,7 +3788,6 @@
 				A5172BC11E1F6EA7007E099A /* TencentOpenApi_IOS_Bundle.bundle in Resources */,
 				A52B83B61DD5CFC90050BF4F /* taobao.png in Resources */,
 				A592A8421DFC0A7700041A3C /* chborder.png in Resources */,
-				A54EC6E01E2724AD005A459F /* yw_1222.jpg in Resources */,
 				A592A8561DFC0A7700041A3C /* chitem05.png in Resources */,
 				A52B83E91DD5CFC90050BF4F /* mouse03.png in Resources */,
 				A5E432A91E21183A0010FD71 /* ny02Item06.png in Resources */,
