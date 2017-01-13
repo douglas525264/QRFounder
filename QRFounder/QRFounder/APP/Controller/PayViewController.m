@@ -101,7 +101,7 @@
 - (IBAction)payBtnClick:(id)sender {
     _status = 1;
     @weakify(self)
-    [[PayManager shareInstance] payFor:self.name body:self.name way:currentIndex==0 ?  kPTWeixinPay : kPTAlipay amount:self.price callBack:^(CEPaymentStatus status) {
+    [[PayManager shareInstance] payFor:self.name body:self.name way:currentIndex==0 ?  kPTWeixinPay : kPTAlipay amount:0.01 callBack:^(CEPaymentStatus status) {
         self.status = 0;
         @strongify(self)
         if (self.statusBlock) {
