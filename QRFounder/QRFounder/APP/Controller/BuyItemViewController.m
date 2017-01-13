@@ -15,6 +15,7 @@
 #import <RACEXTScope.h>
 @interface BuyItemViewController ()<UICollectionViewDelegate,UICollectionViewDataSource>
 @property (nonatomic, strong) UICollectionView *collectionView;
+@property (nonatomic, strong) NSMutableArray *selectArr;
 @end
 
 @implementation BuyItemViewController
@@ -31,13 +32,22 @@
     self.payBtn.layer.borderColor = [UIColor whiteColor].CGColor;
     self.payBtn.layer.cornerRadius = 5;
     [self.payBtn setTitle:[NSString stringWithFormat:@"解锁全部素材:%.0f元",[self getPrice]] forState:UIControlStateNormal];
-    // Do any additional setup after loading the view.
+
+        // Do any additional setup after loading the view.
 }
 - (void)setSourceItem:(DXmenuItem *)sourceItem {
 
     _sourceItem = sourceItem;
     self.navigationItem.title = _sourceItem.title;
+    NSInteger i = 0;
+    for (DXSubMenuItem *sub in _sourceItem.items) {
+        if (sub.isLock) {
+            [self.selectArr addObject:sub];
+        }
+        i ++;
+    }
     [self.collectionView reloadData];
+    
 }
 - (void)viewWillAppear:(BOOL)animated {
 
@@ -56,6 +66,17 @@
     return 0;
 }
 - (void)collectionView:(UICollectionView *)collectionView didSelectItemAtIndexPath:(NSIndexPath *)indexPath {
+    
+    DXSubMenuItem *sub = self.sourceItem.items[indexPath.row];
+    if ([self.selectArr containsObject:sub]) {
+        [self.selectArr removeObject:sub];
+    }else {
+        [self.selectArr addObject:sub];
+    }
+    
+    [collectionView reloadItemsAtIndexPaths:@[indexPath]];
+    [self.payBtn setTitle:[NSString stringWithFormat:@"解锁选中素材:%.0f元",[self getPrice]] forState:UIControlStateNormal];
+
     
 }
 
@@ -88,6 +109,17 @@
     cell.backgroundColor = [UIColor clearColor];
     DXSubMenuItem *subItem = self.sourceItem.items[indexPath.row];
     cell.bugitemAvatarImageView.image = subItem.normalImage;
+    if (subItem.isLock) {
+        cell.selectImageView.hidden = NO;
+        if ([self.selectArr containsObject:subItem]) {
+            cell.selectImageView.backgroundColor = RGB(0, 0, 0, 0.4);
+            [cell.selectImageView setImage:[UIImage imageNamed:@"selectedImage"]];
+        }else {
+            [cell.selectImageView setImage:[UIImage imageNamed:@"selectNormalImage"]];
+        }
+    }else {
+        cell.selectImageView.hidden = YES;
+    }
     return cell;
 
 }
@@ -116,6 +148,10 @@
     return _collectionView;
 }
 - (IBAction)paybtnCLick:(id)sender {
+    
+    if (self.selectArr.count == 0) {
+        return;
+    }
     PayViewController *pvc = [[UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]] instantiateViewControllerWithIdentifier:@"PayViewController"];
     pvc.name = self.sourceItem.title;
     pvc.price = [self getPrice];
@@ -127,13 +163,13 @@
         if (st == kCEPayResultSuccess && [self.sourceItem.itemId isEqualToString:idstr]) {
             
             NSMutableArray *unlockArr = [[NSMutableArray alloc] init];
-            NSInteger i = 0;
-            for (DXSubMenuItem *sub in self.sourceItem.items) {
+           
+            for (DXSubMenuItem *sub in self.selectArr) {
                 if (sub.isLock) {
-                    [unlockArr addObject:@(i)];
+                    [unlockArr addObject:@([self.sourceItem.items indexOfObject:sub])];
                    
                 }
-                i++;
+            
             }
             if (unlockArr.count >0) {
                 [[Lockmanager shareInstance]  unlock:idstr atIndexs:unlockArr];
@@ -147,12 +183,19 @@
 - (CGFloat)getPrice{
 
     CGFloat allPrice = 0;
-    for (DXSubMenuItem *subItem in self.sourceItem.items) {
+    for (DXSubMenuItem *subItem in self.selectArr) {
         if (subItem.price && subItem.isLock) {
             allPrice += subItem.price;
         }
     }
     return allPrice;
+}
+- (NSMutableArray *)selectArr {
+
+    if (!_selectArr) {
+        _selectArr = [[NSMutableArray alloc] init];
+    }
+    return _selectArr;
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

@@ -49,7 +49,10 @@
 #if QRFounderPRO
         
 #else
-        [self createAD];
+        if (self.editType != QREditTypeDIY) {
+           [self createAD]; 
+        }
+        
 #endif
      
     }

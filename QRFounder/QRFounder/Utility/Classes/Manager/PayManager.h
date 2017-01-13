@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-#import "FuqianlaPay.h"
+#import "FuqianlaPay+scheme.h"
 @interface PayManager : NSObject
 
 

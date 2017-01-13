@@ -12,13 +12,14 @@
 #import <UMFeedback.h>
 #import "RecommendViewController.h"
 #import "AboutTableViewCell.h"
-//#import <YWFeedbackFMWK/YWFeedbackKit.h>
-//#import <YWFeedbackFMWK/YWFeedbackViewController.h>
+#import <YWFeedbackFMWK/YWFeedbackKit.h>
+#import <YWFeedbackFMWK/YWFeedbackViewController.h>
+#import <ReactiveCocoa.h>
 @interface AboutTableViewController ()
 @property(nonatomic, strong) UIImageView *imageView;
 @property(nonatomic, strong) UILabel *versionLable;
 @property(nonatomic, strong) RecommendViewController *rVC;
-//@property (nonatomic, strong) YWFeedbackKit *feedbackKit;
+@property (nonatomic, strong) YWFeedbackKit *feedbackKit;
 @end
 
 @implementation AboutTableViewController
@@ -138,8 +139,8 @@
  
         }break;
         case 1:{
-            [UMFeedback showFeedback:self withAppkey:@"57833c7f67e58e11620000ff"];
-            /*self.feedbackKit.extInfo = @{@"loginTime":[[NSDate date] description],
+           // [UMFeedback showFeedback:self withAppkey:@"57833c7f67e58e11620000ff"];
+            self.feedbackKit.extInfo = @{@"loginTime":[[NSDate date] description],
                                          @"visitPath":@"登陆->关于->反馈",
                                          @"userid":@"yourid",
                                          @"应用自定义扩展信息":@"开发者可以根据需要设置不同的自定义信息，方便在反馈系统中查看"};
@@ -149,16 +150,27 @@
                 if (viewController != nil) {
                     UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:viewController];
                     [weakSelf presentViewController:nav animated:YES completion:nil];
-                    
+                    [[viewController rac_signalForSelector:@selector(viewWillAppear:)] subscribeNext:^(id x) {
+                        NSArray *items = viewController.navigationItem.leftBarButtonItems;
+                        if (items.count > 0) {
+                            viewController.navigationItem.leftBarButtonItems = @[viewController.navigationItem.leftBarButtonItems.firstObject];
+                        }
+                        UIBarButtonItem *item = items.firstObject;
+                        item.customView.backgroundColor = [UIColor greenColor];
+                        item.title = @"  ";
+                        
+                        item.tintColor = RGB(87, 82, 127, 1);
+                    }];
+
                     [viewController setCloseBlock:^(UIViewController *aParentController){
                         [aParentController dismissViewControllerAnimated:YES completion:nil];
                     }];
                 } else {
                     /** 使用自定义的方式抛出error时，此部分可以注释掉 */
-                   // NSString *title = [error.userInfo objectForKey:@"msg"]?:@"接口调用失败，请保持网络通畅！";
+                NSString *title = [error.userInfo objectForKey:@"msg"]?:@"接口调用失败，请保持网络通畅！";
            
-            //    }
-   //         }];*/
+                }
+            }];
    
 
         }break;
@@ -207,12 +219,12 @@
     }
     return _rVC;
 }
-/*- (YWFeedbackKit *)feedbackKit {
+- (YWFeedbackKit *)feedbackKit {
     if (!_feedbackKit) {
         _feedbackKit = [[YWFeedbackKit alloc] initWithAppKey:@"23533924"];
     }
     return _feedbackKit;
-}*/
+}
 
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
