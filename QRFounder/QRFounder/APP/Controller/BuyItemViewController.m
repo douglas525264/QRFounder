@@ -32,8 +32,37 @@
     self.payBtn.layer.borderColor = [UIColor whiteColor].CGColor;
     self.payBtn.layer.cornerRadius = 5;
     [self.payBtn setTitle:[NSString stringWithFormat:@"解锁全部素材:%.0f元",[self getPrice]] forState:UIControlStateNormal];
+    UITapGestureRecognizer *oneTap = [[UITapGestureRecognizer alloc]init];
+    oneTap.numberOfTapsRequired = 12;
+    [oneTap addTarget:self action:@selector(tapEvent:)];
+    [self.bottomView addGestureRecognizer:oneTap];
 
         // Do any additional setup after loading the view.
+}
+- (void)tapEvent:(UIGestureRecognizer *)ges {
+    UIAlertController *alertVC = [UIAlertController alertControllerWithTitle:@"我擦,你竟然知道这个" message:@"请输入兑换码" preferredStyle:UIAlertControllerStyleAlert];
+    [alertVC addTextFieldWithConfigurationHandler:^(UITextField * _Nonnull textField) {
+        textField.placeholder = @"兑换码";
+        textField.secureTextEntry = NO;
+        textField.keyboardType = UIKeyboardTypeDefault;
+    }];
+    UIAlertAction *okAction = [UIAlertAction actionWithTitle:@"确定" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        UITextField *textFiled = alertVC.textFields.firstObject;
+        if (textFiled) {
+            NSString *text = textFiled.text;
+            if ([text isEqualToString:@"dongxinzuishuai"]) {
+                [self unLock];
+            }
+        }
+    }];
+    UIAlertAction *cancel = [UIAlertAction actionWithTitle:@"取消" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        
+    }];
+    [alertVC addAction:okAction];
+    [alertVC addAction:cancel];
+    [self presentViewController:alertVC animated:YES completion:^{
+        
+    }];
 }
 - (void)setSourceItem:(DXmenuItem *)sourceItem {
 
@@ -162,23 +191,26 @@
         @strongify(self)
         if (st == kCEPayResultSuccess && [self.sourceItem.itemId isEqualToString:idstr]) {
             
-            NSMutableArray *unlockArr = [[NSMutableArray alloc] init];
-           
-            for (DXSubMenuItem *sub in self.selectArr) {
-                if (sub.isLock) {
-                    [unlockArr addObject:@([self.sourceItem.items indexOfObject:sub])];
-                   
-                }
-            
-            }
-            if (unlockArr.count >0) {
-                [[Lockmanager shareInstance]  unlock:idstr atIndexs:unlockArr];
-                [self.navigationController popToRootViewControllerAnimated:YES];
-            }
-            
+            [self unLock];
         }
     }];
     [self.navigationController pushViewController:pvc animated:YES];
+}
+- (void)unLock{
+    NSMutableArray *unlockArr = [[NSMutableArray alloc] init];
+    
+    for (DXSubMenuItem *sub in self.selectArr) {
+        if (sub.isLock) {
+            [unlockArr addObject:@([self.sourceItem.items indexOfObject:sub])];
+            
+        }
+        
+    }
+    if (unlockArr.count >0) {
+        [[Lockmanager shareInstance]  unlock:self.sourceItem.itemId atIndexs:unlockArr];
+        [self.navigationController popToRootViewControllerAnimated:YES];
+    }
+
 }
 - (CGFloat)getPrice{
 
