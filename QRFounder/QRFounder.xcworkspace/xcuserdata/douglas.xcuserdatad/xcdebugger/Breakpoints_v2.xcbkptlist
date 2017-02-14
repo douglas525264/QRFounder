@@ -42,11 +42,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QRFounder/QRFounderAppDelegate.m"
-            timestampString = "503215256.612681"
+            timestampString = "496312595.260099"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "193"
-            endingLineNumber = "193"
+            startingLineNumber = "187"
+            endingLineNumber = "187"
             landmarkName = "-checkAppUpdate"
             landmarkType = "7">
          </BreakpointContent>
@@ -74,12 +74,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QRFounder/APP/Controller/QRShowVC/QREditViewController.m"
-            timestampString = "505912438.75744"
+            timestampString = "505486721.982225"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "371"
-            endingLineNumber = "371"
-            landmarkName = "-willDisplayAd:"
+            startingLineNumber = "337"
+            endingLineNumber = "337"
+            landmarkName = "-scrollMenu"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -89,13 +89,13 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "QRFounder/QRFounderAppDelegate.m"
-            timestampString = "503215304.395945"
+            filePath = "QRFounder/APP/Controller/BuyItemViewController.m"
+            timestampString = "505482801.603098"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "92"
-            endingLineNumber = "92"
-            landmarkName = "-networkDidReceiveMessage:"
+            startingLineNumber = "24"
+            endingLineNumber = "24"
+            landmarkName = "-viewDidLoad"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -138,12 +138,44 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QRFounder/APP/Controller/BuyItemViewController.m"
-            timestampString = "505907301.908182"
+            timestampString = "506069180.240875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
-            landmarkName = "-collectionView"
+            startingLineNumber = "146"
+            endingLineNumber = "146"
+            landmarkName = "-collectionView:cellForItemAtIndexPath:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QRFounder/APP/Controller/PayViewController.m"
+            timestampString = "503898100.571823"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "21"
+            endingLineNumber = "21"
+            landmarkName = "@implementation PayViewController"
+            landmarkType = "3">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QRFounder/APP/Controller/BuyItemViewController.m"
+            timestampString = "506069180.240875"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "99"
+            endingLineNumber = "99"
+            landmarkName = "-collectionView:didSelectItemAtIndexPath:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -154,28 +186,12 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QRFounder/APP/Controller/BuyItemViewController.m"
-            timestampString = "505907044.773396"
+            timestampString = "506069180.240875"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "91"
-            endingLineNumber = "91"
+            startingLineNumber = "133"
+            endingLineNumber = "133"
             landmarkName = "-collectionView:viewForSupplementaryElementOfKind:atIndexPath:"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "QRFounder/APP/Controller/BuyItemViewController.m"
-            timestampString = "505907301.908182"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "136"
-            endingLineNumber = "136"
-            landmarkName = "-collectionView"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

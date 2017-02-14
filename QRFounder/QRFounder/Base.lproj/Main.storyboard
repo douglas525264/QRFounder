@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NNv-Xg-Bcj">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16C67" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NNv-Xg-Bcj">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -1143,10 +1143,10 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PayWayTableViewCell" rowHeight="60" id="N0K-iR-g8v" customClass="PayWayTableViewCell">
-                                        <rect key="frame" x="0.0" y="56" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="55.5" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N0K-iR-g8v" id="9ON-yg-Az0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="and-mk-ecu">
@@ -1258,10 +1258,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="22W-h8-9LJ">
-                                <rect key="frame" x="0.0" y="588" width="375" height="79"/>
+                                <rect key="frame" x="0.0" y="555" width="375" height="112"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIz-xu-4ug">
-                                        <rect key="frame" x="72" y="19" width="230" height="41"/>
+                                        <rect key="frame" x="72" y="44" width="230" height="41"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="41" id="Nsz-Gf-wtI"/>
                                             <constraint firstAttribute="width" constant="230" id="k8W-nc-H71"/>
@@ -1274,11 +1274,23 @@
                                             <action selector="paybtnCLick:" destination="XOD-rp-qS2" eventType="touchUpInside" id="nbN-ig-qIt"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="点击上方素材可以选择单个购买" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Tfr-34-8bX">
+                                        <rect key="frame" x="8" y="6" width="367" height="21"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="21" id="xVc-J8-abC"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="Tfr-34-8bX" secondAttribute="trailing" id="8Si-V7-XDk"/>
                                     <constraint firstItem="bIz-xu-4ug" firstAttribute="centerX" secondItem="22W-h8-9LJ" secondAttribute="centerX" id="PaP-PX-kGO"/>
-                                    <constraint firstItem="bIz-xu-4ug" firstAttribute="centerY" secondItem="22W-h8-9LJ" secondAttribute="centerY" id="Ww6-s9-vqx"/>
-                                    <constraint firstAttribute="height" constant="79" id="ova-ti-Cs1"/>
+                                    <constraint firstItem="bIz-xu-4ug" firstAttribute="centerY" secondItem="22W-h8-9LJ" secondAttribute="centerY" constant="8.5" id="Ww6-s9-vqx"/>
+                                    <constraint firstItem="Tfr-34-8bX" firstAttribute="leading" secondItem="22W-h8-9LJ" secondAttribute="leading" constant="8" id="dfN-9q-wdM"/>
+                                    <constraint firstItem="Tfr-34-8bX" firstAttribute="top" secondItem="22W-h8-9LJ" secondAttribute="top" constant="6" id="eZ2-RW-Afa"/>
+                                    <constraint firstAttribute="height" constant="112" id="ova-ti-Cs1"/>
                                 </constraints>
                             </view>
                         </subviews>
