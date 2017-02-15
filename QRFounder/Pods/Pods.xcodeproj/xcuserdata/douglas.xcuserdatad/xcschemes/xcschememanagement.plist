@@ -8,73 +8,81 @@
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-QRFounder.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
+		</dict>
+		<key>Pods-QRFounderPro.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>ReactiveCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>UMengFeedback.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>ZBarSDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
+		</dict>
+		<key>ZipArchive.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>libqrencode.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0D928596E47DF9926D5FF7305A0BE38E</key>
+		<key>383D1D5D4E30580035A5417C7C429FC9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>493916BEC12C93E24DA01C7110B8053C</key>
+		<key>7841167EAAE92C149AA2C57553E36905</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>59B5154DEC6908AAF54B5F46275BEC56</key>
+		<key>939C98D7F9AF557A56132DEDA417E54F</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>645652AFFA267F74DE04EDD7EC96DAA5</key>
+		<key>A2148AECEB5EE02107D9E2C44EE1EFA7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>86A100CE727E95CD8AA9B97CED922FA2</key>
+		<key>D17742489E37FB6CBD33A83210F915ED</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A46A84BFCC6FEE4C66AEF1DECC1DC502</key>
+		<key>DBFBD27F220AA348CA24305807ED050E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EBEAE71EFDFF37F91049E7CEB04EA967</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EE92568402D817704D83238E5FF0FBDF</key>
 		<dict>
 			<key>primary</key>
 			<true/>

@@ -1,10 +1,20 @@
 
 platform :ios, '7.0'
-workspace 'QRFounder'  // 这个
-link_with 'QRFounder', 'QRFounderPro'
+target "QRFounder" do
 pod 'ZBarSDK', '~> 1.3.1'
 pod 'libqrencode', '~> 3.4.2'
 pod 'ATMHud@dhoerl', '~> 3.0.0'
 pod 'UMengAnalytics'
 pod 'UMengFeedback', '~> 2.3.4'
 pod 'ReactiveCocoa'
+pod 'ZipArchive', '~> 1.4.0'
+end
+target "QRFounderPro" do
+    pod 'ZBarSDK', '~> 1.3.1'
+    pod 'libqrencode', '~> 3.4.2'
+    pod 'ATMHud@dhoerl', '~> 3.0.0'
+    pod 'UMengAnalytics'
+    pod 'UMengFeedback', '~> 2.3.4'
+    pod 'ReactiveCocoa'
+    pod 'ZipArchive', '~> 1.4.0'
+end
