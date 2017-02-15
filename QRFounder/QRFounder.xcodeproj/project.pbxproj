@@ -20,6 +20,12 @@
 		A50459EE1D338FDB006C7D31 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50459ED1D338FDB006C7D31 /* JavaScriptCore.framework */; };
 		A50459F01D338FFF006C7D31 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50459EF1D338FFF006C7D31 /* ImageIO.framework */; };
 		A50459F11D339009006C7D31 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A50459AE1D3376B2006C7D31 /* libsqlite3.tbd */; };
+		A506554A1E5460FD0073F2A4 /* DownLoadItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655491E5460FD0073F2A4 /* DownLoadItemViewController.m */; };
+		A506554B1E5460FD0073F2A4 /* DownLoadItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655491E5460FD0073F2A4 /* DownLoadItemViewController.m */; };
+		A506555A1E54612D0073F2A4 /* DownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655591E54612D0073F2A4 /* DownloadTask.m */; };
+		A506555B1E54612D0073F2A4 /* DownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655591E54612D0073F2A4 /* DownloadTask.m */; };
+		A50655621E54614F0073F2A4 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655611E54614F0073F2A4 /* DownloadManager.m */; };
+		A50655631E54614F0073F2A4 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655611E54614F0073F2A4 /* DownloadManager.m */; };
 		A508DBD41DA64874004550BB /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A508DBD31DA64874004550BB /* BaiduMobAdSDK.framework */; };
 		A50FDA361CC789380027188C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA351CC789380027188C /* AddressBook.framework */; };
 		A50FDA381CC7893D0027188C /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA371CC7893D0027188C /* AddressBookUI.framework */; };
@@ -1108,6 +1114,12 @@
 		A50459EB1D338FD4006C7D31 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		A50459ED1D338FDB006C7D31 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		A50459EF1D338FFF006C7D31 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		A50655481E5460FD0073F2A4 /* DownLoadItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadItemViewController.h; sourceTree = "<group>"; };
+		A50655491E5460FD0073F2A4 /* DownLoadItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadItemViewController.m; sourceTree = "<group>"; };
+		A50655581E54612D0073F2A4 /* DownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTask.h; sourceTree = "<group>"; };
+		A50655591E54612D0073F2A4 /* DownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadTask.m; sourceTree = "<group>"; };
+		A50655601E54614F0073F2A4 /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
+		A50655611E54614F0073F2A4 /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
 		A508DBD31DA64874004550BB /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
 		A50FDA351CC789380027188C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		A50FDA371CC7893D0027188C /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -1904,6 +1916,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A506553B1E545ED50073F2A4 /* download */ = {
+			isa = PBXGroup;
+			children = (
+				A50655581E54612D0073F2A4 /* DownloadTask.h */,
+				A50655591E54612D0073F2A4 /* DownloadTask.m */,
+				A50655601E54614F0073F2A4 /* DownloadManager.h */,
+				A50655611E54614F0073F2A4 /* DownloadManager.m */,
+			);
+			name = download;
+			sourceTree = "<group>";
+		};
 		A51191431D364BBF004C2697 /* About */ = {
 			isa = PBXGroup;
 			children = (
@@ -2419,6 +2442,7 @@
 		A57609A41CB287DB006F3F1B /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A506553B1E545ED50073F2A4 /* download */,
 				A568C1E01E0002E700A58EE6 /* Lockmanager.h */,
 				A568C1E11E0002E700A58EE6 /* Lockmanager.m */,
 				A57609A51CB287F8006F3F1B /* QRSourceManager.h */,
@@ -2453,6 +2477,8 @@
 				A5520E271E03E7610099670B /* BuyItemViewController.m */,
 				A5141AC11E07C4A200C4C23B /* PayViewController.h */,
 				A5141AC21E07C4A200C4C23B /* PayViewController.m */,
+				A50655481E5460FD0073F2A4 /* DownLoadItemViewController.h */,
+				A50655491E5460FD0073F2A4 /* DownLoadItemViewController.m */,
 			);
 			name = Buy;
 			sourceTree = "<group>";
@@ -4399,6 +4425,7 @@
 				A55C5D481DFE53820081A8DF /* UIActionSheet+RACExtends.m in Sources */,
 				A55C5D491DFE53820081A8DF /* HttpInfoView.m in Sources */,
 				A55C5D4A1DFE53820081A8DF /* QRShowViewController.m in Sources */,
+				A506554B1E5460FD0073F2A4 /* DownLoadItemViewController.m in Sources */,
 				A55C5D4B1DFE53820081A8DF /* MailInfoView.m in Sources */,
 				A55C5D4C1DFE53820081A8DF /* DXCommenViewController.m in Sources */,
 				A55C5D4D1DFE53820081A8DF /* NSManagedObject+NSManagedObject_BaseType.m in Sources */,
@@ -4450,6 +4477,7 @@
 				A55C5D731DFE53820081A8DF /* DXCommenQRView.m in Sources */,
 				A55C5D741DFE53820081A8DF /* DBHelper.m in Sources */,
 				A55C5D751DFE53820081A8DF /* QREditViewController.m in Sources */,
+				A50655631E54614F0073F2A4 /* DownloadManager.m in Sources */,
 				A55C5D761DFE53820081A8DF /* DXSubMenuItem.m in Sources */,
 				A55C5D771DFE53820081A8DF /* LaViewController.m in Sources */,
 				A55C5D781DFE53820081A8DF /* QRHelper.m in Sources */,
@@ -4465,6 +4493,7 @@
 				A55C5D821DFE53820081A8DF /* DXQRScanView.m in Sources */,
 				A55C5D831DFE53820081A8DF /* main.m in Sources */,
 				A55C5D841DFE53820081A8DF /* MainViewController.m in Sources */,
+				A506555B1E54612D0073F2A4 /* DownloadTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4515,10 +4544,12 @@
 				D78418D31C74706F00850129 /* PositionInfoView.m in Sources */,
 				D78418601C74551200850129 /* ViewController.m in Sources */,
 				A55031111E2605E7006DE647 /* FuqianlaPay+scheme.m in Sources */,
+				A50655621E54614F0073F2A4 /* DownloadManager.m in Sources */,
 				A5A8F4A21CF7056100019A7E /* DXWebViewController.m in Sources */,
 				D78418B31C745DB900850129 /* QRCreateViewController.m in Sources */,
 				A59BFC731E08DAC200FC39D5 /* UILabel+ZYTool.m in Sources */,
 				D78418EF1C7488D300850129 /* DXSelectView.m in Sources */,
+				A506554A1E5460FD0073F2A4 /* DownLoadItemViewController.m in Sources */,
 				A56FF93F1D50422500F61BD6 /* RecommendViewController.m in Sources */,
 				A5383F641DD4B26B008B4650 /* ColorModel.m in Sources */,
 				D7FC15661CA93CB4009EAB4C /* DXmenuItem.m in Sources */,
@@ -4534,6 +4565,7 @@
 				A5520E1A1E03D2D00099670B /* BuyCollectionViewCell.m in Sources */,
 				A540A0D31D239F4B0012EEB0 /* MsgView.m in Sources */,
 				A54516B51DD0679600B38B3F /* DIYSubModel.m in Sources */,
+				A506555A1E54612D0073F2A4 /* DownloadTask.m in Sources */,
 				A568C1E21E0002E700A58EE6 /* Lockmanager.m in Sources */,
 				D7FC156F1CA93F51009EAB4C /* DXScrollMenu.m in Sources */,
 				A5D76F821D3795D400AA8006 /* DBManager.m in Sources */,
