@@ -32,4 +32,8 @@ typedef NS_ENUM(NSInteger,DownloadTaskStatus)
 @property (nonatomic, copy)NSString *tempSavePath;
 @property (nonatomic, copy)NSString *filePath;
 @property (nonatomic, assign) DownloadTaskStatus status;
+
+- (void)start;
+- (void)stop;
+
 @end

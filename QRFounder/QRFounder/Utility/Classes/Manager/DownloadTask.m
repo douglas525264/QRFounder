@@ -7,9 +7,23 @@
 //
 
 #import "DownloadTask.h"
+
 @interface DownloadTask()
+@property (nonatomic, strong)NSURLSessionDataTask *downLoadSession;
 
 @end
+
 @implementation DownloadTask
+
+- (void)start {
+
+    
+}
+- (void)stop {
+
+
+}
+
+
 
 @end
