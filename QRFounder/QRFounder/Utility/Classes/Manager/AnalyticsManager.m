@@ -84,19 +84,30 @@ static AnalyticsManager *aManager;
    
 }
 
-- (void)scanQRCodeWithAlbumEvent {
+- (void)scanQRCodeWithAlbumEvent:(BOOL)forRead {
     if (!self.analyticsEnable) {
         return;
     }
-
-    [MobClick event:@"qr_scan_album"];
+    [MobClick event:@"qr_scan"];
+    if (forRead) {
+        [MobClick event:@"qr_scan_create_album"];
+    } else {
+        [MobClick event:@"qr_scan_album"];
+    }
+    
 }
-- (void)scanQRCodeWithCameraEvent {
+- (void)scanQRCodeWithCameraEvent:(BOOL)forRead {
     if (!self.analyticsEnable) {
         return;
     }
+    [MobClick event:@"qr_scan"];
+    if (forRead) {
+        [MobClick event:@"qr_scan_create_camera"];
+    } else {
+        [MobClick event:@"qr_scan_camera"];
+    }
 
-    [MobClick event:@"qr_scan_camera"];
+    
 }
 - (void)scanQREventWithType:(QRType)type {
     if (!self.analyticsEnable) {
