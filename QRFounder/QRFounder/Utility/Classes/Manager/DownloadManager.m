@@ -41,6 +41,7 @@ static DownloadManager *dManager;
 - (void)downloadtask:(DownloadTask *)task statusChange:(DownloadTaskStatus)status {
     if (status == TaskStatusFinished) {
         //存储状态
+        [self.runArr removeObject:task];
     }
     if ([_delegate respondsToSelector:@selector(downloadtask:statusChange:)]) {
         [_delegate downloadtask:task statusChange:status];

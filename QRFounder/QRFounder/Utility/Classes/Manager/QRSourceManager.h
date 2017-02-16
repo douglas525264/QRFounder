@@ -12,4 +12,9 @@
 + (QRSourceManager *)shareInstance;
 - (NSArray *)getSoureceWithEditeType:(QREditType)type;
 - (void)preloadSource;
+//远程相关
+- (void)getItemListWithFinishedBlock:(void (^)(BOOL isok,NSArray *arr)) block;
+- (void)hasDownload:(NSString *)itemId;
+- (void)deleteDownload:(NSString *)itemId;
+- (NSArray *)getHasDownLoadItems;
 @end

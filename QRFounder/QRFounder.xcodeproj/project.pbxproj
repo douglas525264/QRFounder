@@ -185,6 +185,10 @@
 		A54BBBE81D8680D900E38764 /* dxBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54BBBE71D8680D900E38764 /* dxBgView.m */; };
 		A54CE1C21E554FF4007068C7 /* SourceItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1C11E554FF4007068C7 /* SourceItemModel.m */; };
 		A54CE1C31E554FF4007068C7 /* SourceItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1C11E554FF4007068C7 /* SourceItemModel.m */; };
+		A54CE1C61E557A9B007068C7 /* DXNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1C51E557A9B007068C7 /* DXNetworkTool.m */; };
+		A54CE1C71E557A9B007068C7 /* DXNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1C51E557A9B007068C7 /* DXNetworkTool.m */; };
+		A54CE1CB1E557B1D007068C7 /* DXError.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1CA1E557B1D007068C7 /* DXError.m */; };
+		A54CE1CC1E557B1D007068C7 /* DXError.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1CA1E557B1D007068C7 /* DXError.m */; };
 		A54EC6D41E2724AD005A459F /* BCConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */; };
 		A54EC6D51E2724AD005A459F /* BCConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */; };
 		A54EC6D61E2724AD005A459F /* BCHybridWebViewFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CC1E2724AD005A459F /* BCHybridWebViewFMWK.framework */; };
@@ -1286,6 +1290,10 @@
 		A54BBBE71D8680D900E38764 /* dxBgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dxBgView.m; sourceTree = "<group>"; };
 		A54CE1C01E554FF4007068C7 /* SourceItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceItemModel.h; sourceTree = "<group>"; };
 		A54CE1C11E554FF4007068C7 /* SourceItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceItemModel.m; sourceTree = "<group>"; };
+		A54CE1C41E557A9B007068C7 /* DXNetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXNetworkTool.h; sourceTree = "<group>"; };
+		A54CE1C51E557A9B007068C7 /* DXNetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXNetworkTool.m; sourceTree = "<group>"; };
+		A54CE1C91E557B1D007068C7 /* DXError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXError.h; sourceTree = "<group>"; };
+		A54CE1CA1E557B1D007068C7 /* DXError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXError.m; sourceTree = "<group>"; };
 		A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BCConnectorBundle.framework; sourceTree = "<group>"; };
 		A54EC6CC1E2724AD005A459F /* BCHybridWebViewFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BCHybridWebViewFMWK.framework; sourceTree = "<group>"; };
 		A54EC6CD1E2724AD005A459F /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
@@ -2296,6 +2304,17 @@
 			path = moreColor;
 			sourceTree = "<group>";
 		};
+		A54CE1C81E557AA2007068C7 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				A54CE1C41E557A9B007068C7 /* DXNetworkTool.h */,
+				A54CE1C51E557A9B007068C7 /* DXNetworkTool.m */,
+				A54CE1C91E557B1D007068C7 /* DXError.h */,
+				A54CE1CA1E557B1D007068C7 /* DXError.m */,
+			);
+			name = Net;
+			sourceTree = "<group>";
+		};
 		A54EC6CA1E2724AD005A459F /* BCFeedback */ = {
 			isa = PBXGroup;
 			children = (
@@ -3203,6 +3222,7 @@
 		D78418921C7455C400850129 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A54CE1C81E557AA2007068C7 /* Net */,
 				A5383F651DD4B310008B4650 /* QRColorBgView.h */,
 				A5383F661DD4B310008B4650 /* QRColorBgView.m */,
 				A57609A41CB287DB006F3F1B /* Manager */,
@@ -4464,7 +4484,9 @@
 				A55C5D601DFE53820081A8DF /* ShareManager.m in Sources */,
 				A55C5D611DFE53820081A8DF /* AnalyticsManager.m in Sources */,
 				A55C5D621DFE53820081A8DF /* QRPointModel.m in Sources */,
+				A54CE1C71E557A9B007068C7 /* DXNetworkTool.m in Sources */,
 				A55C5D631DFE53820081A8DF /* WIFIInfoView.m in Sources */,
+				A54CE1CC1E557B1D007068C7 /* DXError.m in Sources */,
 				A55C5D641DFE53820081A8DF /* AboutTableViewController.m in Sources */,
 				A55C5D651DFE53820081A8DF /* QRdatabase.xcdatamodeld in Sources */,
 				A55C5D661DFE53820081A8DF /* DXQRView.m in Sources */,
@@ -4556,6 +4578,7 @@
 				A5A8F4A21CF7056100019A7E /* DXWebViewController.m in Sources */,
 				D78418B31C745DB900850129 /* QRCreateViewController.m in Sources */,
 				A59BFC731E08DAC200FC39D5 /* UILabel+ZYTool.m in Sources */,
+				A54CE1CB1E557B1D007068C7 /* DXError.m in Sources */,
 				D78418EF1C7488D300850129 /* DXSelectView.m in Sources */,
 				A506554A1E5460FD0073F2A4 /* DownLoadItemViewController.m in Sources */,
 				A56FF93F1D50422500F61BD6 /* RecommendViewController.m in Sources */,
@@ -4569,6 +4592,7 @@
 				A54305701D753C18001E5906 /* LaViewController.m in Sources */,
 				D78418BB1C746D2D00850129 /* QRHelper.m in Sources */,
 				A5D76F761D3793C900AA8006 /* NSString+DXTool.m in Sources */,
+				A54CE1C61E557A9B007068C7 /* DXNetworkTool.m in Sources */,
 				A554246F1D3E0A7900081141 /* DXBottomActionView.m in Sources */,
 				A5520E1A1E03D2D00099670B /* BuyCollectionViewCell.m in Sources */,
 				A540A0D31D239F4B0012EEB0 /* MsgView.m in Sources */,
