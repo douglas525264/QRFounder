@@ -19,6 +19,7 @@
 #import "Lockmanager.h"
 #import <RACEXTScope.h>
 #import "BuyItemViewController.h"
+#import "DownloadItemTableViewController.h"
 @interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,BaiduMobAdViewDelegate,GDTMobBannerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 
@@ -238,8 +239,10 @@
 
 }
 - (void)jumpToDownLoadPage {
-
-
+    UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    DownloadItemTableViewController *byVC = [mainStory instantiateViewControllerWithIdentifier:@"DownloadItemTableViewController"];
+    byVC.type = self.editType;
+    [self.navigationController pushViewController:byVC animated:YES];
 }
 - (void)showUnlockWithItem:(DXmenuItem *)menu AndIndex:(NSInteger)index {
     //正常弹出详情界面

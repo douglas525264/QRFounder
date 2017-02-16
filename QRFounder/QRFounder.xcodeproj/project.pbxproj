@@ -20,8 +20,6 @@
 		A50459EE1D338FDB006C7D31 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50459ED1D338FDB006C7D31 /* JavaScriptCore.framework */; };
 		A50459F01D338FFF006C7D31 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50459EF1D338FFF006C7D31 /* ImageIO.framework */; };
 		A50459F11D339009006C7D31 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A50459AE1D3376B2006C7D31 /* libsqlite3.tbd */; };
-		A506554A1E5460FD0073F2A4 /* DownLoadItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655491E5460FD0073F2A4 /* DownLoadItemViewController.m */; };
-		A506554B1E5460FD0073F2A4 /* DownLoadItemViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655491E5460FD0073F2A4 /* DownLoadItemViewController.m */; };
 		A506555A1E54612D0073F2A4 /* DownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655591E54612D0073F2A4 /* DownloadTask.m */; };
 		A506555B1E54612D0073F2A4 /* DownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655591E54612D0073F2A4 /* DownloadTask.m */; };
 		A50655621E54614F0073F2A4 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655611E54614F0073F2A4 /* DownloadManager.m */; };
@@ -189,8 +187,10 @@
 		A54CE1C71E557A9B007068C7 /* DXNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1C51E557A9B007068C7 /* DXNetworkTool.m */; };
 		A54CE1CB1E557B1D007068C7 /* DXError.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1CA1E557B1D007068C7 /* DXError.m */; };
 		A54CE1CC1E557B1D007068C7 /* DXError.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1CA1E557B1D007068C7 /* DXError.m */; };
-		A54CE1D01E558711007068C7 /* DownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1CF1E558711007068C7 /* DownLoadViewController.m */; };
-		A54CE1D11E558711007068C7 /* DownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1CF1E558711007068C7 /* DownLoadViewController.m */; };
+		A54CE1D41E558D90007068C7 /* DownloadItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1D31E558D90007068C7 /* DownloadItemTableViewController.m */; };
+		A54CE1D51E558D90007068C7 /* DownloadItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1D31E558D90007068C7 /* DownloadItemTableViewController.m */; };
+		A54CE1D81E558E32007068C7 /* DownloadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1D71E558E32007068C7 /* DownloadTableViewCell.m */; };
+		A54CE1D91E558E32007068C7 /* DownloadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1D71E558E32007068C7 /* DownloadTableViewCell.m */; };
 		A54EC6D41E2724AD005A459F /* BCConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */; };
 		A54EC6D51E2724AD005A459F /* BCConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */; };
 		A54EC6D61E2724AD005A459F /* BCHybridWebViewFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CC1E2724AD005A459F /* BCHybridWebViewFMWK.framework */; };
@@ -1122,8 +1122,6 @@
 		A50459EB1D338FD4006C7D31 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		A50459ED1D338FDB006C7D31 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		A50459EF1D338FFF006C7D31 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
-		A50655481E5460FD0073F2A4 /* DownLoadItemViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadItemViewController.h; sourceTree = "<group>"; };
-		A50655491E5460FD0073F2A4 /* DownLoadItemViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadItemViewController.m; sourceTree = "<group>"; };
 		A50655581E54612D0073F2A4 /* DownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTask.h; sourceTree = "<group>"; };
 		A50655591E54612D0073F2A4 /* DownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadTask.m; sourceTree = "<group>"; };
 		A50655601E54614F0073F2A4 /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
@@ -1296,8 +1294,10 @@
 		A54CE1C51E557A9B007068C7 /* DXNetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXNetworkTool.m; sourceTree = "<group>"; };
 		A54CE1C91E557B1D007068C7 /* DXError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXError.h; sourceTree = "<group>"; };
 		A54CE1CA1E557B1D007068C7 /* DXError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXError.m; sourceTree = "<group>"; };
-		A54CE1CE1E558711007068C7 /* DownLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadViewController.h; sourceTree = "<group>"; };
-		A54CE1CF1E558711007068C7 /* DownLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadViewController.m; sourceTree = "<group>"; };
+		A54CE1D21E558D90007068C7 /* DownloadItemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadItemTableViewController.h; sourceTree = "<group>"; };
+		A54CE1D31E558D90007068C7 /* DownloadItemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadItemTableViewController.m; sourceTree = "<group>"; };
+		A54CE1D61E558E32007068C7 /* DownloadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTableViewCell.h; sourceTree = "<group>"; };
+		A54CE1D71E558E32007068C7 /* DownloadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadTableViewCell.m; sourceTree = "<group>"; };
 		A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BCConnectorBundle.framework; sourceTree = "<group>"; };
 		A54EC6CC1E2724AD005A459F /* BCHybridWebViewFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BCHybridWebViewFMWK.framework; sourceTree = "<group>"; };
 		A54EC6CD1E2724AD005A459F /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
@@ -2322,8 +2322,8 @@
 		A54CE1CD1E5586FD007068C7 /* Download */ = {
 			isa = PBXGroup;
 			children = (
-				A54CE1CE1E558711007068C7 /* DownLoadViewController.h */,
-				A54CE1CF1E558711007068C7 /* DownLoadViewController.m */,
+				A54CE1D21E558D90007068C7 /* DownloadItemTableViewController.h */,
+				A54CE1D31E558D90007068C7 /* DownloadItemTableViewController.m */,
 			);
 			name = Download;
 			sourceTree = "<group>";
@@ -2513,8 +2513,6 @@
 				A5520E271E03E7610099670B /* BuyItemViewController.m */,
 				A5141AC11E07C4A200C4C23B /* PayViewController.h */,
 				A5141AC21E07C4A200C4C23B /* PayViewController.m */,
-				A50655481E5460FD0073F2A4 /* DownLoadItemViewController.h */,
-				A50655491E5460FD0073F2A4 /* DownLoadItemViewController.m */,
 			);
 			name = Buy;
 			sourceTree = "<group>";
@@ -3195,6 +3193,8 @@
 				A56FFA321D50B67A00F61BD6 /* AboutTableViewCell.xib */,
 				A54BBBE61D8680D900E38764 /* dxBgView.h */,
 				A54BBBE71D8680D900E38764 /* dxBgView.m */,
+				A54CE1D61E558E32007068C7 /* DownloadTableViewCell.h */,
+				A54CE1D71E558E32007068C7 /* DownloadTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -4465,7 +4465,7 @@
 				A55C5D481DFE53820081A8DF /* UIActionSheet+RACExtends.m in Sources */,
 				A55C5D491DFE53820081A8DF /* HttpInfoView.m in Sources */,
 				A55C5D4A1DFE53820081A8DF /* QRShowViewController.m in Sources */,
-				A506554B1E5460FD0073F2A4 /* DownLoadItemViewController.m in Sources */,
+				A54CE1D91E558E32007068C7 /* DownloadTableViewCell.m in Sources */,
 				A55C5D4B1DFE53820081A8DF /* MailInfoView.m in Sources */,
 				A55C5D4C1DFE53820081A8DF /* DXCommenViewController.m in Sources */,
 				A55C5D4D1DFE53820081A8DF /* NSManagedObject+NSManagedObject_BaseType.m in Sources */,
@@ -4480,6 +4480,7 @@
 				A55C5D531DFE53820081A8DF /* dxBgView.m in Sources */,
 				A5141AC81E07D15300C4C23B /* PayWayTableViewCell.m in Sources */,
 				A55C5D541DFE53820081A8DF /* DXScanresultViewController.m in Sources */,
+				A54CE1D51E558D90007068C7 /* DownloadItemTableViewController.m in Sources */,
 				A55031121E2605E7006DE647 /* FuqianlaPay+scheme.m in Sources */,
 				A5172BFD1E1F7083007E099A /* PayManager.m in Sources */,
 				A55C5D551DFE53820081A8DF /* DmSearchCriteria.m in Sources */,
@@ -4500,7 +4501,6 @@
 				A55C5D621DFE53820081A8DF /* QRPointModel.m in Sources */,
 				A54CE1C71E557A9B007068C7 /* DXNetworkTool.m in Sources */,
 				A55C5D631DFE53820081A8DF /* WIFIInfoView.m in Sources */,
-				A54CE1D11E558711007068C7 /* DownLoadViewController.m in Sources */,
 				A54CE1CC1E557B1D007068C7 /* DXError.m in Sources */,
 				A55C5D641DFE53820081A8DF /* AboutTableViewController.m in Sources */,
 				A55C5D651DFE53820081A8DF /* QRdatabase.xcdatamodeld in Sources */,
@@ -4557,6 +4557,7 @@
 				A5D76F851D3795D400AA8006 /* NSManagedObject+NSManagedObject_BaseType.m in Sources */,
 				D7FC156C1CA93F05009EAB4C /* DXMenuBtn.m in Sources */,
 				A56FFA311D50B65B00F61BD6 /* AboutTableViewCell.m in Sources */,
+				A54CE1D41E558D90007068C7 /* DownloadItemTableViewController.m in Sources */,
 				D74AAA151CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				A5B76D711D0C312A00A68667 /* DXTextInfovViewController.m in Sources */,
 				A5D76F831D3795D400AA8006 /* DmDatabaseOperation.m in Sources */,
@@ -4595,7 +4596,6 @@
 				A59BFC731E08DAC200FC39D5 /* UILabel+ZYTool.m in Sources */,
 				A54CE1CB1E557B1D007068C7 /* DXError.m in Sources */,
 				D78418EF1C7488D300850129 /* DXSelectView.m in Sources */,
-				A506554A1E5460FD0073F2A4 /* DownLoadItemViewController.m in Sources */,
 				A56FF93F1D50422500F61BD6 /* RecommendViewController.m in Sources */,
 				A5383F641DD4B26B008B4650 /* ColorModel.m in Sources */,
 				D7FC15661CA93CB4009EAB4C /* DXmenuItem.m in Sources */,
@@ -4618,10 +4618,10 @@
 				A5D76F821D3795D400AA8006 /* DBManager.m in Sources */,
 				A5141AC71E07D15300C4C23B /* PayWayTableViewCell.m in Sources */,
 				A50258F01CC76A68007B00E3 /* CardInfoTableViewCell.m in Sources */,
-				A54CE1D01E558711007068C7 /* DownLoadViewController.m in Sources */,
 				D78418BE1C746FAF00850129 /* CommenInfoView.m in Sources */,
 				A5D76F881D379E8D00AA8006 /* NSDictionary+DXHelper.m in Sources */,
 				D7E4BF2E1C9ABD7600AE9030 /* DXQRScanView.m in Sources */,
+				A54CE1D81E558E32007068C7 /* DownloadTableViewCell.m in Sources */,
 				D784185A1C74551200850129 /* main.m in Sources */,
 				D784189F1C745B9400850129 /* MainViewController.m in Sources */,
 			);

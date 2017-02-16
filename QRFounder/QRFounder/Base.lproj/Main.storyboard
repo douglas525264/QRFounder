@@ -1143,10 +1143,10 @@
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="PayWayTableViewCell" rowHeight="60" id="N0K-iR-g8v" customClass="PayWayTableViewCell">
-                                        <rect key="frame" x="0.0" y="55.5" width="375" height="60"/>
+                                        <rect key="frame" x="0.0" y="56" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="N0K-iR-g8v" id="9ON-yg-Az0">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="and-mk-ecu">
@@ -1309,6 +1309,106 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DR2-nZ-Ttk" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3594.4000000000001" y="954.87256371814101"/>
+        </scene>
+        <!--Download Item Table View Controller-->
+        <scene sceneID="4fZ-6d-eO6">
+            <objects>
+                <tableViewController storyboardIdentifier="DownloadItemTableViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="D0P-L9-ERe" customClass="DownloadItemTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="80" sectionHeaderHeight="28" sectionFooterHeight="28" id="9tM-0p-Elr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="DownloadTableViewCell" rowHeight="80" id="qAB-Q1-nBw" customClass="DownloadTableViewCell">
+                                <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qAB-Q1-nBw" id="8cx-ZV-LlZ">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LMM-mi-oAn">
+                                            <rect key="frame" x="25" y="10" width="60" height="60"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="60" id="2Hr-9P-VLC"/>
+                                                <constraint firstAttribute="height" constant="60" id="4aD-hk-9xB"/>
+                                            </constraints>
+                                        </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="疯狂的兔子" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gt7-oP-D5M">
+                                            <rect key="frame" x="93" y="10" width="186" height="29"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="186" id="knh-iL-fyF"/>
+                                                <constraint firstAttribute="height" constant="29" id="nGr-o7-nYl"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="疯狂的兔子专辑，给你疯狂的感觉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdT-ON-6fh">
+                                            <rect key="frame" x="94" y="40" width="186" height="29"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="186" id="3YL-PT-gvp"/>
+                                                <constraint firstAttribute="height" constant="29" id="kf8-Oa-1c6"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="11"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="58e-fb-TTy">
+                                            <rect key="frame" x="294" y="25" width="67" height="30"/>
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="67" id="KII-Jl-5xq"/>
+                                                <constraint firstAttribute="height" constant="30" id="Yjy-GN-1OJ"/>
+                                            </constraints>
+                                            <state key="normal" title="下载">
+                                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="dowladBtnClick:" destination="qAB-Q1-nBw" eventType="touchUpInside" id="KMr-mN-avf"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="80%" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HSJ-IL-BXT">
+                                            <rect key="frame" x="313" y="29" width="42" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="A7H-Oe-tab"/>
+                                                <constraint firstAttribute="width" constant="42" id="tQ8-ce-2me"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottomMargin" secondItem="YdT-ON-6fh" secondAttribute="bottom" constant="2" id="1bS-Xz-Uwb"/>
+                                        <constraint firstItem="YdT-ON-6fh" firstAttribute="leading" secondItem="LMM-mi-oAn" secondAttribute="trailing" constant="9" id="2eu-lL-cBe"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="HSJ-IL-BXT" secondAttribute="trailing" constant="12" id="IlG-SS-66Y"/>
+                                        <constraint firstItem="gt7-oP-D5M" firstAttribute="leading" secondItem="LMM-mi-oAn" secondAttribute="trailing" constant="8" id="Jej-Ah-QYQ"/>
+                                        <constraint firstItem="58e-fb-TTy" firstAttribute="centerY" secondItem="8cx-ZV-LlZ" secondAttribute="centerY" id="LUm-m6-pKm"/>
+                                        <constraint firstItem="LMM-mi-oAn" firstAttribute="leading" secondItem="8cx-ZV-LlZ" secondAttribute="leadingMargin" constant="17" id="RNN-a8-IMb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="LMM-mi-oAn" secondAttribute="bottom" constant="1" id="SMz-q5-J7q"/>
+                                        <constraint firstItem="HSJ-IL-BXT" firstAttribute="centerY" secondItem="8cx-ZV-LlZ" secondAttribute="centerY" id="aV0-W5-S1F"/>
+                                        <constraint firstItem="LMM-mi-oAn" firstAttribute="top" secondItem="8cx-ZV-LlZ" secondAttribute="topMargin" constant="2" id="c1w-0O-sRH"/>
+                                        <constraint firstItem="gt7-oP-D5M" firstAttribute="top" secondItem="8cx-ZV-LlZ" secondAttribute="topMargin" constant="2" id="wAb-u4-SU2"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="58e-fb-TTy" secondAttribute="trailing" constant="6" id="xoQ-83-qdn"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="desLable" destination="YdT-ON-6fh" id="BZ3-OG-LSe"/>
+                                    <outlet property="downLoadBtn" destination="58e-fb-TTy" id="x59-S0-d9w"/>
+                                    <outlet property="iconImageView" destination="LMM-mi-oAn" id="Xzs-zZ-2Sh"/>
+                                    <outlet property="progressLable" destination="HSJ-IL-BXT" id="d9M-f9-gdI"/>
+                                    <outlet property="titleLable" destination="gt7-oP-D5M" id="iek-ta-4fG"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="D0P-L9-ERe" id="81S-y3-lbi"/>
+                            <outlet property="delegate" destination="D0P-L9-ERe" id="5bO-qU-rjs"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="zct-rK-sFk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4552.8000000000002" y="834.33283358320841"/>
         </scene>
         <!--扫描-->
         <scene sceneID="MXy-pa-wOK">

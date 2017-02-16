@@ -87,6 +87,7 @@
     [manager POST:path parameters:bodyData progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+       
         NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         if (resp ) {
             NSInteger code = 0;
@@ -96,8 +97,8 @@
             }
             NSString *msg =  resp[@"msg"];
             if (code == 200) {
-                NSDictionary *info = resp[@"json"];
-                completeBlock(info,msg,code);
+                
+                completeBlock(resp,msg,code);
             } else {
                 DXError *error = [[DXError alloc] init];
                 error.code = code;
