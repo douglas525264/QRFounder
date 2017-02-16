@@ -183,6 +183,8 @@
 		A549E73D1D7FFB0300651D23 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73C1D7FFB0300651D23 /* CoreLocation.framework */; };
 		A549E73F1D7FFB0F00651D23 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73E1D7FFB0F00651D23 /* CoreTelephony.framework */; };
 		A54BBBE81D8680D900E38764 /* dxBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54BBBE71D8680D900E38764 /* dxBgView.m */; };
+		A54CE1C21E554FF4007068C7 /* SourceItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1C11E554FF4007068C7 /* SourceItemModel.m */; };
+		A54CE1C31E554FF4007068C7 /* SourceItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1C11E554FF4007068C7 /* SourceItemModel.m */; };
 		A54EC6D41E2724AD005A459F /* BCConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */; };
 		A54EC6D51E2724AD005A459F /* BCConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */; };
 		A54EC6D61E2724AD005A459F /* BCHybridWebViewFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CC1E2724AD005A459F /* BCHybridWebViewFMWK.framework */; };
@@ -1282,6 +1284,8 @@
 		A549E73E1D7FFB0F00651D23 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A54BBBE61D8680D900E38764 /* dxBgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dxBgView.h; sourceTree = "<group>"; };
 		A54BBBE71D8680D900E38764 /* dxBgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dxBgView.m; sourceTree = "<group>"; };
+		A54CE1C01E554FF4007068C7 /* SourceItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceItemModel.h; sourceTree = "<group>"; };
+		A54CE1C11E554FF4007068C7 /* SourceItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceItemModel.m; sourceTree = "<group>"; };
 		A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BCConnectorBundle.framework; sourceTree = "<group>"; };
 		A54EC6CC1E2724AD005A459F /* BCHybridWebViewFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BCHybridWebViewFMWK.framework; sourceTree = "<group>"; };
 		A54EC6CD1E2724AD005A459F /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
@@ -3124,6 +3128,8 @@
 				A54516B71DD0696600B38B3F /* QRPointModel.m */,
 				A5383F621DD4B26B008B4650 /* ColorModel.h */,
 				A5383F631DD4B26B008B4650 /* ColorModel.m */,
+				A54CE1C01E554FF4007068C7 /* SourceItemModel.h */,
+				A54CE1C11E554FF4007068C7 /* SourceItemModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -4476,6 +4482,7 @@
 				A55C5D721DFE53820081A8DF /* HistoryViewController.m in Sources */,
 				A55C5D731DFE53820081A8DF /* DXCommenQRView.m in Sources */,
 				A55C5D741DFE53820081A8DF /* DBHelper.m in Sources */,
+				A54CE1C31E554FF4007068C7 /* SourceItemModel.m in Sources */,
 				A55C5D751DFE53820081A8DF /* QREditViewController.m in Sources */,
 				A50655631E54614F0073F2A4 /* DownloadManager.m in Sources */,
 				A55C5D761DFE53820081A8DF /* DXSubMenuItem.m in Sources */,
@@ -4542,6 +4549,7 @@
 				D78418C71C746FEB00850129 /* MsgInfoView.m in Sources */,
 				D78418B01C745D4500850129 /* QRScanViewController.m in Sources */,
 				D78418D31C74706F00850129 /* PositionInfoView.m in Sources */,
+				A54CE1C21E554FF4007068C7 /* SourceItemModel.m in Sources */,
 				D78418601C74551200850129 /* ViewController.m in Sources */,
 				A55031111E2605E7006DE647 /* FuqianlaPay+scheme.m in Sources */,
 				A50655621E54614F0073F2A4 /* DownloadManager.m in Sources */,

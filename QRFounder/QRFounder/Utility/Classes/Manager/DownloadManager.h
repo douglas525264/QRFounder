@@ -7,7 +7,12 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "DownloadTask.h"
+@interface DownloadManager : NSObject<DownloadTaskDelegate>
+@property (nonatomic, weak) id<DownloadTaskDelegate> delegate;
 
-@interface DownloadManager : NSObject
++ (DownloadManager *)shareInstance;
 
+- (void)addATask:(DownloadTask *)task;
+- (void)startTaskWithId:(NSString *)taskID;
 @end

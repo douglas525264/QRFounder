@@ -4,6 +4,11 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ATMHud@dhoerl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,7 +52,12 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>383D1D5D4E30580035A5417C7C429FC9</key>
+		<key>13C1F98B999CCC5E1F26E6C5E7D5AA80</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>4296E3AF8A0DEFE7EFAF41E28AF501DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -57,17 +67,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>939C98D7F9AF557A56132DEDA417E54F</key>
+		<key>84EAD2644D81112D3FF37B986E1C30D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A2148AECEB5EE02107D9E2C44EE1EFA7</key>
+		<key>8CAA2781BDF4DCA77FFD6B51ECE17675</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>D17742489E37FB6CBD33A83210F915ED</key>
+		<key>9475387C5806A416DE130AFC8D6E9CD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9E033EDB5EC0819481B0546434FA577B</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -77,12 +92,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>EBEAE71EFDFF37F91049E7CEB04EA967</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>EE92568402D817704D83238E5FF0FBDF</key>
+		<key>FF14C128C66EF2297D145EED9C5EF781</key>
 		<dict>
 			<key>primary</key>
 			<true/>

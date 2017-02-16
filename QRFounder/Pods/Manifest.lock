@@ -1,4 +1,19 @@
 PODS:
+  - AFNetworking (3.1.0):
+    - AFNetworking/NSURLSession (= 3.1.0)
+    - AFNetworking/Reachability (= 3.1.0)
+    - AFNetworking/Security (= 3.1.0)
+    - AFNetworking/Serialization (= 3.1.0)
+    - AFNetworking/UIKit (= 3.1.0)
+  - AFNetworking/NSURLSession (3.1.0):
+    - AFNetworking/Reachability
+    - AFNetworking/Security
+    - AFNetworking/Serialization
+  - AFNetworking/Reachability (3.1.0)
+  - AFNetworking/Security (3.1.0)
+  - AFNetworking/Serialization (3.1.0)
+  - AFNetworking/UIKit (3.1.0):
+    - AFNetworking/NSURLSession
   - ATMHud@dhoerl (3.0.0):
     - ATMHud@dhoerl/Core (= 3.0.0)
   - ATMHud@dhoerl/Core (3.0.0)
@@ -16,6 +31,7 @@ PODS:
   - ZipArchive (1.4.0)
 
 DEPENDENCIES:
+  - AFNetworking (~> 3.1.0)
   - ATMHud@dhoerl (~> 3.0.0)
   - libqrencode (~> 3.4.2)
   - ReactiveCocoa
@@ -25,6 +41,7 @@ DEPENDENCIES:
   - ZipArchive (~> 1.4.0)
 
 SPEC CHECKSUMS:
+  AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   ATMHud@dhoerl: df5862a0a76c7330aa78e3cd3504fa8221ee8a0d
   libqrencode: 43dc34b89af83ea4b07c409cd8e09c87aa3a1c9f
   ReactiveCocoa: e2db045570aa97c695e7aa97c2bcab222ae51f4a
@@ -33,6 +50,6 @@ SPEC CHECKSUMS:
   ZBarSDK: 4c1b5daeb7d6cc67dc9355e690af0230a661f6ec
   ZipArchive: e25a4373192673e3229ac8d6e9f64a3e5713c966
 
-PODFILE CHECKSUM: 2206db467d0ff8755664139146be66fccff9a49c
+PODFILE CHECKSUM: 64fb5e6993282d2521febc5d0425c3d88c229527
 
 COCOAPODS: 1.2.0

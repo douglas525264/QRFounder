@@ -26,11 +26,13 @@ typedef NS_ENUM(NSInteger,DownloadTaskStatus)
 - (void)downloadtask:(DownloadTask *)task progressCahnge:(CGFloat) progress;
 
 @end
-@interface DownloadTask : NSObject
+@interface DownloadTask : NSObject<NSURLSessionDataDelegate,NSURLSessionDelegate>
 @property (nonatomic, copy)NSString *taskID;
 @property (nonatomic, copy)NSString *downLoadURL;
 @property (nonatomic, copy)NSString *tempSavePath;
 @property (nonatomic, copy)NSString *filePath;
+@property (nonatomic, assign)CGFloat progress;
+@property (nonatomic, weak) id<DownloadTaskDelegate> delegate;
 @property (nonatomic, assign) DownloadTaskStatus status;
 
 - (void)start;
