@@ -189,6 +189,8 @@
 		A54CE1C71E557A9B007068C7 /* DXNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1C51E557A9B007068C7 /* DXNetworkTool.m */; };
 		A54CE1CB1E557B1D007068C7 /* DXError.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1CA1E557B1D007068C7 /* DXError.m */; };
 		A54CE1CC1E557B1D007068C7 /* DXError.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1CA1E557B1D007068C7 /* DXError.m */; };
+		A54CE1D01E558711007068C7 /* DownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1CF1E558711007068C7 /* DownLoadViewController.m */; };
+		A54CE1D11E558711007068C7 /* DownLoadViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1CF1E558711007068C7 /* DownLoadViewController.m */; };
 		A54EC6D41E2724AD005A459F /* BCConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */; };
 		A54EC6D51E2724AD005A459F /* BCConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */; };
 		A54EC6D61E2724AD005A459F /* BCHybridWebViewFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CC1E2724AD005A459F /* BCHybridWebViewFMWK.framework */; };
@@ -1294,6 +1296,8 @@
 		A54CE1C51E557A9B007068C7 /* DXNetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXNetworkTool.m; sourceTree = "<group>"; };
 		A54CE1C91E557B1D007068C7 /* DXError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXError.h; sourceTree = "<group>"; };
 		A54CE1CA1E557B1D007068C7 /* DXError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXError.m; sourceTree = "<group>"; };
+		A54CE1CE1E558711007068C7 /* DownLoadViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownLoadViewController.h; sourceTree = "<group>"; };
+		A54CE1CF1E558711007068C7 /* DownLoadViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownLoadViewController.m; sourceTree = "<group>"; };
 		A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BCConnectorBundle.framework; sourceTree = "<group>"; };
 		A54EC6CC1E2724AD005A459F /* BCHybridWebViewFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BCHybridWebViewFMWK.framework; sourceTree = "<group>"; };
 		A54EC6CD1E2724AD005A459F /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
@@ -2315,6 +2319,15 @@
 			name = Net;
 			sourceTree = "<group>";
 		};
+		A54CE1CD1E5586FD007068C7 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				A54CE1CE1E558711007068C7 /* DownLoadViewController.h */,
+				A54CE1CF1E558711007068C7 /* DownLoadViewController.m */,
+			);
+			name = Download;
+			sourceTree = "<group>";
+		};
 		A54EC6CA1E2724AD005A459F /* BCFeedback */ = {
 			isa = PBXGroup;
 			children = (
@@ -3116,6 +3129,7 @@
 		D784188C1C7455BA00850129 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A54CE1CD1E5586FD007068C7 /* Download */,
 				A589D0181E00E8A700FB5168 /* Buy */,
 				A579DBD61D388D6900561CD3 /* History */,
 				A51191431D364BBF004C2697 /* About */,
@@ -4486,6 +4500,7 @@
 				A55C5D621DFE53820081A8DF /* QRPointModel.m in Sources */,
 				A54CE1C71E557A9B007068C7 /* DXNetworkTool.m in Sources */,
 				A55C5D631DFE53820081A8DF /* WIFIInfoView.m in Sources */,
+				A54CE1D11E558711007068C7 /* DownLoadViewController.m in Sources */,
 				A54CE1CC1E557B1D007068C7 /* DXError.m in Sources */,
 				A55C5D641DFE53820081A8DF /* AboutTableViewController.m in Sources */,
 				A55C5D651DFE53820081A8DF /* QRdatabase.xcdatamodeld in Sources */,
@@ -4603,6 +4618,7 @@
 				A5D76F821D3795D400AA8006 /* DBManager.m in Sources */,
 				A5141AC71E07D15300C4C23B /* PayWayTableViewCell.m in Sources */,
 				A50258F01CC76A68007B00E3 /* CardInfoTableViewCell.m in Sources */,
+				A54CE1D01E558711007068C7 /* DownLoadViewController.m in Sources */,
 				D78418BE1C746FAF00850129 /* CommenInfoView.m in Sources */,
 				A5D76F881D379E8D00AA8006 /* NSDictionary+DXHelper.m in Sources */,
 				D7E4BF2E1C9ABD7600AE9030 /* DXQRScanView.m in Sources */,

@@ -229,8 +229,16 @@
                 
             }
 
+        }else {
+            if (tag == - 1) {
+                [strongSelf jumpToDownLoadPage];
+            }
         }
     }];
+
+}
+- (void)jumpToDownLoadPage {
+
 
 }
 - (void)showUnlockWithItem:(DXmenuItem *)menu AndIndex:(NSInteger)index {

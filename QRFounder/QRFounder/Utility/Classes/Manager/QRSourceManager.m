@@ -258,7 +258,10 @@ static QRSourceManager *qManager;
             break;
     }
     
-    
+    DXmenuItem *lastmenuItem = [[DXmenuItem alloc] init];
+    lastmenuItem.menuIcon = [UIImage imageNamed:@"itemadd"];
+    lastmenuItem.items = [[NSMutableArray alloc] init];
+    [resultArr addObject:lastmenuItem];
     
     return resultArr;
 }
