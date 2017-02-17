@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QRFounder/APP/Controller/QRShowVC/QREditViewController.m"
-            timestampString = "509013864.620702"
+            timestampString = "509018639.583529"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "360"
-            endingLineNumber = "360"
+            startingLineNumber = "365"
+            endingLineNumber = "365"
             landmarkName = "-scrollMenu"
             landmarkType = "7">
          </BreakpointContent>

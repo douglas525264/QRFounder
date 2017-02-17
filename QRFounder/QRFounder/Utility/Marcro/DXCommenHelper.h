@@ -81,7 +81,7 @@ typedef NS_ENUM(NSInteger,QREditType) {
     /**
      *  背景图片
      */
-    QREditTypeBg,
+    QREditTypeBg = 1,
     /**
      *  边框
      */

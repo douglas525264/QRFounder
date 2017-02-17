@@ -262,10 +262,13 @@ static QRSourceManager *qManager;
             break;
     }
     [resultArr addObjectsFromArray:[self getlocalInfoWithType:type]];
-    DXmenuItem *lastmenuItem = [[DXmenuItem alloc] init];
-    lastmenuItem.menuIcon = [UIImage imageNamed:@"itemadd"];
-    lastmenuItem.items = [[NSMutableArray alloc] init];
-    [resultArr addObject:lastmenuItem];
+    if (type != QREditTypeColor) {
+        DXmenuItem *lastmenuItem = [[DXmenuItem alloc] init];
+        lastmenuItem.menuIcon = [UIImage imageNamed:@"itemadd"];
+        lastmenuItem.items = [[NSMutableArray alloc] init];
+        [resultArr addObject:lastmenuItem];
+ 
+    }
     
     return resultArr;
 }
@@ -585,7 +588,139 @@ static QRSourceManager *qManager;
             }
             
         }break;
+        case QREditTypeBg:{
             
+            rPath = [QRSourceManager getBGPath];
+            NSError *error = nil;
+            NSArray *fileList = [fileManager contentsOfDirectoryAtPath:rPath error:&error];
+            
+            for (NSString *file in fileList) {
+                NSString *path = [rPath stringByAppendingPathComponent:file];
+                [fileManager fileExistsAtPath:path isDirectory:(&isDir)];
+                if (isDir) {
+                    NSString *infoPath = [path stringByAppendingString:@"/SourceConfig.plist"];
+                    if ([fileManager fileExistsAtPath:infoPath]) {
+                        NSDictionary *info = [NSDictionary dictionaryWithContentsOfFile:infoPath];
+                        DXmenuItem *menuItem = [[DXmenuItem alloc] init];
+                        NSString *title = info[@"sourcename"];
+                        NSString *des = info[@"des"];
+                        NSString *sourceID = info[@"diysourceid"];
+                        if (title) {
+                            menuItem.title = title;
+                        }
+                        if (des) {
+                            menuItem.des = des;
+                        }
+                        if (sourceID) {
+                            menuItem.itemId = sourceID;
+                        }
+                        menuItem.menuIcon = QRImage1([info objectForKey:@"iconName"],path);
+                        NSMutableArray *menulist = [[NSMutableArray alloc] init];
+                        NSArray *subMenuInfos = [info objectForKey:@"menuList"];
+                            NSInteger inde = 0;
+                        for (NSDictionary *subInfo in subMenuInfos) {
+                            DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
+                            subItem.normalImage = QRImage1([subInfo objectForKey:@"menuIcon"],path);//[UIImage imageNamed:[subInfo objectForKey:@"menuIcon"]];
+                            subItem.ImageName = [path stringByAppendingFormat:@"/%@.png",[subInfo objectForKey:@"imageSourceName"] ] ;
+                            NSNumber *price = [subInfo objectForKey:@"price"];
+                            subItem.price = price ? price.floatValue : 0;
+                            NSNumber *isLock = subInfo [@"islock"];
+                            if (isLock) {
+                                if (isLock.boolValue) {
+                                    subItem.isLock = ![[Lockmanager shareInstance] hasunlock:sourceID atindex:inde];
+                                } else {
+                                    subItem.isLock = NO;
+                                }
+                            } else {
+                                subItem.isLock = NO;
+                            }
+                            
+
+                            [menulist addObject:subItem];
+                            inde ++;
+                            
+                        }
+                        menuItem.items = menulist;
+                        [resultArr addObject:menuItem];
+                    
+                    }
+                }
+            }
+            
+            
+            
+            
+           
+
+        
+        }break;
+        case QREditTypeLogo:{
+            
+            rPath = [QRSourceManager getLogoPath];
+            NSError *error = nil;
+            NSArray *fileList = [fileManager contentsOfDirectoryAtPath:rPath error:&error];
+            
+            for (NSString *file in fileList) {
+                NSString *path = [rPath stringByAppendingPathComponent:file];
+                [fileManager fileExistsAtPath:path isDirectory:(&isDir)];
+                if (isDir) {
+                    NSString *infoPath = [path stringByAppendingString:@"/SourceConfig.plist"];
+                    if ([fileManager fileExistsAtPath:infoPath]) {
+                        NSDictionary *info = [NSDictionary dictionaryWithContentsOfFile:infoPath];
+                        DXmenuItem *menuItem = [[DXmenuItem alloc] init];
+                        NSString *title = info[@"sourcename"];
+                        NSString *des = info[@"des"];
+                        NSString *sourceID = info[@"diysourceid"];
+                        if (title) {
+                            menuItem.title = title;
+                        }
+                        if (des) {
+                            menuItem.des = des;
+                        }
+                        if (sourceID) {
+                            menuItem.itemId = sourceID;
+                        }
+                        menuItem.menuIcon = QRImage1([info objectForKey:@"iconName"],path);
+                        NSMutableArray *menulist = [[NSMutableArray alloc] init];
+                        NSArray *subMenuInfos = [info objectForKey:@"menuList"];
+                        NSInteger inde = 0;
+                        for (NSDictionary *subInfo in subMenuInfos) {
+                            DXSubMenuItem *subItem = [[DXSubMenuItem alloc] init];
+                            subItem.normalImage = QRImage1([subInfo objectForKey:@"menuIcon"],path);//[UIImage imageNamed:[subInfo objectForKey:@"menuIcon"]];
+                            subItem.ImageName = [path stringByAppendingFormat:@"/%@.png",[subInfo objectForKey:@"imageSourceName"] ] ;
+                            NSNumber *price = [subInfo objectForKey:@"price"];
+                            subItem.price = price ? price.floatValue : 0;
+                            NSNumber *isLock = subInfo [@"islock"];
+                            if (isLock) {
+                                if (isLock.boolValue) {
+                                    subItem.isLock = ![[Lockmanager shareInstance] hasunlock:sourceID atindex:inde];
+                                } else {
+                                    subItem.isLock = NO;
+                                }
+                            } else {
+                                subItem.isLock = NO;
+                            }
+                            
+                            
+                            [menulist addObject:subItem];
+                            inde ++;
+                            
+                        }
+                        menuItem.items = menulist;
+                        [resultArr addObject:menuItem];
+                        
+                    }
+                }
+            }
+            
+            
+            
+            
+            
+            
+            
+        }break;
+
         default:
             
             break;

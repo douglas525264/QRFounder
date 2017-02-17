@@ -205,6 +205,11 @@
                // return ;
             } else {
                 UIImage *image = [UIImage imageWithContentsOfFile:subitem.ImageName];
+                if (subitem.isLock) {
+                
+                [strongSelf showUnlockWithItem:item AndIndex:path.row];
+                    return;
+                }
                 switch (strongSelf.editType) {
                     case QREditTypeBg:{
                         [strongSelf setBgImage:image];

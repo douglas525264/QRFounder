@@ -116,7 +116,8 @@
     [qVC setFinishedBlock:^(QRModel *model) {
         self.qrModel = model;
     }];
-    [self presentViewController:qVC animated:YES completion:^{
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:qVC];
+    [self presentViewController:nav animated:YES completion:^{
         
     }];
 
@@ -145,7 +146,8 @@
         self.qrModel = model;
     }];
   //  qVC.modalTransitionStyle = UIModalTransitionStyleFlipHorizontal;
-    [self presentViewController:qVC animated:YES completion:^{
+    UINavigationController *nav = [[UINavigationController alloc] initWithRootViewController:qVC];
+    [self presentViewController:nav animated:YES completion:^{
         
     }];
 
