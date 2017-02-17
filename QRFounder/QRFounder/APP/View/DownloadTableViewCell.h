@@ -14,5 +14,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *desLable;
 @property (weak, nonatomic) IBOutlet UIButton *downLoadBtn;
 @property (weak, nonatomic) IBOutlet UILabel *progressLable;
+@property (nonatomic, copy) void (^downLoadCallBack)();
 - (void)configWithModel:(SourceItemModel *)model;
+- (void)setProgress:(CGFloat)progress;
 @end

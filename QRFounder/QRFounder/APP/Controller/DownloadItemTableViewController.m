@@ -11,7 +11,9 @@
 #import "DXHelper.h"
 #import "SourceItemModel.h"
 #import <RACEXTScope.h>
-@interface DownloadItemTableViewController ()
+#import "DownloadManager.h"
+#import "QRSourceManager.h"
+@interface DownloadItemTableViewController ()<DownloadTaskDelegate>
 @property (nonatomic, strong) NSMutableArray *sourceArr;
 @end
 
@@ -21,6 +23,7 @@
     [super viewDidLoad];
     [self createUI];
     [self loadData];
+    
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -42,36 +45,59 @@
     imageV.image = [[DXHelper shareInstance] getBgImage];
     imageV.contentMode = UIViewContentModeScaleAspectFill;
     self.tableView.backgroundView = imageV;
-
+    if (!self.isManager) {
+        [DownloadManager shareInstance].delegate = self;
+    }
 }
 - (void)managerClick:(id)sender {
     UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
     DownloadItemTableViewController *byVC = [mainStory instantiateViewControllerWithIdentifier:@"DownloadItemTableViewController"];
     byVC.isManager = YES;
+    byVC.type = self.type;
+    @weakify(self);
+    [byVC setDeleteCallBack:^(NSString *sid) {
+        @strongify(self)
+        for (SourceItemModel *model in self.sourceArr) {
+            if([model.sId isEqualToString:sid]) {
+                model.status = TaskStatusIdle;
+                
+            }
+        }
+        dispatch_async(dispatch_get_main_queue(), ^{
+        [self.tableView reloadData];
+        });
+    }];
     [self.navigationController pushViewController:byVC animated:YES];
 
 }
 - (void)loadData {
+    NSArray *hasd = [[QRSourceManager shareInstance] getHasDownLoadItemsWithtype:self.type];
+    
     if (self.isManager) {
-        
+        if (hasd && hasd.count > 0) {
+            [self.sourceArr addObjectsFromArray:hasd];
+        }
     } else {
         @weakify(self);
-        [DXNetworkTool postWithPath:sourceURL postBody:@{@"type": @"4"} andHttpHeader:@{@"type": @"4"} completed:^(NSDictionary *json, NSString *stringdata, NSInteger code) {
-            @strongify(self)
-            NSArray *sourr = json[@"json"];
-            if (sourr && sourr.count > 0) {
-                for (NSDictionary *infoDic in sourr) {
-                    SourceItemModel *model = [[SourceItemModel alloc] init];
-                    [model configWithJson:infoDic];
-                    [self.sourceArr addObject:model];
+        [[QRSourceManager shareInstance] getItemListwithtype:self.type withFinishedBlock:^(BOOL isok, NSArray *arr) {
+            if (isok) {
+                @strongify(self)
+                
+                [self.sourceArr addObjectsFromArray:arr];
+                if (hasd && hasd.count > 0) {
+                    for (SourceItemModel *model in self.sourceArr) {
+                        for (SourceItemModel *kk in hasd) {
+                            if ([model.sId isEqualToString:kk.sId]) {
+                                model.status = TaskStatusFinished;
+                                break;
+                            }
+                        }
+                    }
                 }
                 [self.tableView reloadData];
             }
-            
-        } failed:^(DXError *error) {
-            
         }];
-        
+                
     }
 }
 - (NSMutableArray *)sourceArr {
@@ -105,7 +131,19 @@
     [cell configWithModel:model];
     cell.backgroundColor = [UIColor clearColor];
     cell.contentView.backgroundColor = [UIColor clearColor];
-    
+    if (self.isManager) {
+        cell.downLoadBtn.enabled = YES;
+        [cell.downLoadBtn setTitle:@"移除" forState:UIControlStateNormal];
+    }
+    @weakify(self);
+    [cell setDownLoadCallBack:^{
+        @strongify(self);
+        if (self.isManager) {
+            [self deleteWithModel:model];
+        }else {
+        [self downLoadWithModel:model];
+        }
+    }];
    // cell.accessoryType = UITableViewCellAccessoryDisclosureIndicator;
 
     // Configure the cell...
@@ -113,7 +151,80 @@
     return cell;
 }
 
+- (void)downLoadWithModel:(SourceItemModel *)model {
+    
+    NSLog(@"downLoad %@",model.remoteUrl);
+    DownloadTask *task = [[DownloadTask alloc] init];
+    task.downLoadURL = model.remoteUrl;
+    task.tempSavePath = [NSString stringWithFormat:@"%@/%@",[QRSourceManager getTempSavapath],task.downLoadURL.lastPathComponent];
+    task.filePath = [self getPathWithType:self.type];
+    task.taskID = model.sId;
+    
+    [[DownloadManager shareInstance] addATask:task];
+    [[DownloadManager shareInstance] startTaskWithId:task.taskID];
+}
+- (NSString *)getPathWithType:(QREditType)type {
+    switch (type) {
+        case QREditTypeDIY:
+            return [QRSourceManager getDIYPath];
+            break;
+        case QREditTypeLogo:
+            return [QRSourceManager getLogoPath];
+            break;
+        case QREditTypeBoarder:
+            return [QRSourceManager getBorderPath];
+            break;
+        case QREditTypeBg:
+            return [QRSourceManager getBGPath];
+            break;
+        default:
+            return @"";
+            break;
+    }
+}
+- (SourceItemModel *)getmodelWithID:(NSString *)sid {
 
+    for (SourceItemModel *model in self.sourceArr) {
+        if ([model.sId isEqualToString:sid]) {
+            return model;
+        }
+    }
+    return nil;
+}
+#pragma mark - DownloadTaskDelegate
+- (void)downloadtask:(DownloadTask *)task statusChange:(DownloadTaskStatus)status {
+    SourceItemModel *model = [self getmodelWithID:task.taskID];
+    if (model) {
+        model.status = status;
+        NSInteger row = [self.sourceArr indexOfObject:model];
+        dispatch_async(dispatch_get_main_queue(), ^{
+            [self.tableView reloadRowsAtIndexPaths:@[[NSIndexPath indexPathForRow:row inSection:0]] withRowAnimation:UITableViewRowAnimationNone];
+        });
+        
+    }
+}
+- (void)downloadtask:(DownloadTask *)task progressCahnge:(CGFloat) progress {
+    SourceItemModel *model = [self getmodelWithID:task.taskID];
+    model.progress = progress;
+    if (model) {
+        NSInteger row = [self.sourceArr indexOfObject:model];
+        DownloadTableViewCell *cell = [self.tableView cellForRowAtIndexPath:[NSIndexPath indexPathForRow:row inSection:0]];
+        if (cell) {
+            dispatch_async(dispatch_get_main_queue(), ^{
+            [cell setProgress:progress];
+            });
+        }
+  
+    }
+}
+- (void)deleteWithModel:(SourceItemModel *)model {
+    [[QRSourceManager shareInstance] deleteDownload:model.sId withtype:model.type];
+    [self.sourceArr removeObject:model];
+    [self.tableView reloadData];
+    if (self.deleteCallBack) {
+        self.deleteCallBack(model.sId);
+    }
+}
 /*
 // Override to support conditional editing of the table view.
 - (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath {

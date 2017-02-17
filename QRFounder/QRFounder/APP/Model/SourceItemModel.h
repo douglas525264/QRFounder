@@ -7,7 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "DownloadTask.h"
+#import <UIKit/UIKit.h>
+#import "DXCommenHelper.h"
 @interface SourceItemModel : NSObject
 @property (nonatomic, copy)NSString *sId;
 @property (nonatomic, copy)NSString *name;
@@ -15,6 +16,8 @@
 @property (nonatomic, copy)NSString *remoteUrl;
 @property (nonatomic, copy)NSString *iconURL;
 @property (nonatomic, assign) DownloadTaskStatus status;
+@property (nonatomic, assign) QREditType type;
+@property (nonatomic, assign) CGFloat progress;
 - (void)configWithJson:(NSDictionary *)json;
 - (NSDictionary *)toJson;
 @end

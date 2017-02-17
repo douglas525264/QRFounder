@@ -7,7 +7,9 @@
 //
 
 #import "DownloadManager.h"
+#import "QRSourceManager.h"
 static DownloadManager *dManager;
+
 @interface DownloadManager()
 @property (nonatomic, strong) NSMutableArray *runArr;
 @end
@@ -41,6 +43,7 @@ static DownloadManager *dManager;
 - (void)downloadtask:(DownloadTask *)task statusChange:(DownloadTaskStatus)status {
     if (status == TaskStatusFinished) {
         //存储状态
+        [[QRSourceManager shareInstance] hasDownload:task.taskID];
         [self.runArr removeObject:task];
     }
     if ([_delegate respondsToSelector:@selector(downloadtask:statusChange:)]) {

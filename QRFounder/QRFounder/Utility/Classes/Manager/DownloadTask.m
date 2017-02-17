@@ -109,8 +109,29 @@ didReceiveResponse:(NSURLResponse *)response
     [self stop];
     
     self.status = TaskStatusUnziping;
-    ZipArchive *ar = [[ZipArchive alloc] initWithFileManager:[NSFileManager defaultManager]];
-    [ar UnzipFileTo:self.filePath overWrite:NO];
+    ZipArchive *za = [[ZipArchive alloc] init];
+    
+    if ([za UnzipOpenFile:self.tempSavePath])
+    {
+        
+        NSArray *unzipFileList = [za getZipFileContents];
+        
+        NSString *unZipPath = self.filePath;
+        
+        BOOL ret = [za UnzipFileTo:unZipPath overWrite:YES];
+        if (ret) {
+            NSLog(@"解压成功");
+        }
+        
+        [za UnzipCloseFile];
+        NSFileManager *filemanager = [NSFileManager defaultManager];
+        if ([filemanager fileExistsAtPath:self.tempSavePath]) {
+            [filemanager removeItemAtPath:self.tempSavePath error:nil];
+        }
+       // [movData writeToFile:[[SourceManager shareManager] getOtherFolderPath] atomically:YES];
+        
+    }
+
     
     self.status = TaskStatusFinished;
     
@@ -143,6 +164,9 @@ didReceiveResponse:(NSURLResponse *)response
                     [_delegate downloadtask:self progressCahnge:_currentBytes*1.0f/_totalSize];
                     
                 }
+            }
+            if (_currentBytes >= _totalSize) {
+                [self requestFinished];
             }
             
             

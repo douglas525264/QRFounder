@@ -11,5 +11,5 @@
 @interface DownloadItemTableViewController : UITableViewController
 @property (nonatomic, assign) BOOL isManager;
 @property (nonatomic, assign) QREditType type;
-
+@property (nonatomic, copy) void (^deleteCallBack)(NSString *sid);
 @end

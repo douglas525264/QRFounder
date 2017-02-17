@@ -8,16 +8,10 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-@class DownloadTask;
-typedef NS_ENUM(NSInteger,DownloadTaskStatus)
-{
-    TaskStatusWaiting,
-    TaskStatusDownLoading,
-    TaskStatusError,
-    TaskStatusFinished,
-    TaskStatusUnziping
+#import "DXCommenHelper.h"
 
-};
+@class DownloadTask;
+
 @protocol DownloadTaskDelegate <NSObject>
 
 @optional

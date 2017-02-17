@@ -22,15 +22,53 @@
     [self.iconImageView setImageWithURL:[NSURL URLWithString:model.iconURL]];
     self.titleLable.text = model.name;
     self.desLable.text = model.desStr;
-    if (model.status != TaskStatusDownLoading) {
-        self.progressLable.hidden = YES;
-        self.downLoadBtn.hidden = NO;
-    }else {
+    switch (model.status) {
+        case TaskStatusIdle:{
+            [self.downLoadBtn setTitle:@"下载" forState:UIControlStateNormal];
+        }break;
+
+        case TaskStatusWaiting:{
+            [self setProgress:0];
+        }break;
+        case TaskStatusDownLoading:{
+            [self setProgress:model.progress];
+
+        }break;
+        case TaskStatusError:{
+          
+            [self.downLoadBtn setTitle:@"下载失败" forState:UIControlStateNormal];
+        }break;
+        case TaskStatusUnziping:{
+            [self.downLoadBtn setTitle:@"解压中" forState:UIControlStateNormal];
+        }break;
+        case TaskStatusFinished:{
+            [self.downLoadBtn setTitle:@"已下载" forState:UIControlStateNormal];
+        }break;
+            
+        default:
+            break;
+    }
+    if( model.status == TaskStatusError ||  model.status == TaskStatusIdle){
+        self.downLoadBtn.enabled = YES;
+    
+    } else {
+        self.downLoadBtn.enabled = NO;
+    }
+    if (model.status == TaskStatusDownLoading || model.status == TaskStatusWaiting) {
         self.progressLable.hidden = NO;
         self.downLoadBtn.hidden = YES;
+    }else {
+        self.progressLable.hidden = YES;
+        self.downLoadBtn.hidden = NO;
     }
 }
 - (IBAction)dowladBtnClick:(id)sender {
+    if (self.downLoadCallBack) {
+        self.downLoadCallBack();
+    }
+}
+- (void)setProgress:(CGFloat)progress {
+    self.progressLable.text = [NSString stringWithFormat:@"%.0f%@",progress*100,@"%"];
 }
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {
     [super setSelected:selected animated:animated];
