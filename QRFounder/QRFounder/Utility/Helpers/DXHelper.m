@@ -456,7 +456,12 @@ static DXHelper *helper;
     [DXAlertAction showAlertWithTitle:@"提示" msg:@"对我们的二维码样式是否满意" inVC:vc chooseBlock:^(NSInteger buttonIdx) {
             switch (buttonIdx) {
                 case 0:{
+#if QRFounderPRO
+                    NSString *strUrl = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id1185233985"];
+#else
                     NSString *strUrl = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id1152798225"];
+#endif
+                   // NSString *strUrl = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id1152798225"];
                     NSURL *url = [NSURL URLWithString:strUrl];
                     [[UIApplication sharedApplication] openURL:url];
                     [de setObject:@(YES) forKey:@"hasClikLike"];

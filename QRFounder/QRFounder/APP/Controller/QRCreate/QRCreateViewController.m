@@ -241,6 +241,7 @@
     
     QRModel *model = [[QRModel alloc] init];
     model.QRStr = qrStr;
+    model.type = [self.views indexOfObject:self.currentInfoView];
     [[DBManager shareManager] saveModel:model];
 //    model.QRFrame = CGRectMake(0.065, 0.2355, 0.7, 0.7);
 //    NSString *path = [[NSBundle mainBundle] pathForResource:@"border_test" ofType:@"jpg"];
@@ -330,7 +331,7 @@
         [[DXHelper shareInstance] makeAlterWithTitle:@"无法识别图片" andIsShake:NO];
         NSLog(@"无法识别图片");
     }else {
-        [[AnalyticsManager shareInstance] scanQRCodeWithAlbumEvent];
+        [[AnalyticsManager shareInstance] scanQRCodeWithAlbumEvent:YES];
         [self getResult:symbol.data];
     }
     

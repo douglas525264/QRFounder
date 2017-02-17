@@ -207,7 +207,7 @@
         AVMetadataMachineReadableCodeObject * metadataObject = [metadataObjects objectAtIndex:0];
        // self.ScanResult(metadataObject.stringValue,YES);
         NSLog(@"get Data : %@",metadataObject.stringValue);
-        [[AnalyticsManager shareInstance] scanQRCodeWithCameraEvent];
+        [[AnalyticsManager shareInstance] scanQRCodeWithCameraEvent:NO];
         [self getResult:metadataObject.stringValue];
     }
     
@@ -330,7 +330,7 @@
         [[DXHelper shareInstance] makeAlterWithTitle:@"无法识别图片" andIsShake:NO];
         NSLog(@"无法识别图片");
     }else {
-        [[AnalyticsManager shareInstance] scanQRCodeWithAlbumEvent];
+        [[AnalyticsManager shareInstance] scanQRCodeWithAlbumEvent:NO];
         [self getResult:symbol.data];
         [readView stop];
         
@@ -342,6 +342,7 @@
 
 - (void)getResult:(NSString *)result {
     if (self.scanBlock) {
+        [[AnalyticsManager shareInstance] scanQRCodeWithCameraEvent:YES];
         self.scanBlock(result);
         [self cancelBtnClick:nil];
         

@@ -133,7 +133,7 @@
 #else
       NSString *strUrl = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id1152798225"];
 #endif
-
+            
             NSURL *url = [NSURL URLWithString:strUrl];
             [[UIApplication sharedApplication] openURL:url];
  

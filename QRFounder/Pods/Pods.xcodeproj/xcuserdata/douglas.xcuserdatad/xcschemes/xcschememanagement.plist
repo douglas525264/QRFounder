@@ -4,77 +4,95 @@
 <dict>
 	<key>SchemeUserState</key>
 	<dict>
+		<key>AFNetworking.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>ATMHud@dhoerl.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>1</integer>
 		</dict>
-		<key>Pods.xcscheme</key>
+		<key>Pods-QRFounder.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>3</integer>
+		</dict>
+		<key>Pods-QRFounderPro.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>ReactiveCocoa.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>4</integer>
 		</dict>
 		<key>UMengFeedback.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>5</integer>
 		</dict>
 		<key>ZBarSDK.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>6</integer>
+		</dict>
+		<key>ZipArchive.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
 		</dict>
 		<key>libqrencode.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
-			<key>orderHint</key>
-			<integer>2</integer>
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>0D928596E47DF9926D5FF7305A0BE38E</key>
+		<key>13C1F98B999CCC5E1F26E6C5E7D5AA80</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>493916BEC12C93E24DA01C7110B8053C</key>
+		<key>4296E3AF8A0DEFE7EFAF41E28AF501DB</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>59B5154DEC6908AAF54B5F46275BEC56</key>
+		<key>7841167EAAE92C149AA2C57553E36905</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>645652AFFA267F74DE04EDD7EC96DAA5</key>
+		<key>84EAD2644D81112D3FF37B986E1C30D9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>86A100CE727E95CD8AA9B97CED922FA2</key>
+		<key>8CAA2781BDF4DCA77FFD6B51ECE17675</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A46A84BFCC6FEE4C66AEF1DECC1DC502</key>
+		<key>9475387C5806A416DE130AFC8D6E9CD8</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>9E033EDB5EC0819481B0546434FA577B</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>DBFBD27F220AA348CA24305807ED050E</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FF14C128C66EF2297D145EED9C5EF781</key>
 		<dict>
 			<key>primary</key>
 			<true/>

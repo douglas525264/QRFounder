@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
-
+#import "DXNetworkTool.h"
 #import <ATMHud.h>
 #import "QRModel.h"
 @interface DXHelper : NSObject

@@ -12,8 +12,8 @@
  *  服务器宏定义
  */
 #define Schema @"http://"
-#define weiWuHost @"120.55.81.59"
+#define weiWuHost @"www.opendreamer.cn"
 #define mainURL [NSString stringWithFormat:@"%@%@%@",Schema,weiWuHost,@"index/appJump?device?android&package=%@&appid=@%"]
 #define appUrl [NSString stringWithFormat:@"%@%@/%@",Schema,weiWuHost,@"index/appJump?device=?android&package=%@&appleId=%@"]
-
+#define sourceURL @"http://localhost:8888/QRCodeSever/sourceList.php"
 #endif /* RemoteSever_h */

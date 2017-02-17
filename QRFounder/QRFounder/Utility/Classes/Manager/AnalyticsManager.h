@@ -23,8 +23,8 @@
 - (void)createQREvent;
 - (void)createQREventWithType:(QRType)type;
 
-- (void)scanQRCodeWithAlbumEvent;
-- (void)scanQRCodeWithCameraEvent;
+- (void)scanQRCodeWithAlbumEvent:(BOOL)forRead;
+- (void)scanQRCodeWithCameraEvent:(BOOL)forRead;
 - (void)scanQREventWithType:(QRType)type;
 - (void)beginqLoadVC:(UIViewController *)vc;
 - (void)endLoadVC:(UIViewController *)vc;

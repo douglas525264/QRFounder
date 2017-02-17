@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6F47158C73E0701CA9C33A1D /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870B66BCB23AE6D674C3889 /* libPods.a */; };
+		608B105A4E1B52A947DFF61A /* libPods-QRFounderPro.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4B193A7D2BFE3C1294D583A /* libPods-QRFounderPro.a */; };
+		A1AE23C8634A41360B9F7318 /* libPods-QRFounder.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9939C336B8385276A2C7D5B /* libPods-QRFounder.a */; };
 		A50258F01CC76A68007B00E3 /* CardInfoTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A50258EE1CC76A68007B00E3 /* CardInfoTableViewCell.m */; };
 		A50258F11CC76A68007B00E3 /* CardInfoTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A50258EF1CC76A68007B00E3 /* CardInfoTableViewCell.xib */; };
 		A50258F71CC76E65007B00E3 /* DXInputTextView.m in Sources */ = {isa = PBXBuildFile; fileRef = A50258F61CC76E65007B00E3 /* DXInputTextView.m */; };
@@ -19,6 +20,10 @@
 		A50459EE1D338FDB006C7D31 /* JavaScriptCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50459ED1D338FDB006C7D31 /* JavaScriptCore.framework */; };
 		A50459F01D338FFF006C7D31 /* ImageIO.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50459EF1D338FFF006C7D31 /* ImageIO.framework */; };
 		A50459F11D339009006C7D31 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = A50459AE1D3376B2006C7D31 /* libsqlite3.tbd */; };
+		A506555A1E54612D0073F2A4 /* DownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655591E54612D0073F2A4 /* DownloadTask.m */; };
+		A506555B1E54612D0073F2A4 /* DownloadTask.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655591E54612D0073F2A4 /* DownloadTask.m */; };
+		A50655621E54614F0073F2A4 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655611E54614F0073F2A4 /* DownloadManager.m */; };
+		A50655631E54614F0073F2A4 /* DownloadManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A50655611E54614F0073F2A4 /* DownloadManager.m */; };
 		A508DBD41DA64874004550BB /* BaiduMobAdSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A508DBD31DA64874004550BB /* BaiduMobAdSDK.framework */; };
 		A50FDA361CC789380027188C /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA351CC789380027188C /* AddressBook.framework */; };
 		A50FDA381CC7893D0027188C /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA371CC7893D0027188C /* AddressBookUI.framework */; };
@@ -176,6 +181,16 @@
 		A549E73D1D7FFB0300651D23 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73C1D7FFB0300651D23 /* CoreLocation.framework */; };
 		A549E73F1D7FFB0F00651D23 /* CoreTelephony.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A549E73E1D7FFB0F00651D23 /* CoreTelephony.framework */; };
 		A54BBBE81D8680D900E38764 /* dxBgView.m in Sources */ = {isa = PBXBuildFile; fileRef = A54BBBE71D8680D900E38764 /* dxBgView.m */; };
+		A54CE1C21E554FF4007068C7 /* SourceItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1C11E554FF4007068C7 /* SourceItemModel.m */; };
+		A54CE1C31E554FF4007068C7 /* SourceItemModel.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1C11E554FF4007068C7 /* SourceItemModel.m */; };
+		A54CE1C61E557A9B007068C7 /* DXNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1C51E557A9B007068C7 /* DXNetworkTool.m */; };
+		A54CE1C71E557A9B007068C7 /* DXNetworkTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1C51E557A9B007068C7 /* DXNetworkTool.m */; };
+		A54CE1CB1E557B1D007068C7 /* DXError.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1CA1E557B1D007068C7 /* DXError.m */; };
+		A54CE1CC1E557B1D007068C7 /* DXError.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1CA1E557B1D007068C7 /* DXError.m */; };
+		A54CE1D41E558D90007068C7 /* DownloadItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1D31E558D90007068C7 /* DownloadItemTableViewController.m */; };
+		A54CE1D51E558D90007068C7 /* DownloadItemTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1D31E558D90007068C7 /* DownloadItemTableViewController.m */; };
+		A54CE1D81E558E32007068C7 /* DownloadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1D71E558E32007068C7 /* DownloadTableViewCell.m */; };
+		A54CE1D91E558E32007068C7 /* DownloadTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A54CE1D71E558E32007068C7 /* DownloadTableViewCell.m */; };
 		A54EC6D41E2724AD005A459F /* BCConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */; };
 		A54EC6D51E2724AD005A459F /* BCConnectorBundle.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */; };
 		A54EC6D61E2724AD005A459F /* BCHybridWebViewFMWK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A54EC6CC1E2724AD005A459F /* BCHybridWebViewFMWK.framework */; };
@@ -300,7 +315,6 @@
 		A55C5DAB1DFE53820081A8DF /* AddressBookUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA371CC7893D0027188C /* AddressBookUI.framework */; };
 		A55C5DAC1DFE53820081A8DF /* AddressBook.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A50FDA351CC789380027188C /* AddressBook.framework */; };
 		A55C5DAD1DFE53820081A8DF /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D72A3BB31C9FA130001DB11F /* AVFoundation.framework */; };
-		A55C5DAE1DFE53820081A8DF /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3870B66BCB23AE6D674C3889 /* libPods.a */; };
 		A55C5DB11DFE53820081A8DF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A599E1FD1DFAC5ED00F43834 /* StoreKit.framework */; };
 		A55C5DB31DFE53820081A8DF /* ch01_item009.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A7641DFC0A7600041A3C /* ch01_item009.png */; };
 		A55C5DB41DFE53820081A8DF /* ch01_item013.png in Resources */ = {isa = PBXBuildFile; fileRef = A592A7671DFC0A7600041A3C /* ch01_item013.png */; };
@@ -1091,8 +1105,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		3870B66BCB23AE6D674C3889 /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
-		5E4F2B2A688A4033626C109B /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		7F8C84A0477DFB5F5EDC54F6 /* Pods-QRFounderPro.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRFounderPro.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QRFounderPro/Pods-QRFounderPro.debug.xcconfig"; sourceTree = "<group>"; };
 		A50258ED1CC76A68007B00E3 /* CardInfoTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CardInfoTableViewCell.h; sourceTree = "<group>"; };
 		A50258EE1CC76A68007B00E3 /* CardInfoTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CardInfoTableViewCell.m; sourceTree = "<group>"; };
 		A50258EF1CC76A68007B00E3 /* CardInfoTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardInfoTableViewCell.xib; sourceTree = "<group>"; };
@@ -1109,6 +1122,10 @@
 		A50459EB1D338FD4006C7D31 /* libstdc++.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = "libstdc++.tbd"; path = "usr/lib/libstdc++.tbd"; sourceTree = SDKROOT; };
 		A50459ED1D338FDB006C7D31 /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		A50459EF1D338FFF006C7D31 /* ImageIO.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ImageIO.framework; path = System/Library/Frameworks/ImageIO.framework; sourceTree = SDKROOT; };
+		A50655581E54612D0073F2A4 /* DownloadTask.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTask.h; sourceTree = "<group>"; };
+		A50655591E54612D0073F2A4 /* DownloadTask.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadTask.m; sourceTree = "<group>"; };
+		A50655601E54614F0073F2A4 /* DownloadManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadManager.h; sourceTree = "<group>"; };
+		A50655611E54614F0073F2A4 /* DownloadManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadManager.m; sourceTree = "<group>"; };
 		A508DBD31DA64874004550BB /* BaiduMobAdSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BaiduMobAdSDK.framework; sourceTree = "<group>"; };
 		A50FDA351CC789380027188C /* AddressBook.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBook.framework; path = System/Library/Frameworks/AddressBook.framework; sourceTree = SDKROOT; };
 		A50FDA371CC7893D0027188C /* AddressBookUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AddressBookUI.framework; path = System/Library/Frameworks/AddressBookUI.framework; sourceTree = SDKROOT; };
@@ -1271,6 +1288,16 @@
 		A549E73E1D7FFB0F00651D23 /* CoreTelephony.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreTelephony.framework; path = System/Library/Frameworks/CoreTelephony.framework; sourceTree = SDKROOT; };
 		A54BBBE61D8680D900E38764 /* dxBgView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = dxBgView.h; sourceTree = "<group>"; };
 		A54BBBE71D8680D900E38764 /* dxBgView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = dxBgView.m; sourceTree = "<group>"; };
+		A54CE1C01E554FF4007068C7 /* SourceItemModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SourceItemModel.h; sourceTree = "<group>"; };
+		A54CE1C11E554FF4007068C7 /* SourceItemModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SourceItemModel.m; sourceTree = "<group>"; };
+		A54CE1C41E557A9B007068C7 /* DXNetworkTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXNetworkTool.h; sourceTree = "<group>"; };
+		A54CE1C51E557A9B007068C7 /* DXNetworkTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXNetworkTool.m; sourceTree = "<group>"; };
+		A54CE1C91E557B1D007068C7 /* DXError.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXError.h; sourceTree = "<group>"; };
+		A54CE1CA1E557B1D007068C7 /* DXError.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXError.m; sourceTree = "<group>"; };
+		A54CE1D21E558D90007068C7 /* DownloadItemTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadItemTableViewController.h; sourceTree = "<group>"; };
+		A54CE1D31E558D90007068C7 /* DownloadItemTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadItemTableViewController.m; sourceTree = "<group>"; };
+		A54CE1D61E558E32007068C7 /* DownloadTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DownloadTableViewCell.h; sourceTree = "<group>"; };
+		A54CE1D71E558E32007068C7 /* DownloadTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DownloadTableViewCell.m; sourceTree = "<group>"; };
 		A54EC6CB1E2724AD005A459F /* BCConnectorBundle.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BCConnectorBundle.framework; sourceTree = "<group>"; };
 		A54EC6CC1E2724AD005A459F /* BCHybridWebViewFMWK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = BCHybridWebViewFMWK.framework; sourceTree = "<group>"; };
 		A54EC6CD1E2724AD005A459F /* SecurityGuardSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = SecurityGuardSDK.framework; sourceTree = "<group>"; };
@@ -1658,7 +1685,9 @@
 		A5EE9C9F1DDADAEA00753F90 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = System/Library/Frameworks/CoreFoundation.framework; sourceTree = SDKROOT; };
 		A5EE9CA11DDADB1B00753F90 /* UserNotifications.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UserNotifications.framework; path = System/Library/Frameworks/UserNotifications.framework; sourceTree = SDKROOT; };
 		A5EE9CA31DDADB3800753F90 /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
-		D2F73D3798209558300E55FF /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		A8AE4552D3F16B4594A35C2C /* Pods-QRFounder.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRFounder.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRFounder/Pods-QRFounder.release.xcconfig"; sourceTree = "<group>"; };
+		B3315325DE875335EF8733BD /* Pods-QRFounder.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRFounder.debug.xcconfig"; path = "Pods/Target Support Files/Pods-QRFounder/Pods-QRFounder.debug.xcconfig"; sourceTree = "<group>"; };
+		BF2A9D516741FD582CF4F3AB /* Pods-QRFounderPro.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-QRFounderPro.release.xcconfig"; path = "Pods/Target Support Files/Pods-QRFounderPro/Pods-QRFounderPro.release.xcconfig"; sourceTree = "<group>"; };
 		D7130D9C1C9A99BD0096768B /* QRModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRModel.h; sourceTree = "<group>"; };
 		D7130D9D1C9A99BD0096768B /* QRModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRModel.m; sourceTree = "<group>"; };
 		D7130D9F1C9A9E8D0096768B /* DXQRView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXQRView.h; sourceTree = "<group>"; };
@@ -1739,6 +1768,8 @@
 		D7FC156B1CA93F05009EAB4C /* DXMenuBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXMenuBtn.m; sourceTree = "<group>"; };
 		D7FC156D1CA93F51009EAB4C /* DXScrollMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXScrollMenu.h; sourceTree = "<group>"; };
 		D7FC156E1CA93F51009EAB4C /* DXScrollMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXScrollMenu.m; sourceTree = "<group>"; };
+		E4B193A7D2BFE3C1294D583A /* libPods-QRFounderPro.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QRFounderPro.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F9939C336B8385276A2C7D5B /* libPods-QRFounder.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-QRFounder.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -1809,9 +1840,9 @@
 				A54EC6D91E2724AD005A459F /* SecurityGuardSDK.framework in Frameworks */,
 				A5172BD41E1F6EBA007E099A /* ShareSDKUI.framework in Frameworks */,
 				A5172B871E1F6DB9007E099A /* libPaymentControl.a in Frameworks */,
-				A55C5DAE1DFE53820081A8DF /* libPods.a in Frameworks */,
 				A5172BD61E1F6EBA007E099A /* MOBFoundation.framework in Frameworks */,
 				A55C5DB11DFE53820081A8DF /* StoreKit.framework in Frameworks */,
+				608B105A4E1B52A947DFF61A /* libPods-QRFounderPro.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1879,8 +1910,8 @@
 				D72A3BB41C9FA130001DB11F /* AVFoundation.framework in Frameworks */,
 				A5172BAC1E1F6E7A007E099A /* jpush-ios-2.2.0.a in Frameworks */,
 				A5172B861E1F6DB9007E099A /* libPaymentControl.a in Frameworks */,
-				6F47158C73E0701CA9C33A1D /* libPods.a in Frameworks */,
 				A599E1FE1DFAC5EE00F43834 /* StoreKit.framework in Frameworks */,
+				A1AE23C8634A41360B9F7318 /* libPods-QRFounder.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1901,13 +1932,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		1F2384E57598E60F1ABB9D70 /* Pods */ = {
+		A506553B1E545ED50073F2A4 /* download */ = {
 			isa = PBXGroup;
 			children = (
-				5E4F2B2A688A4033626C109B /* Pods.debug.xcconfig */,
-				D2F73D3798209558300E55FF /* Pods.release.xcconfig */,
+				A50655581E54612D0073F2A4 /* DownloadTask.h */,
+				A50655591E54612D0073F2A4 /* DownloadTask.m */,
+				A50655601E54614F0073F2A4 /* DownloadManager.h */,
+				A50655611E54614F0073F2A4 /* DownloadManager.m */,
 			);
-			name = Pods;
+			name = download;
 			sourceTree = "<group>";
 		};
 		A51191431D364BBF004C2697 /* About */ = {
@@ -2275,6 +2308,26 @@
 			path = moreColor;
 			sourceTree = "<group>";
 		};
+		A54CE1C81E557AA2007068C7 /* Net */ = {
+			isa = PBXGroup;
+			children = (
+				A54CE1C41E557A9B007068C7 /* DXNetworkTool.h */,
+				A54CE1C51E557A9B007068C7 /* DXNetworkTool.m */,
+				A54CE1C91E557B1D007068C7 /* DXError.h */,
+				A54CE1CA1E557B1D007068C7 /* DXError.m */,
+			);
+			name = Net;
+			sourceTree = "<group>";
+		};
+		A54CE1CD1E5586FD007068C7 /* Download */ = {
+			isa = PBXGroup;
+			children = (
+				A54CE1D21E558D90007068C7 /* DownloadItemTableViewController.h */,
+				A54CE1D31E558D90007068C7 /* DownloadItemTableViewController.m */,
+			);
+			name = Download;
+			sourceTree = "<group>";
+		};
 		A54EC6CA1E2724AD005A459F /* BCFeedback */ = {
 			isa = PBXGroup;
 			children = (
@@ -2425,6 +2478,7 @@
 		A57609A41CB287DB006F3F1B /* Manager */ = {
 			isa = PBXGroup;
 			children = (
+				A506553B1E545ED50073F2A4 /* download */,
 				A568C1E01E0002E700A58EE6 /* Lockmanager.h */,
 				A568C1E11E0002E700A58EE6 /* Lockmanager.m */,
 				A57609A51CB287F8006F3F1B /* QRSourceManager.h */,
@@ -2953,9 +3007,21 @@
 				A50FDA371CC7893D0027188C /* AddressBookUI.framework */,
 				A50FDA351CC789380027188C /* AddressBook.framework */,
 				D72A3BB31C9FA130001DB11F /* AVFoundation.framework */,
-				3870B66BCB23AE6D674C3889 /* libPods.a */,
+				F9939C336B8385276A2C7D5B /* libPods-QRFounder.a */,
+				E4B193A7D2BFE3C1294D583A /* libPods-QRFounderPro.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		CC588BF153C4A4598E7B4907 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				B3315325DE875335EF8733BD /* Pods-QRFounder.debug.xcconfig */,
+				A8AE4552D3F16B4594A35C2C /* Pods-QRFounder.release.xcconfig */,
+				7F8C84A0477DFB5F5EDC54F6 /* Pods-QRFounderPro.debug.xcconfig */,
+				BF2A9D516741FD582CF4F3AB /* Pods-QRFounderPro.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		D7130DA21C9AA2EA0096768B /* QRResult */ = {
@@ -2985,8 +3051,8 @@
 				D78418711C74551200850129 /* QRFounderTests */,
 				D784187C1C74551200850129 /* QRFounderUITests */,
 				D78418561C74551200850129 /* Products */,
-				1F2384E57598E60F1ABB9D70 /* Pods */,
 				CC25F21FA19289206F13E26A /* Frameworks */,
+				CC588BF153C4A4598E7B4907 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
@@ -3061,6 +3127,7 @@
 		D784188C1C7455BA00850129 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A54CE1CD1E5586FD007068C7 /* Download */,
 				A589D0181E00E8A700FB5168 /* Buy */,
 				A579DBD61D388D6900561CD3 /* History */,
 				A51191431D364BBF004C2697 /* About */,
@@ -3092,6 +3159,8 @@
 				A54516B71DD0696600B38B3F /* QRPointModel.m */,
 				A5383F621DD4B26B008B4650 /* ColorModel.h */,
 				A5383F631DD4B26B008B4650 /* ColorModel.m */,
+				A54CE1C01E554FF4007068C7 /* SourceItemModel.h */,
+				A54CE1C11E554FF4007068C7 /* SourceItemModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -3124,6 +3193,8 @@
 				A56FFA321D50B67A00F61BD6 /* AboutTableViewCell.xib */,
 				A54BBBE61D8680D900E38764 /* dxBgView.h */,
 				A54BBBE71D8680D900E38764 /* dxBgView.m */,
+				A54CE1D61E558E32007068C7 /* DownloadTableViewCell.h */,
+				A54CE1D71E558E32007068C7 /* DownloadTableViewCell.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -3165,6 +3236,7 @@
 		D78418921C7455C400850129 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A54CE1C81E557AA2007068C7 /* Net */,
 				A5383F651DD4B310008B4650 /* QRColorBgView.h */,
 				A5383F661DD4B310008B4650 /* QRColorBgView.m */,
 				A57609A41CB287DB006F3F1B /* Manager */,
@@ -3333,12 +3405,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = A55C5EAF1DFE53820081A8DF /* Build configuration list for PBXNativeTarget "QRFounderPro" */;
 			buildPhases = (
-				A55C5D441DFE53820081A8DF /* Check Pods Manifest.lock */,
+				2E3DFE9373FDF5501E6EC42D /* [CP] Check Pods Manifest.lock */,
 				A55C5D451DFE53820081A8DF /* Sources */,
 				A55C5D851DFE53820081A8DF /* Frameworks */,
 				A55C5DB21DFE53820081A8DF /* Resources */,
-				A55C5EAD1DFE53820081A8DF /* Embed Pods Frameworks */,
-				A55C5EAE1DFE53820081A8DF /* Copy Pods Resources */,
+				23B3215556F1391B1C31040B /* [CP] Embed Pods Frameworks */,
+				293F2FF93DF354833D708546 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3353,12 +3425,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D78418821C74551200850129 /* Build configuration list for PBXNativeTarget "QRFounder" */;
 			buildPhases = (
-				31625CFD53EF6F7D09212CB3 /* Check Pods Manifest.lock */,
+				D5FD5E4B11FA6E9F455D5CFB /* [CP] Check Pods Manifest.lock */,
 				D78418511C74551200850129 /* Sources */,
 				D78418521C74551200850129 /* Frameworks */,
 				D78418531C74551200850129 /* Resources */,
-				6629F068D2886426F161E982 /* Embed Pods Frameworks */,
-				90700194507311A54659D55F /* Copy Pods Resources */,
+				857419D3C4A70971D76C00B6 /* [CP] Embed Pods Frameworks */,
+				072B83AC55F5EDF7BC153D23 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -3421,7 +3493,7 @@
 					D78418541C74551200850129 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = B6H7GPKGQJ;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -4291,94 +4363,94 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		31625CFD53EF6F7D09212CB3 /* Check Pods Manifest.lock */ = {
+		072B83AC55F5EDF7BC153D23 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QRFounder/Pods-QRFounder-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		6629F068D2886426F161E982 /* Embed Pods Frameworks */ = {
+		23B3215556F1391B1C31040B /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QRFounderPro/Pods-QRFounderPro-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		90700194507311A54659D55F /* Copy Pods Resources */ = {
+		293F2FF93DF354833D708546 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QRFounderPro/Pods-QRFounderPro-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A55C5D441DFE53820081A8DF /* Check Pods Manifest.lock */ = {
+		2E3DFE9373FDF5501E6EC42D /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		A55C5EAD1DFE53820081A8DF /* Embed Pods Frameworks */ = {
+		857419D3C4A70971D76C00B6 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-frameworks.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-QRFounder/Pods-QRFounder-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A55C5EAE1DFE53820081A8DF /* Copy Pods Resources */ = {
+		D5FD5E4B11FA6E9F455D5CFB /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -4393,6 +4465,7 @@
 				A55C5D481DFE53820081A8DF /* UIActionSheet+RACExtends.m in Sources */,
 				A55C5D491DFE53820081A8DF /* HttpInfoView.m in Sources */,
 				A55C5D4A1DFE53820081A8DF /* QRShowViewController.m in Sources */,
+				A54CE1D91E558E32007068C7 /* DownloadTableViewCell.m in Sources */,
 				A55C5D4B1DFE53820081A8DF /* MailInfoView.m in Sources */,
 				A55C5D4C1DFE53820081A8DF /* DXCommenViewController.m in Sources */,
 				A55C5D4D1DFE53820081A8DF /* NSManagedObject+NSManagedObject_BaseType.m in Sources */,
@@ -4407,6 +4480,7 @@
 				A55C5D531DFE53820081A8DF /* dxBgView.m in Sources */,
 				A5141AC81E07D15300C4C23B /* PayWayTableViewCell.m in Sources */,
 				A55C5D541DFE53820081A8DF /* DXScanresultViewController.m in Sources */,
+				A54CE1D51E558D90007068C7 /* DownloadItemTableViewController.m in Sources */,
 				A55031121E2605E7006DE647 /* FuqianlaPay+scheme.m in Sources */,
 				A5172BFD1E1F7083007E099A /* PayManager.m in Sources */,
 				A55C5D551DFE53820081A8DF /* DmSearchCriteria.m in Sources */,
@@ -4425,7 +4499,9 @@
 				A55C5D601DFE53820081A8DF /* ShareManager.m in Sources */,
 				A55C5D611DFE53820081A8DF /* AnalyticsManager.m in Sources */,
 				A55C5D621DFE53820081A8DF /* QRPointModel.m in Sources */,
+				A54CE1C71E557A9B007068C7 /* DXNetworkTool.m in Sources */,
 				A55C5D631DFE53820081A8DF /* WIFIInfoView.m in Sources */,
+				A54CE1CC1E557B1D007068C7 /* DXError.m in Sources */,
 				A55C5D641DFE53820081A8DF /* AboutTableViewController.m in Sources */,
 				A55C5D651DFE53820081A8DF /* QRdatabase.xcdatamodeld in Sources */,
 				A55C5D661DFE53820081A8DF /* DXQRView.m in Sources */,
@@ -4443,7 +4519,9 @@
 				A55C5D721DFE53820081A8DF /* HistoryViewController.m in Sources */,
 				A55C5D731DFE53820081A8DF /* DXCommenQRView.m in Sources */,
 				A55C5D741DFE53820081A8DF /* DBHelper.m in Sources */,
+				A54CE1C31E554FF4007068C7 /* SourceItemModel.m in Sources */,
 				A55C5D751DFE53820081A8DF /* QREditViewController.m in Sources */,
+				A50655631E54614F0073F2A4 /* DownloadManager.m in Sources */,
 				A55C5D761DFE53820081A8DF /* DXSubMenuItem.m in Sources */,
 				A55C5D771DFE53820081A8DF /* LaViewController.m in Sources */,
 				A55C5D781DFE53820081A8DF /* QRHelper.m in Sources */,
@@ -4459,6 +4537,7 @@
 				A55C5D821DFE53820081A8DF /* DXQRScanView.m in Sources */,
 				A55C5D831DFE53820081A8DF /* main.m in Sources */,
 				A55C5D841DFE53820081A8DF /* MainViewController.m in Sources */,
+				A506555B1E54612D0073F2A4 /* DownloadTask.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4478,6 +4557,7 @@
 				A5D76F851D3795D400AA8006 /* NSManagedObject+NSManagedObject_BaseType.m in Sources */,
 				D7FC156C1CA93F05009EAB4C /* DXMenuBtn.m in Sources */,
 				A56FFA311D50B65B00F61BD6 /* AboutTableViewCell.m in Sources */,
+				A54CE1D41E558D90007068C7 /* DownloadItemTableViewController.m in Sources */,
 				D74AAA151CA1011C00B35B2D /* UINavigationController+FDFullscreenPopGesture.m in Sources */,
 				A5B76D711D0C312A00A68667 /* DXTextInfovViewController.m in Sources */,
 				A5D76F831D3795D400AA8006 /* DmDatabaseOperation.m in Sources */,
@@ -4507,11 +4587,14 @@
 				D78418C71C746FEB00850129 /* MsgInfoView.m in Sources */,
 				D78418B01C745D4500850129 /* QRScanViewController.m in Sources */,
 				D78418D31C74706F00850129 /* PositionInfoView.m in Sources */,
+				A54CE1C21E554FF4007068C7 /* SourceItemModel.m in Sources */,
 				D78418601C74551200850129 /* ViewController.m in Sources */,
 				A55031111E2605E7006DE647 /* FuqianlaPay+scheme.m in Sources */,
+				A50655621E54614F0073F2A4 /* DownloadManager.m in Sources */,
 				A5A8F4A21CF7056100019A7E /* DXWebViewController.m in Sources */,
 				D78418B31C745DB900850129 /* QRCreateViewController.m in Sources */,
 				A59BFC731E08DAC200FC39D5 /* UILabel+ZYTool.m in Sources */,
+				A54CE1CB1E557B1D007068C7 /* DXError.m in Sources */,
 				D78418EF1C7488D300850129 /* DXSelectView.m in Sources */,
 				A56FF93F1D50422500F61BD6 /* RecommendViewController.m in Sources */,
 				A5383F641DD4B26B008B4650 /* ColorModel.m in Sources */,
@@ -4524,10 +4607,12 @@
 				A54305701D753C18001E5906 /* LaViewController.m in Sources */,
 				D78418BB1C746D2D00850129 /* QRHelper.m in Sources */,
 				A5D76F761D3793C900AA8006 /* NSString+DXTool.m in Sources */,
+				A54CE1C61E557A9B007068C7 /* DXNetworkTool.m in Sources */,
 				A554246F1D3E0A7900081141 /* DXBottomActionView.m in Sources */,
 				A5520E1A1E03D2D00099670B /* BuyCollectionViewCell.m in Sources */,
 				A540A0D31D239F4B0012EEB0 /* MsgView.m in Sources */,
 				A54516B51DD0679600B38B3F /* DIYSubModel.m in Sources */,
+				A506555A1E54612D0073F2A4 /* DownloadTask.m in Sources */,
 				A568C1E21E0002E700A58EE6 /* Lockmanager.m in Sources */,
 				D7FC156F1CA93F51009EAB4C /* DXScrollMenu.m in Sources */,
 				A5D76F821D3795D400AA8006 /* DBManager.m in Sources */,
@@ -4536,6 +4621,7 @@
 				D78418BE1C746FAF00850129 /* CommenInfoView.m in Sources */,
 				A5D76F881D379E8D00AA8006 /* NSDictionary+DXHelper.m in Sources */,
 				D7E4BF2E1C9ABD7600AE9030 /* DXQRScanView.m in Sources */,
+				A54CE1D81E558E32007068C7 /* DownloadTableViewCell.m in Sources */,
 				D784185A1C74551200850129 /* main.m in Sources */,
 				D784189F1C745B9400850129 /* MainViewController.m in Sources */,
 			);
@@ -4603,7 +4689,7 @@
 /* Begin XCBuildConfiguration section */
 		A55C5EB01DFE53820081A8DF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E4F2B2A688A4033626C109B /* Pods.debug.xcconfig */;
+			baseConfigurationReference = 7F8C84A0477DFB5F5EDC54F6 /* Pods-QRFounderPro.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppProIcon;
 				CODE_SIGN_ENTITLEMENTS = QRFounder/QRFounder.entitlements;
@@ -4666,7 +4752,7 @@
 		};
 		A55C5EB11DFE53820081A8DF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2F73D3798209558300E55FF /* Pods.release.xcconfig */;
+			baseConfigurationReference = BF2A9D516741FD582CF4F3AB /* Pods-QRFounderPro.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppProIcon;
 				CODE_SIGN_ENTITLEMENTS = QRFounder/QRFounder.entitlements;
@@ -4811,13 +4897,13 @@
 		};
 		D78418831C74551200850129 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5E4F2B2A688A4033626C109B /* Pods.debug.xcconfig */;
+			baseConfigurationReference = B3315325DE875335EF8733BD /* Pods-QRFounder.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = QRFounder/QRFounder.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: xin dong (B6H7GPKGQJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = B6H7GPKGQJ;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4867,20 +4953,20 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.qrcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "49c2757e-1205-4ce6-b80b-6c991a8390b2";
-				PROVISIONING_PROFILE_SPECIFIER = nacho;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
 		D78418841C74551200850129 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D2F73D3798209558300E55FF /* Pods.release.xcconfig */;
+			baseConfigurationReference = A8AE4552D3F16B4594A35C2C /* Pods-QRFounder.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = QRFounder/QRFounder.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: xin dong (B6H7GPKGQJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = B6H7GPKGQJ;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4930,8 +5016,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.qrcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "49c2757e-1205-4ce6-b80b-6c991a8390b2";
-				PROVISIONING_PROFILE_SPECIFIER = nacho;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

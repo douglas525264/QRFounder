@@ -19,6 +19,7 @@
 #import "Lockmanager.h"
 #import <RACEXTScope.h>
 #import "BuyItemViewController.h"
+#import "DownloadItemTableViewController.h"
 @interface QREditViewController ()<UIImagePickerControllerDelegate,UINavigationControllerDelegate,BaiduMobAdViewDelegate,GDTMobBannerViewDelegate>
 @property (weak, nonatomic) IBOutlet UIView *toolView;
 
@@ -77,9 +78,21 @@
   
         });
     }];
+   
+    [[QRSourceManager shareInstance].rac_qrSourceChangeSingle subscribeNext:^(NSNumber  *tt) {
+        @strongify(self)
+        if (tt.integerValue == self.editType) {
+            [self reloadMenu];
+        }
+    }];
     // Do any additional setup after loading the view.
 }
+- (void)reloadMenu {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.editType = self.editType;
+    });
 
+}
 - (void)createAD {
         if ([[ADManager shareInstance] getAdType] == ADTypeBaidu) {
         [BaiduMobAdSetting setLpStyle:BaiduMobAdLpStyleDefault];
@@ -192,6 +205,11 @@
                // return ;
             } else {
                 UIImage *image = [UIImage imageWithContentsOfFile:subitem.ImageName];
+                if (subitem.isLock) {
+                
+                [strongSelf showUnlockWithItem:item AndIndex:path.row];
+                    return;
+                }
                 switch (strongSelf.editType) {
                     case QREditTypeBg:{
                         [strongSelf setBgImage:image];
@@ -229,9 +247,19 @@
                 
             }
 
+        }else {
+            if (tag == - 1) {
+                [strongSelf jumpToDownLoadPage];
+            }
         }
     }];
 
+}
+- (void)jumpToDownLoadPage {
+    UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+    DownloadItemTableViewController *byVC = [mainStory instantiateViewControllerWithIdentifier:@"DownloadItemTableViewController"];
+    byVC.type = self.editType;
+    [self.navigationController pushViewController:byVC animated:YES];
 }
 - (void)showUnlockWithItem:(DXmenuItem *)menu AndIndex:(NSInteger)index {
     //正常弹出详情界面

@@ -30,7 +30,7 @@
 //RGB(33,188,225,1)
 #define DefaultColor [UIColor colorWithPatternImage:[[DXHelper shareInstance] getBgImage]]
 #define QRImage(a) [UIImage imageWithContentsOfFile:[[NSBundle mainBundle] pathForResource:a ofType:@"png"]]
-
+#define QRImage1(a,dirPath) [UIImage imageWithContentsOfFile:[dirPath stringByAppendingString:[NSString stringWithFormat:@"/%@.png",a]]]
 #if QRFounderPRO
 #define isQRFounderPRO YES
 #else
@@ -81,7 +81,7 @@ typedef NS_ENUM(NSInteger,QREditType) {
     /**
      *  背景图片
      */
-    QREditTypeBg,
+    QREditTypeBg = 1,
     /**
      *  边框
      */
@@ -101,7 +101,16 @@ typedef NS_ENUM(NSInteger,QREditType) {
     //moreColor
     QREditTypeMoreColor
 };
-
+typedef NS_ENUM(NSInteger,DownloadTaskStatus)
+{
+    TaskStatusIdle,
+    TaskStatusWaiting,
+    TaskStatusDownLoading,
+    TaskStatusError,
+    TaskStatusFinished,
+    TaskStatusUnziping
+    
+};
 //MyCard
 static NSString *NAME_KEY = @"qrnamekey";
 static NSString *COMPANY_KEY = @"qrcompanykey";

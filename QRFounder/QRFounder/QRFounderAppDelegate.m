@@ -49,6 +49,7 @@
     [[ShareManager shareInstance] startSDK];
     [self enableJpush:launchOptions];
     [[QRSourceManager shareInstance] preloadSource];
+    [[QRSourceManager shareInstance] createDir];
     return YES;
 }
 - (void)enableJpush:(NSDictionary *) launchOptions{

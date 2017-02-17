@@ -91,7 +91,7 @@
         [self addSubview:lable];
 
     NSInteger i = 0;
-    self.menuScrollView.contentSize = CGSizeMake(self.menuScrollView.frame.size.width * _menuItems.count, self.menuScrollView.frame.size.height);
+    self.menuScrollView.contentSize = CGSizeMake(self.menuScrollView.frame.size.width * (_menuItems.count - 1), self.menuScrollView.frame.size.height);
 
     CGFloat iconW = self.frame.size.width/MenuIconCount;
     
@@ -120,6 +120,9 @@
         NSInteger j = 0;
         
         iconW = self.frame.size.width/MenuItemCount;
+        if ((i == _menuItems.count -1) && item.items.count == 0) {
+            break;
+        }
          UIScrollView *subScrollView = [[UIScrollView alloc] initWithFrame:CGRectMake(i * self.menuScrollView.frame.size.width, 0,  self.menuScrollView.frame.size.width,  self.menuScrollView.frame.size.height)];
         subScrollView.userInteractionEnabled = YES;
         subScrollView.showsHorizontalScrollIndicator = NO;
@@ -184,13 +187,20 @@
 - (void)btnClick:(DXMenuBtn *)sender {
     if (!sender.path) {
      NSLog(@"Btn Click With Tag : %ld",sender.tag);
-        [UIView animateWithDuration:0.5 animations:^{
-           self.menuScrollView.contentOffset = CGPointMake(self.menuScrollView.frame.size.width *sender.tag, 0);
-        }];
-        [self selectIconWithTag:sender.tag];
-        if (self.selectFinishedCallBack) {
-            self.selectFinishedCallBack(nil,sender.tag);
+        if (sender.tag != (self.menuItems.count - 1)) {
+            [UIView animateWithDuration:0.5 animations:^{
+                self.menuScrollView.contentOffset = CGPointMake(self.menuScrollView.frame.size.width *sender.tag, 0);
+            }];
+            [self selectIconWithTag:sender.tag];
+            if (self.selectFinishedCallBack) {
+                self.selectFinishedCallBack(nil,sender.tag);
+            }
+        } else {
+            if (self.selectFinishedCallBack) {
+                self.selectFinishedCallBack(nil,-1);
+            }
         }
+        
     } else {
      NSLog(@"Btn Click With IndexPath : %@",sender.path.description);
         if (self.selectFinishedCallBack) {
