@@ -74,11 +74,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "QRFounder/APP/Controller/QRShowVC/QREditViewController.m"
-            timestampString = "508925255.004092"
+            timestampString = "509013864.620702"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "348"
-            endingLineNumber = "348"
+            startingLineNumber = "360"
+            endingLineNumber = "360"
             landmarkName = "-scrollMenu"
             landmarkType = "7">
          </BreakpointContent>
@@ -302,6 +302,22 @@
             startingLineNumber = "214"
             endingLineNumber = "214"
             landmarkName = "-downloadtask:progressCahnge:"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "QRFounder/APP/Controller/QRShowVC/QREditViewController.m"
+            timestampString = "509013910.171186"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "177"
+            endingLineNumber = "177"
+            landmarkName = "-setEditType:"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

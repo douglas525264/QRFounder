@@ -377,6 +377,7 @@ static QRSourceManager *qManager;
         [resArr addObject:[model toJson]];
         [de setValue:resArr forKey:key];
         [de synchronize];
+        [self.rac_qrSourceChangeSingle sendNext:@(model.type)];
     }
 }
 - (void)deleteDownload:(NSString *)itemId withtype:(QREditType)type {
@@ -416,6 +417,7 @@ static QRSourceManager *qManager;
                 if ([filemanager fileExistsAtPath:unzipPath]) {
                     [filemanager removeItemAtPath:unzipPath error:nil];
                 }
+                [self.rac_qrSourceChangeSingle sendNext:@(type)];
                 break;
             }
         }
@@ -664,4 +666,12 @@ static QRSourceManager *qManager;
     }
     return _remoteSourceArr;
 }
+- (RACSubject *)rac_qrSourceChangeSingle {
+    if (!_rac_qrSourceChangeSingle) {
+        // RACSubject *sub = [RACSubject subject];
+        _rac_qrSourceChangeSingle =  [RACSubject subject];
+    }
+    return _rac_qrSourceChangeSingle;
+}
+
 @end

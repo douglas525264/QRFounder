@@ -8,7 +8,9 @@
 
 #import <Foundation/Foundation.h>
 #import "DXCommenHelper.h"
+#import <ReactiveCocoa.h>
 @interface QRSourceManager : NSObject
+@property (nonatomic, strong)RACSubject *rac_qrSourceChangeSingle;
 + (QRSourceManager *)shareInstance;
 - (NSArray *)getSoureceWithEditeType:(QREditType)type;
 - (void)preloadSource;

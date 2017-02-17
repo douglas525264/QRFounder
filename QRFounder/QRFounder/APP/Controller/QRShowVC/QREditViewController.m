@@ -78,9 +78,21 @@
   
         });
     }];
+   
+    [[QRSourceManager shareInstance].rac_qrSourceChangeSingle subscribeNext:^(NSNumber  *tt) {
+        @strongify(self)
+        if (tt.integerValue == self.editType) {
+            [self reloadMenu];
+        }
+    }];
     // Do any additional setup after loading the view.
 }
+- (void)reloadMenu {
+    dispatch_async(dispatch_get_main_queue(), ^{
+        self.editType = self.editType;
+    });
 
+}
 - (void)createAD {
         if ([[ADManager shareInstance] getAdType] == ADTypeBaidu) {
         [BaiduMobAdSetting setLpStyle:BaiduMobAdLpStyleDefault];
