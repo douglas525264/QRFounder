@@ -1323,7 +1323,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qAB-Q1-nBw" id="8cx-ZV-LlZ">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="79"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LMM-mi-oAn">
@@ -1344,9 +1344,9 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="疯狂的兔子专辑，给你疯狂的感觉" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YdT-ON-6fh">
-                                            <rect key="frame" x="94" y="40" width="186" height="29"/>
+                                            <rect key="frame" x="94" y="40" width="223" height="29"/>
                                             <constraints>
-                                                <constraint firstAttribute="width" constant="186" id="3YL-PT-gvp"/>
+                                                <constraint firstAttribute="width" constant="223" id="3YL-PT-gvp"/>
                                                 <constraint firstAttribute="height" constant="29" id="kf8-Oa-1c6"/>
                                             </constraints>
                                             <fontDescription key="fontDescription" type="system" pointSize="11"/>
@@ -1378,7 +1378,7 @@
                                         </label>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstAttribute="bottomMargin" secondItem="YdT-ON-6fh" secondAttribute="bottom" constant="2" id="1bS-Xz-Uwb"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="YdT-ON-6fh" secondAttribute="bottom" constant="3" id="1bS-Xz-Uwb"/>
                                         <constraint firstItem="YdT-ON-6fh" firstAttribute="leading" secondItem="LMM-mi-oAn" secondAttribute="trailing" constant="9" id="2eu-lL-cBe"/>
                                         <constraint firstAttribute="trailingMargin" secondItem="HSJ-IL-BXT" secondAttribute="trailing" constant="12" id="IlG-SS-66Y"/>
                                         <constraint firstItem="gt7-oP-D5M" firstAttribute="leading" secondItem="LMM-mi-oAn" secondAttribute="trailing" constant="8" id="Jej-Ah-QYQ"/>
