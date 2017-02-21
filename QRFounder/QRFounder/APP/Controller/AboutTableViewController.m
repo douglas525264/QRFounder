@@ -97,13 +97,13 @@
         case 0:{
         cell.actionLable.text = @"去评分";
         }break;
-        case 1:{
+        case 2:{
           cell.actionLable.text = @"用户反馈";
         }break;
-        case 2:{
+        case 3:{
           cell.actionLable.text = @"推荐给朋友";
         }break;
-        case 3:{
+        case 1:{
             cell.actionLable.text = @"打赏";
           
         }break;
@@ -143,7 +143,7 @@
             [[UIApplication sharedApplication] openURL:url];
  
         }break;
-        case 1:{
+        case 2:{
            // [UMFeedback showFeedback:self withAppkey:@"57833c7f67e58e11620000ff"];
             self.feedbackKit.extInfo = @{@"loginTime":[[NSDate date] description],
                                          @"visitPath":@"登陆->关于->反馈",
@@ -179,10 +179,10 @@
    
 
         }break;
-        case 2:{
+        case 3:{
             [[[UIApplication sharedApplication] keyWindow] addSubview:self.rVC.view];
         }break;
-        case 3:{
+        case 1:{
             UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
             RewardViewController *rVC = [mainStory instantiateViewControllerWithIdentifier:@"RewardViewController"];
             [self presentViewController:[[UINavigationController alloc] initWithRootViewController:rVC] animated:YES completion:^{
