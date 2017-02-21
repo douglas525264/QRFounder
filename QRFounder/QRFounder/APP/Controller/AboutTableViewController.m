@@ -15,6 +15,7 @@
 #import <YWFeedbackFMWK/YWFeedbackKit.h>
 #import <YWFeedbackFMWK/YWFeedbackViewController.h>
 #import <ReactiveCocoa.h>
+#import "RewardViewController.h"
 @interface AboutTableViewController ()
 @property(nonatomic, strong) UIImageView *imageView;
 @property(nonatomic, strong) UILabel *versionLable;
@@ -182,7 +183,11 @@
             [[[UIApplication sharedApplication] keyWindow] addSubview:self.rVC.view];
         }break;
         case 3:{
-            
+            UIStoryboard *mainStory = [UIStoryboard storyboardWithName:@"Main" bundle:[NSBundle mainBundle]];
+            RewardViewController *rVC = [mainStory instantiateViewControllerWithIdentifier:@"RewardViewController"];
+            [self presentViewController:[[UINavigationController alloc] initWithRootViewController:rVC] animated:YES completion:^{
+                
+            }];
         }break;
         case 4:{
             if (!isQRFounderPRO) {

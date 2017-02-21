@@ -679,6 +679,8 @@
 		A56FFA311D50B65B00F61BD6 /* AboutTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A56FFA301D50B65B00F61BD6 /* AboutTableViewCell.m */; };
 		A56FFA331D50B67A00F61BD6 /* AboutTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A56FFA321D50B67A00F61BD6 /* AboutTableViewCell.xib */; };
 		A57609A71CB287F8006F3F1B /* QRSourceManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A57609A61CB287F8006F3F1B /* QRSourceManager.m */; };
+		A5776FFD1E5C70BE003A2D32 /* RewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5776FFC1E5C70BE003A2D32 /* RewardViewController.m */; };
+		A5776FFE1E5C70BE003A2D32 /* RewardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A5776FFC1E5C70BE003A2D32 /* RewardViewController.m */; };
 		A579DBD91D388D8100561CD3 /* HistoryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A579DBD81D388D8100561CD3 /* HistoryViewController.m */; };
 		A585877B1E212C200032E5E5 /* QRFounderPro-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = A585877A1E212C200032E5E5 /* QRFounderPro-Info.plist */; };
 		A58A55F91CA2EED6003C97B7 /* DXCommenQRView.m in Sources */ = {isa = PBXBuildFile; fileRef = A58A55F81CA2EED6003C97B7 /* DXCommenQRView.m */; };
@@ -1367,6 +1369,8 @@
 		A56FFA321D50B67A00F61BD6 /* AboutTableViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AboutTableViewCell.xib; sourceTree = "<group>"; };
 		A57609A51CB287F8006F3F1B /* QRSourceManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QRSourceManager.h; sourceTree = "<group>"; };
 		A57609A61CB287F8006F3F1B /* QRSourceManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QRSourceManager.m; sourceTree = "<group>"; };
+		A5776FFB1E5C70BE003A2D32 /* RewardViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RewardViewController.h; sourceTree = "<group>"; };
+		A5776FFC1E5C70BE003A2D32 /* RewardViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RewardViewController.m; sourceTree = "<group>"; };
 		A579DBD71D388D8100561CD3 /* HistoryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HistoryViewController.h; sourceTree = "<group>"; };
 		A579DBD81D388D8100561CD3 /* HistoryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HistoryViewController.m; sourceTree = "<group>"; };
 		A585877A1E212C200032E5E5 /* QRFounderPro-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "QRFounderPro-Info.plist"; sourceTree = SOURCE_ROOT; };
@@ -2437,6 +2441,15 @@
 			path = Manager;
 			sourceTree = "<group>";
 		};
+		A5776FF61E5C7075003A2D32 /* Reward */ = {
+			isa = PBXGroup;
+			children = (
+				A5776FFB1E5C70BE003A2D32 /* RewardViewController.h */,
+				A5776FFC1E5C70BE003A2D32 /* RewardViewController.m */,
+			);
+			name = Reward;
+			sourceTree = "<group>";
+		};
 		A579DBD61D388D6900561CD3 /* History */ = {
 			isa = PBXGroup;
 			children = (
@@ -3067,6 +3080,7 @@
 		D784188C1C7455BA00850129 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				A5776FF61E5C7075003A2D32 /* Reward */,
 				A54CE1CD1E5586FD007068C7 /* Download */,
 				A589D0181E00E8A700FB5168 /* Buy */,
 				A579DBD61D388D6900561CD3 /* History */,
@@ -4442,6 +4456,7 @@
 				A55C5D791DFE53820081A8DF /* NSString+DXTool.m in Sources */,
 				A55C5D7A1DFE53820081A8DF /* DXBottomActionView.m in Sources */,
 				A55C5D7B1DFE53820081A8DF /* MsgView.m in Sources */,
+				A5776FFE1E5C70BE003A2D32 /* RewardViewController.m in Sources */,
 				A55C5D7C1DFE53820081A8DF /* DIYSubModel.m in Sources */,
 				A55C5D7D1DFE53820081A8DF /* DXScrollMenu.m in Sources */,
 				A55C5D7E1DFE53820081A8DF /* DBManager.m in Sources */,
@@ -4496,6 +4511,7 @@
 				A5D76F6B1D373D2200AA8006 /* AboutTableViewController.m in Sources */,
 				A5D76F731D378DC900AA8006 /* QRdatabase.xcdatamodeld in Sources */,
 				D7130DA11C9A9E8D0096768B /* DXQRView.m in Sources */,
+				A5776FFD1E5C70BE003A2D32 /* RewardViewController.m in Sources */,
 				A5172BFC1E1F7083007E099A /* PayManager.m in Sources */,
 				A50258F71CC76E65007B00E3 /* DXInputTextView.m in Sources */,
 				D78418C71C746FEB00850129 /* MsgInfoView.m in Sources */,
