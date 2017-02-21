@@ -187,7 +187,8 @@
 - (void)btnClick:(DXMenuBtn *)sender {
     if (!sender.path) {
      NSLog(@"Btn Click With Tag : %ld",sender.tag);
-        if (sender.tag != (self.menuItems.count - 1)) {
+        DXmenuItem *last = self.menuItems.lastObject;
+        if (sender.tag != (self.menuItems.count - 1) || last.items.count > 0) {
             [UIView animateWithDuration:0.5 animations:^{
                 self.menuScrollView.contentOffset = CGPointMake(self.menuScrollView.frame.size.width *sender.tag, 0);
             }];
