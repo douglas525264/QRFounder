@@ -103,14 +103,18 @@
           cell.actionLable.text = @"推荐给朋友";
         }break;
         case 3:{
-            if (!isQRFounderPRO) {
-              cell.actionLable.text = @"去除广告";
-            } else {
-              cell.actionLable.text = @"更多功能敬请期待";
-            }
+            cell.actionLable.text = @"打赏";
           
         }break;
         case 4:{
+            if (!isQRFounderPRO) {
+                cell.actionLable.text = @"去除广告";
+            } else {
+                cell.actionLable.text = @"更多功能敬请期待";
+            }
+            
+        }break;
+        case 5:{
             cell.actionLable.text = @"更多功能敬请期待";
         }break;
         
@@ -177,7 +181,7 @@
         case 2:{
             [[[UIApplication sharedApplication] keyWindow] addSubview:self.rVC.view];
         }break;
-        case 3:{
+        case 4:{
             if (!isQRFounderPRO) {
                 NSString *strUrl = [NSString stringWithFormat:@"itms-apps://itunes.apple.com/app/id1185233985"];
                 NSURL *url = [NSURL URLWithString:strUrl];
