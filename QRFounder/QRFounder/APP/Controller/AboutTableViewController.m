@@ -76,7 +76,7 @@
 }
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
     
-    return isQRFounderPRO ? 4 : 5;
+    return isQRFounderPRO ? 5 : 6;
 }
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return IS_IPAD ? 65 : 55;
@@ -180,6 +180,9 @@
         }break;
         case 2:{
             [[[UIApplication sharedApplication] keyWindow] addSubview:self.rVC.view];
+        }break;
+        case 3:{
+            
         }break;
         case 4:{
             if (!isQRFounderPRO) {
