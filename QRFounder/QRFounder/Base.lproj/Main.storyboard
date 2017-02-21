@@ -1019,23 +1019,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="让朋友扫描二维码即可下载" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfe-9z-dNn">
-                                <rect key="frame" x="6" y="352" width="594" height="28"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="让朋友扫描二维码即可下载，也可以点击右上方分享给盆友~" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nfe-9z-dNn">
+                                <rect key="frame" x="31" y="352" width="314" height="70"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="28" id="fLQ-xg-xgk"/>
+                                    <constraint firstAttribute="height" constant="70" id="fLQ-xg-xgk"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <view contentMode="scaleToFill" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Ypn-4m-Pc7" customClass="DXCommenQRView">
-                                <rect key="frame" x="183" y="94" width="240" height="240"/>
-                                <color key="backgroundColor" red="1" green="0.47499180740000002" blue="0.22692442160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="240" id="Upy-2B-aQG"/>
-                                    <constraint firstAttribute="height" constant="240" id="vB5-u2-ajO"/>
-                                </constraints>
-                            </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zKb-cj-tFw">
                                 <rect key="frame" x="299" y="28" width="46" height="30"/>
                                 <constraints>
@@ -1049,16 +1041,24 @@
                                     <action selector="shareBtnClick:" destination="LpF-6v-MWg" eventType="touchUpInside" id="4H9-kK-x8y"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ypn-4m-Pc7" customClass="DXCommenQRView">
+                                <rect key="frame" x="68" y="94" width="240" height="240"/>
+                                <color key="backgroundColor" red="1" green="0.47499180740000002" blue="0.22692442160000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="240" id="Upy-2B-aQG"/>
+                                    <constraint firstAttribute="height" constant="240" id="vB5-u2-ajO"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="Nfe-9z-dNn" firstAttribute="leading" secondItem="jJJ-qJ-LSJ" secondAttribute="leadingMargin" constant="-14" id="60h-F2-dLJ"/>
+                            <constraint firstItem="Nfe-9z-dNn" firstAttribute="leading" secondItem="jJJ-qJ-LSJ" secondAttribute="leadingMargin" constant="15" id="60h-F2-dLJ"/>
                             <constraint firstItem="zKb-cj-tFw" firstAttribute="top" secondItem="zVT-5n-e9R" secondAttribute="bottom" constant="8" id="6Fh-6L-XaO"/>
                             <constraint firstItem="Nfe-9z-dNn" firstAttribute="top" secondItem="Ypn-4m-Pc7" secondAttribute="bottom" constant="18" id="BXJ-x1-KZB"/>
                             <constraint firstAttribute="trailingMargin" secondItem="zKb-cj-tFw" secondAttribute="trailing" constant="14" id="DQc-FD-se9"/>
                             <constraint firstItem="Ypn-4m-Pc7" firstAttribute="top" secondItem="zVT-5n-e9R" secondAttribute="bottom" constant="74" id="VPA-V7-uuP"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="Nfe-9z-dNn" secondAttribute="trailing" constant="-20" id="WZg-5f-uDK"/>
-                            <constraint firstItem="Ypn-4m-Pc7" firstAttribute="centerX" secondItem="jJJ-qJ-LSJ" secondAttribute="centerX" constant="3" id="td7-Jt-U0y"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Nfe-9z-dNn" secondAttribute="trailing" constant="14" id="WZg-5f-uDK"/>
+                            <constraint firstItem="Ypn-4m-Pc7" firstAttribute="centerX" secondItem="jJJ-qJ-LSJ" secondAttribute="centerX" constant="0.5" id="td7-Jt-U0y"/>
                         </constraints>
                     </view>
                     <connections>
@@ -1068,7 +1068,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FFp-hW-teb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2706" y="1234"/>
+            <point key="canvasLocation" x="2792.8000000000002" y="1160.8695652173915"/>
         </scene>
         <!--Pay View Controller-->
         <scene sceneID="fgJ-L5-Rvv">

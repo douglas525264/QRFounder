@@ -12,4 +12,5 @@
 + (ShareManager *)shareInstance;
 - (void)startSDK;
 - (void)shareQrimage:(UIImage *)image withView:(UIView *)view;
+- (void)shareURL:(NSString *)url withTitle:(NSString *)title des:(NSString *)des andView:(UIView *)view;
 @end

@@ -31,8 +31,15 @@
     // Do any additional setup after loading the view.
 }
 - (IBAction)shareBtnClick:(id)sender {
-    UIImage *image = [[DXHelper shareInstance] normalImageFromView:self.qrView];
-    [[ShareManager shareInstance] shareQrimage:image withView:IS_IPAD ? self.qrView : nil];
+    //UIImage *image = [[DXHelper shareInstance] normalImageFromView:self.qrView];
+   // [[ShareManager shareInstance] shareQrimage:image withView:IS_IPAD ? self.qrView : nil];
+    NSString *appID = @"1152798225";
+#if QRFounderPRO
+    appID = @"1185233985";
+#else
+    
+#endif
+    [[ShareManager shareInstance] shareURL:[NSString stringWithFormat:appUrl,@"com.onlybeyond.QRcode",appID] withTitle:@"个性二维码" des:@"一款为您打造专属二维码的APP" andView:IS_IPAD ? self.qrView : nil];
 }
 
 - (void)didReceiveMemoryWarning {
