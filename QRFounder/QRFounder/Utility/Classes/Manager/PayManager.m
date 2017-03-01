@@ -107,8 +107,6 @@ static PayManager *pManager;
             return;
         }
         NSString *payStr = @"https://api.fuqian.la/services/order/singleQuery";
-        FuqianlaPay *manager = [FuqianlaPay sharedPayManager];
-
         NSDictionary *dir = @{@"app_id":@"UOIcpKx4jipj1WM3Wn2Tjw",@"charset":@"UTF-8",@"order_no":self.currentPayOrder,@"version":@"v2.1.1"};
         NSMutableString *muStr = [[NSMutableString alloc] init] ;
         NSMutableArray *arr = [NSMutableArray arrayWithArray:dir.allKeys];
