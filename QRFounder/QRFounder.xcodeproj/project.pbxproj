@@ -95,6 +95,8 @@
 		A5172BDD1E1F6EC3007E099A /* ShareSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5172BDB1E1F6EC3007E099A /* ShareSDK.framework */; };
 		A5172BFC1E1F7083007E099A /* PayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5172BFB1E1F7083007E099A /* PayManager.m */; };
 		A5172BFD1E1F7083007E099A /* PayManager.m in Sources */ = {isa = PBXBuildFile; fileRef = A5172BFB1E1F7083007E099A /* PayManager.m */; };
+		A522E5B61E66865C00821B8E /* DmEncryptionMath.m in Sources */ = {isa = PBXBuildFile; fileRef = A522E5B51E66865C00821B8E /* DmEncryptionMath.m */; };
+		A522E5B71E66865C00821B8E /* DmEncryptionMath.m in Sources */ = {isa = PBXBuildFile; fileRef = A522E5B51E66865C00821B8E /* DmEncryptionMath.m */; };
 		A52B83361DD569F10050BF4F /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A52B83351DD569F10050BF4F /* Security.framework */; };
 		A52B833B1DD56F3C0050BF4F /* DXAlertAction.m in Sources */ = {isa = PBXBuildFile; fileRef = A52B833A1DD56F3C0050BF4F /* DXAlertAction.m */; };
 		A52B83B31DD5CFC90050BF4F /* album.png in Resources */ = {isa = PBXBuildFile; fileRef = A52B83481DD5CFC90050BF4F /* album.png */; };
@@ -1168,6 +1170,8 @@
 		A5172BDB1E1F6EC3007E099A /* ShareSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ShareSDK.framework; path = ShareSDK/ShareSDK.framework; sourceTree = "<group>"; };
 		A5172BFA1E1F7083007E099A /* PayManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PayManager.h; sourceTree = "<group>"; };
 		A5172BFB1E1F7083007E099A /* PayManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PayManager.m; sourceTree = "<group>"; };
+		A522E5B41E66865C00821B8E /* DmEncryptionMath.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DmEncryptionMath.h; sourceTree = "<group>"; };
+		A522E5B51E66865C00821B8E /* DmEncryptionMath.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DmEncryptionMath.m; sourceTree = "<group>"; };
 		A52B83351DD569F10050BF4F /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		A52B83391DD56F3C0050BF4F /* DXAlertAction.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DXAlertAction.h; sourceTree = "<group>"; };
 		A52B833A1DD56F3C0050BF4F /* DXAlertAction.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DXAlertAction.m; sourceTree = "<group>"; };
@@ -3190,6 +3194,8 @@
 		D78418921C7455C400850129 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A522E5B41E66865C00821B8E /* DmEncryptionMath.h */,
+				A522E5B51E66865C00821B8E /* DmEncryptionMath.m */,
 				A54CE1C81E557AA2007068C7 /* Net */,
 				A5383F651DD4B310008B4650 /* QRColorBgView.h */,
 				A5383F661DD4B310008B4650 /* QRColorBgView.m */,
@@ -3447,7 +3453,7 @@
 					D78418541C74551200850129 = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = B6H7GPKGQJ;
-						ProvisioningStyle = Manual;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.BackgroundModes = {
 								enabled = 1;
@@ -4391,6 +4397,7 @@
 				A55C5D461DFE53820081A8DF /* NSString+DXCheck.m in Sources */,
 				A55C5D471DFE53820081A8DF /* APPInfoView.m in Sources */,
 				A55C5D481DFE53820081A8DF /* UIActionSheet+RACExtends.m in Sources */,
+				A522E5B71E66865C00821B8E /* DmEncryptionMath.m in Sources */,
 				A55C5D491DFE53820081A8DF /* HttpInfoView.m in Sources */,
 				A55C5D4A1DFE53820081A8DF /* QRShowViewController.m in Sources */,
 				A54CE1D91E558E32007068C7 /* DownloadTableViewCell.m in Sources */,
@@ -4554,6 +4561,7 @@
 				A54CE1D81E558E32007068C7 /* DownloadTableViewCell.m in Sources */,
 				D784185A1C74551200850129 /* main.m in Sources */,
 				D784189F1C745B9400850129 /* MainViewController.m in Sources */,
+				A522E5B61E66865C00821B8E /* DmEncryptionMath.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -4832,8 +4840,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = QRFounder/QRFounder.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: xin dong (B6H7GPKGQJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = B6H7GPKGQJ;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4883,8 +4891,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.qrcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7edeb8de-eac6-4526-ba50-ec65f2bcd7bb";
-				PROVISIONING_PROFILE_SPECIFIER = DXQRAOC;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Debug;
 		};
@@ -4895,8 +4903,8 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = QRFounder/QRFounder.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: xin dong (B6H7GPKGQJ)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = B6H7GPKGQJ;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = "";
 				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -4946,8 +4954,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.douglas.qrcode;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "7edeb8de-eac6-4526-ba50-ec65f2bcd7bb";
-				PROVISIONING_PROFILE_SPECIFIER = DXQRAOC;
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};

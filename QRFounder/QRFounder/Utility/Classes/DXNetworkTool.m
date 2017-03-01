@@ -87,23 +87,28 @@
     [manager POST:path parameters:bodyData progress:^(NSProgress * _Nonnull uploadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
+       // NSString *str = [[NSString alloc] initWithData:responseObject encoding:NSUTF8StringEncoding];
         NSDictionary *resp = [NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:nil];
         if (resp ) {
             NSInteger code = 0;
             if (resp[@"code"]) {
+                 NSString *msg =  resp[@"msg"];
                 NSNumber *cc = resp[@"code"];
                 code = cc.integerValue;
-            }
-            NSString *msg =  resp[@"msg"];
-            if (code == 200) {
                 
-                completeBlock(resp,msg,code);
+                if (code == 200) {
+                    
+                    completeBlock(resp,msg,code);
+                } else {
+                    DXError *error = [[DXError alloc] init];
+                    error.code = code;
+                    failed(error);
+                }
             } else {
-                DXError *error = [[DXError alloc] init];
-                error.code = code;
-                failed(error);
+               completeBlock(resp,@"",code);
             }
+           
+           
         } else {
             DXError *error1 = [[DXError alloc] init];
             error1.code = 404;
